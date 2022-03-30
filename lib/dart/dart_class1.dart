@@ -1,5 +1,7 @@
 /*
  * dart 类（类基础，构造函数，枚举）
+ *
+ * 注意：dart 中没有 private 和 public 之类的，_ 开头代表 private，否则为 public
  */
 
 import 'package:flutter/material.dart';
@@ -29,15 +31,20 @@ class DartClass1 extends StatelessWidget {
     var b = a.name;
     var c = a.getInfo();
 
-    // _MyClass1 的自定义的 + 逻辑，详见 _MyClass1 中的 operator 定义
+    // _MyClass1 的自定义的 + 逻辑，详见 _MyClass1 中的相关 operator 定义
     var d = a + _MyClass1("wanglei", 50)
       ..salary = 6000;
     var e = d.getInfo();
 
-    var f = _MyClass1.version;
-    var g = _MyClass1.getVersion();
+    // _MyClass1 的自定义的 [] 逻辑，详见 _MyClass1 中的相关 operator 定义
+    a[1] = "abc";
+    var f = a[1];
 
-    log("$b, $c, $e, $f, $g");
+    // 调用静态属性和静态方法
+    var g = _MyClass1.version;
+    var h = _MyClass1.getVersion();
+
+    log("$b, $c, $e, $f, $g, $h");
   }
 
   void sample2() {
@@ -94,8 +101,13 @@ class _MyClass1 {
   num get salary => _salary;
   set salary(num value) => _salary = value;
 
-  // 定义运算符（本例用于定义 _MyClass1 对象的 + 运算符的实现）
+  // 实现 _MyClass1 的 + 运算符
   _MyClass1 operator +(_MyClass1 v) => _MyClass1(name + v.name, age + v.age);
+
+  // 实现 _MyClass1 的 [] 运算符（即索引器）
+  String _temp = "";
+  operator [](index) => _temp;
+  operator []=(index, value) => _temp = "$value $index";
 
   // 类属性
   static double version = 1.1;

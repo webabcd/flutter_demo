@@ -116,9 +116,9 @@ class _MyClass extends _MyClassBase with _MyMixin1, _MyMixin2 implements _MyClas
   }
 }
 
-// 扩展方法
+// 扩展方法（_ 开头代表 private，否则为 public）
 // 为 _MyClass 类扩展出 getInfo7() 方法
-extension MyExtension on _MyClass {
+extension _MyExtension on _MyClass {
   String getInfo7() {
     return "getInfo7()";
   }
