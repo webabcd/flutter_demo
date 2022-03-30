@@ -15,6 +15,7 @@ import 'dart/dart_exception.dart';
 import 'dart/dart_function.dart';
 import 'dart/dart_class1.dart';
 import 'dart/dart_class2.dart';
+import 'dart/dart_generic.dart';
 
 // main 是
 void main() {
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         "dart.dart_function":(context) => const DartFunction(),
         "dart.dart_class1":(context) => const DartClass1(),
         "dart.dart_class2":(context) => const DartClass2(),
+        "dart.dart_generic":(context) => const DartGeneric(),
       },
     );
   }

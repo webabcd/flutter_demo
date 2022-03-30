@@ -33,6 +33,10 @@
       {
         "title": "类（抽象类，接口，继承，混入，扩展方法）",
         "url": "dart.dart_class2"
+      },
+      {
+        "title": "泛型",
+        "url": "dart.dart_generic"
       }
     ]
   }
