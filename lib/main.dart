@@ -7,15 +7,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 
-import 'dart/dart_summary.dart';
-import 'dart/dart_datatype.dart';
-import 'dart/dart_operator.dart';
-import 'dart/dart_statement.dart';
-import 'dart/dart_exception.dart';
-import 'dart/dart_function.dart';
-import 'dart/dart_class1.dart';
-import 'dart/dart_class2.dart';
-import 'dart/dart_generic.dart';
+import 'dart/summary.dart';
+import 'dart/datatype.dart';
+import 'dart/operator.dart';
+import 'dart/statement.dart';
+import 'dart/exception.dart';
+import 'dart/function.dart';
+import 'dart/class1.dart';
+import 'dart/class2.dart';
+import 'dart/generic.dart';
+import 'dart/other.dart';
+import 'dart/async.dart';
+import 'dart/package/demo.dart';
 
 // main 是
 void main() {
@@ -43,15 +46,18 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(title: 'ddd'),
       routes:{
-        "dart.dart_summary":(context) => const DartSummary(),
-        "dart.dart_datatype":(context) => const DartDatatype(),
-        "dart.dart_operator":(context) => const DartOperator(),
-        "dart.dart_statement":(context) => const DartStatement(),
-        "dart.dart_exception":(context) => const DartException(),
-        "dart.dart_function":(context) => const DartFunction(),
-        "dart.dart_class1":(context) => const DartClass1(),
-        "dart.dart_class2":(context) => const DartClass2(),
-        "dart.dart_generic":(context) => const DartGeneric(),
+        "dart.summary":(context) => const DartSummary(),
+        "dart.datatype":(context) => const DartDatatype(),
+        "dart.operator":(context) => const DartOperator(),
+        "dart.statement":(context) => const DartStatement(),
+        "dart.exception":(context) => const DartException(),
+        "dart.function":(context) => const DartFunction(),
+        "dart.class1":(context) => const DartClass1(),
+        "dart.class2":(context) => const DartClass2(),
+        "dart.generic":(context) => const DartGeneric(),
+        "dart.other":(context) => const DartOther(),
+        "dart.package.demo":(context) => const DartPackage(),
+        "dart.async":(context) => const DartAsync(),
       },
     );
   }

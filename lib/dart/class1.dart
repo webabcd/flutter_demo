@@ -25,7 +25,7 @@ class DartClass1 extends StatelessWidget {
 
   void sample1() {
     // 实例化时可以省略 new
-    // 关于 .. 运算符的说明请参见 dart_operator.dart
+    // 关于 .. 运算符的说明请参见 operator.dart
     var a = _MyClass1("webabcd", 40)
       ..salary = 4000;
     var b = a.name;

@@ -31,9 +31,12 @@ class DartSummary extends StatelessWidget {
      * 用于生成文档的注释
      */
 
+    // 声明变量，final，const
     sample1();
+    // 变量初始化，late，?
     sample2();
-
+    // 类型别名
+    sample3();
 
     return MyText(text: "dart_summary");
   }
@@ -98,4 +101,21 @@ class DartSummary extends StatelessWidget {
     log("invoke _lateDemo");
     return "return _lateDemo";
   }
+
+  void sample3() {
+    MyInt a = 1;
+    // MyInt 实际上就是 int
+    var b = a.runtimeType.toString(); // int
+
+    int plus(int a, int b) => a + b;
+    // plus() 函数的类型是 int Function(int a, int b)，也就是说 plus() 函数的类型是 MyFunc
+    var c = plus is MyFunc;           // true
+
+    log("$a, $b, $c");
+  }
 }
+
+// 为某个类指定类型别名
+typedef MyInt = int;
+// 为某个函数类型指定类型别名
+typedef MyFunc = int Function(int a, int b);

@@ -5,6 +5,10 @@ void log(String message) {
   debugPrint(message);
 }
 
+int currentTimestamp() {
+  return DateTime.now().millisecondsSinceEpoch;
+}
+
 class MyText extends StatelessWidget {
   const MyText({
     Key? key,
