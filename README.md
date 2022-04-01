@@ -3,9 +3,9 @@
 
 #### dart
 1. 概述
-   - lib/dart/summary.dart
++ lib/dart/summary.dart
 2. 数据类型（num, int, double, bool, String, List, Set, Map, Object, dynamic, 数据类型转换与判断，可空类型）
-   - lib/dart/datatype.dart
+   * lib/dart/datatype.dart
 3. 运算符
    - lib/dart/operator.dart
 4. 控制语句（if/else, switch/case, while/do-while, for）
@@ -21,9 +21,9 @@
 9. 泛型（泛型类，泛型属性，泛型方法，泛型扩展方法）
    - lib/dart/generic.dart
 10. 异步编程（async/await/Future/Stream）
-   - lib/dart/async.dart
+   + lib/dart/async.dart
 11. 库的开发和使用
-   - lib/dart/package/demo.dart
+* lib/dart/package/demo.dart
    - lib/dart/package/lib1.dart
    - lib/dart/package/lib2.dart
    - lib/dart/package/lib3.dart
