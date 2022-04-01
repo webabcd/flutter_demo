@@ -1,5 +1,5 @@
 /*
- * dart 控制语句
+ * dart 控制语句（if/else, switch/case, while/do-while, for）
  */
 
 import 'package:flutter/material.dart';
@@ -115,11 +115,8 @@ class DartStatement extends StatelessWidget {
     }
 
     // 可迭代对象的 forEach 方法
-    a.forEach((item) { log("a:$item"); });
-
-    // 可迭代对象的 forEach 方法
     // 迭代出的元素是 int 类型，每迭代一次就调用一次 myLog(int i) 方法，并为其传递迭代出的数据
-    a.forEach(myLog);
+    a.forEach(myLog); // 注：不建议在 forEach 中使用匿名函数，比如像这样写 a.forEach((i) { log("$i"); }); 是不被推荐的
   }
   void myLog(int i) {
     log("$i");

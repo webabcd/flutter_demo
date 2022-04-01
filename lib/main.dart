@@ -33,31 +33,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'ddd'),
+      home: const MyHomePage(title: 'Flutter Demo'),
       routes:{
-        "dart.summary":(context) => const DartSummary(),
-        "dart.datatype":(context) => const DartDatatype(),
-        "dart.operator":(context) => const DartOperator(),
-        "dart.statement":(context) => const DartStatement(),
-        "dart.exception":(context) => const DartException(),
-        "dart.function":(context) => const DartFunction(),
-        "dart.class1":(context) => const DartClass1(),
-        "dart.class2":(context) => const DartClass2(),
-        "dart.generic":(context) => const DartGeneric(),
-        "dart.other":(context) => const DartOther(),
-        "dart.package.demo":(context) => const DartPackage(),
-        "dart.async":(context) => const DartAsync(),
+        "lib.dart.summary.dart":(context) => const DartSummary(),
+        "lib.dart.datatype.dart":(context) => const DartDatatype(),
+        "lib.dart.operator.dart":(context) => const DartOperator(),
+        "lib.dart.statement.dart":(context) => const DartStatement(),
+        "lib.dart.exception.dart":(context) => const DartException(),
+        "lib.dart.function.dart":(context) => const DartFunction(),
+        "lib.dart.class1.dart":(context) => const DartClass1(),
+        "lib.dart.class2.dart":(context) => const DartClass2(),
+        "lib.dart.generic.dart":(context) => const DartGeneric(),
+        "lib.dart.other.dart":(context) => const DartOther(),
+        "lib.dart.package.demo.dart":(context) => const DartPackage(),
+        "lib.dart.async.dart":(context) => const DartAsync(),
       },
     );
   }
@@ -65,16 +56,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
   final String title;
 
   @override
@@ -82,25 +63,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  // https://blog.csdn.net/Ly250821/article/details/118684351
-  // _MyHomePageState(this._json, this._counter);
-
-  List<Welcome>? _json;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  List<Node>? _siteMap;
 
   _loadSiteMap() async {
+    _siteMap = <Node>[];
 
-    var jsonString = await rootBundle.loadString('assets/site_map.json');
-    _json = welcomeFromJson(jsonString);
-    //debugPrint(_json[0]["title"]);
-   // debugPrint(_json[0]["title"].runtimeType.toString());
+    var str = await rootBundle.loadString('assets/README.md');
+    var list = str.split("\n");
+    Node? n;
+    for (int i = 0; i < list.length; i++) {
+      var line = list[i];
+      if (line.startsWith("####")) {
+        n = Node(line.substring(4).trim(), "", <Node>[]);
+        _siteMap!.add(n);
+      } else if (n != null && line.contains(". ")) {
+        n.node.add(Node(line.trim(),
+            list[++i].substring(list[i].indexOf("-") + 2).trim().replaceAll("/", "."),
+            <Node>[]));
+      }
+    }
   }
 
   @override
@@ -109,6 +90,9 @@ class _MyHomePageState extends State<MyHomePage> {
     return FutureBuilder(
       future: _loadSiteMap(),
       builder: (context, snapshot) {
+        if (snapshot.connectionState != ConnectionState.done) {
+          return const Text("loading");
+        }
         return Scaffold(
           appBar: AppBar(
             title: Text(widget.title),
@@ -117,31 +101,55 @@ class _MyHomePageState extends State<MyHomePage> {
             itemBuilder: (context, index) {
               return ExpansionTile(
                 initiallyExpanded: false,
-                title: Text(_json![index].title),
-                children: _json![index].node.map((e) =>
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                title: Text(
+                  _siteMap![index].title,
+                  style: const TextStyle(
+
+                  ),
+                ),
+                collapsedBackgroundColor: Colors.yellow,
+                backgroundColor: Colors.orange,
+                collapsedTextColor: Colors.black,
+                textColor: Colors.white,
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.white,
+                children: _siteMap![index].node.map((e) =>
+                  Column(
                     children: [
-                      GestureDetector(
-                        child: Text(
-                          e.title,
-                          textAlign: TextAlign.left,
-                          style: const TextStyle(
-                            fontSize: 36,
-                            color: Colors.red,
-                            backgroundColor: Colors.blue,
-                          ),
-                        ),
-                        onTap: () {
-                          Navigator.pushNamed(context, e.url);
-                        },
-                      )
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Expanded(
+                              child: GestureDetector(
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10, right: 10, top: 3, bottom: 3),
+                                  child: Text(
+                                    e.title,
+                                    textAlign: TextAlign.left,
+                                    style: const TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      backgroundColor: Colors.transparent,
+                                    ),
+                                  ),
+                                ),
+                                onTap: () {
+                                  Navigator.pushNamed(context, e.url);
+                                },
+                              )
+                          )
+                        ],
+                      ),
+                      const Divider(
+                        height: 5,
+                        color: Colors.blue,
+                      ),
                     ],
                   ),
                 ).toList(),
               );
             },
-            itemCount: _json?.length,
+            itemCount: _siteMap!.length,
           ),
         );
       }
@@ -149,48 +157,9 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-
-
-List<Welcome> welcomeFromJson(String str) => List<Welcome>.from(json.decode(str).map((x) => Welcome.fromJson(x)));
-
-String welcomeToJson(List<Welcome> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
-
-class Welcome {
-  Welcome({
-    required this.title,
-    required this.node,
-  });
-
-  String title;
-  List<Node> node;
-
-  factory Welcome.fromJson(Map<String, dynamic> json) => Welcome(
-    title: json["title"],
-    node: List<Node>.from(json["node"].map((x) => Node.fromJson(x))),
-  );
-
-  Map<String, dynamic> toJson() => {
-    "title": title,
-    "node": List<dynamic>.from(node.map((x) => x.toJson())),
-  };
-}
-
 class Node {
-  Node({
-    required this.title,
-    required this.url,
-  });
-
   String title;
   String url;
-
-  factory Node.fromJson(Map<String, dynamic> json) => Node(
-    title: json["title"],
-    url: json["url"],
-  );
-
-  Map<String, dynamic> toJson() => {
-    "title": title,
-    "url": url,
-  };
+  List<Node> node;
+  Node(this.title, this.url, this.node);
 }

@@ -122,6 +122,11 @@ class DartSummary extends StatelessWidget {
         'b';
     var c = "hello: $b"; // 格式化字符串时尽量用 $ 而不是用 + 号拼接
     var d = [1, 2, 3].isEmpty; // 判断一个可迭代对象是否为空建议用 isEmpty 属性而不要使用 length 属性（可能会比较慢）
+    var e = [
+      1,
+      2,
+      3,  // 分行定义 List, Set, Map 中的元素时，建议结尾的元素后面也加上逗号，这样会方便你的各种修改
+    ];
   }
 }
 

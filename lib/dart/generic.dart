@@ -1,5 +1,5 @@
 /*
- * dart 泛型
+ * dart 泛型（泛型类，泛型属性，泛型方法，泛型扩展方法）
  */
 
 import 'package:flutter/material.dart';
@@ -56,7 +56,7 @@ class _MyClass2<T extends num> {
     return "type: $T";
   }
 
-  // 泛型方法
+  // 泛型属性和泛型方法
   T v = 0 as T;
   void setT(T v) {
     this.v = v;

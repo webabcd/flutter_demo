@@ -58,7 +58,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/site_map.json
+    - assets/README.md
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -1,5 +1,5 @@
 /*
- * dart 数据类型
+ * dart 数据类型（num, int, double, bool, String, List, Set, Map, Object, dynamic, 数据类型转换与判断，可空类型）
  */
 
 import 'package:flutter/material.dart';
@@ -95,11 +95,11 @@ c''';
     // List 是有序列表，元素是可重复的
     // 下面的 a 会被推导为 List<int> 类型，如果需要创建一个空列表则类似这么写 var x = <int>[];
     // 如果通过 var x = []; 创建空数组的话，其类型为 List<dynamic>
-    var a = [1, 2, ];
+    var a = [1, 2];
     // 添加一个元素
     a.add(0);
     // 添加多个元素
-    a.addAll([4, 5, ]);
+    a.addAll([4, 5]);
     // 获取或设置指定位置的元素
     a[2] = 3;                 // [1, 2, 3, 4, 5]
     var b = a[a.length - 1];  // 5

@@ -1,5 +1,5 @@
 /*
- * dart 错误处理
+ * dart 错误处理（assert, try/on/catch/finally）
  */
 
 import 'package:flutter/material.dart';
