@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Node? n;
     for (int i = 0; i < list.length; i++) {
       var line = list[i];
-      if (line.startsWith("####")) {
+      if (line.startsWith("###")) {
         n = Node(line.substring(4).trim(), "", <Node>[]);
         _siteMap!.add(n);
       } else if (n != null && line.contains(". ")) {
