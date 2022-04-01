@@ -20,7 +20,7 @@
    - lib/dart/class2.dart
 9. 泛型（泛型类，泛型属性，泛型方法，泛型扩展方法）
    - lib/dart/generic.dart
-10. 异步编程（async/await/Future<T>/Stream<T>）
+10. 异步编程（async/await/Future/Stream）
    - lib/dart/async.dart
 11. 库的开发和使用
    - lib/dart/package/demo.dart
