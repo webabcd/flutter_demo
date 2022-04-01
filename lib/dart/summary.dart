@@ -37,6 +37,8 @@ class DartSummary extends StatelessWidget {
     sample2();
     // 类型别名
     sample3();
+    // 几个最佳实践
+    sample4();
 
     return MyText(text: "dart_summary");
   }
@@ -63,7 +65,7 @@ class DartSummary extends StatelessWidget {
     f = [4, 5, 6];      // 这句运行正常，因为 f 自己不是 const 的，所以可以让 f 指向别的数据
 
     const g = [1, 2, 3];
-    // g[0] = 100;      // 这句会报错，你不能修改 const 常量引用的内容中的任何数据
+    // g[0] = 100;      // 这句会报错，你不能修改 const 常量引用的内容中的任何数据（因为在 dart 中 const 常量引用的内容也都会被自动标记为 const）
     // g = [4, 5, 6];   // 这句会报错，你不能让 const 常量引用别的数据
 
     var h = [1, 2, 3] == [1, 2, 3];             // false（即使数据相同，这两个对象也不是同一个对象）
@@ -112,6 +114,14 @@ class DartSummary extends StatelessWidget {
     var c = plus is MyFunc;           // true
 
     log("$a, $b, $c");
+  }
+
+  void sample4() {
+    String? a; // 默认就是 null，不建议写成 String? a = null;
+    var b = 'a' // 拼接多个字符串时建议不用使用 + 号
+        'b';
+    var c = "hello: $b"; // 格式化字符串时尽量用 $ 而不是用 + 号拼接
+    var d = [1, 2, 3].isEmpty; // 判断一个可迭代对象是否为空建议用 isEmpty 属性而不要使用 length 属性（可能会比较慢）
   }
 }
 

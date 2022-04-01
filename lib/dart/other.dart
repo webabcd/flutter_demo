@@ -30,7 +30,7 @@ class DartOther extends StatelessWidget {
 
   void sample2() {
 
-    // 生成一个同步可迭代对象
+    // 生成一个同步可迭代对象，迭代到谁才会真正的执行谁
     // 标记为 sync* 的函数返回 Iterable<T> 类型的对象
     Iterable<int> syncGenerator(int n) sync* {
       int k = 0;
@@ -42,7 +42,7 @@ class DartOther extends StatelessWidget {
       log("$item");
     }
 
-    // 生成一个异步可迭代对象（用法请参见 async.dart 中的关于 Stream<T> 的用法）
+    // 生成一个异步可迭代对象（用法请参见 async.dart 中的关于 Stream<T> 的用法），迭代到谁才会真正的执行谁
     // 标记为 async* 的函数返回 Stream<T> 类型的对象
     Stream<int> asyncGenerator(int n) async* {
       int k = 0;

@@ -65,7 +65,7 @@ class DartDatatype extends StatelessWidget {
 
     // 通过 r 创建的字符串，转义符无效
     var d = r'a\nb\nc';
-    // 相连的多个字符串会自动拼接。下面变量 e 的结果为 abc
+    // 相邻的多个字符串会自动拼接（不需要使用 + 拼接）。下面变量 e 的结果为 abc
     var e = 'a'   'b'
         'c';
     // 通过 '''''' 或 """""" 定义多行字符串（换行和空格等都会被保留）
@@ -94,10 +94,15 @@ c''';
   void sample3() {
     // List 是有序列表，元素是可重复的
     // 下面的 a 会被推导为 List<int> 类型，如果需要创建一个空列表则类似这么写 var x = <int>[];
-    var a = [1, 2, 0, ];
+    // 如果通过 var x = []; 创建空数组的话，其类型为 List<dynamic>
+    var a = [1, 2, ];
+    // 添加一个元素
+    a.add(0);
+    // 添加多个元素
+    a.addAll([4, 5, ]);
     // 获取或设置指定位置的元素
-    a[2] = 3;                 // [1, 2, 3]
-    var b = a[a.length - 1];
+    a[2] = 3;                 // [1, 2, 3, 4, 5]
+    var b = a[a.length - 1];  // 5
 
     // 通过 ... 拼接多个 List（...后的变量不能为 null）
     var c = [1, 1, ...a];     // [1, 1, 1, 2, 3]
@@ -110,7 +115,15 @@ c''';
     // 构造 List 的时候支持 for 语句
     var g = ['a0', for (var i in f) 'a$i']; // [a0, a1, a2, a3, a4]
 
-    log("$a, $b, $c, $d, $e, $f, $g");
+    var h = [1, 2, 3];
+    var i = h.toList(); // 通过 toList() 复制列表
+    var j = h == i;     // h 和 i 是不同的对象
+
+    // 通过 whereType<T>() 按类型过滤列表
+    var k = [1, 'a', 2, 'b', 3];
+    var l = k.whereType<int>().toList(); // [1, 2, 3]
+
+    log("$a, $b, $c, $d, $e, $f, $g, $j, $k, $l");
   }
 
   void sample4() {
@@ -181,6 +194,13 @@ c''';
     var c = b is String;              // true
     // 通过 runtimeType 获取数据类型
     var d = b.runtimeType.toString(); // String
+
+    var e = <dynamic>[1, 2, 3];
+    var f = e.cast<int>();      // 不建议用 cast<T>() 转换列表的数据类型
+    var g = List<int>.from(e);  // 推荐通过 List<T>.from() 转换列表的数据类型
+    for (final item in e) {
+      var x = item as int;      // 在访问的时候转换数据类型也是被推荐的做法
+    }
 
     log("$a, $b, $c, $d");
   }

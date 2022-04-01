@@ -64,6 +64,9 @@ class DartAsync extends StatelessWidget {
     await Future.delayed(const Duration(seconds: 2));
     // 返回数据，假设返回值类型为 T 则在函数体之前加上 async 的话，会自动返回 Future<T> 类型的数据
     return "sample1: aaa";
+
+    // 也可以使用 Future.then() 返回 Future<T> 类型的数据，下面这句等同于上面两句
+    // return Future.delayed(const Duration(seconds: 2)).then((value) => "sample1: aaa");
   }
 
   Future<String> f2() {

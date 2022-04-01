@@ -33,6 +33,7 @@ class DartException extends StatelessWidget {
     } on String catch(e, s) {     // catch 用于捕获对象，其中 e 是捕获到的对象，s 是堆栈信息（一个 StackTrace 对象），如果捕获到的对象是 String 类型则执行此句
       log("ex: $e, $s");
     } catch (e) {                 // 没有 on 的意思就是捕获所有类型的对象，上面的 on 都捕获不到对象的话，就会执行此句
+      // 建议用 rethrow 抛出未处理异常，而不是用 throw e 抛出（因为这会将堆栈跟踪重置为最后抛出的位置）
       rethrow;                    // 向外抛出捕获到的对象
     } finally {                   // finally
       log("finally");

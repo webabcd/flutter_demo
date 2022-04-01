@@ -74,7 +74,8 @@ class DartFunction extends StatelessWidget {
   void sample3() {
     // 函数作为参数的示例
     [1, 2, 3].forEach(f6);
-    // 使用匿名函数的示例（本例仅演示用，实际开发不建议在 forEach() 中使用匿名函数）
+    // 使用匿名函数的示例
+    // 本例仅演示用，实际开发不建议在 forEach() 中使用匿名函数，比如下面这句建议写成上面的方式，或者写成 for (var element in [1, 2, 3]) {}
     [1, 2, 3].forEach((element) {
       log("$element");
     });
@@ -95,7 +96,7 @@ class DartFunction extends StatelessWidget {
     f7("webabcd", myF2);
 
     // 在 dart 中一切皆对象，函数也是一个对象，允许将函数赋值给一个变量
-    // 本例仅演示用，实际开发不建议这样做
+    // 本例仅演示用，实际开发不建议这样做，建议用上面那几种方式
     var a = (element) {
       log("hello4: $element");
     };

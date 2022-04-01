@@ -24,7 +24,7 @@ class DartClass1 extends StatelessWidget {
   }
 
   void sample1() {
-    // 实例化时可以省略 new
+    // 实例化（建议省略 new 关键字）
     // 关于 .. 运算符的说明请参见 operator.dart
     var a = _MyClass1("webabcd", 40)
       ..salary = 4000;
@@ -128,7 +128,7 @@ class _MyClass2 {
     this.age = age;
   }
   */
-  // 因为 dart 支持构造函数的语法糖（syntactic sugar）技术，下面这句等同于上面那句
+  // 因为 dart 支持构造函数的语法糖（syntactic sugar）技术，下面这句等同于上面那句（建议用下面的方式，而不用上面的方式）
   _MyClass2(this.name, this.age);
 
   // dart 中无名构造函数只能有一个，如果你不定义无名构造函数，那么默认会有一个无参数的无名构造函数
