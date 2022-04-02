@@ -35,4 +35,8 @@
 12. 其它（用调用函数的方式调用类的实例，生成器）
 - lib/dart/other.dart
 
-## widget
+### widget 基础
+1. StatelessWidget 无状态 widget
+- lib/widget/basic/statelessWidget.dart
+2. StatefulWidget 有状态 widget
+- lib/widget/basic/statefulWidget.dart

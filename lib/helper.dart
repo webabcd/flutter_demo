@@ -13,18 +13,24 @@ class MyText extends StatelessWidget {
   const MyText({
     Key? key,
     required this.text,
-    this.color = Colors.white,
   }):super(key:key);
 
   final String text;
-  final Color color;
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: color,
-        child: Text(text),
+    return Container(
+      decoration: const BoxDecoration(
+        color: Colors.blue
+      ),
+      alignment: Alignment.center,
+      child: Text(
+        text,
+        style: const TextStyle(
+            fontSize: 24.0,
+            color: Colors.white,
+            decoration: TextDecoration.none
+        ),
       ),
     );
   }

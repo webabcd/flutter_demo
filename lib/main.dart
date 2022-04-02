@@ -20,6 +20,9 @@ import 'dart/other.dart';
 import 'dart/async.dart';
 import 'dart/package/demo.dart';
 
+import 'widget/basic/statelessWidget.dart';
+import 'widget/basic/statefulWidget.dart';
+
 // main 是
 void main() {
   runApp(const MyApp());
@@ -49,6 +52,8 @@ class MyApp extends StatelessWidget {
         "lib.dart.other.dart":(context) => const DartOther(),
         "lib.dart.package.demo.dart":(context) => const DartPackage(),
         "lib.dart.async.dart":(context) => const DartAsync(),
+        "lib.widget.basic.statelessWidget.dart":(context) => const StatelessWidgetDemo(),
+        "lib.widget.basic.statefulWidget.dart":(context) => const StatefulWidgetDemo(),
       },
     );
   }
