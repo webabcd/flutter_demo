@@ -6,6 +6,6 @@ class TextDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MyText(text: "hello webabcd");
+    return const MyWidget(text: "hello webabcd");
   }
 }

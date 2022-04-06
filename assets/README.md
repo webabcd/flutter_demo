@@ -40,3 +40,7 @@
 - lib/widget/basic/statelessWidget.dart
 2. StatefulWidget 有状态 widget
 - lib/widget/basic/statefulWidget.dart
+
+### widget 布局类
+1. row
+- lib/widget/layout/row.dart

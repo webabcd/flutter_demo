@@ -13,7 +13,7 @@ class DartClass2 extends StatelessWidget {
 
     sample1();
 
-    return MyText(text: "dart_class2");
+    return const MyWidget(text: "dart_class2");
   }
 
   void sample1() {

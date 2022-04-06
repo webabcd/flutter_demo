@@ -27,7 +27,7 @@ class DartDatatype extends StatelessWidget {
     // 可空类型
     sample8();
 
-    return MyText(text: "dart_datatype");
+    return const MyWidget(text: "dart_datatype");
   }
 
   void sample1() {

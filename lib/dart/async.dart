@@ -25,7 +25,7 @@ class DartAsync extends StatelessWidget {
     // 演示 isolate 的用法
     sample3();
 
-    return MyText(text: "dart_async");
+    return const MyWidget(text: "dart_async");
   }
 
   // 如需在函数体内使用 await 则需要在函数体之前加上 async

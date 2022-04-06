@@ -16,7 +16,7 @@ class DartOther extends StatelessWidget {
     // 生成器（生成可迭代对象，迭代到谁才会真正的执行谁）
     sample2();
 
-    return MyText(text: "dart_other");
+    return const MyWidget(text: "dart_other");
   }
 
   void sample1() {

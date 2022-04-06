@@ -20,7 +20,7 @@ class DartStatement extends StatelessWidget {
     // for/forEach
     sample4();
 
-    return MyText(text: "dart_statement");
+    return const MyWidget(text: "dart_statement");
   }
 
   void sample1() {

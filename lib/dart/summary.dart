@@ -40,7 +40,7 @@ class DartSummary extends StatelessWidget {
     // 几个最佳实践
     sample4();
 
-    return MyText(text: "dart_summary");
+    return const MyWidget(text: "dart_summary");
   }
 
   void sample1() {

@@ -29,7 +29,7 @@ class DartOperator extends StatelessWidget {
     // .. ?..
     sample4();
 
-    return MyText(text: "dart_operator");
+    return const MyWidget(text: "dart_operator");
   }
 
   void sample1() {

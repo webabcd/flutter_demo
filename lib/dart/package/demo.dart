@@ -22,7 +22,7 @@ class DartPackage extends StatelessWidget {
 
     sample1();
 
-    return MyText(text: "dart_package_demo");
+    return const MyWidget(text: "dart_package_demo");
   }
 
   void sample1() {

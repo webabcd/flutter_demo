@@ -20,7 +20,7 @@ class DartClass1 extends StatelessWidget {
     // 枚举
     sample3();
 
-    return MyText(text: "dart_class1");
+    return const MyWidget(text: "dart_class1");
   }
 
   void sample1() {
@@ -64,13 +64,15 @@ class DartClass1 extends StatelessWidget {
   }
 
   void sample3() {
-    var a = _MyColor.green;
+    var a = _MyColor.green;       // _MyColor.green
     // 判断枚举值是否相等
     var b = a == _MyColor.green;  // true
     // 获取枚举的 index
     var c = _MyColor.green.index; // 1
     // 获取枚举的 name
     var d = _MyColor.green.name;  // green
+    // index 转换为枚举值
+    var e = _MyColor.values[1];   // _MyColor.green
 
     // 遍历枚举的 index 和 name
     List<_MyColor> colors = _MyColor.values;
@@ -78,7 +80,7 @@ class DartClass1 extends StatelessWidget {
       log("index:${color.index}, name:${color.name}");
     }
 
-    log("$b, $c, $d");
+    log("$a, $b, $c, $d, $e");
   }
 }
 

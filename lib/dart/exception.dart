@@ -16,13 +16,18 @@ class DartException extends StatelessWidget {
     // try
     sample2();
 
-    return MyText(text: "dart_exception");
+    return const MyWidget(text: "dart_exception");
   }
 
   void sample1() {
     // assert 断言，条件为假则中断运行
     // assert 仅在调试模式下有效
+
     // assert(1 == 2);
+    // assert(1 == 2, "1 == 2 不成立");
+
+    // 构造函数也是可以支持 assert 的
+    // var a = _MyClass("webabcd", 30.0);
   }
 
   void sample2() {
@@ -39,4 +44,11 @@ class DartException extends StatelessWidget {
       log("finally");
     }
   }
+}
+
+class _MyClass {
+  String name = "";
+  double age = 0;
+  // 构造函数也是可以支持 assert 的
+  _MyClass(this.name, this.age) : assert(age > 35.0, "age > 35.0 不成立");
 }

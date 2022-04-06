@@ -30,7 +30,7 @@ class DartFunction extends StatelessWidget {
     // 闭包函数
     sample4();
 
-    return MyText(text: "dart_function");
+    return const MyWidget(text: "dart_function");
   }
 
   void sample1() {
