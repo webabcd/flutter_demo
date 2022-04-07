@@ -24,6 +24,12 @@ import 'widget/basic/statelessWidget.dart';
 import 'widget/basic/statefulWidget.dart';
 
 import 'widget/layout/row.dart';
+import 'widget/layout/column.dart';
+import 'widget/layout/flex.dart';
+
+import 'widget/container/padding.dart';
+import 'widget/container/align.dart';
+import 'widget/container/center.dart';
 
 // main 是
 void main() {
@@ -57,6 +63,11 @@ class MyApp extends StatelessWidget {
         "lib.widget.basic.statelessWidget.dart":(context) => const StatelessWidgetDemo(),
         "lib.widget.basic.statefulWidget.dart":(context) => const StatefulWidgetDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
+        "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
+        "lib.widget.layout.flex.dart":(context) => const FlexDemo(),
+        "lib.widget.container.padding.dart":(context) => const PaddingDemo(),
+        "lib.widget.container.align.dart":(context) => const AlignDemo(),
+        "lib.widget.container.center.dart":(context) => const CenterDemo(),
       },
     );
   }

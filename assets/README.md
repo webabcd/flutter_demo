@@ -36,11 +36,23 @@
 - lib/dart/other.dart
 
 ### widget 基础
-1. StatelessWidget 无状态 widget
+1. StatelessWidget - 无状态 widget
 - lib/widget/basic/statelessWidget.dart
-2. StatefulWidget 有状态 widget
+2. StatefulWidget - 有状态 widget
 - lib/widget/basic/statefulWidget.dart
 
-### widget 布局类
-1. row
+### widget 布局类（可以有多个子）
+1. Row - 水平布局
 - lib/widget/layout/row.dart
+2. Column - 垂直布局
+- lib/widget/layout/column.dart
+3. Flex - 水平布局或垂直布局
+- lib/widget/layout/flex.dart
+
+### widget 容器类（只能有一个子）
+1. Align - 对齐方式
+- lib/widget/container/align.dart
+2. Center - 居中对齐
+- lib/widget/container/center.dart
+3. Padding - 内边距
+- lib/widget/container/padding.dart

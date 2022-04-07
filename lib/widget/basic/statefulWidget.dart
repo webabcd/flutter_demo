@@ -1,5 +1,5 @@
 /*
- * StatefulWidget 有状态 widget
+ * StatefulWidget - 有状态 widget
  *
  * 无状态 widget 的意思是：内容确定之后，自己无法修改自己的内容
  * 有状态 widget 的意思是：内容确定之后，自己可以修改自己的内容
@@ -14,7 +14,7 @@ import 'package:flutter/material.dart';
 class StatefulWidgetDemo extends StatefulWidget {
   const StatefulWidgetDemo({Key? key}) : super(key: key);
 
-  // 把 build() 放到 State<T> 中实现
+  /// 把 build() 放到 State<T> 中实现
   @override
   _StatefulWidgetDemoState createState() => _StatefulWidgetDemoState();
 
@@ -25,18 +25,18 @@ class _StatefulWidgetDemoState extends State<StatefulWidgetDemo> {
   int _counter2 = 0;
 
   void _handleTap() {
-    // 在 State<T> 中通过 setState() 修改自己，
-    // setState() 的意思就是，执行完指定的逻辑后调用 build() 重新渲染
-    // 本例用于演示，如何响应自己的行为然后修改自己
+    /// 在 State<T> 中通过 setState() 修改自己，
+    /// setState() 的意思就是，执行完指定的逻辑后调用 build() 重新渲染
+    /// 本例用于演示，如何响应自己的行为然后修改自己
     setState(() {
       _counter1++;
     });
   }
 
   void _handleMyWidgetChanged(int newValue) {
-    // 在 State<T> 中通过 setState() 修改自己，
-    // setState() 的意思就是，执行完指定的逻辑后调用 build() 重新渲染
-    // 本例用于演示，如何响应自己的儿子的行为然后修改自己的儿子（自己的儿子是无状态 widget，它无法自己修改自己）
+    /// 在 State<T> 中通过 setState() 修改自己，
+    /// setState() 的意思就是，执行完指定的逻辑后调用 build() 重新渲染
+    /// 本例用于演示，如何响应自己的儿子的行为然后修改自己的儿子（自己的儿子是无状态 widget，它无法自己修改自己）
     setState(() {
       _counter2 = newValue;
     });
@@ -67,7 +67,7 @@ class _StatefulWidgetDemoState extends State<StatefulWidgetDemo> {
           ),
           _MyWidget(
             counter: _counter2,
-            onChanged: _handleMyWidgetChanged, // 用于儿子回调
+            onChanged: _handleMyWidgetChanged, /// 用于儿子回调
           ),
         ],
       ),
@@ -83,7 +83,7 @@ class _MyWidget extends StatelessWidget {
   }) : super(key: key);
 
   final int counter;
-  final ValueChanged<int> onChanged; // 用于通知父亲
+  final ValueChanged<int> onChanged; /// 用于通知父亲
 
   void _handleTap() {
     onChanged(counter + 1);
