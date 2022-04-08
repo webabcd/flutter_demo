@@ -54,6 +54,8 @@
 - lib/widget/layout/wrap.dart
 5. Flow - 自定义流式布局
 - lib/widget/layout/flow.dart
+6. Stack - 层叠布局
+- lib/widget/layout/stack.dart
 
 ### widget 容器类（只能有一个子）
 1. Align - 对齐方式

@@ -29,6 +29,7 @@ import 'widget/layout/column.dart';
 import 'widget/layout/flex.dart';
 import 'widget/layout/wrap.dart';
 import 'widget/layout/flow.dart';
+import 'widget/layout/stack.dart';
 
 import 'widget/container/padding.dart';
 import 'widget/container/align.dart';
@@ -71,6 +72,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.layout.flex.dart":(context) => const FlexDemo(),
         "lib.widget.layout.wrap.dart":(context) => const WrapDemo(),
         "lib.widget.layout.flow.dart":(context) => const FlowDemo(),
+        "lib.widget.layout.stack.dart":(context) => const StackDemo(),
         "lib.widget.container.padding.dart":(context) => const PaddingDemo(),
         "lib.widget.container.align.dart":(context) => const AlignDemo(),
         "lib.widget.container.center.dart":(context) => const CenterDemo(),
