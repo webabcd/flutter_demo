@@ -48,6 +48,10 @@
 - lib/widget/layout/column.dart
 3. Flex - 水平布局或垂直布局
 - lib/widget/layout/flex.dart
+4. Wrap - 可换行的水平布局，可换列的垂直布局
+- lib/widget/layout/wrap.dart
+5. Flow - 自定义流式布局
+- lib/widget/layout/flow.dart
 
 ### widget 容器类（只能有一个子）
 1. Align - 对齐方式

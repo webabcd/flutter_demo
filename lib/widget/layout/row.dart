@@ -45,19 +45,17 @@ class _RowDemoState extends State<RowDemo> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          /// Row 的高度默认是其子的最大高度，但是这样 Row 的 CrossAxisAlignment.stretch 是没有效果的
-          /// 所以这里指定了 Row 的高度，这样 Row 的 CrossAxisAlignment.stretch 就有效了
           height: 200,
           color: Colors.red,
           child: Row(
-            /// textDirection - 水平排列方向
-            ///   ltr - 左到右，默认值
-            ///   rtl - 右到左
-            textDirection: TextDirection.ltr,
             /// mainAxisSize - 主轴尺寸（对于 Row 来说就是水平方向的宽度）
             ///   max - 宽度为父的宽度，默认值
             ///   min - 宽度为所有子占用的水平空间的总和
             mainAxisSize: MainAxisSize.max,
+            /// textDirection - 水平排列方向
+            ///   ltr - 左到右，默认值
+            ///   rtl - 右到左
+            textDirection: TextDirection.ltr,
             /// mainAxisAlignment - 主轴方向的排列方式（对于 Row 来说就是水平方向的排列方式），以下说明以 TextDirection.ltr 为例
             ///   start - 线性排列，整体居左
             ///   end - 线性排列，整体居右
@@ -70,36 +68,36 @@ class _RowDemoState extends State<RowDemo> {
             ///   down - 上到下，默认值
             ///   up - 下到上
             verticalDirection: VerticalDirection.down,
-            /// crossAxisAlignment - 交叉轴方向的排列方式（对于 Row 来说就是垂直方向的排列方式），以下说明以 VerticalDirection.down 为例
+            /// crossAxisAlignment - 交叉轴方向的元素对齐方式（对于 Row 来说就是垂直方向的元素对齐方式），以下说明以 VerticalDirection.down 为例
             ///   start - 顶部对齐
             ///   end - 底部对齐
             ///   center - 中线对齐，默认值
-            ///   stretch - 将每个元素的高度拉伸到与 Row 同高（需要指定 Row 的高度，本例通过 Container() 指定了 Row 的高度）
+            ///   stretch - 将每个元素的高度拉伸到与 Row 同高
             ///   baseline - 基线对齐
             crossAxisAlignment: _crossAxisAlignment,
             children: [
-              MyText("aaa"),
+              MyText("a"),
               Container(
                 height: 50,
                 color: Colors.green,
-                child: MyText("bbb"),
+                child: MyText("bb"),
               ),
               MyText("ccc"),
               Container(
                 height: 100,
                 color: Colors.green,
-                child: MyText("ddd"),
+                child: MyText("dddd"),
               ),
             ],
           ),
         ),
         MyButton(
           onPressed: _changeMainAxisAlignment,
-          child: Text(_mainAxisAlignment.name),
+          child: Text("mainAxisAlignment: ${_mainAxisAlignment.name}"),
         ),
         MyButton(
           onPressed: _changeCrossAxisAlignment,
-          child: Text(_crossAxisAlignment.name),
+          child: Text("crossAxisAlignment: ${_crossAxisAlignment.name}"),
         ),
       ],
     );

@@ -10,14 +10,9 @@
 
 import 'package:flutter/material.dart';
 
-class FlexDemo extends StatefulWidget {
+class FlexDemo extends StatelessWidget {
   const FlexDemo({Key? key}) : super(key: key);
 
-  @override
-  _FlexDemoState createState() => _FlexDemoState();
-}
-
-class _FlexDemoState extends State<FlexDemo> {
   @override
   Widget build(BuildContext context) {
     return Flex(

@@ -22,10 +22,13 @@ import 'dart/package/demo.dart';
 
 import 'widget/basic/statelessWidget.dart';
 import 'widget/basic/statefulWidget.dart';
+import 'widget/basic/widget_key.dart';
 
 import 'widget/layout/row.dart';
 import 'widget/layout/column.dart';
 import 'widget/layout/flex.dart';
+import 'widget/layout/wrap.dart';
+import 'widget/layout/flow.dart';
 
 import 'widget/container/padding.dart';
 import 'widget/container/align.dart';
@@ -62,9 +65,12 @@ class MyApp extends StatelessWidget {
         "lib.dart.async.dart":(context) => const DartAsync(),
         "lib.widget.basic.statelessWidget.dart":(context) => const StatelessWidgetDemo(),
         "lib.widget.basic.statefulWidget.dart":(context) => const StatefulWidgetDemo(),
+        "lib.widget.basic.widget_key.dart":(context) => const WidgetKeyDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
         "lib.widget.layout.flex.dart":(context) => const FlexDemo(),
+        "lib.widget.layout.wrap.dart":(context) => const WrapDemo(),
+        "lib.widget.layout.flow.dart":(context) => const FlowDemo(),
         "lib.widget.container.padding.dart":(context) => const PaddingDemo(),
         "lib.widget.container.align.dart":(context) => const AlignDemo(),
         "lib.widget.container.center.dart":(context) => const CenterDemo(),

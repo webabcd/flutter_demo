@@ -10,14 +10,17 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/helper.dart';
 
 class StatefulWidgetDemo extends StatefulWidget {
   const StatefulWidgetDemo({Key? key}) : super(key: key);
 
+  /// 用于演示如何在 State<T> 中调用 StatefulWidget 中的属性或方法
+  final param = "webabcd";
+
   /// 把 build() 放到 State<T> 中实现
   @override
   _StatefulWidgetDemoState createState() => _StatefulWidgetDemoState();
-
 }
 
 class _StatefulWidgetDemoState extends State<StatefulWidgetDemo> {
@@ -40,6 +43,15 @@ class _StatefulWidgetDemoState extends State<StatefulWidgetDemo> {
     setState(() {
       _counter2 = newValue;
     });
+  }
+
+  /// 用于初始化数据
+  @override
+  void initState() {
+    super.initState();
+
+    /// 通过如下方式调用 StatefulWidget 中的属性或方法
+    log(widget.param);
   }
 
   @override
