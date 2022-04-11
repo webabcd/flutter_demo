@@ -113,7 +113,8 @@ c''';
     // 构造 List 的时候支持 if 语句
     var f = [1, 2, 3, if (c.length > 1) 4]; // [1, 2, 3, 4]
     // 构造 List 的时候支持 for 语句
-    var g = ['a0', for (var i in f) 'a$i']; // [a0, a1, a2, a3, a4]
+    var g = ['a0', for (var v in f) 'a$v']; // [a0, a1, a2, a3, a4]
+    var g2 = ['a0', for (var i = 0; i < f.length; i++) 'a${f[i]}']; // [a0, a1, a2, a3, a4]
 
     var h = [1, 2, 3];
     var i = h.toList(); // 通过 toList() 复制列表
@@ -123,7 +124,7 @@ c''';
     var k = [1, 'a', 2, 'b', 3];
     var l = k.whereType<int>().toList(); // [1, 2, 3]
 
-    log("$a, $b, $c, $d, $e, $f, $g, $j, $k, $l");
+    log("$a, $b, $c, $d, $e, $f, $g, $g2, $j, $k, $l");
   }
 
   void sample4() {

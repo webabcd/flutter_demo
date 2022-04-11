@@ -23,7 +23,7 @@ class _WrapDemoState extends State<WrapDemo> {
   var _runAlignment = WrapAlignment.start;
   var _crossAxisAlignment = WrapCrossAlignment.start;
 
-  void _change_alignment() {
+  void _changeAlignment() {
     setState(() {
       var index = _alignment.index + 1;
       if (index >= WrapAlignment.values.length) {
@@ -33,7 +33,7 @@ class _WrapDemoState extends State<WrapDemo> {
     });
   }
 
-  void _change_runAlignment() {
+  void _changeRunAlignment() {
     setState(() {
       var index = _runAlignment.index + 1;
       if (index >= WrapAlignment.values.length) {
@@ -43,7 +43,7 @@ class _WrapDemoState extends State<WrapDemo> {
     });
   }
 
-  void _change_crossAxisAlignment() {
+  void _changeCrossAxisAlignment() {
     setState(() {
       var index = _crossAxisAlignment.index + 1;
       if (index >= WrapCrossAlignment.values.length) {
@@ -113,15 +113,15 @@ class _WrapDemoState extends State<WrapDemo> {
           ),
         ),
         MyButton(
-          onPressed: _change_alignment,
+          onPressed: _changeAlignment,
           child: Text("alignment: ${_alignment.name}"),
         ),
         MyButton(
-          onPressed: _change_runAlignment,
+          onPressed: _changeRunAlignment,
           child: Text("runAlignment: ${_runAlignment.name}"),
         ),
         MyButton(
-          onPressed: _change_crossAxisAlignment,
+          onPressed: _changeCrossAxisAlignment,
           child: Text("crossAxisAlignment: ${_crossAxisAlignment.name}"),
         ),
       ],

@@ -20,6 +20,12 @@ class FlexDemo extends StatelessWidget {
       ///   horizontal - 水平布局
       ///   vertical - 垂直布局
       direction: Axis.horizontal,
+      /// clipBehavior - 超出范围的子元素的剪裁方式（布局类 Widget 大部分都有这个属性，作用都是一样的）
+      ///   none - 不剪裁
+      ///   hardEdge - 裁剪但不抗锯齿，速度比 none 慢
+      ///   antiAlias - 裁剪而且抗锯齿，速度比 hardEdge 慢
+      ///   antiAliasWithSaveLayer - 裁剪而且抗锯齿，并分配一个缓冲区，速度比 antiAlias 慢
+      clipBehavior: Clip.none,
       children: [
         Container(
           width: 20,

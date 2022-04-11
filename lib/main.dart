@@ -22,6 +22,7 @@ import 'dart/package/demo.dart';
 
 import 'widget/basic/statelessWidget.dart';
 import 'widget/basic/statefulWidget.dart';
+import 'widget/basic/constraint.dart';
 import 'widget/basic/widget_key.dart';
 
 import 'widget/layout/row.dart';
@@ -34,6 +35,9 @@ import 'widget/layout/stack.dart';
 import 'widget/container/padding.dart';
 import 'widget/container/align.dart';
 import 'widget/container/center.dart';
+import 'widget/container/constrainedBox.dart';
+import 'widget/container/sizedBox.dart';
+import 'widget/container/unconstrainedBox.dart';
 
 // main 是
 void main() {
@@ -66,6 +70,7 @@ class MyApp extends StatelessWidget {
         "lib.dart.async.dart":(context) => const DartAsync(),
         "lib.widget.basic.statelessWidget.dart":(context) => const StatelessWidgetDemo(),
         "lib.widget.basic.statefulWidget.dart":(context) => const StatefulWidgetDemo(),
+        "lib.widget.basic.constraint.dart":(context) => const ConstraintDemo(),
         "lib.widget.basic.widget_key.dart":(context) => const WidgetKeyDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
@@ -76,6 +81,9 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.padding.dart":(context) => const PaddingDemo(),
         "lib.widget.container.align.dart":(context) => const AlignDemo(),
         "lib.widget.container.center.dart":(context) => const CenterDemo(),
+        "lib.widget.container.constrainedBox.dart":(context) => const ConstrainedBoxDemo(),
+        "lib.widget.container.sizedBox.dart":(context) => const SizedBoxDemo(),
+        "lib.widget.container.unconstrainedBox.dart":(context) => const UnconstrainedBoxDemo(),
       },
     );
   }

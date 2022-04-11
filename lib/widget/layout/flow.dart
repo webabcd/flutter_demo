@@ -1,5 +1,7 @@
 /*
  * Flow - 自定义流式布局（所谓流式布局就是一个一个地布局子元素）
+ *
+ * 这个还是比较麻烦的，所以如果能 Wrap 的还是用 Wrap 吧
  */
 
 import 'package:flutter/material.dart';
@@ -10,29 +12,26 @@ class FlowDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        /// 我这里测试发现，只有把 Flow 放到 Scaffold 的 body 中，FlowPaintingContext 的 getChildSize() 才能获取到正确的值
-        body: Center(
-          child: Flow(
-            /// delegate - 自定义一个 FlowDelegate 以便布局所有子元素
-            delegate: _FlowDemoDelegate(
-                margin: const EdgeInsets.all(10.0)
-            ),
-            children: [
-              Container(width: 80, height:30, color: Colors.red[100],),
-              Container(width: 80, height:30, color: Colors.red[200],),
-              Container(width: 80, height:30, color: Colors.red[300],),
-              Container(width: 80, height:30, color: Colors.red[400],),
-              Container(width: 80, height:30, color: Colors.red[500],),
-              Container(width: 80, height:30, color: Colors.green[100],),
-              Container(width: 80, height:30, color: Colors.green[200],),
-              Container(width: 80, height:30, color: Colors.green[300],),
-              Container(width: 80, height:30, color: Colors.green[400],),
-              Container(width: 80, height:30, color: Colors.green[500],),
-            ],
-          ),
+    /// Flow 外要加一层 Center 之类的，或者把 Flow 放到 Scaffold 的 body 中，否则 FlowPaintingContext 的 getChildSize() 返回的值和你预期的是不相符的
+    /// 关于约束这块请参见 /lib/widget/basic/constraint.dart
+    return Center(
+      child: Flow(
+        /// delegate - 自定义一个 FlowDelegate 以便布局所有子元素
+        delegate: _FlowDemoDelegate(
+            margin: const EdgeInsets.all(10.0)
         ),
+        children: [
+          Container(width: 80, height:30, color: Colors.red[100],),
+          Container(width: 80, height:30, color: Colors.red[200],),
+          Container(width: 80, height:30, color: Colors.red[300],),
+          Container(width: 80, height:30, color: Colors.red[400],),
+          Container(width: 80, height:30, color: Colors.red[500],),
+          Container(width: 80, height:30, color: Colors.green[100],),
+          Container(width: 80, height:30, color: Colors.green[200],),
+          Container(width: 80, height:30, color: Colors.green[300],),
+          Container(width: 80, height:30, color: Colors.green[400],),
+          Container(width: 80, height:30, color: Colors.green[500],),
+        ],
       ),
     );
   }
@@ -50,7 +49,7 @@ class _FlowDemoDelegate extends FlowDelegate {
   /// FlowPaintingContext - 绘制的上下文
   ///   size - Flow 的尺寸
   ///   childCount - 子元素的数量
-  ///   getChildSize() - 获取指定索引的子元素的尺寸（我这里测试发现，只有把 Flow 放到 Scaffold 的 body 中，FlowPaintingContext 的 getChildSize() 才能获取到正确的值）
+  ///   getChildSize() - 获取指定索引的子元素的尺寸
   ///   paintChild() - 将指定索引的子元素绘制到指定的位置上
   @override
   void paintChildren(FlowPaintingContext context) {
@@ -77,7 +76,7 @@ class _FlowDemoDelegate extends FlowDelegate {
   /// 返回 Flow 的尺寸（Flow 的尺寸是不能自适应的，需要你自己计算）
   @override
   Size getSize(BoxConstraints constraints) {
-    /// 这里的 double.infinity 不是无限大的意思，而是尽量大的意思，本例中此值代表的意思就是屏幕的宽
+    /// 这里的 double.infinity 不是无限大的意思，而是尽量大的意思，其会被父亲约束，本例中此值代表的意思就是屏幕的宽
     return const Size(double.infinity, 150);
   }
 
