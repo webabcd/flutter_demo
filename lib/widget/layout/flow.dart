@@ -83,6 +83,6 @@ class _FlowDemoDelegate extends FlowDelegate {
   /// 是否需要重新绘制
   @override
   bool shouldRepaint(FlowDelegate oldDelegate) {
-    return oldDelegate != this;
+    return true;
   }
 }

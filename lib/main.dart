@@ -38,6 +38,12 @@ import 'widget/container/center.dart';
 import 'widget/container/constrainedBox.dart';
 import 'widget/container/sizedBox.dart';
 import 'widget/container/unconstrainedBox.dart';
+import 'widget/container/decoratedBox.dart';
+import 'widget/container/container.dart';
+
+import 'shape/border.dart';
+import 'shape/clip.dart';
+import 'shape/gradient.dart';
 
 // main 是
 void main() {
@@ -84,6 +90,11 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.constrainedBox.dart":(context) => const ConstrainedBoxDemo(),
         "lib.widget.container.sizedBox.dart":(context) => const SizedBoxDemo(),
         "lib.widget.container.unconstrainedBox.dart":(context) => const UnconstrainedBoxDemo(),
+        "lib.widget.container.decoratedBox.dart":(context) => const DecoratedBoxDemo(),
+        "lib.widget.container.container.dart":(context) => const ContainerDemo(),
+        "lib.shape.border.dart":(context) => const BorderDemo(),
+        "lib.shape.clip.dart":(context) => const ClipDemo(),
+        "lib.shape.gradient.dart":(context) => const GradientDemo(),
       },
     );
   }

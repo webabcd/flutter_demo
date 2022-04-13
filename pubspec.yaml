@@ -59,6 +59,7 @@ flutter:
 
   assets:
     - assets/README.md
+    - assets/son.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
