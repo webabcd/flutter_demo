@@ -1,7 +1,7 @@
 /*
- * Row - 水平布局
+ * Row - 水平弹性布局
  *
- * Row 在布局其子元素时，可以通过 Expanded 按比例指定每个元素的宽度，因为 Row 继承自 Flex（关于在 Row 中使用 Expanded, Spacer 请参见 flex.dart）
+ * Row 在布局其子元素时，可以通过 Expanded 按比例指定每个元素的宽度，因为 Row 继承自 Flex（关于在 Row 中使用弹性布局 Expanded, Flexible, Spacer 请参见 flex.dart）
  */
 
 import 'package:flutter/material.dart';

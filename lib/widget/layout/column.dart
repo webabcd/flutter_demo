@@ -1,7 +1,7 @@
 /*
- * Column - 垂直布局
+ * Column - 垂直弹性布局
  *
- * Column 在布局其子元素时，可以通过 Expanded 按比例指定每个元素的高度，因为 Column 继承自 Flex（关于在 Column 中使用 Expanded, Spacer 请参见 flex.dart）
+ * Column 在布局其子元素时，可以通过 Expanded 按比例指定每个元素的高度，因为 Column 继承自 Flex（关于在 Column 中使用弹性布局 Expanded, Flexible, Spacer 请参见 flex.dart）
  */
 
 import 'package:flutter/material.dart';

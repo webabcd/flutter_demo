@@ -48,6 +48,8 @@ class ConstraintDemo extends StatefulWidget {
     Example17(),
     Example18(),
     Example19(),
+    Example20(),
+    Example21(),
   ];
 
   /// 所谓的 tight 约束，就是严格约束，比如
@@ -421,8 +423,9 @@ class Example19 extends StatelessWidget {
   const Example19({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 Row 的宽高与屏幕相同
+    /// 首先参见 Example18 的说明
     /// 如果在 Row 的子元素外加一层 Expanded 则由 Expanded 管理宽度，像下面这样写就不会有内容溢出的警告了
+    /// 第 2 个子元素是 Container 自己管理自己的宽度，剩下的宽度都归第 1 个子元素 Expanded 管理
     return Row(
       children: [
         Expanded(
@@ -432,6 +435,56 @@ class Example19 extends StatelessWidget {
           ),
         ),
         Container(color: green, child: const MyText('xyz')),
+      ],
+    );
+  }
+}
+
+class Example20 extends StatelessWidget {
+  const Example20({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    /// 首先参见 Example19 的说明
+    /// Row 的两个子元素都是 Expanded，其默认 flex 均为 1，也就是说他们会平分宽度
+    /// 注：
+    /// 1、Expanded 会强制其子元素与 Expanded 同宽
+    /// 2、Flexible 会让其子元素自行决定宽度，然后调整为与其子元素同宽，但是宽度不能超过 Flexible 的 flex 指定的权重
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            color: red,
+            child: const MyText('abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc'),
+          ),
+        ),
+        Expanded(
+          child: Container(color: green, child: const MyText('xyz')),
+        )
+      ],
+    );
+  }
+}
+
+class Example21 extends StatelessWidget {
+  const Example21({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    /// 首先参见 Example20 的说明
+    /// Row 的两个子元素都是 Flexible，其默认 flex 均为 1，也就是说他们会平分宽度
+    //// 注：
+    /// 1、Expanded 会强制其子元素与 Expanded 同宽
+    /// 2、Flexible 会让其子元素自行决定宽度，然后调整为与其子元素同宽，但是宽度不能超过 Flexible 的 flex 指定的权重
+    return Row(
+      children: [
+        Flexible(
+          child: Container(
+            color: red,
+            child: const MyText('abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc'),
+          ),
+        ),
+        Flexible(
+          child: Container(color: green, child: const MyText('xyz')),
+        ),
       ],
     );
   }

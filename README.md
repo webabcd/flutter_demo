@@ -40,13 +40,17 @@
 - lib/widget/basic/statelessWidget.dart
 2. StatefulWidget - 有状态 widget
 - lib/widget/basic/statefulWidget.dart
+3. constraint - 约束
+- lib/widget/basic/constraint.dart
+4. Widget 的 key 与三棵树
+- lib/widget/basic/widget_key.dart
 
 ### widget 布局类（可以有多个子）
-1. Row - 水平布局
+1. Row - 水平弹性布局
 - lib/widget/layout/row.dart
-2. Column - 垂直布局
+2. Column - 垂直弹性布局
 - lib/widget/layout/column.dart
-3. Flex - 水平布局或垂直布局
+3. Flex - 水平弹性布局或垂直弹性布局
 - lib/widget/layout/flex.dart
 4. Wrap - 可换行的水平布局，可换列的垂直布局
 - lib/widget/layout/wrap.dart
@@ -62,3 +66,9 @@
 - lib/widget/container/center.dart
 3. Padding - 内边距
 - lib/widget/container/padding.dart
+4. ConstrainedBox - 约束范围
+- lib/widget/container/constrainedBox.dart
+5. SizedBox - 确定宽高
+- lib/widget/container/sizedBox.dart
+6. UnconstrainedBox - 无约束
+- lib/widget/container/unconstrainedBox.dart
