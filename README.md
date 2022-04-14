@@ -72,9 +72,9 @@
 - lib/widget/container/sizedBox.dart
 6. UnconstrainedBox - 无约束
 - lib/widget/container/unconstrainedBox.dart
-7. DecoratedBox - 
+7. DecoratedBox - 装饰（用于绘制背景，边框，渐变，阴影，矩形或圆形等效果）
 - lib/widget/container/decoratedBox.dart
-8. Container - 
+8. Container - 综合容器（综合了各种效果的容器）
 - lib/widget/container/container.dart
 
 ### 图形
