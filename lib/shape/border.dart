@@ -15,7 +15,6 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/widget/layout/column.dart';
 
 class BorderDemo extends StatelessWidget {
   const BorderDemo({Key? key}) : super(key: key);

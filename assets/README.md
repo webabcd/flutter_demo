@@ -84,3 +84,7 @@
 - lib/shape/clip.dart
 3. 渐变
 - lib/shape/gradient.dart
+4. 变换
+- lib/shape/transform.dart
+5. 阴影
+- lib/shape/shadow.dart

@@ -44,6 +44,8 @@ import 'widget/container/container.dart';
 import 'shape/border.dart';
 import 'shape/clip.dart';
 import 'shape/gradient.dart';
+import 'shape/transform.dart';
+import 'shape/shadow.dart';
 
 // main 是
 void main() {
@@ -95,6 +97,8 @@ class MyApp extends StatelessWidget {
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),
         "lib.shape.gradient.dart":(context) => const GradientDemo(),
+        "lib.shape.transform.dart":(context) => const TransformDemo(),
+        "lib.shape.shadow.dart":(context) => const ShadowDemo(),
       },
     );
   }

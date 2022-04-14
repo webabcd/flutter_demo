@@ -3,7 +3,7 @@
  *
  * LinearGradient - 线性渐变
  * RadialGradient - 放射渐变
- * SweepGradient - 扇形渐变
+ * SweepGradient - 扫描式渐变
  */
 
 import 'package:flutter/material.dart';
@@ -148,14 +148,14 @@ class _GradientDemoState extends State<GradientDemo> {
             height: 50,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                /// SweepGradient - 扇形渐变
+                /// SweepGradient - 扫描式渐变
                 ///   colors - 渐变色的关键色值列表
                 ///   stops - 每个关键色值的位置（0 - 1 之间）
                 ///     不指定此属性，则默认会等分每个关键色值的位置
                 ///     指定此属性，请注意必须要与 colors 的长度相同
-                ///   center - 扇形渐变的中心点（渐变会围绕着此点做渐变），默认值为 Alignment.center
-                ///   startAngle - 扇形渐变的起始弧度（pi * 2 就是 360 度）
-                ///   endAngle - 扇形渐变的结束弧度（pi * 2 就是 360 度）
+                ///   center - 扫描的中心点（渐变会围绕着此点做渐变），默认值为 Alignment.center
+                ///   startAngle - 扫描的起始弧度（pi * 2 就是 360 度）
+                ///   endAngle - 扫描的结束弧度（pi * 2 就是 360 度）
                 ///   tileMode - 渐变色的平铺模式
                 ///     clamp - 外围用最接近的颜色填充，默认值
                 ///     repeated - 外围会重复渐变色
