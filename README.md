@@ -77,6 +77,14 @@
 8. Container - 综合容器（综合了各种效果的容器）
 - lib/widget/container/container.dart
 
+### widget 文本类
+1. Text - 文本显示框
+- lib/widget/text/text.dart
+2. 字体
+- lib/widget/text/font.dart
+3. TextField - 文本编辑框
+- lib/widget/text/textField.dart
+
 ### 图形
 1. 边框
 - lib/shape/border.dart
@@ -88,3 +96,5 @@
 - lib/shape/transform.dart
 5. 阴影
 - lib/shape/shadow.dart
+6. Paint
+- lib/shape/paint.dart

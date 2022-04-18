@@ -88,7 +88,10 @@ c''';
     // unicode 转字符串
     var l = String.fromCharCodes(Runes('\u738b\u738b'));  // 王王
 
-    log("$a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l");
+    // 字符串可以和一个整型做乘法，用于指定字符串的重复次数
+    var m = "abc" * 3;  // abcabcabc
+
+    log("$a, $b, $c, $d, $e, $f, $g, $h, $i, $j, $k, $l, $m");
   }
 
   void sample3() {

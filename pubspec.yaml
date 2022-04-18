@@ -91,3 +91,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  # 下面的配置用于演示如何使用第三方字体（请参见：lib/widget/text/font.dart）
+  fonts:
+    - family: customfont                                        # 字体名称
+      fonts:
+        - asset: assets/fonts/myfont.ttf                        # 字体文件的地址
