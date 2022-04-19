@@ -82,7 +82,7 @@
 - lib/widget/text/text.dart
 2. 字体
 - lib/widget/text/font.dart
-3. TextField - 文本编辑框
+3. TextField - 文本输入框
 - lib/widget/text/textField.dart
 
 ### 图形

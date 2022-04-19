@@ -25,7 +25,7 @@ class _TextDemoState extends State<TextDemo> {
     textDirection: TextDirection.ltr,
     /// textScaleFactor - 文字相对于当前 fontSize 的放大倍数
     textScaleFactor: 1,
-    /// style - 文本样式
+    /// style - 文本样式（一个 TextStyle 类型的对象）
     style: TextStyle(
       color: Colors.red,                            /// 文本颜色
       background: Paint()..color = Colors.green,    /// 文本背景色
