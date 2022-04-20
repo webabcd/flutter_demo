@@ -76,6 +76,8 @@
 - lib/widget/container/decoratedBox.dart
 8. Container - 综合容器（综合了各种效果的容器）
 - lib/widget/container/container.dart
+9. Opacity - 不透明度
+- lib/widget/container/opacity.dart
 
 ### widget 文本类
 1. Text - 文本显示框
@@ -84,6 +86,12 @@
 - lib/widget/text/font.dart
 3. TextField - 文本输入框
 - lib/widget/text/textField.dart
+
+### widget 媒体类
+1. Image - 图片
+- lib/widget/media/image.dart
+2. Icon - 图标
+- lib/widget/media/icon.dart
 
 ### 图形
 1. 边框

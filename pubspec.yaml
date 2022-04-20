@@ -46,6 +46,9 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
 
+  # 用于获取不同平台的本地存储的路径
+  path_provider: ^2.0.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
@@ -60,6 +63,7 @@ flutter:
   assets:
     - assets/README.md
     - assets/son.jpg
+    - assets/dialog.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

@@ -40,10 +40,14 @@ import 'widget/container/sizedBox.dart';
 import 'widget/container/unconstrainedBox.dart';
 import 'widget/container/decoratedBox.dart';
 import 'widget/container/container.dart';
+import 'widget/container/opacity.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
 import 'widget/text/textField.dart';
+
+import 'widget/media/image.dart';
+import 'widget/media/icon.dart';
 
 import 'shape/border.dart';
 import 'shape/clip.dart';
@@ -99,9 +103,12 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.unconstrainedBox.dart":(context) => const UnconstrainedBoxDemo(),
         "lib.widget.container.decoratedBox.dart":(context) => const DecoratedBoxDemo(),
         "lib.widget.container.container.dart":(context) => const ContainerDemo(),
+        "lib.widget.container.opacity.dart":(context) => const OpacityDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.textField.dart":(context) => const TextFieldDemo(),
+        "lib.widget.media.image.dart":(context) => const ImageDemo(),
+        "lib.widget.media.icon.dart":(context) => const IconDemo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),
         "lib.shape.gradient.dart":(context) => const GradientDemo(),
@@ -124,7 +131,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   List<Node>? _siteMap;
 
-  _loadSiteMap() async {
+  Future<void> _loadSiteMap() async {
     _siteMap = <Node>[];
 
     var str = await rootBundle.loadString('assets/README.md');
