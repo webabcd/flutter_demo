@@ -42,7 +42,9 @@
 - lib/widget/basic/statefulWidget.dart
 3. constraint - 约束
 - lib/widget/basic/constraint.dart
-4. Widget 的 key 与三棵树
+4. 焦点
+- lib/widget/basic/focus.dart
+5. Widget 的 key 与三棵树
 - lib/widget/basic/widget_key.dart
 
 ### widget 布局类（可以有多个子）
@@ -86,6 +88,16 @@
 - lib/widget/text/font.dart
 3. TextField - 文本输入框
 - lib/widget/text/textField.dart
+
+### widget 按钮类
+1. TextButton - 文本按钮
+- lib/widget/button/textButton.dart
+2. OutlinedButton - 自带边框按钮
+- lib/widget/button/outlinedButton.dart
+3. ElevatedButton - 自带背景色按钮
+- lib/widget/button/elevatedButton.dart
+4. IconButton - 图标按钮
+- lib/widget/button/iconButton.dart
 
 ### widget 媒体类
 1. Image - 图片
