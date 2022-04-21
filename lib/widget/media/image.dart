@@ -60,15 +60,18 @@ class _ImageDemoState extends State<ImageDemo> {
   String _imagePath = "";
   Uint8List _imageData = Uint8List.fromList([]);
 
-  /// 从 assets 中复制图片文件到本地存储，并获取图片的本地存储路径，以及图片的二进制数据
-  Future<void> loadImage() async {
+  /// 从 assets 中复制图片文件到本地存储，并获取图片的本地存储路径
+  Future<void> loadImagePath() async {
     var bytes = await rootBundle.load("assets/son.jpg");
     String dir = (await getApplicationDocumentsDirectory()).path;
-
     _imagePath = '$dir/son.jpg';
-    _imageData = bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);
+    File(_imagePath).writeAsBytes(bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes));
+  }
 
-    File(_imagePath).writeAsBytes(_imageData);
+  /// 从 assets 中获取图片的二进制数据
+  Future<void> loadImageData() async {
+    var bytes = await rootBundle.load("assets/son.jpg");
+    _imageData = bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes);
   }
 
   @override
@@ -79,7 +82,7 @@ class _ImageDemoState extends State<ImageDemo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            /// Image.asset() - 加载 assets 中的图片，也可以用类似这种方式 Image(image: AssetImage("assets/son.jpg"))
+            /// Image.asset() - 显示 assets 中的图片，也可以用类似这种方式 Image(image: AssetImage("assets/son.jpg"))
             Image.asset("assets/son.jpg",
               width: 100,                   /// 宽
               height: 50,                   /// 高
@@ -136,16 +139,19 @@ class _ImageDemoState extends State<ImageDemo> {
             centerSlice: Rect.fromLTWH(25, 25, 5, 5),
           ),
         ),
-        /// Image.network() - 加载网络图片，也可以用类似这种方式 Image(image: NetworkImage("http://xxx")),
+        /// Image.network() - 显示网络图片，也可以用类似这种方式 Image(image: NetworkImage("http://xxx")),
         Image.network("https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
           width: 100,
           height: 50,
           fit: BoxFit.fill,
         ),
         FutureBuilder(
-          future: loadImage(),
+          future: loadImagePath(),
           builder: (context, snapshot) {
-            /// Image.file() - 加载本地存储的图片
+            if (snapshot.connectionState != ConnectionState.done) {
+              return const MyText("loading");
+            }
+            /// Image.file() - 显示本地存储的图片，也可以用类似这种方式 Image(image: FileImage(file))
             return Image.file(File.fromUri(Uri.file(_imagePath)),
               width: 50,
               height: 50,
@@ -153,9 +159,12 @@ class _ImageDemoState extends State<ImageDemo> {
           },
         ),
         FutureBuilder(
-          future: loadImage(),
+          future: loadImageData(),
           builder: (context, snapshot) {
-            /// Image.file() - 加载内存中的图片
+            if (snapshot.connectionState != ConnectionState.done) {
+              return const MyText("loading");
+            }
+            /// Image.file() - 显示内存中的图片，也可以用类似这种方式 Image(image: MemoryImage(bytes))
             return Image.memory(_imageData,
               width: 50,
               height: 50,

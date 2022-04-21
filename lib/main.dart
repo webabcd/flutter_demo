@@ -1,6 +1,10 @@
 // https://dart.dev/guides/language/language-tour
 
-
+/*
+ * flutter 的 UI 部分是声明式 UI，不是传统的命令式编程
+ * 1、UI 的命令式编程：先实例化一个 UI 对象，然后按需求更改这个对象
+ * 2、UI 的声明式编程：描述你需要的 UI 即可（构造 Widget 实例），需要修改时就重新描述 UI（构造新的 Widget 实例）
+ */
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +27,7 @@ import 'dart/package/demo.dart';
 import 'widget/basic/statelessWidget.dart';
 import 'widget/basic/statefulWidget.dart';
 import 'widget/basic/constraint.dart';
+import 'widget/basic/focus.dart';
 import 'widget/basic/widget_key.dart';
 
 import 'widget/layout/row.dart';
@@ -45,6 +50,11 @@ import 'widget/container/opacity.dart';
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
 import 'widget/text/textField.dart';
+
+import 'widget/button/textButton.dart';
+import 'widget/button/outlinedButton.dart';
+import 'widget/button/elevatedButton.dart';
+import 'widget/button/iconButton.dart';
 
 import 'widget/media/image.dart';
 import 'widget/media/icon.dart';
@@ -88,6 +98,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.basic.statelessWidget.dart":(context) => const StatelessWidgetDemo(),
         "lib.widget.basic.statefulWidget.dart":(context) => const StatefulWidgetDemo(),
         "lib.widget.basic.constraint.dart":(context) => const ConstraintDemo(),
+        "lib.widget.basic.focus.dart":(context) => const FocusDemo(),
         "lib.widget.basic.widget_key.dart":(context) => const WidgetKeyDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
@@ -107,6 +118,10 @@ class MyApp extends StatelessWidget {
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.textField.dart":(context) => const TextFieldDemo(),
+        "lib.widget.button.textButton.dart":(context) => const TextButtonDemo(),
+        "lib.widget.button.outlinedButton.dart":(context) => const OutlinedButtonDemo(),
+        "lib.widget.button.elevatedButton.dart":(context) => const ElevatedButtonDemo(),
+        "lib.widget.button.iconButton.dart":(context) => const IconButtonDemo(),
         "lib.widget.media.image.dart":(context) => const ImageDemo(),
         "lib.widget.media.icon.dart":(context) => const IconDemo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
