@@ -105,6 +105,16 @@
 2. Icon - 图标
 - lib/widget/media/icon.dart
 
+### widget 架构类
+1. Scaffold - 脚手架
+- lib/widget/structure/scaffold.dart
+
+### UI
+1. 状态栏
+- lib/ui/statusBar.dart
+2. android 底部导航栏
+- lib/ui/navigationBar.dart
+
 ### 图形
 1. 边框
 - lib/shape/border.dart

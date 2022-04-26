@@ -59,6 +59,18 @@ import 'widget/button/iconButton.dart';
 import 'widget/media/image.dart';
 import 'widget/media/icon.dart';
 
+import 'widget/structure/scaffold.dart';
+import 'widget/structure/scaffold_appBar.dart';
+import 'widget/structure/scaffold_bottomNavigationBar.dart';
+import 'widget/structure/scaffold_persistentFooterButtons.dart';
+import 'widget/structure/scaffold_bottomSheet.dart';
+import 'widget/structure/scaffold_floatingActionButton.dart';
+import 'widget/structure/scaffold_drawer.dart';
+import 'widget/structure/materialApp.dart';
+
+import 'ui/statusBar.dart';
+import 'ui/navigationBar.dart';
+
 import 'shape/border.dart';
 import 'shape/clip.dart';
 import 'shape/gradient.dart';
@@ -124,6 +136,16 @@ class MyApp extends StatelessWidget {
         "lib.widget.button.iconButton.dart":(context) => const IconButtonDemo(),
         "lib.widget.media.image.dart":(context) => const ImageDemo(),
         "lib.widget.media.icon.dart":(context) => const IconDemo(),
+        "lib.widget.structure.scaffold.dart":(context) => const ScaffoldDemo(),
+        "lib.widget.structure.scaffold_appBar.dart":(context) => const ScaffoldAppBarDemo(),
+        "lib.widget.structure.scaffold_bottomNavigationBar.dart":(context) => const ScaffoldBottomNavigationBarDemo(),
+        "lib.widget.structure.scaffold_persistentFooterButtons.dart":(context) => const ScaffoldPersistentFooterButtonsDemo(),
+        "lib.widget.structure.scaffold_bottomSheet.dart":(context) => const ScaffoldBottomSheetDemo(),
+        "lib.widget.structure.scaffold_floatingActionButton.dart":(context) => const ScaffoldFloatingActionButtonDemo(),
+        "lib.widget.structure.scaffold_drawer.dart":(context) => const ScaffoldDrawerDemo(),
+        "lib.widget.structure.materialApp.dart":(context) => const MaterialAppDemo(),
+        "lib.ui.statusBar.dart":(context) => const StatusBarDemo(),
+        "lib.ui.navigationBar.dart":(context) => const NavigationBarDemo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),
         "lib.shape.gradient.dart":(context) => const GradientDemo(),

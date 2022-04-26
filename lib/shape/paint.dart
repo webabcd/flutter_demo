@@ -20,4 +20,4 @@ class PaintDemo extends StatelessWidget {
 }
 
 
-// https://docs.flutter.dev/development/ui/layout#material-apps    materialapp  nonmaterialapp   Material组件
+// https://docs.flutter.dev/development/ui/layout#material-apps    materialapp  nonmaterialapp 他们继承的是什么  Material组件
