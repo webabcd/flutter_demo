@@ -2,6 +2,8 @@
  * dart 数据类型（num, int, double, bool, String, List, Set, Map, Object, dynamic, 数据类型转换与判断，可空类型）
  */
 
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/helper.dart';
 
@@ -98,7 +100,7 @@ c''';
     // List 是有序列表，元素是可重复的
     // 下面的 a 会被推导为 List<int> 类型，如果需要创建一个空列表则类似这么写 var x = <int>[];
     // 如果通过 var x = []; 创建空数组的话，其类型为 List<dynamic>
-    var a = [1, 2];
+    var a = [1, 2]; // 写全了就是 <int>[1, 2]
     // 添加一个元素
     a.add(0);
     // 添加多个元素
@@ -127,13 +129,32 @@ c''';
     var k = [1, 'a', 2, 'b', 3];
     var l = k.whereType<int>().toList(); // [1, 2, 3]
 
-    log("$a, $b, $c, $d, $e, $f, $g, $g2, $j, $k, $l");
+    var m = [1, 2, 3, 4, 5, 6];     // [1, 2, 3, 4, 5, 6]
+    // where - 返回符合指定条件的元素（返回的是 Iterable<E> 类型的数据）
+    var n = m.where((element) {     // [4, 5, 6]
+      return element > 3;
+    }).toList();
+    // any - 是否至少有一个元素符合指定的条件
+    var o = m.any((element) {       // true
+      return element > 3;
+    });
+    // every - 是否每个元素都符合指定的条件
+    var p = m.every((element) {     // false
+      return element > 3;
+    });
+    // map - 处理每个元素后再放入新的集合（返回的是 Iterable<E> 类型的数据）
+    // 注：下面这句写全了应该是 m.map<String>(...) 其中的 String 代表处理后的元素的类型
+    var q = m.map((e) {             // [element:1, element:2, element:3, element:4, element:5, element:6]
+      return 'element:$e';
+    }).toList();
+
+    log("$a, $b, $c, $d, $e, $f, $g, $g2, $j, $k, $l, $m, $n, $o, $p, $q");
   }
 
   void sample4() {
     // Set 是无序集合，元素是不可重复的
     // 下面的 a 会被推导为 Set<int> 类型，如果需要创建一个空集合则类似这么写 var x = <int>{};
-    var a = {'a', 'b', 'c', };
+    var a = {'a', 'b', 'c', }; // 写全了就是 <String>{'a', 'b', 'c', }
     // 添加一个元素
     a.add('c');
     a.add('d');   // {a, b, c, d}
@@ -153,10 +174,7 @@ c''';
   void sample5() {
     // Map 是字典表
     // 下面的 a 会被推导为 Map<String, String> 类型，，如果需要创建一个空字典则类似这么写 var x = <String, String>{};
-    var a = {
-      'k1': 'v1',
-      'k2': 'v2',
-    };
+    var a = {'k1': 'v1', 'k2': 'v2', }; // 写全了就是 <String, String>{'k1': 'v1', 'k2': 'v2', }
     a['k2'] = "v222";                         // 有则更新
     a['k3'] = 'v3';                           // 无则添加
     var b = a.putIfAbsent("k4", () => "v4");  // 有则返回，无则添加并返回
