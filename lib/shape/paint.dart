@@ -21,3 +21,4 @@ class PaintDemo extends StatelessWidget {
 
 
 // https://docs.flutter.dev/development/ui/layout#material-apps    materialapp  nonmaterialapp 他们继承的是什么  Material组件
+// Colors.blue[400] 在 ui 里单独说一下类似这种用法,   主题，    系统主题，  TextStyle  null  集合建议,结尾
