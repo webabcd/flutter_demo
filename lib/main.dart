@@ -89,6 +89,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,      // 右上角是否显示 debug 图标
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,

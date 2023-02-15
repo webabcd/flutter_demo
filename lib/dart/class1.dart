@@ -80,7 +80,12 @@ class DartClass1 extends StatelessWidget {
       log("index:${color.index}, name:${color.name}");
     }
 
-    log("$a, $b, $c, $d, $e");
+    // dart 2.17 或以上版本的枚举引入了对成员变量，方法，方法重载等的支持
+    var f = _MyColor2.green;            // name:green, myValue1:200, myValue2:11
+    var g = _MyColor2.green.myValue1;   // 200
+    var h = _MyColor2.green.myValue2;   // 11
+
+    log("$a, $b, $c, $d, $e, $f, $g, $h");
   }
 }
 
@@ -164,3 +169,18 @@ class _MyClass2 {
 
 // 枚举
 enum _MyColor { red, green, blue }
+
+// 枚举（支持成员变量，方法，方法重载等，需要 dart 2.17 或以上版本）
+enum _MyColor2 {
+  red(100, 1),
+  green(200, 11),
+  blue(300, 111);
+
+  final int myValue1;
+  final int myValue2;
+  const _MyColor2(this.myValue1, this.myValue2);
+
+  @override
+  String toString() =>
+    "name:$name, myValue1:$myValue1, myValue2:$myValue2";
+}

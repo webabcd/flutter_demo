@@ -57,9 +57,12 @@ class DartFunction extends StatelessWidget {
     var c = f4("a", "b", "c");  // a, b, c
 
     var d = f5("a", d:"d");               // a, b, null, d
+    // 之前，命名参数必须放到非命名参数之后调用
     var e = f5("a", d:"d", c:"c", b:"b"); // a, b, c, d
+    // 在 dart 2.17 或之后，命名参数可以放到任意位置调用了
+    var f = f5(d:"d", "a", c:"c", b:"b"); // a, b, c, d
 
-    log("$a, $b, $c, $d, $e");
+    log("$a, $b, $c, $d, $e, $f");
   }
   // [] 中定义的参数为可选参数，允许为可选参数提供默认值，允许调用时不传递可空类型的可选参数
   String f4(String a, [String b = "b", String? c]) {
