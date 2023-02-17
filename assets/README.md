@@ -112,15 +112,9 @@
 - lib/widget/structure/scaffold_appBar.dart
 3. Scaffold 的 bottomNavigationBar - 底部导航栏
 - lib/widget/structure/scaffold_bottomNavigationBar.dart
-4. Scaffold 的 persistentFooterButtons - 底部导航栏上面的一组按钮
-- lib/widget/structure/scaffold_persistentFooterButtons.dart
-5. Scaffold 的 bottomSheet - 底部显示的组件
-- lib/widget/structure/scaffold_bottomSheet.dart
-6. Scaffold 的 floatingActionButton - 悬浮在界面上的按钮
-- lib/widget/structure/scaffold_floatingActionButton.dart
-7. Scaffold 的 drawer/endDrawer - 左侧抽屉/右侧抽屉
+4. Scaffold 的 drawer/endDrawer - 侧滑菜单（左侧抽屉/右侧抽屉）
 - lib/widget/structure/scaffold_drawer.dart
-2. MaterialApp
+5. MaterialApp
 - lib/widget/structure/materialApp.dart
 
 ### UI

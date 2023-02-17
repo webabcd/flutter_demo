@@ -52,7 +52,7 @@ class _ScaffoldAppBarDemoState extends State<ScaffoldAppBarDemo> {
             onPressed: () { },
           ),
         ],
-        shape: BeveledRectangleBorder(                    /// appBar 的 shape
+        shape: BeveledRectangleBorder(                    /// 边框
             side: const BorderSide(width: 2, color: Colors.red),
             borderRadius: BorderRadius.circular(0)
         ),

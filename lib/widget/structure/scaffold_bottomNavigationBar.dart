@@ -72,25 +72,27 @@ class _ScaffoldBottomNavigationBarDemo extends State<ScaffoldBottomNavigationBar
           });
         },
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          DropdownButton<BottomNavigationBarType>(
-            value: _type,
-            onChanged: (BottomNavigationBarType? value) {
-              setState(() {
-                _type = value ?? BottomNavigationBarType.fixed;
-              });
-            },
-            items: <BottomNavigationBarType>[BottomNavigationBarType.fixed, BottomNavigationBarType.shifting].map<DropdownMenuItem<BottomNavigationBarType>>((BottomNavigationBarType value) {
-              return DropdownMenuItem<BottomNavigationBarType>(
-                value: value,
-                child: Text(value.toString()),
-              );
-            }).toList(),
-          ),
-          _widgetList.elementAt(_currentIndex),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            DropdownButton<BottomNavigationBarType>(
+              value: _type,
+              onChanged: (BottomNavigationBarType? value) {
+                setState(() {
+                  _type = value ?? BottomNavigationBarType.fixed;
+                });
+              },
+              items: <BottomNavigationBarType>[BottomNavigationBarType.fixed, BottomNavigationBarType.shifting].map<DropdownMenuItem<BottomNavigationBarType>>((BottomNavigationBarType value) {
+                return DropdownMenuItem<BottomNavigationBarType>(
+                  value: value,
+                  child: Text(value.toString()),
+                );
+              }).toList(),
+            ),
+            _widgetList.elementAt(_currentIndex),
+          ],
+        ),
       ),
       backgroundColor: Colors.orange,
     );

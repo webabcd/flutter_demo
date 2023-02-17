@@ -21,11 +21,40 @@ class _ScaffoldDemoState extends State<ScaffoldDemo> {
       body: MyText("body"),                               /// 主体内容
       appBar: _appBar(),                                  /// 顶部导航栏，请参见 scaffold_appBar.dart
       bottomNavigationBar: _bottomNavigationBar(),        /// 底部导航栏，请参见 scaffold_bottomNavigationBar.dart
-      persistentFooterButtons: _persistentFooterButtons(),/// 底部导航栏上面的一组按钮，请参见 scaffold_persistentFooterButtons.dart
-      bottomSheet: _bottomSheet(),                        /// 底部显示的组件，请参见 scaffold_bottomSheet.dart
-      floatingActionButton: _floatingActionButton(),      /// 悬浮在界面上的按钮，请参见 scaffold_floatingActionButton.dart
-      drawer: _drawer(),                                  /// 左侧抽屉，请参见 scaffold_drawer.dart
-      endDrawer: _endDrawer(),                            /// 右侧抽屉，请参见 scaffold_drawer.dart
+      drawer: _drawer(),                                  /// 左侧抽屉（侧滑菜单），请参见 scaffold_drawer.dart
+      endDrawer: _endDrawer(),                            /// 右侧抽屉（侧滑菜单），请参见 scaffold_drawer.dart
+
+      persistentFooterButtons: <Widget>[                          /// 底部导航栏上面的一组 widget
+        Container(width: 100, height: 20, color: Colors.red,),
+        Container(width: 100, height: 20, color: Colors.green,),
+        Container(width: 100, height: 20, color: Colors.blue,),
+      ],
+      persistentFooterAlignment: AlignmentDirectional.center,     /// 底部导航栏上面的一组 widget 的对齐方式
+
+      floatingActionButton: Builder(                              /// 悬浮在界面上的按钮
+        builder: (BuildContext context) {
+          return FloatingActionButton(
+            child: Text('show'),
+            onPressed: () {
+              //Navigator.pop(context);
+              Scaffold.of(context).showBottomSheet((context) {    /// 弹出 BottomSheet（下滑可消失）
+                return Container(
+                  height: 200,
+                  color: Colors.red,
+                  alignment: Alignment.center,
+                  child: TextButton(
+                    child: const MyText("close"),
+                    onPressed: () {
+                      /// 关闭当前的 BottomSheet
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                );
+              });
+            },
+          );
+        },
+      ),
 
       backgroundColor: Colors.orange,                     /// 背景色
       resizeToAvoidBottomInset: true,                     /// 设置为 true 则会自动滚动，以避免弹出的软键盘遮住输入框的问题
@@ -50,49 +79,6 @@ class _ScaffoldDemoState extends State<ScaffoldDemo> {
           icon: Icon(Icons.favorite),
         ),
       ],
-    );
-  }
-
-  BottomSheet _bottomSheet() {
-    return BottomSheet(
-      onClosing: () {},
-      builder: (BuildContext context) {
-        return Container(
-          height: 60,
-          color: Colors.red,
-          alignment: Alignment.center,
-          child: MyText('BottomSheet'),
-        );
-      },
-    );
-  }
-
-  List<Widget> _persistentFooterButtons() {
-    return [
-      Container(
-        width: 100,
-        height: 100,
-        color: Colors.red,
-      ),
-      Container(
-        width: 100,
-        height: 100,
-        color: Colors.green,
-      ),
-      Container(
-        width: 100,
-        height: 100,
-        color: Colors.blue,
-      ),
-    ];
-  }
-
-  FloatingActionButton _floatingActionButton() {
-    return FloatingActionButton(
-      child: Text('关闭'),
-      onPressed: () {
-        Navigator.pop(context);
-      },
     );
   }
 

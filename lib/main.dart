@@ -62,9 +62,6 @@ import 'widget/media/icon.dart';
 import 'widget/structure/scaffold.dart';
 import 'widget/structure/scaffold_appBar.dart';
 import 'widget/structure/scaffold_bottomNavigationBar.dart';
-import 'widget/structure/scaffold_persistentFooterButtons.dart';
-import 'widget/structure/scaffold_bottomSheet.dart';
-import 'widget/structure/scaffold_floatingActionButton.dart';
 import 'widget/structure/scaffold_drawer.dart';
 import 'widget/structure/materialApp.dart';
 
@@ -140,9 +137,6 @@ class MyApp extends StatelessWidget {
         "lib.widget.structure.scaffold.dart":(context) => const ScaffoldDemo(),
         "lib.widget.structure.scaffold_appBar.dart":(context) => const ScaffoldAppBarDemo(),
         "lib.widget.structure.scaffold_bottomNavigationBar.dart":(context) => const ScaffoldBottomNavigationBarDemo(),
-        "lib.widget.structure.scaffold_persistentFooterButtons.dart":(context) => const ScaffoldPersistentFooterButtonsDemo(),
-        "lib.widget.structure.scaffold_bottomSheet.dart":(context) => const ScaffoldBottomSheetDemo(),
-        "lib.widget.structure.scaffold_floatingActionButton.dart":(context) => const ScaffoldFloatingActionButtonDemo(),
         "lib.widget.structure.scaffold_drawer.dart":(context) => const ScaffoldDrawerDemo(),
         "lib.widget.structure.materialApp.dart":(context) => const MaterialAppDemo(),
         "lib.ui.statusBar.dart":(context) => const StatusBarDemo(),
