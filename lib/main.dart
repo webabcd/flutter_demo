@@ -9,6 +9,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_demo/widget/structure/scaffold_floatingActionButton.dart';
 import 'dart:convert';
 
 import 'dart/summary.dart';
@@ -55,6 +56,7 @@ import 'widget/button/textButton.dart';
 import 'widget/button/outlinedButton.dart';
 import 'widget/button/elevatedButton.dart';
 import 'widget/button/iconButton.dart';
+import 'widget/structure/scaffold_floatingActionButton.dart';
 
 import 'widget/media/image.dart';
 import 'widget/media/icon.dart';
@@ -138,6 +140,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.structure.scaffold_appBar.dart":(context) => const ScaffoldAppBarDemo(),
         "lib.widget.structure.scaffold_bottomNavigationBar.dart":(context) => const ScaffoldBottomNavigationBarDemo(),
         "lib.widget.structure.scaffold_drawer.dart":(context) => const ScaffoldDrawerDemo(),
+        "lib.widget.structure.scaffold_floatingActionButton.dart":(context) => const ScaffoldFloatingActionButtonDemo(),
         "lib.widget.structure.materialApp.dart":(context) => const MaterialAppDemo(),
         "lib.ui.statusBar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigationBar.dart":(context) => const NavigationBarDemo(),

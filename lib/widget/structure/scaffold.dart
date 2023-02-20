@@ -24,6 +24,9 @@ class _ScaffoldDemoState extends State<ScaffoldDemo> {
       drawer: _drawer(),                                  /// 左侧抽屉（侧滑菜单），请参见 scaffold_drawer.dart
       endDrawer: _endDrawer(),                            /// 右侧抽屉（侧滑菜单），请参见 scaffold_drawer.dart
 
+      extendBody: false,                                  /// body 内容是否延伸到底部（即底部导航栏是否要覆盖 body 内容）
+      extendBodyBehindAppBar: false,                      /// body 内容是否延伸到顶部（即顶部导航栏是否要覆盖 body 内容）
+
       persistentFooterButtons: <Widget>[                          /// 底部导航栏上面的一组 widget
         Container(width: 100, height: 20, color: Colors.red,),
         Container(width: 100, height: 20, color: Colors.green,),
@@ -31,12 +34,11 @@ class _ScaffoldDemoState extends State<ScaffoldDemo> {
       ],
       persistentFooterAlignment: AlignmentDirectional.center,     /// 底部导航栏上面的一组 widget 的对齐方式
 
-      floatingActionButton: Builder(                              /// 悬浮在界面上的按钮
+      floatingActionButton: Builder(                              /// 悬浮按钮，请参见 scaffold_floatingActionButton.dart
         builder: (BuildContext context) {
           return FloatingActionButton(
             child: Text('show'),
             onPressed: () {
-              //Navigator.pop(context);
               Scaffold.of(context).showBottomSheet((context) {    /// 弹出 BottomSheet（下滑可消失）
                 return Container(
                   height: 200,

@@ -14,6 +14,17 @@ class ScaffoldDrawerDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawerEdgeDragWidth: 20,                            /// 通过手势打开侧边抽屉时，手势的起始点距屏幕边缘的最大宽度
+      drawerScrimColor: Colors.blue.withAlpha(128),       /// 侧滑菜单显示后，主页面的颜色
+      drawerEnableOpenDragGesture: true,                  /// 左侧抽屉是否支持手势打开
+      endDrawerEnableOpenDragGesture: true,               /// 右侧抽屉是否支持手势打开
+      onDrawerChanged: (isOpened) {                       /// 左侧抽屉的打开关闭状态发生变化时触发的事件
+        log("onDrawerChanged: $isOpened");
+      },
+      onEndDrawerChanged: (isOpened) {                    /// 右侧抽屉的打开关闭状态发生变化时触发的事件
+        log("onEndDrawerChanged: $isOpened");
+      },
+
       drawer: Drawer(
         width: 200,                                       /// 宽度
         shadowColor: Colors.black,                        /// 阴影颜色
