@@ -1,13 +1,19 @@
 /*
- * Center - 居中对齐
- *
- * Center 继承自 Align，建议能用 Center 就别用 Align
+ * FloatingActionButton - 悬浮按钮（一般在 Scaffold 中使用）
  */
 
 import 'package:flutter/material.dart';
 
-class ScaffoldFloatingActionButtonDemo extends StatelessWidget {
+class ScaffoldFloatingActionButtonDemo extends StatefulWidget {
   const ScaffoldFloatingActionButtonDemo({Key? key}) : super(key: key);
+
+  @override
+  _ScaffoldFloatingActionButtonDemoState createState() => _ScaffoldFloatingActionButtonDemoState();
+}
+
+class _ScaffoldFloatingActionButtonDemoState extends State<ScaffoldFloatingActionButtonDemo> {
+
+  var _floatingActionButtonLocation = FloatingActionButtonLocation.miniStartFloat;
 
   @override
   Widget build(BuildContext context) {
@@ -27,18 +33,9 @@ class ScaffoldFloatingActionButtonDemo extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.blue,           /// 背景色
-        iconSize: 24,                           /// 图标大小
-        unselectedItemColor: Colors.white,      /// 未选中的 item 的颜色
-        unselectedFontSize: 12,                 /// 未选中的 item 的文字的大小
-        unselectedLabelStyle: const TextStyle(  /// 未选中的 item 的文字的样式
-            fontWeight: FontWeight.normal
-        ),
-        selectedItemColor: Colors.yellow,       /// 选中的 item 的颜色
-        selectedFontSize: 14,                   /// 选中的 item 的文字的大小
-        selectedLabelStyle: const TextStyle(    /// 选中的 item 的文字的样式
-            fontWeight: FontWeight.bold
-        ),
+        backgroundColor: Colors.blue,
+        unselectedItemColor: Colors.white,
+        selectedItemColor: Colors.yellow,
         items: const [
           BottomNavigationBarItem(
             label: 'favorite',
@@ -50,26 +47,86 @@ class ScaffoldFloatingActionButtonDemo extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+
+      /// 按钮的位置
+      floatingActionButtonLocation: _floatingActionButtonLocation,
+      /// 按钮的动画，设置为 null 的话则默认使用 FloatingActionButtonAnimator.scaling 动画
+      /// 如果需要自定义动画的话，则继承 FloatingActionButtonAnimator 后写自定义的逻辑即可
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
-      floatingActionButton: Builder(                              /// 悬浮按钮
+      floatingActionButton: Builder(
         builder: (BuildContext context) {
           return FloatingActionButton(
-            child: Text('show'),
-            onPressed: () {
-              Scaffold.of(context).showBottomSheet((context) {    /// 弹出 BottomSheet（下滑可消失）
-                return Container(
-                  height: 200,
-                  color: Colors.red,
-                  alignment: Alignment.center,
-                  child: TextButton(
-                    child: const Text("close"),
-                    onPressed: () {
-                      /// 关闭当前的 BottomSheet
-                      Navigator.of(context).pop();
-                    },
-                  ),
-                );
+            child: const Text('show'),      /// 按钮上显示的内容
+            tooltip: "tooltip",             /// 长按提示
+            foregroundColor: Colors.white,  /// 前景色
+            backgroundColor: Colors.orange, /// 背景色
+            splashColor: Colors.blue,       /// 点击效果的颜色
+            mini: false,                    /// 是否是小按钮
+            elevation: 5,                   /// 按钮阴影
+            highlightElevation: 20,         /// 点击后的按钮阴影
+            shape: null,                    /// 边框
+            onPressed: () {                 /// 单击事件
+              setState(() {
+                switch (_floatingActionButtonLocation) {
+                  case FloatingActionButtonLocation.startTop:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniStartTop;
+                    break;
+                  case FloatingActionButtonLocation.miniStartTop:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.centerTop;
+                    break;
+                  case FloatingActionButtonLocation.centerTop:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniCenterTop;
+                    break;
+                  case FloatingActionButtonLocation.miniCenterTop:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.endTop;
+                    break;
+                  case FloatingActionButtonLocation.endTop:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniEndTop;
+                    break;
+                  case FloatingActionButtonLocation.miniEndTop:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.startFloat;
+                    break;
+                  case FloatingActionButtonLocation.startFloat:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniStartFloat;
+                    break;
+                  case FloatingActionButtonLocation.miniStartFloat:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.centerFloat;
+                    break;
+                  case FloatingActionButtonLocation.centerFloat:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniCenterFloat;
+                    break;
+                  case FloatingActionButtonLocation.miniCenterFloat:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.endFloat;
+                    break;
+                  case FloatingActionButtonLocation.endFloat:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniEndFloat;
+                    break;
+                  case FloatingActionButtonLocation.miniEndFloat:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.startDocked;
+                    break;
+                  case FloatingActionButtonLocation.startDocked:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniStartDocked;
+                    break;
+                  case FloatingActionButtonLocation.miniStartDocked:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.centerDocked;
+                    break;
+                  case FloatingActionButtonLocation.centerDocked:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniCenterDocked;
+                    break;
+                  case FloatingActionButtonLocation.miniCenterDocked:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.endDocked;
+                    break;
+                  case FloatingActionButtonLocation.endDocked:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.miniEndDocked;
+                    break;
+                  case FloatingActionButtonLocation.miniEndDocked:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.endContained;
+                    break;
+                  case FloatingActionButtonLocation.endContained:
+                    _floatingActionButtonLocation = FloatingActionButtonLocation.startTop;
+                    break;
+                  default:
+                }
               });
             },
           );

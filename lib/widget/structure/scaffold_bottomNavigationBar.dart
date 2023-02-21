@@ -12,10 +12,10 @@ class ScaffoldBottomNavigationBarDemo extends StatefulWidget {
   const ScaffoldBottomNavigationBarDemo({Key? key}) : super(key: key);
 
   @override
-  _ScaffoldBottomNavigationBarDemo createState() => _ScaffoldBottomNavigationBarDemo();
+  _ScaffoldBottomNavigationBarDemoState createState() => _ScaffoldBottomNavigationBarDemoState();
 }
 
-class _ScaffoldBottomNavigationBarDemo extends State<ScaffoldBottomNavigationBarDemo> {
+class _ScaffoldBottomNavigationBarDemoState extends State<ScaffoldBottomNavigationBarDemo> {
 
   var _currentIndex = 0;
   var _type = BottomNavigationBarType.fixed;
@@ -52,6 +52,7 @@ class _ScaffoldBottomNavigationBarDemo extends State<ScaffoldBottomNavigationBar
           BottomNavigationBarItem(              /// BottomNavigationBar 的 item
             label: 'home',                      ///   文字
             icon: Icon(Icons.home),             ///   图标
+            tooltip: "tooltip",                 ///   长按提示
             backgroundColor: Colors.red,        ///   item 被选中且 type 为 BottomNavigationBarType.shifting 时的背景色
             activeIcon: Icon(Icons.done),       ///   item 被选中且 type 为 BottomNavigationBarType.shifting 时的图标
           ),
