@@ -19,8 +19,8 @@ class _ScaffoldDemoState extends State<ScaffoldDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: MyText("body"),                               /// 主体内容
-      appBar: _appBar(),                                  /// 顶部导航栏，请参见 scaffold_appBar.dart
-      bottomNavigationBar: _bottomNavigationBar(),        /// 底部导航栏，请参见 scaffold_bottomNavigationBar.dart
+      appBar: _appBar(),                                  /// 顶部导航栏，一个 PreferredSizeWidget 对象，请参见 scaffold_appBar.dart
+      bottomNavigationBar: _bottomNavigationBar(),        /// 底部导航栏，一个 Widget 对象，请参见 scaffold_bottomNavigationBar.dart
       drawer: _drawer(),                                  /// 左侧抽屉（侧滑菜单），请参见 scaffold_drawer.dart
       endDrawer: _endDrawer(),                            /// 右侧抽屉（侧滑菜单），请参见 scaffold_drawer.dart
 
