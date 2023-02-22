@@ -108,17 +108,17 @@
 ### widget 架构类
 1. Scaffold - 脚手架
 - lib/widget/structure/scaffold.dart
-2. Scaffold 的 appBar - 顶部导航栏
+2. Scaffold 的 AppBar - 顶部导航栏
 - lib/widget/structure/scaffold_appBar.dart
-3. Scaffold 的 bottomNavigationBar - 底部导航栏
+3. Scaffold 的 BottomNavigationBar - 底部导航栏
 - lib/widget/structure/scaffold_bottomNavigationBar.dart
-4. Scaffold 的 drawer/endDrawer - 侧滑菜单（左侧抽屉/右侧抽屉）
+4. Scaffold 的 Drawer - 侧滑菜单（左侧抽屉/右侧抽屉）
 - lib/widget/structure/scaffold_drawer.dart
-5. Scaffold 的 floatingActionButton - 悬浮按钮
+5. Scaffold 的 FloatingActionButton - 悬浮按钮
 - lib/widget/structure/scaffold_floatingActionButton.dart
-6. Scaffold 的 tabBar - 选项卡（基础）
+6. Scaffold 的 TabBar - 选项卡（基础）
 - lib/widget/structure/scaffold_tabBar.dart
-7. Scaffold 的 tabBar - 选项卡（自定义 TabController，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态）
+7. Scaffold 的 TabBar - 选项卡（自定义 TabController，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态）
 - lib/widget/structure/scaffold_tabBar2.dart
 8. MaterialApp
 - lib/widget/structure/materialApp.dart
