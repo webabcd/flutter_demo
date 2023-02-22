@@ -85,6 +85,9 @@ class _ScaffoldTabBarDemo2State extends State<ScaffoldTabBarDemo2> with TickerPr
             _tabController.animateTo(_selectedIndex);   /// 通过程序切换选项卡
           },
         ),
+        bottomNavigationBar: TabPageSelector(
+          controller: _tabController,                   /// 指定 TabPageSelector 关联的 TabController
+        ),
       ),
     );
   }

@@ -33,7 +33,14 @@ class BorderDemo extends StatelessWidget {
           ///   side - 边框的大小和颜色，一个 BorderSide 对象
           ///   borderRadius - 边框的半径，一个 BorderRadius 对象
           shape: BeveledRectangleBorder(
-            side: BorderSide(width: 2, color: Colors.green),
+            /// style - 边框样式
+            ///   BorderStyle.solid - 有边框
+            ///   BorderStyle.none - 无边框
+            /// strokeAlign - 边框位置
+            ///   BorderSide.strokeAlignInside - 边框在主图形之内
+            ///   BorderSide.strokeAlignOutside - 边框在主图形之外
+            ///   BorderSide.strokeAlignCenter - 边框一半在主图形之内，一半在主图形之外
+            side: BorderSide(width: 2, color: Colors.green, style: BorderStyle.solid, strokeAlign: BorderSide.strokeAlignInside),
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(5),
               topRight: Radius.circular(5),

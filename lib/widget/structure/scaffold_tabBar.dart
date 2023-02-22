@@ -3,7 +3,8 @@
  *
  * TabBar - 选项卡整体效果（其内的 Tab 用于定义每一个选项卡）
  * TabBarView - 每个选项卡对应的内容
- * TabController - 用于把 TabBar 和 TabBarView 关联起来
+ * TabPageSelector - 小圆圈指示器，用于提示当前是第几个 Tab 被选中了
+ * TabController - 用于把 TabBar，TabBarView，TabPageSelector 关联起来
  *
  * 关于自定义 TabController 的用法，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态请参见 scaffold_tabBar2.dart
  */
@@ -84,6 +85,12 @@ class _ScaffoldTabBarDemoState extends State<ScaffoldTabBarDemo> {
               ),
             ),
           ),
+        ),
+        bottomNavigationBar: TabPageSelector(               /// 小圆圈指示器，用于提示当前是第几个 Tab 被选中了
+          color: Colors.white,                              /// 小圆圈的颜色
+          selectedColor: Colors.orange,                     /// 小圆圈被选中时的颜色
+          indicatorSize: 40,                                /// 小圆圈的大小
+          borderStyle: BorderStyle.solid,                   /// 小圆圈的边框样式（solid - 有边框，none - 无边框）
         ),
       ),
     );
