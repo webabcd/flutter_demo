@@ -19,3 +19,7 @@ doc/api/
 *.js_
 *.js.deps
 *.js.map
+
+WebApi/.vs
+WebApi/WebApi/bin
+WebApi/WebApi/obj
