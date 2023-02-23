@@ -10,10 +10,12 @@ namespace WebApi
         {
             Thread.Sleep(2000);
 
+            var myHeader = Request.Headers["myHeader"];
+
             return Json(new
             {
                 id = 123,
-                name = "webabcd",
+                name = $"webabcd, myHeader:{myHeader}",
                 age = 43
             });
         }

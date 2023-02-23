@@ -20,9 +20,11 @@
 - lib/dart/class2.dart
 9. 泛型（泛型类，泛型属性，泛型方法，泛型扩展方法）
 - lib/dart/generic.dart
-10. 异步编程（async/await/Future<T>/Stream<T>）
+10. 单线程异步编程（async/await/Future<T>/Stream<T>/Completer）
 - lib/dart/async.dart
-11. 库的开发和使用
+11. 多线程异步编程（isolate/compute）
+- lib/dart/isolate.dart
+12. 库的开发和使用
 - lib/dart/package/demo.dart
 - lib/dart/package/lib1.dart
 - lib/dart/package/lib2.dart
@@ -32,7 +34,7 @@
 - lib/dart/package/lib6.dart
 - lib/dart/package/lib7.dart
 - lib/dart/package/mylib.dart
-12. 其它（用调用函数的方式调用类的实例，生成器）
+13. 其它（用调用函数的方式调用类的实例，生成器）
 - lib/dart/other.dart
 
 ### widget 基础
@@ -142,3 +144,7 @@
 - lib/shape/shadow.dart
 6. Paint
 - lib/shape/paint.dart
+
+### 网络
+1. http
+- lib/network/http.dart

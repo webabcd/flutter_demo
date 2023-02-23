@@ -11,6 +11,7 @@
     1. 然后运行 flutter run，但是这个不会自动 hot reload，需要运行后通过输入 r 做手动 hot reload
     2. 直接通过 ctrl + f5 运行，这个是自动 hot reload 的
   注：如果运行报错，比如 Target of URI doesn't exist 'package:xxx'，则在终端窗口运行一下 flutter packages get 即可
+5、启动 web 的命令为 flutter run -d chrome
 
 
 提示：
@@ -19,3 +20,8 @@
 3、更新 dart 版本时，除了要更新 pub 包外，还要在 pubspec.yaml 中指定你的 dart 的版本，需要修改的地方如下
 environment:
   sdk: ">=2.19.2 <3.0.0"
+
+镜像：
+不能翻墙的话就镜像，执行如下命令即可
+set PUB_HOSTED_URL=https://pub.flutter-io.cn
+set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn

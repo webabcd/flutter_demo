@@ -1,4 +1,7 @@
-// https://dart.dev/guides/language/language-tour
+// https://flutter.github.io/samples/
+// https://dart.dev/
+// https://flutter.dev/
+// https://pub.dev/
 
 /*
  * flutter 的 UI 部分是声明式 UI，不是传统的命令式编程
@@ -22,6 +25,7 @@ import 'dart/class2.dart';
 import 'dart/generic.dart';
 import 'dart/other.dart';
 import 'dart/async.dart';
+import 'dart/isolate.dart';
 import 'dart/package/demo.dart';
 
 import 'widget/basic/statelessWidget.dart';
@@ -78,6 +82,8 @@ import 'shape/transform.dart';
 import 'shape/shadow.dart';
 import 'shape/paint.dart';
 
+import 'network/http.dart';
+
 // main 是
 void main() {
   runApp(const MyApp());
@@ -108,6 +114,7 @@ class MyApp extends StatelessWidget {
         "lib.dart.other.dart":(context) => const DartOther(),
         "lib.dart.package.demo.dart":(context) => const DartPackage(),
         "lib.dart.async.dart":(context) => const DartAsync(),
+        "lib.dart.isolate.dart":(context) => const DartIsolate(),
         "lib.widget.basic.statelessWidget.dart":(context) => const StatelessWidgetDemo(),
         "lib.widget.basic.statefulWidget.dart":(context) => const StatefulWidgetDemo(),
         "lib.widget.basic.constraint.dart":(context) => const ConstraintDemo(),
@@ -153,6 +160,7 @@ class MyApp extends StatelessWidget {
         "lib.shape.transform.dart":(context) => const TransformDemo(),
         "lib.shape.shadow.dart":(context) => const ShadowDemo(),
         "lib.shape.paint.dart":(context) => const PaintDemo(),
+        "lib.network.http.dart":(context) => const HttpDemo(),
       },
     );
   }

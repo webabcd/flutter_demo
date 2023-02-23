@@ -1,13 +1,11 @@
 /*
- * dart 异步编程（async/await/Future<T>/Stream<T>）
+ * dart 单线程异步编程（async/await/Future<T>/Stream<T>/Completer）
  *
- * dart 的异步编程是通过 isolate 实现的，忘记传统的多线程编程吧（当然 isolate 的底层技术还是通过系统的线程和进程实现的）
- * dart 有一个主 isolate，你可以新开 isolate 实现并发编程
- * dart 的 isolate 与传统线程的主要区别就是，每个 isolate 都只维护自己的内存堆且不会与其它 isolate 共享，也就是说不需要锁这种东西了
- * dart 的不同 isolate 之间通过消息传递来实现通信
+ * 注：
+ * 本例介绍的异步编程，只是在相同线程上的异步，并不是多线程，关于多线程请参见 isolate.dart
  */
 
-import 'dart:isolate';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/helper.dart';
@@ -22,7 +20,7 @@ class DartAsync extends StatelessWidget {
     sample1();
     // 演示 Stream<T> 的用法
     sample2();
-    // 演示 isolate 的用法
+    // 演示 Completer 的用法
     sample3();
 
     return const MyWidget(text: "dart_async");
@@ -120,42 +118,31 @@ class DartAsync extends StatelessWidget {
 
 
   void sample3() async {
-    // isolate2
-    Future<void> isolate2(SendPort sp) async {
-      for (var i = 0; i < 5; i++) {
-        await Future.delayed(const Duration(seconds: 1));
-        log("sample3: send $i");
-        // 向消息通道发送消息（因为 isolate 之间不会共享内存，所以这里的消息会先复制然后再发送副本，所以可能会比较慢）
-        sp.send(i);
+    try {
+      // 对你自己的没有 async/await 的逻辑做异步编程
+      var a = await myCompleter();                // Completer 通过 complete() 返回时，可在此处拿到返回值
+      log("sample3: $a");                         // sample3: 888888
+    } catch (e) {                                 // Completer 通过 completeError() 返回时，可在此处拿到异常值
+      log("sample3 error: " + e.toString());      // sample3 error: -999
+    }
+  }
+
+  // 当你自己的逻辑没有 async/await 时，但是你又想要异步编程，就可以使用 Completer 了
+  Future<int> myCompleter() {
+    // 实例化一个 Completer<T>，此处的 T 就是 Completer 的 future 属性返回的 Future<T> 中的 T
+    Completer<int> c = Completer<int>();
+    for (int i=0; i<10000000; i++) {
+      if (i == 888888) {
+        // 完成并返回指定类型的结果值（调用者通过 await 可以拿到此值）
+        //c.complete(i);
+
+        // 完成并返回指定类型的异常值（调用者通过 catch 可以拿到此值）
+         c.completeError(-999);
+        break;
       }
-      log("sample3: send 999 and exit");
-      // 终止当前 isolate 并关闭指定的消息通道，并且在关闭消息通道之前发送指定的消息（这个最后的消息不会复制，而是直接发送，所以会很快）
-      Isolate.exit(sp, 999);
     }
 
-    // isolate1
-    Future<int> isolate1() async {
-      // 创建一个用于在不同 isolate 之间传递消息的通道
-      // ReceivePort 继承自 Stream<dynamic> 你可以通过它获取其他 isolate 发来的消息
-      var rp = ReceivePort();
-      // 通过 spawn() 启动指定的 isolate 并传递指定消息通道的 SendPort 对象，以便新启动的 isolate 可以发送消息
-      await Isolate.spawn(isolate2, rp.sendPort);
-
-      var sum = 0;
-      // 接收消息通道中发来的消息
-      await for (final value in rp) {
-        var v = value as int;
-        log("sample3: recv $v");
-        // 自定义约定，收到 999 就退出
-        if (v == 999) {
-          break;
-        }
-        sum += v;
-      }
-      return sum;
-    }
-
-    var a = await isolate1();
-    log("sample3: $a"); // sample3: 10
+    // 返回一个 Future<T> 对象，从而实现异步编程
+    return c.future;
   }
 }
