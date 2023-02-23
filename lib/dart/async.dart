@@ -1,5 +1,5 @@
 /*
- * dart 单线程异步编程（async/await/Future<T>/Stream<T>/Completer）
+ * dart 单线程异步编程（async/await/Future<T>/Stream<T>/StreamSubscription/Completer）
  *
  * 注：
  * 本例介绍的异步编程，只是在相同线程上的异步，并不是多线程，关于多线程请参见 isolate.dart
@@ -20,8 +20,10 @@ class DartAsync extends StatelessWidget {
     sample1();
     // 演示 Stream<T> 的用法
     sample2();
-    // 演示 Completer 的用法
+    // 演示 StreamSubscription 的用法，以及如何取消 Future
     sample3();
+    // 演示 Completer 的用法
+    sample4();
 
     return const MyWidget(text: "dart_async");
   }
@@ -118,12 +120,60 @@ class DartAsync extends StatelessWidget {
 
 
   void sample3() async {
+    var stream = myStream2(10);
+    // 通过 Stream 的 listen() 方法创建一个 StreamSubscription 对象用来管理 Stream
+    // cancelOnError 如果是 false 则 Stream 异常后会走到 onDone
+    // cancelOnError 如果是 true 则 Stream 异常后不会走到 onDone
+    StreamSubscription<int> streamSubscription = stream.listen(null, cancelOnError: false);
+
+    // 通过 StreamSubscription 可以控制对应的 Stream 的暂停和继续
+    // streamSubscription.pause();
+    // var isPaused = streamSubscription.isPaused;
+    // streamSubscription.resume();
+
+    // 取消 Stream（Stream 会被取消，且不会走到 onDone）
+    // streamSubscription.cancel();
+
+    // 收到 Stream 的数据时
+    streamSubscription.onData((data) {
+      log("sample3 onData: $data");
+    });
+    // Stream 发生异常时
+    streamSubscription.onError((e) {
+      log("sample3 onError: $e");
+    });
+    // Stream 的数据都收到时
+    // 或者 Stream 发生异常了且 cancelOnError 为 false 时
+    streamSubscription.onDone(() {
+      log("sample3 onDone");
+    });
+
+    // Future 和 Stream 之间可以互相转换
+    // 将 Stream 转换为 Future 后，要注意 onDone 和 onError 都不会被调用了，分别要用 Future 的 then() 和 try/catch 取代之
+    // var myFuture = streamSubscription.asFuture();
+    // 如果需要取消 Future 的话，你可以将其转换为 Stream，然后通过 StreamSubscription 取消
+    // var myStream = myFuture.asStream();
+  }
+
+  Stream<int> myStream2(int to) async* {
+    for (int i = 1; i <= to; i++) {
+      await Future.delayed(const Duration(seconds: 1));
+      if (i > 3) {
+        throw Exception("error");
+      }
+      yield i;
+    }
+  }
+
+
+
+  void sample4() async {
     try {
       // 对你自己的没有 async/await 的逻辑做异步编程
       var a = await myCompleter();                // Completer 通过 complete() 返回时，可在此处拿到返回值
-      log("sample3: $a");                         // sample3: 888888
+      log("sample4: $a");                         // sample4: 888888
     } catch (e) {                                 // Completer 通过 completeError() 返回时，可在此处拿到异常值
-      log("sample3 error: " + e.toString());      // sample3 error: -999
+      log("sample4 error: " + e.toString());      // sample4 error: -999
     }
   }
 
