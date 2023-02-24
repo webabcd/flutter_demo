@@ -146,5 +146,5 @@
 - lib/shape/paint.dart
 
 ### 网络
-1. http
+1. http 库以及 json 和对象间的转换
 - lib/network/http.dart
