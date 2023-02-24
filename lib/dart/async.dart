@@ -16,28 +16,31 @@ class DartAsync extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // 通过 async/await Future<T> 实现异步编程
+    // 通过 async/await Future<T> 实现异步编程，等待与不等待，异常处理，超时处理
     sample1();
     // 演示 Stream<T> 的用法
-    sample2();
+    //sample2();
     // 演示 StreamSubscription 的用法，以及如何取消 Future
-    sample3();
+    //sample3();
     // 演示 Completer 的用法
-    sample4();
+    //sample4();
 
     return const MyWidget(text: "dart_async");
   }
 
   // 如需在函数体内使用 await 则需要在函数体之前加上 async
   // 标记为 async 的函数会自动异步执行
-  // async 函数有返回值则返回的是 Future<T>；没有返回值则返回的是 Future<void> 可以简写为 void
+  // async 函数有返回值则返回的是 Future<T>（可以省略 async）；没有返回值则返回的是 Future<void>（可以省略 async），也可以简写为 void（不可以省略 async）
   void sample1() async {
 
     // await 就是让它异步执行，然后等着它执行完
     log("sample1: 1, ${currentTimestamp()}");
     var a = await f1();
+    log(a);
     log("sample1: 2, ${currentTimestamp()}");
     var b = await f2();
+    log(b);
+
 
     // 异步编程的异常处理
     try {
@@ -49,12 +52,44 @@ class DartAsync extends StatelessWidget {
       log("sample1: 4, ${currentTimestamp()}");
     }
 
+
+    // then() 的用法
     log("sample1: 5, ${currentTimestamp()}");
     // 对于 async 函数来说，你也可以不 await 它，也就是说它会异步执行，但是你不用等它
-    f4();
+    // then() - 当 Future 完成时会回调此方法（你不等他了怎么知道他完成了呢，就可以用这个）
+    f4().then((value) => {
+      log(value)
+    });
     log("sample1: 6, ${currentTimestamp()}");
 
-    log("$a, $b");
+
+    // 使用 then() 时的异常处理（onError, catchError, whenComplete）
+    f5().then((value) => log(value), onError:(e) {
+      // 用于捕获 future() 过程中的异常
+      log("onError: $e");
+    }).catchError((e) {
+      // 用于捕获 then() 过程中的异常
+      // 如果没有在 then() 中定义 onError() 则这里也会捕获 future() 过程中的异常
+      log("catchError: $e");
+    }).whenComplete(() => {
+      // 当 Future 完成后，无论是否发生异常都会走到这里，类似 finally
+      log("whenComplete")
+    });
+
+
+    // 通过 Future 的 timeout() 实现异步的超时处理
+    try {
+      await f6().timeout(const Duration(seconds: 1));
+    } catch (e) {
+      // 超时后会捕获到 TimeoutException 类型的异常
+      log("timeout: $e");
+    }
+    // 不用 try/catch 的话可以通过 onTimeout 处理超时后的回调
+    var result = await f6().timeout(const Duration(seconds: 1), onTimeout: () {
+      // 返回值的类型与你的 Future<T> 中 T 一样
+      return "timeout";
+    });
+    log(result);
   }
 
   // Future<T> 的意思是函数需要异步执行，其可被 await
@@ -79,11 +114,16 @@ class DartAsync extends StatelessWidget {
     return Future.delayed(const Duration(seconds: 2), () => throw 'sample1: ccc');
   }
 
-  // 这个返回值类型实际上是 Future<void>
-  void f4() async {
-    await Future.delayed(const Duration(seconds: 2));
-    log("sample1: ddd");
-    log("sample1: 7, ${currentTimestamp()}");
+  Future<String> f4() {
+    return Future.delayed(const Duration(seconds: 2), () => 'sample1: ddd');
+  }
+
+  Future<String> f5() {
+    return Future.delayed(const Duration(seconds: 2), () => throw 'sample1: eee');
+  }
+
+  Future<String> f6() {
+    return Future.delayed(const Duration(seconds: 2), () => 'sample1: fff');
   }
 
 
@@ -149,7 +189,7 @@ class DartAsync extends StatelessWidget {
     });
 
     // Future 和 Stream 之间可以互相转换
-    // 将 Stream 转换为 Future 后，要注意 onDone 和 onError 都不会被调用了，分别要用 Future 的 then() 和 try/catch 取代之
+    // 将 Stream 转换为 Future 后，要注意 onDone 和 onError 都不会被调用了，分别要用 Future 的 then() 和 catchError() 取代之
     // var myFuture = streamSubscription.asFuture();
     // 如果需要取消 Future 的话，你可以将其转换为 Stream，然后通过 StreamSubscription 取消
     // var myStream = myFuture.asStream();
@@ -184,10 +224,10 @@ class DartAsync extends StatelessWidget {
     for (int i=0; i<10000000; i++) {
       if (i == 888888) {
         // 完成并返回指定类型的结果值（调用者通过 await 可以拿到此值）
-        //c.complete(i);
+        c.complete(i);
 
         // 完成并返回指定类型的异常值（调用者通过 catch 可以拿到此值）
-         c.completeError(-999);
+        // c.completeError(-999);
         break;
       }
     }
