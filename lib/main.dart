@@ -7,6 +7,9 @@
  * flutter 的 UI 部分是声明式 UI，不是传统的命令式编程
  * 1、UI 的命令式编程：先实例化一个 UI 对象，然后按需求更改这个对象
  * 2、UI 的声明式编程：描述你需要的 UI 即可（构造 Widget 实例），需要修改时就重新描述 UI（构造新的 Widget 实例）
+ *
+ * 注：
+ * 为了容易看懂，本例中的文件命名并不符合规范，实际开发中请按照 lower_lower 规范命名（避免不同文件系统是否区分大小写的问题），比如 scaffold_bottom_navigation_bar.dart
  */
 
 import 'package:flutter/cupertino.dart';
