@@ -3,6 +3,7 @@
  *
  * 注：
  * 1、在 dart 中一切都是对象，除了 null 外都继承自 Object
+ * 2、_ 开头代表 private，否则为 public
  */
 
 import 'package:flutter/material.dart';
@@ -45,7 +46,8 @@ class DartSummary extends StatelessWidget {
 
   void sample1() {
     // 声明指定类型的变量，并初始化
-    String a = "a";
+    // 字符串可以用双引号，也可以用单引号
+    String a = 'a';
 
     // 通过 var 声明变量，然后根据初始化数据推导变量的类型（这是推荐的方式）
     var b = "b";

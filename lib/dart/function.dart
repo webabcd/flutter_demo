@@ -1,5 +1,5 @@
 /*
- * dart 函数（函数基础，箭头函数，可选参数，命名参数，函数作为参数，匿名函数，嵌套函数，闭包函数）
+ * dart 函数（函数基础，箭头函数，可选参数，命名参数，函数作为参数，匿名函数，嵌套函数，闭包函数，回调函数）
  */
 
 import 'package:flutter/material.dart';
@@ -25,13 +25,16 @@ class DartFunction extends StatelessWidget {
     sample1();
     // 可选参数，命名参数
     sample2();
-    // 函数作为参数，匿名函数，嵌套函数
+    // 函数作为参数（函数指针），匿名函数，嵌套函数
     sample3();
     // 闭包函数
     sample4();
+    // 回调函数
+    sample5();
 
     return const MyWidget(text: "dart_function");
   }
+
 
   void sample1() {
     var a = f1("abc", 123); // abc, 123
@@ -50,6 +53,7 @@ class DartFunction extends StatelessWidget {
   f3() {
 
   }
+
 
   void sample2() {
     var a = f4("a");            // a, b, null
@@ -74,8 +78,9 @@ class DartFunction extends StatelessWidget {
     return "$a, $b, $c, $d";
   }
 
+
   void sample3() {
-    // 函数作为参数的示例
+    // 函数作为参数（函数指针）的示例
     [1, 2, 3].forEach(f6);
     // 使用匿名函数的示例
     // 本例仅演示用，实际开发不建议在 forEach() 中使用匿名函数，比如下面这句建议写成上面的方式，或者写成 for (var element in [1, 2, 3]) {}
@@ -123,6 +128,7 @@ class DartFunction extends StatelessWidget {
     return func(a);
   }
 
+
   void sample4() {
     // 获取一个闭包
     var a = f9(2);
@@ -147,5 +153,46 @@ class DartFunction extends StatelessWidget {
     }
     // 返回一个闭包
     return myFunc;
+  }
+
+
+  // 回调函数实际就是函数作为参数（函数指针）的应用
+  void sample5() {
+    var a = _MyClass(c1, (String str) {
+      log(str);
+    }, (String str1, str2) {
+      log("$str1, $str2");
+      return "$str1, $str2";
+    }, (_) { // 回调函数中的参数如果你用不到，建议用 _ 代替
+      log("callback4 返回数据了");
+    });
+    a.start();
+  }
+}
+void c1(String str1, String str2) {
+  log("$str1, $str2");
+}
+// 为指定的函数类型指定类型别名
+typedef MyCallback = void Function(String str);
+class _MyClass {
+  // 支持任意类型和任意数量的参数的函数
+  Function callback1;
+  // 支持指定类型的参数的函数
+  void Function(String str) callback2;
+  // 支持指定类型的参数，以及指定返回值类型的函数
+  String Function(String str1, String str2) callback3;
+  // 类型别名的应用
+  MyCallback callback4;
+
+  _MyClass(this.callback1, this.callback2, this.callback3, this.callback4);
+
+  void start() {
+    Future.delayed(const Duration(seconds: 1), () {
+      callback1("i am callback1", "webabcd");
+      callback2("i am callback2");
+      var result = callback3("i am callback3", "webabcd");
+      log("result: $result");
+      callback4("i am callback4");
+    });
   }
 }

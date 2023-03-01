@@ -95,7 +95,14 @@ class _MyClass1 {
   String name;
   double age;
 
-  // 构造函数的语法糖（syntactic sugar）技术
+  /*
+  // 常规的定义构造函数的方式
+  _MyClass1(String name, double age) {
+    this.name = name;
+    this.age = age;
+  }
+  */
+  // 因为 dart 支持构造函数的语法糖（syntactic sugar）技术，下面这句等同于上面那句（建议用下面的方式，而不用上面的方式）
   _MyClass1(this.name, this.age); // 第 1 个参数赋值给 name 属性，第 2 个参数赋值给 age 属性
 
   // 实例方法（_ 开头代表 private，否则为 public）
@@ -127,16 +134,10 @@ class _MyClass1 {
 class _MyClass2 {
   String name = "";
   double age = 0;
+  String? temp1;
 
-  /*
-  // 常规的定义构造函数的方式
-  _MyClass2(String name, double age) {
-    this.name = name;
-    this.age = age;
-  }
-  */
-  // 因为 dart 支持构造函数的语法糖（syntactic sugar）技术，下面这句等同于上面那句（建议用下面的方式，而不用上面的方式）
-  _MyClass2(this.name, this.age);
+  // 构造函数也支持命名参数
+  _MyClass2(this.name, this.age, {this.temp1, String? temp2});
 
   // dart 中无名构造函数只能有一个，如果你不定义无名构造函数，那么默认会有一个无参数的无名构造函数
   // 如果需要定义多个不同的构造函数怎么办？你可以像下面这样定义有名的构造函数

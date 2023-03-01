@@ -12,7 +12,7 @@
 - lib/dart/statement.dart
 5. 错误处理（assert, try/on/catch/finally）
 - lib/dart/exception.dart
-6. 函数（函数基础，箭头函数，可选参数，命名参数，函数作为参数，匿名函数，嵌套函数，闭包函数）
+6. 函数（函数基础，箭头函数，可选参数，命名参数，函数作为参数，匿名函数，嵌套函数，闭包函数，回调函数）
 - lib/dart/function.dart
 7. 类（类基础，构造函数，枚举）
 - lib/dart/class1.dart
