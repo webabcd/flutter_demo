@@ -35,7 +35,7 @@ import 'widget/basic/statelessWidget.dart';
 import 'widget/basic/statefulWidget.dart';
 import 'widget/basic/constraint.dart';
 import 'widget/basic/focus.dart';
-import 'widget/basic/widget_key.dart';
+import 'widget/basic/tree.dart';
 
 import 'widget/layout/row.dart';
 import 'widget/layout/column.dart';
@@ -122,7 +122,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.basic.statefulWidget.dart":(context) => const StatefulWidgetDemo(),
         "lib.widget.basic.constraint.dart":(context) => const ConstraintDemo(),
         "lib.widget.basic.focus.dart":(context) => const FocusDemo(),
-        "lib.widget.basic.widget_key.dart":(context) => const WidgetKeyDemo(),
+        "lib.widget.basic.tree.dart":(context) => const TreeDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
         "lib.widget.layout.flex.dart":(context) => const FlexDemo(),

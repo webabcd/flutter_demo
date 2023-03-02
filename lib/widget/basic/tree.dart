@@ -1,6 +1,4 @@
 /*
- * Widget 的 key 与三棵树
- *
  * Flutter 中的三棵树
  * 1、Widget 树
  *   Widget 是一个用来描述 UI 的配置
@@ -10,19 +8,24 @@
  *   Element 是 Widget 实例化出的对象，它是 Widget 和 RenderObject 之间的桥梁
  *   Element 会持有其对应的 Widget
  *   如果 Element 是需要渲染的，则会通过 Widget 生成 RenderObject 对象
+ *
+ *
+ * 首次新建某个 Widget 对象时，会自动新建一个持有此 Widget 的 Element 对象
+ * 当这个 View 需要更新时，需要重新生成这个 Widget 对象，这个新生成的 Widget 对象会替代之前的 Widget 对象与 Element 建立关系
+ * 这就是所谓的 Element 与 Widget 的一对多关系
  */
 
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/helper.dart';
 
-class WidgetKeyDemo extends StatefulWidget {
-  const WidgetKeyDemo({Key? key}) : super(key: key);
+class TreeDemo extends StatefulWidget {
+  const TreeDemo({Key? key}) : super(key: key);
 
   @override
-  _WidgetKeyDemoState createState() => _WidgetKeyDemoState();
+  _TreeDemoState createState() => _TreeDemoState();
 }
 
-class _WidgetKeyDemoState extends State<WidgetKeyDemo> {
+class _TreeDemoState extends State<TreeDemo> {
   /// 颜色信息保存在 Widget 中
   List<Widget> widgets1 = [
     _MyStatefulWidget(color: Colors.red, type: 0),
@@ -69,7 +72,7 @@ class _WidgetKeyDemoState extends State<WidgetKeyDemo> {
             /// 但是因为两个 Widget 对调了，所以第 1 个 Element 持有了原来第 2 个 Widget，第 2 个 Element 持有了原来第 1 个 Widget
             /// Element 会调用持有的 Widget 的 canUpdate() 方法，其会判断新老 Widget 的 key 和 runtimeType 是否相同（注：如果没指定 Widget 的 key 则认为 key 是相同的）
             ///   1、如果你没有为 Widget 指定不同的 key，则 key 和 runtimeType 均相同，所以第 1 个 Element 就认为其持有原来的第 2 个 Widget 是合法的
-            ///   因为使用的颜色信息是保存在 Widget 的 State 中的，所以虽然 Widget 对调了，但是颜色不会对调
+            ///   因为使用的颜色信息是保存在 Widget 的 State 中的（State 是保存在 Element 树中的），所以虽然 Widget 对调了，但是颜色不会对调
             ///   2、如果你为 Widget 指定了不同的 key，则因为 key 是不同的，所以第 1 个 Element 就认为其持有原来的第 2 个 Widget 是不合法的
             ///   然后 Element 就会在 Widget 树种查找，看看有没有和之前的 Widget 的 key 和 runtimeType 都相同的
             ///   结果找到了，然后第 1 个 Element 就持有了原来的第 1 个 Widget，所以随着 Widget 的对调，颜色也对调了

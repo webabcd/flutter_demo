@@ -4,7 +4,7 @@
  * 注：
  * 1、在 dart 中一切都是对象，除了 null 外都继承自 Object
  * 2、_ 开头代表 private，否则为 public
- * 3、类用 UpperCamelCase 规范命名，变量等用 lowerCamelCase 规范命名
+ * 3、类用 UpperCamelCase 规范命名，变量名、函数名、参数名等用 lowerCamelCase 规范命名
  * 4、目录名、文件名以及导入时定义的前缀用 lower_lower 规范命名（避免不同文件系统是否区分大小写的问题），比如 import 'aaa_bbb_ccc.dart' as xxx_yyy_zzz;
  */
 

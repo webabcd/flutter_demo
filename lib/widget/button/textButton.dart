@@ -27,7 +27,7 @@ class _TextButtonDemoState extends State<TextButtonDemo> {
           onLongPress: () { log("onLongPress"); },/// 长按事件
           style: TextButton.styleFrom(            /// 样式，通过 TextButton.styleFrom() 实现，如需要为按钮的不同状态指定不同的样式请参见后面的 ButtonStyle() 中的说明
             padding: const EdgeInsets.all(2),     ///   内边距
-            primary: Colors.white,                ///   按钮文字颜色
+            foregroundColor: Colors.white,        ///   按钮文字颜色
             backgroundColor: Colors.blue,         ///   按钮背景颜色
             alignment: Alignment.center,          ///   按钮文字相对于按钮整体的对齐方式
             minimumSize: const Size(200, 0),      ///   最小尺寸
