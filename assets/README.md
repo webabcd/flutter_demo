@@ -130,6 +130,8 @@
 - lib/ui/statusBar.dart
 2. android 底部导航栏
 - lib/ui/navigationBar.dart
+3. 主题
+- lib/ui/theme.dart
 
 ### 图形
 1. 边框

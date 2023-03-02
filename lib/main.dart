@@ -77,6 +77,7 @@ import 'widget/structure/scaffold_tabBar2.dart';
 
 import 'ui/statusBar.dart';
 import 'ui/navigationBar.dart';
+import 'ui/theme.dart';
 
 import 'shape/border.dart';
 import 'shape/clip.dart';
@@ -157,6 +158,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.structure.materialApp.dart":(context) => const MaterialAppDemo(),
         "lib.ui.statusBar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigationBar.dart":(context) => const NavigationBarDemo(),
+        "lib.ui.theme.dart":(context) => const ThemeDemo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),
         "lib.shape.gradient.dart":(context) => const GradientDemo(),

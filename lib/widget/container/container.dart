@@ -1,8 +1,8 @@
 /*
  * Container - 综合容器（综合了各种效果的容器）
  *   child - 子
- *   width - 宽
- *   height - 高
+ *   width - 宽，设置为 double.infinity 代表尽量宽
+ *   height - 高，设置为 double.infinity 代表尽量高
  *   color - 颜色
  *   alignment - 子相对于 Container 的对齐方式
  *     topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
@@ -11,6 +11,8 @@
  *   constraints - 范围约束，参见 /lib/container/constrainedBox.dart
  *   decoration, foregroundDecoration - 子前面和子后面的装饰，参见 /lib/container/decoratedBox.dart
  *   transform, transformAlignment - 变换和变换的中心点，参见 /lib/shape/transform.dart
+ *
+ * 注：当 Container 没有 child 时其宽高与父相同，当 Container 有 child 时其宽高与 child 相同
  */
 
 import 'package:flutter/material.dart';
