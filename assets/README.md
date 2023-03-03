@@ -48,6 +48,8 @@
 - lib/widget/basic/focus.dart
 5. 三棵树
 - lib/widget/basic/tree.dart
+6. 状态管理
+- lib/widget/basic/changeNotifier.dart
 
 ### widget 布局类（可以有多个子）
 1. Row - 水平弹性布局

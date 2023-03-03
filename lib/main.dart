@@ -4,7 +4,7 @@
 // https://pub.dev/
 
 /*
- * flutter 的 UI 部分是声明式 UI，不是传统的命令式编程
+ * flutter 使用的是声明式 UI（declarative UI），不是传统的命令式编程
  * 1、UI 的命令式编程：先实例化一个 UI 对象，然后按需求更改这个对象
  * 2、UI 的声明式编程：描述你需要的 UI 即可（构造 Widget 实例），需要修改时就重新描述 UI（构造新的 Widget 实例）
  *
@@ -36,6 +36,7 @@ import 'widget/basic/statefulWidget.dart';
 import 'widget/basic/constraint.dart';
 import 'widget/basic/focus.dart';
 import 'widget/basic/tree.dart';
+import 'widget/basic/changeNotifier.dart';
 
 import 'widget/layout/row.dart';
 import 'widget/layout/column.dart';
@@ -124,6 +125,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.basic.constraint.dart":(context) => const ConstraintDemo(),
         "lib.widget.basic.focus.dart":(context) => const FocusDemo(),
         "lib.widget.basic.tree.dart":(context) => const TreeDemo(),
+        "lib.widget.basic.changeNotifier.dart":(context) => const ChangeNotifierDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
         "lib.widget.layout.flex.dart":(context) => const FlexDemo(),
