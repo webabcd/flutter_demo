@@ -58,6 +58,7 @@ class _MyHomePage extends StatelessWidget {
           ),
           /// 如果只想在某一个部分使用自定义主题，则可以使用名为 Theme 的 Widget
           Theme(
+            /// 指定一个 ThemeData 类型的对象
             data: Theme.of(context).copyWith(
               textTheme: const TextTheme(
                 displayLarge: TextStyle(fontSize: 72.0, color: Colors.yellow),

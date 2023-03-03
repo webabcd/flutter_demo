@@ -48,6 +48,8 @@
 - lib/widget/basic/focus.dart
 5. 三棵树
 - lib/widget/basic/tree.dart
+6. 状态管理
+- lib/widget/basic/changeNotifier.dart
 
 ### widget 布局类（可以有多个子）
 1. Row - 水平弹性布局
@@ -122,6 +124,14 @@
 - lib/widget/structure/scaffold_tabBar.dart
 7. Scaffold 的 TabBar - 选项卡（自定义 TabController，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态）
 - lib/widget/structure/scaffold_tabBar2.dart
+
+### widget Builder
+1. Builder - 在指定的位置构造上下文
+- lib/widget/builder/builder.dart
+2. StatefulBuilder - 有状态的 Builder
+- lib/widget/builder/statefulBuilder.dart
+3. LayoutBuilder - 可以拿到父亲的尺寸的 Builder
+- lib/widget/builder/layoutBuilder.dart
 
 ### UI
 1. 状态栏

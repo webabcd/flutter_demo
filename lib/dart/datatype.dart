@@ -50,11 +50,13 @@ class DartDatatype extends StatelessWidget {
     var g = int.parse('123');
     // String 转 double
     var h = double.parse('3.14');
+    // double 转 int
+    var i = 3.14.toInt();
 
     // bool 类型
-    var i = true;
+    var j = true;
 
-    log("$a, $b, $c, $d, $e, $f, $g, $h, $i");
+    log("$a, $b, $c, $d, $e, $f, $g, $h, $i, $j");
   }
 
   void sample2() {

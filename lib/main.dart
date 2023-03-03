@@ -76,6 +76,10 @@ import 'widget/structure/scaffold_floatingActionButton.dart';
 import 'widget/structure/scaffold_tabBar.dart';
 import 'widget/structure/scaffold_tabBar2.dart';
 
+import 'widget/builder/builder.dart';
+import 'widget/builder/statefulBuilder.dart';
+import 'widget/builder/layoutBuilder.dart';
+
 import 'ui/statusBar.dart';
 import 'ui/navigationBar.dart';
 import 'ui/theme.dart';
@@ -158,6 +162,9 @@ class MyApp extends StatelessWidget {
         "lib.widget.structure.scaffold_tabBar.dart":(context) => const ScaffoldTabBarDemo(),
         "lib.widget.structure.scaffold_tabBar2.dart":(context) => const ScaffoldTabBarDemo2(),
         "lib.widget.structure.materialApp.dart":(context) => const MaterialAppDemo(),
+        "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
+        "lib.widget.builder.statefulBuilder.dart":(context) => const StatefulBuilderDemo(),
+        "lib.widget.builder.layoutBuilder.dart":(context) => const LayoutBuilderDemo(),
         "lib.ui.statusBar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigationBar.dart":(context) => const NavigationBarDemo(),
         "lib.ui.theme.dart":(context) => const ThemeDemo(),

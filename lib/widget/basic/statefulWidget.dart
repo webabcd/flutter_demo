@@ -6,7 +6,7 @@
  *
  * 要让有状态 widget 自己修改自己，仅需如下两个步骤
  * 1、把 build() 放到 State<T> 中实现
- * 2、在 State<T> 中通过 setState() 修改自己
+ * 2、在 State<T> 中通过 setState() 修改状态，然后对应的 Widget 会重新创建，从而重绘 UI
  */
 
 import 'package:flutter/material.dart';

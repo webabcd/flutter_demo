@@ -127,6 +127,14 @@
 8. MaterialApp
 - lib/widget/structure/materialApp.dart
 
+### widget Builder
+1. Builder - 在指定的位置构造上下文
+- lib/widget/builder/builder.dart
+2. StatefulBuilder - 有状态的 Builder
+- lib/widget/builder/statefulBuilder.dart
+3. LayoutBuilder - 可以拿到父亲的尺寸的 Builder
+- lib/widget/builder/layoutBuilder.dart
+
 ### UI
 1. 状态栏
 - lib/ui/statusBar.dart
