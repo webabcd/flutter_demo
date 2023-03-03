@@ -15,7 +15,7 @@ class OutlinedButtonDemo extends StatelessWidget {
       child:  OutlinedButton(
         child: Text('button'),
         onPressed: () {},
-        style: OutlinedButton.styleFrom(  /// 关于按钮样式请参见 lib/widget/button/textButton.dart 中的说明
+        style: OutlinedButton.styleFrom(  /// 关于按钮样式请参见 lib/widget/button/text_button.dart 中的说明
           primary: Colors.white,
           backgroundColor: Colors.blue,
           side: BorderSide(               ///   按钮边框的大小和颜色

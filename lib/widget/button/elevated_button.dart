@@ -15,7 +15,7 @@ class ElevatedButtonDemo extends StatelessWidget {
       child:  ElevatedButton(
         child: Text('button'),
         onPressed: () {},
-        style: ElevatedButton.styleFrom(  /// 关于按钮样式请参见 lib/widget/button/textButton.dart 中的说明
+        style: ElevatedButton.styleFrom(  /// 关于按钮样式请参见 lib/widget/button/text_button.dart 中的说明
 
         ),
       ),

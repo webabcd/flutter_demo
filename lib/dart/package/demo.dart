@@ -3,6 +3,8 @@
  *
  * import 用于从其他 .dart 文件中导入（_ 开头的是私有的不会被导入，非 _ 开头的会被导入）
  * export 用于在一个 .dart 文件中定义需要导出的其他多个 .dart 文件，这样你只用 import 这一个 .dart 文件即可导入此文件中定义的多个 .dart 文件
+ *
+ * 注：目录名、文件名以及导入时定义的前缀建议用 snake_case 规范命名（避免不同文件系统是否区分大小写的问题），比如 import 'aaa_bbb_ccc.dart' as xxx_yyy_zzz;
  */
 
 import 'package:flutter/material.dart';

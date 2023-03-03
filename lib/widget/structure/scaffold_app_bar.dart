@@ -57,7 +57,7 @@ class _ScaffoldAppBarDemoState extends State<ScaffoldAppBarDemo> {
             borderRadius: BorderRadius.circular(0)
         ),
         toolbarOpacity: 1,                                /// toolbar 中的内容的不透明度
-        bottom: AppBar(                                   /// bottom 是 toolbar 下显示的 widget（通常这里可以用来显示一个 TabBar，请参见 scaffold_tabBar.dart）
+        bottom: AppBar(                                   /// bottom 是 toolbar 下显示的 widget（通常这里可以用来显示一个 TabBar，请参见 scaffold_tab_bar.dart）
           automaticallyImplyLeading: false,
           title: const Text('bottom'),
         ),

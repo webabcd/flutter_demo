@@ -7,9 +7,6 @@
  * flutter 使用的是声明式 UI（declarative UI），不是传统的命令式编程
  * 1、UI 的命令式编程：先实例化一个 UI 对象，然后按需求更改这个对象
  * 2、UI 的声明式编程：描述你需要的 UI 即可（构造 Widget 实例），需要修改时就重新描述 UI（构造新的 Widget 实例）
- *
- * 注：
- * 为了容易看懂，本例中的文件命名并不符合规范，实际开发中请按照 lower_lower 规范命名（避免不同文件系统是否区分大小写的问题），比如 scaffold_bottom_navigation_bar.dart
  */
 
 import 'package:flutter/cupertino.dart';
@@ -31,12 +28,12 @@ import 'dart/async.dart';
 import 'dart/isolate.dart';
 import 'dart/package/demo.dart';
 
-import 'widget/basic/statelessWidget.dart';
-import 'widget/basic/statefulWidget.dart';
+import 'widget/basic/stateless_widget.dart';
+import 'widget/basic/stateful_widget.dart';
 import 'widget/basic/constraint.dart';
 import 'widget/basic/focus.dart';
 import 'widget/basic/tree.dart';
-import 'widget/basic/changeNotifier.dart';
+import 'widget/basic/change_notifier.dart';
 
 import 'widget/layout/row.dart';
 import 'widget/layout/column.dart';
@@ -48,40 +45,40 @@ import 'widget/layout/stack.dart';
 import 'widget/container/padding.dart';
 import 'widget/container/align.dart';
 import 'widget/container/center.dart';
-import 'widget/container/constrainedBox.dart';
-import 'widget/container/sizedBox.dart';
-import 'widget/container/unconstrainedBox.dart';
-import 'widget/container/decoratedBox.dart';
+import 'widget/container/constrained_box.dart';
+import 'widget/container/sized_box.dart';
+import 'widget/container/unconstrained_box.dart';
+import 'widget/container/decorated_box.dart';
 import 'widget/container/container.dart';
 import 'widget/container/opacity.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
-import 'widget/text/textField.dart';
+import 'widget/text/text_field.dart';
 
-import 'widget/button/textButton.dart';
-import 'widget/button/outlinedButton.dart';
-import 'widget/button/elevatedButton.dart';
-import 'widget/button/iconButton.dart';
+import 'widget/button/text_button.dart';
+import 'widget/button/outlined_button.dart';
+import 'widget/button/elevated_button.dart';
+import 'widget/button/icon_button.dart';
 
 import 'widget/media/image.dart';
 import 'widget/media/icon.dart';
 
 import 'widget/structure/scaffold.dart';
-import 'widget/structure/scaffold_appBar.dart';
-import 'widget/structure/scaffold_bottomNavigationBar.dart';
+import 'widget/structure/scaffold_app_bar.dart';
+import 'widget/structure/scaffold_bottom_navigation_bar.dart';
 import 'widget/structure/scaffold_drawer.dart';
-import 'widget/structure/materialApp.dart';
-import 'widget/structure/scaffold_floatingActionButton.dart';
-import 'widget/structure/scaffold_tabBar.dart';
-import 'widget/structure/scaffold_tabBar2.dart';
+import 'widget/structure/material_app.dart';
+import 'widget/structure/scaffold_floating_action_button.dart';
+import 'widget/structure/scaffold_tab_bar.dart';
+import 'widget/structure/scaffold_tab_bar2.dart';
 
 import 'widget/builder/builder.dart';
-import 'widget/builder/statefulBuilder.dart';
-import 'widget/builder/layoutBuilder.dart';
+import 'widget/builder/stateful_builder.dart';
+import 'widget/builder/layout_builder.dart';
 
-import 'ui/statusBar.dart';
-import 'ui/navigationBar.dart';
+import 'ui/status_bar.dart';
+import 'ui/navigation_bar.dart';
 import 'ui/theme.dart';
 
 import 'shape/border.dart';
@@ -124,12 +121,12 @@ class MyApp extends StatelessWidget {
         "lib.dart.package.demo.dart":(context) => const DartPackage(),
         "lib.dart.async.dart":(context) => const DartAsync(),
         "lib.dart.isolate.dart":(context) => const DartIsolate(),
-        "lib.widget.basic.statelessWidget.dart":(context) => const StatelessWidgetDemo(),
-        "lib.widget.basic.statefulWidget.dart":(context) => const StatefulWidgetDemo(),
+        "lib.widget.basic.stateless_widget.dart":(context) => const StatelessWidgetDemo(),
+        "lib.widget.basic.stateful_widget.dart":(context) => const StatefulWidgetDemo(),
         "lib.widget.basic.constraint.dart":(context) => const ConstraintDemo(),
         "lib.widget.basic.focus.dart":(context) => const FocusDemo(),
         "lib.widget.basic.tree.dart":(context) => const TreeDemo(),
-        "lib.widget.basic.changeNotifier.dart":(context) => const ChangeNotifierDemo(),
+        "lib.widget.basic.change_notifier.dart":(context) => const ChangeNotifierDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
         "lib.widget.layout.flex.dart":(context) => const FlexDemo(),
@@ -139,34 +136,34 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.padding.dart":(context) => const PaddingDemo(),
         "lib.widget.container.align.dart":(context) => const AlignDemo(),
         "lib.widget.container.center.dart":(context) => const CenterDemo(),
-        "lib.widget.container.constrainedBox.dart":(context) => const ConstrainedBoxDemo(),
-        "lib.widget.container.sizedBox.dart":(context) => const SizedBoxDemo(),
-        "lib.widget.container.unconstrainedBox.dart":(context) => const UnconstrainedBoxDemo(),
-        "lib.widget.container.decoratedBox.dart":(context) => const DecoratedBoxDemo(),
+        "lib.widget.container.constrained_box.dart":(context) => const ConstrainedBoxDemo(),
+        "lib.widget.container.sized_box.dart":(context) => const SizedBoxDemo(),
+        "lib.widget.container.unconstrained_box.dart":(context) => const UnconstrainedBoxDemo(),
+        "lib.widget.container.decorated_box.dart":(context) => const DecoratedBoxDemo(),
         "lib.widget.container.container.dart":(context) => const ContainerDemo(),
         "lib.widget.container.opacity.dart":(context) => const OpacityDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
-        "lib.widget.text.textField.dart":(context) => const TextFieldDemo(),
-        "lib.widget.button.textButton.dart":(context) => const TextButtonDemo(),
-        "lib.widget.button.outlinedButton.dart":(context) => const OutlinedButtonDemo(),
-        "lib.widget.button.elevatedButton.dart":(context) => const ElevatedButtonDemo(),
-        "lib.widget.button.iconButton.dart":(context) => const IconButtonDemo(),
+        "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),
+        "lib.widget.button.text_button.dart":(context) => const TextButtonDemo(),
+        "lib.widget.button.outlined_button.dart":(context) => const OutlinedButtonDemo(),
+        "lib.widget.button.elevated_button.dart":(context) => const ElevatedButtonDemo(),
+        "lib.widget.button.icon_button.dart":(context) => const IconButtonDemo(),
         "lib.widget.media.image.dart":(context) => const ImageDemo(),
         "lib.widget.media.icon.dart":(context) => const IconDemo(),
         "lib.widget.structure.scaffold.dart":(context) => const ScaffoldDemo(),
-        "lib.widget.structure.scaffold_appBar.dart":(context) => const ScaffoldAppBarDemo(),
-        "lib.widget.structure.scaffold_bottomNavigationBar.dart":(context) => const ScaffoldBottomNavigationBarDemo(),
+        "lib.widget.structure.scaffold_app_bar.dart":(context) => const ScaffoldAppBarDemo(),
+        "lib.widget.structure.scaffold_bottom_navigation_bar.dart":(context) => const ScaffoldBottomNavigationBarDemo(),
         "lib.widget.structure.scaffold_drawer.dart":(context) => const ScaffoldDrawerDemo(),
-        "lib.widget.structure.scaffold_floatingActionButton.dart":(context) => const ScaffoldFloatingActionButtonDemo(),
-        "lib.widget.structure.scaffold_tabBar.dart":(context) => const ScaffoldTabBarDemo(),
-        "lib.widget.structure.scaffold_tabBar2.dart":(context) => const ScaffoldTabBarDemo2(),
-        "lib.widget.structure.materialApp.dart":(context) => const MaterialAppDemo(),
+        "lib.widget.structure.scaffold_floating_action_button.dart":(context) => const ScaffoldFloatingActionButtonDemo(),
+        "lib.widget.structure.scaffold_tab_bar.dart":(context) => const ScaffoldTabBarDemo(),
+        "lib.widget.structure.scaffold_tab_bar2.dart":(context) => const ScaffoldTabBarDemo2(),
+        "lib.widget.structure.material_app.dart":(context) => const MaterialAppDemo(),
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
-        "lib.widget.builder.statefulBuilder.dart":(context) => const StatefulBuilderDemo(),
-        "lib.widget.builder.layoutBuilder.dart":(context) => const LayoutBuilderDemo(),
-        "lib.ui.statusBar.dart":(context) => const StatusBarDemo(),
-        "lib.ui.navigationBar.dart":(context) => const NavigationBarDemo(),
+        "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
+        "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),
+        "lib.ui.status_bar.dart":(context) => const StatusBarDemo(),
+        "lib.ui.navigation_bar.dart":(context) => const NavigationBarDemo(),
         "lib.ui.theme.dart":(context) => const ThemeDemo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),

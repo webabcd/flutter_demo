@@ -8,8 +8,8 @@
  *     topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
  *   padding - 内边距
  *   margin - 外边距
- *   constraints - 范围约束，参见 /lib/container/constrainedBox.dart
- *   decoration, foregroundDecoration - 子前面和子后面的装饰，参见 /lib/container/decoratedBox.dart
+ *   constraints - 范围约束，参见 /lib/container/constrained_box.dart
+ *   decoration, foregroundDecoration - 子前面和子后面的装饰，参见 /lib/container/decorated_box.dart
  *   transform, transformAlignment - 变换和变换的中心点，参见 /lib/shape/transform.dart
  *
  * 注：当 Container 没有 child 时其宽高与父相同，当 Container 有 child 时其宽高与 child 相同

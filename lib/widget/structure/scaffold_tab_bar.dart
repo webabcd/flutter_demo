@@ -6,7 +6,7 @@
  * TabPageSelector - 小圆圈指示器，用于提示当前是第几个 Tab 被选中了
  * TabController - 用于把 TabBar，TabBarView，TabPageSelector 关联起来
  *
- * 关于自定义 TabController 的用法，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态请参见 scaffold_tabBar2.dart
+ * 关于自定义 TabController 的用法，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态请参见 scaffold_tab_bar2.dart
  */
 
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ class _ScaffoldTabBarDemoState extends State<ScaffoldTabBarDemo> {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(                            /// 默认 TabController（如果需要自己定义 TabController 的逻辑请参见 scaffold_tabBar2.dart）
+    return DefaultTabController(                            /// 默认 TabController（如果需要自己定义 TabController 的逻辑请参见 scaffold_tab_bar2.dart）
       length: 2,                                            /// Tab 的数量
       initialIndex: 0,                                      /// 默认选中的 Tab 的索引位置
       child: Scaffold(                                      /// 通常用 Scaffold，Scaffold 内包含 AppBar，AppBar 内包含 TabBar

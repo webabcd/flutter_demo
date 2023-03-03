@@ -39,9 +39,9 @@
 
 ### widget 基础
 1. StatelessWidget - 无状态 widget
-- lib/widget/basic/statelessWidget.dart
+- lib/widget/basic/stateless_widget.dart
 2. StatefulWidget - 有状态 widget
-- lib/widget/basic/statefulWidget.dart
+- lib/widget/basic/stateful_widget.dart
 3. constraint - 约束
 - lib/widget/basic/constraint.dart
 4. 焦点
@@ -49,7 +49,7 @@
 5. 三棵树
 - lib/widget/basic/tree.dart
 6. 状态管理
-- lib/widget/basic/changeNotifier.dart
+- lib/widget/basic/change_notifier.dart
 
 ### widget 布局类（可以有多个子）
 1. Row - 水平弹性布局
@@ -73,13 +73,13 @@
 3. Padding - 内边距
 - lib/widget/container/padding.dart
 4. ConstrainedBox - 约束范围
-- lib/widget/container/constrainedBox.dart
+- lib/widget/container/constrained_box.dart
 5. SizedBox - 确定宽高
-- lib/widget/container/sizedBox.dart
+- lib/widget/container/sized_box.dart
 6. UnconstrainedBox - 无约束
-- lib/widget/container/unconstrainedBox.dart
+- lib/widget/container/unconstrained_box.dart
 7. DecoratedBox - 装饰（用于绘制背景，边框，渐变，阴影，矩形或圆形等效果）
-- lib/widget/container/decoratedBox.dart
+- lib/widget/container/decorated_box.dart
 8. Container - 综合容器（综合了各种效果的容器）
 - lib/widget/container/container.dart
 9. Opacity - 不透明度
@@ -91,17 +91,17 @@
 2. 字体
 - lib/widget/text/font.dart
 3. TextField - 文本输入框
-- lib/widget/text/textField.dart
+- lib/widget/text/text_field.dart
 
 ### widget 按钮类
 1. TextButton - 文本按钮
-- lib/widget/button/textButton.dart
+- lib/widget/button/text_button.dart
 2. OutlinedButton - 自带边框按钮
-- lib/widget/button/outlinedButton.dart
+- lib/widget/button/outlined_button.dart
 3. ElevatedButton - 自带背景色按钮
-- lib/widget/button/elevatedButton.dart
+- lib/widget/button/elevated_button.dart
 4. IconButton - 图标按钮
-- lib/widget/button/iconButton.dart
+- lib/widget/button/icon_button.dart
 
 ### widget 媒体类
 1. Image - 图片
@@ -113,33 +113,33 @@
 1. Scaffold - 脚手架
 - lib/widget/structure/scaffold.dart
 2. Scaffold 的 AppBar - 顶部导航栏
-- lib/widget/structure/scaffold_appBar.dart
+- lib/widget/structure/scaffold_app_bar.dart
 3. Scaffold 的 BottomNavigationBar - 底部导航栏
-- lib/widget/structure/scaffold_bottomNavigationBar.dart
+- lib/widget/structure/scaffold_bottom_navigation_bar.dart
 4. Scaffold 的 Drawer - 侧滑菜单（左侧抽屉/右侧抽屉）
 - lib/widget/structure/scaffold_drawer.dart
 5. Scaffold 的 FloatingActionButton - 悬浮按钮
-- lib/widget/structure/scaffold_floatingActionButton.dart
+- lib/widget/structure/scaffold_floating_action_button.dart
 6. Scaffold 的 TabBar - 选项卡（基础）
-- lib/widget/structure/scaffold_tabBar.dart
+- lib/widget/structure/scaffold_tab_bar.dart
 7. Scaffold 的 TabBar - 选项卡（自定义 TabController，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态）
-- lib/widget/structure/scaffold_tabBar2.dart
+- lib/widget/structure/scaffold_tab_bar2.dart
 8. MaterialApp
-- lib/widget/structure/materialApp.dart
+- lib/widget/structure/material_app.dart
 
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
 - lib/widget/builder/builder.dart
 2. StatefulBuilder - 有状态的 Builder
-- lib/widget/builder/statefulBuilder.dart
+- lib/widget/builder/stateful_builder.dart
 3. LayoutBuilder - 可以拿到父亲的尺寸的 Builder
-- lib/widget/builder/layoutBuilder.dart
+- lib/widget/builder/layout_builder.dart
 
 ### UI
 1. 状态栏
-- lib/ui/statusBar.dart
+- lib/ui/status_bar.dart
 2. android 底部导航栏
-- lib/ui/navigationBar.dart
+- lib/ui/navigation_bar.dart
 3. 主题
 - lib/ui/theme.dart
 
