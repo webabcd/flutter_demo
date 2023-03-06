@@ -73,6 +73,10 @@ import 'widget/structure/scaffold_floating_action_button.dart';
 import 'widget/structure/scaffold_tab_bar.dart';
 import 'widget/structure/scaffold_tab_bar2.dart';
 
+import 'widget/flyout/alert_dialog.dart';
+import 'widget/flyout/simple_dialog.dart';
+import 'widget/flyout/snack_bar.dart';
+
 import 'widget/builder/builder.dart';
 import 'widget/builder/stateful_builder.dart';
 import 'widget/builder/layout_builder.dart';
@@ -159,6 +163,9 @@ class MyApp extends StatelessWidget {
         "lib.widget.structure.scaffold_tab_bar.dart":(context) => const ScaffoldTabBarDemo(),
         "lib.widget.structure.scaffold_tab_bar2.dart":(context) => const ScaffoldTabBarDemo2(),
         "lib.widget.structure.material_app.dart":(context) => const MaterialAppDemo(),
+        "lib.widget.flyout.alert_dialog.dart":(context) => const AlertDialogDemo(),
+        "lib.widget.flyout.simple_dialog.dart":(context) => const SimpleDialogDemo(),
+        "lib.widget.flyout.snack_bar.dart":(context) => const SnackBarDemo(),
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
         "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),

@@ -127,6 +127,14 @@
 8. MaterialApp
 - lib/widget/structure/material_app.dart
 
+### widget 弹出类
+1. AlertDialog - 弹出框（包括标题，内容，多个按钮）
+- lib/widget/flyout/alert_dialog.dart
+2. SimpleDialog - 弹出框（包括标题，多个选项）
+- lib/widget/flyout/simple_dialog.dart
+2. SnackBar - 底部弹出条
+- lib/widget/flyout/snack_bar.dart
+
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
 - lib/widget/builder/builder.dart
