@@ -77,6 +77,7 @@ import 'widget/flyout/alert_dialog.dart';
 import 'widget/flyout/simple_dialog.dart';
 import 'widget/flyout/snack_bar.dart';
 import 'widget/flyout/material_banner.dart';
+import 'widget/flyout/popup_menu_button.dart';
 
 import 'widget/builder/builder.dart';
 import 'widget/builder/stateful_builder.dart';
@@ -168,6 +169,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.flyout.simple_dialog.dart":(context) => const SimpleDialogDemo(),
         "lib.widget.flyout.snack_bar.dart":(context) => const SnackBarDemo(),
         "lib.widget.flyout.material_banner.dart":(context) => const MaterialBannerDemo(),
+        "lib.widget.flyout.popup_menu_button.dart":(context) => const PopupMenuButtonDemo(),
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
         "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),

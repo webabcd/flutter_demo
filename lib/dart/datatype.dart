@@ -205,7 +205,7 @@ c''';
     b = "b";                            // 可以修改 dynamic 声明的变量的数据类型
     var bLength = b.length;             // 因为在编译时确定具体类型，所以这样写是正确的（如果你调用了具体类型不存在的属性或方法，则在运行时报错）
 
-    log("$a, $aLength, $b, $bLength");
+    log("$a, $aLength, $b, $bLength");  // a, 1, b, 1
   }
 
   void sample7() {
