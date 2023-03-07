@@ -125,6 +125,18 @@
 7. Scaffold 的 TabBar - 选项卡（自定义 TabController，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态）
 - lib/widget/structure/scaffold_tab_bar2.dart
 
+### widget 弹出类
+1. AlertDialog - 弹出框（包括标题，内容，多个按钮）
+- lib/widget/flyout/alert_dialog.dart
+2. SimpleDialog - 弹出框（包括标题，多个选项）
+- lib/widget/flyout/simple_dialog.dart
+3. SnackBar - 底部弹出条
+- lib/widget/flyout/snack_bar.dart
+4. MaterialBanner - 顶部弹出条
+- lib/widget/flyout/material_banner.dart
+5. PopupMenuButton - 弹出菜单按钮
+- lib/widget/flyout/popup_menu_button.dart
+
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
 - lib/widget/builder/builder.dart
