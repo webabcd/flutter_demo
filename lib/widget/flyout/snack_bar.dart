@@ -59,6 +59,8 @@ class _MyStatelessWidget extends StatelessWidget {
             action: SnackBarAction(                             ///   弹出条上显示的按钮
               label: 'action',                                  ///     按钮文字
               onPressed: () {                                   ///     按钮被点击时触发的事件
+                /// 隐藏当前的底部弹出条
+                ScaffoldMessenger.of(context).hideCurrentSnackBar();
                 log("SnackBarAction pressed");
               },
             ),

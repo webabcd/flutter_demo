@@ -132,8 +132,10 @@
 - lib/widget/flyout/alert_dialog.dart
 2. SimpleDialog - 弹出框（包括标题，多个选项）
 - lib/widget/flyout/simple_dialog.dart
-2. SnackBar - 底部弹出条
+3. SnackBar - 底部弹出条
 - lib/widget/flyout/snack_bar.dart
+4. MaterialBanner - 顶部弹出条
+- lib/widget/flyout/material_banner.dart
 
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
