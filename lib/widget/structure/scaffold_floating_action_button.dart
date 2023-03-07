@@ -57,7 +57,7 @@ class _ScaffoldFloatingActionButtonDemoState extends State<ScaffoldFloatingActio
         builder: (BuildContext context) {
           return FloatingActionButton(
             child: const Text('show'),      /// 按钮上显示的内容
-            tooltip: "tooltip",             /// 长按提示
+            tooltip: "tooltip",             /// 长按提示或鼠标悬浮提示
             foregroundColor: Colors.white,  /// 前景色
             backgroundColor: Colors.orange, /// 背景色
             splashColor: Colors.blue,       /// 点击效果的颜色

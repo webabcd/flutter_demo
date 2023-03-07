@@ -52,7 +52,7 @@ class _ScaffoldBottomNavigationBarDemoState extends State<ScaffoldBottomNavigati
           BottomNavigationBarItem(              /// BottomNavigationBar 的 item
             label: 'home',                      ///   文字
             icon: Icon(Icons.home),             ///   图标
-            tooltip: "tooltip",                 ///   长按提示
+            tooltip: "tooltip",                 ///   长按提示或鼠标悬浮提示
             backgroundColor: Colors.red,        ///   item 被选中且 type 为 BottomNavigationBarType.shifting 时的背景色
             activeIcon: Icon(Icons.done),       ///   item 被选中且 type 为 BottomNavigationBarType.shifting 时的图标
           ),
