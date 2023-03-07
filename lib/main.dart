@@ -82,6 +82,8 @@ import 'widget/flyout/popup_menu_button.dart';
 import 'widget/builder/builder.dart';
 import 'widget/builder/stateful_builder.dart';
 import 'widget/builder/layout_builder.dart';
+import 'widget/builder/future_builder.dart';
+import 'widget/builder/stream_builder.dart';
 
 import 'ui/status_bar.dart';
 import 'ui/navigation_bar.dart';
@@ -173,6 +175,8 @@ class MyApp extends StatelessWidget {
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
         "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),
+        "lib.widget.builder.future_builder.dart":(context) => const FutureBuilderDemo(),
+        "lib.widget.builder.stream_builder.dart":(context) => const StreamBuilderDemo(),
         "lib.ui.status_bar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigation_bar.dart":(context) => const NavigationBarDemo(),
         "lib.ui.theme.dart":(context) => const ThemeDemo(),

@@ -101,7 +101,7 @@ class BorderDemo extends StatelessWidget {
           ),
         ),
         MyBox(
-          /// OutlineInputBorder - 用于输入框的边框（参见：lib/widget/text/textField.dart）
+          /// OutlineInputBorder - 用于输入框的边框（参见：lib/widget/text/text_field.dart）
           ///   borderSide - 边框的大小和颜色，一个 BorderSide 对象
           ///   borderRadius - 边框的半径，一个 BorderRadius 对象
           shape: OutlineInputBorder(
@@ -110,7 +110,7 @@ class BorderDemo extends StatelessWidget {
           ),
         ),
         const MyBox(
-          /// UnderlineInputBorder - 用于输入框的下划线（参见：lib/widget/text/textField.dart）
+          /// UnderlineInputBorder - 用于输入框的下划线（参见：lib/widget/text/text_field.dart）
           ///   borderSide - 边框的大小和颜色，一个 BorderSide 对象
           shape: UnderlineInputBorder(
             borderSide: BorderSide(width: 5, color: Colors.green),

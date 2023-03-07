@@ -19,11 +19,11 @@ class DartAsync extends StatelessWidget {
     // 通过 async/await Future<T> 实现异步编程，等待与不等待，异常处理，超时处理
     sample1();
     // 演示 Stream<T> 的用法
-    //sample2();
+    sample2();
     // 演示 StreamSubscription 的用法，以及如何取消 Future
-    //sample3();
+    sample3();
     // 演示 Completer 的用法
-    //sample4();
+    sample4();
 
     return const MyWidget(text: "dart_async");
   }
@@ -152,7 +152,7 @@ class DartAsync extends StatelessWidget {
   Stream<int> myStream(int to) async* {
     for (int i = 1; i <= to; i++) {
       await Future.delayed(const Duration(seconds: 1));
-      log("sample2: ----------");
+      log("sample2: ---------- $i");
       yield i;
     }
   }

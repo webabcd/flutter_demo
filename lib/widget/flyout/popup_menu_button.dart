@@ -44,13 +44,13 @@ class _PopupMenuButtonDemoState extends State<PopupMenuButtonDemo> {
       onOpened: () {                              /// 菜单被打开时触发的事件
         log("onOpened");
       },
-      onSelected: (dynamic object) {              /// 菜单选项被点击时触发的事件（此处的 dynamic 参数就是定义 PopupMenuItem 时的 value 值）
-        if (object is String) {
-          log("onSelected: " + object);
-        } else if (object is List) {
-          log("onSelected: " + object.join(","));
-        } else if (object is Map) {
-          log("onSelected: " + object["v"]);
+      onSelected: (dynamic d) {                   /// 菜单选项被点击时触发的事件（此处的 dynamic 参数就是定义 PopupMenuItem 时的 value 值）
+        if (d is String) {
+          log("onSelected: " + d);
+        } else if (d is List) {
+          log("onSelected: " + d.join(","));
+        } else if (d is Map) {
+          log("onSelected: " + d["v"]);
         }
       },
       onCanceled: () {                            /// 点击空白区域隐藏菜单后触发的事件

@@ -202,10 +202,12 @@ c''';
 
     // dynamic 是动态类型，在运行时才能知道具体类型
     dynamic b = 123;
+    var c = b.runtimeType;              // b 的数据类型是 int
     b = "b";                            // 可以修改 dynamic 声明的变量的数据类型
+    var d = b.runtimeType;              // b 的数据类型是 String
     var bLength = b.length;             // 因为在编译时确定具体类型，所以这样写是正确的（如果你调用了具体类型不存在的属性或方法，则在运行时报错）
 
-    log("$a, $aLength, $b, $bLength");  // a, 1, b, 1
+    log("$a, $aLength, $b, $bLength, $c, $d");  // a, 1, b, 1, int, String
   }
 
   void sample7() {
