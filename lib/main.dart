@@ -100,6 +100,12 @@ import 'shape/transform.dart';
 import 'shape/shadow.dart';
 import 'shape/paint.dart';
 
+import 'animation/animation.dart';
+import 'animation/curved_animation.dart';
+import 'animation/tween.dart';
+import 'animation/tween2.dart';
+import 'animation/transition.dart';
+
 import 'network/http.dart';
 
 // main 是
@@ -193,6 +199,11 @@ class MyApp extends StatelessWidget {
         "lib.shape.transform.dart":(context) => const TransformDemo(),
         "lib.shape.shadow.dart":(context) => const ShadowDemo(),
         "lib.shape.paint.dart":(context) => const PaintDemo(),
+        "lib.animation.animation.dart":(context) => const AnimationDemo(),
+        "lib.animation.curved_animation.dart":(context) => const CurvedAnimationDemo(),
+        "lib.animation.tween.dart":(context) => const TweenDemo(),
+        "lib.animation.tween2.dart":(context) => const Tween2Demo(),
+        "lib.animation.transition.dart":(context) => const TransitionDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
       },
     );

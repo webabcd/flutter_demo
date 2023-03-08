@@ -181,6 +181,18 @@
 6. Paint
 - lib/shape/paint.dart
 
+### 动画
+1. Animation - 动画基础（以直线型动画为例）
+- lib/animation/animation.dart
+2. CurvedAnimation - 曲线型动画（缓动动画）
+- lib/animation/curved_animation.dart
+3. Tween - 补间动画（直线型动画）
+- lib/animation/tween.dart
+4. Tween - 补间动画（曲线型动画）
+- lib/animation/tween2.dart
+5. Transition - 支持直接关联 Animation<T> 并自动重绘的 Widget（FadeTransition, SizeTransition, SlideTransition 等）
+- lib/animation/transition.dart
+
 ### 网络
 1. http 库以及 json 和对象间的转换
 - lib/network/http.dart

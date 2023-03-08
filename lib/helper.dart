@@ -47,6 +47,18 @@ class MyText extends Text {
   );
 }
 
+class MyTextSmall extends Text {
+  const MyTextSmall(String data, {Key? key}) : super(
+    data,
+    key: key,
+    style: const TextStyle(
+        fontSize: 14.0,
+        color: Colors.white,
+        decoration: TextDecoration.none
+    ),
+  );
+}
+
 class MyButton extends TextButton {
   MyButton({
     Key? key,
