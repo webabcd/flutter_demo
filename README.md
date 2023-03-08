@@ -137,6 +137,14 @@
 5. PopupMenuButton - 弹出菜单按钮
 - lib/widget/flyout/popup_menu_button.dart
 
+### widget 选择类
+1. Radio - 单选框
+- lib/widget/selection/radio.dart
+2. Checkbox - 复选框
+- lib/widget/selection/checkbox.dart
+3. DropdownButton - 下拉框
+- lib/widget/selection/dropdown_button.dart
+
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
 - lib/widget/builder/builder.dart
@@ -144,6 +152,10 @@
 - lib/widget/builder/stateful_builder.dart
 3. LayoutBuilder - 可以拿到父亲的尺寸的 Builder
 - lib/widget/builder/layout_builder.dart
+4. FutureBuilder - 跟踪 Future 的变化并构造 Widget
+- lib/widget/builder/future_builder.dart
+5. StreamBuilder - 跟踪 Stream 的变化并构造 Widget
+- lib/widget/builder/stream_builder.dart
 
 ### UI
 1. 状态栏
