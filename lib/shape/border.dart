@@ -15,7 +15,7 @@
  *
  * 注：
  * BorderSide - 用于定义边框的大小和颜色
- * BorderRadius - 用于定义边框的半径
+ * BorderRadius - 用于定义边框圆角的半径
  */
 
 import 'package:flutter/material.dart';
@@ -31,7 +31,7 @@ class BorderDemo extends StatelessWidget {
         const MyBox(
           /// BeveledRectangleBorder - 边可倾斜的矩形框
           ///   side - 边框的大小和颜色，一个 BorderSide 对象
-          ///   borderRadius - 边框的半径，一个 BorderRadius 对象
+          ///   borderRadius - 边框圆角的半径，一个 BorderRadius 对象
           shape: BeveledRectangleBorder(
             /// style - 边框样式
             ///   BorderStyle.solid - 有边框
@@ -77,7 +77,7 @@ class BorderDemo extends StatelessWidget {
         MyBox(
           /// RoundedRectangleBorder - 圆角矩形边框
           ///   side - 边框的大小和颜色，一个 BorderSide 对象
-          ///   borderRadius - 边框的半径，一个 BorderRadius 对象
+          ///   borderRadius - 边框圆角的半径，一个 BorderRadius 对象
           shape: RoundedRectangleBorder(
             side: const BorderSide(width: 5, color: Colors.green),
             borderRadius: BorderRadius.circular(5)
@@ -86,7 +86,7 @@ class BorderDemo extends StatelessWidget {
         MyBox(
           /// ContinuousRectangleBorder - 圆角矩形边框
           ///   side - 边框的大小和颜色，一个 BorderSide 对象
-          ///   borderRadius - 边框的半径，一个 BorderRadius 对象
+          ///   borderRadius - 边框圆角的半径，一个 BorderRadius 对象
           /// 注：ContinuousRectangleBorder 的边框一半在主图形内一半在主图形外，其他类型的边框均是在主图形内
           shape: ContinuousRectangleBorder(
             side: const BorderSide(width: 5, color: Colors.green),
@@ -103,7 +103,7 @@ class BorderDemo extends StatelessWidget {
         MyBox(
           /// OutlineInputBorder - 用于输入框的边框（参见：lib/widget/text/text_field.dart）
           ///   borderSide - 边框的大小和颜色，一个 BorderSide 对象
-          ///   borderRadius - 边框的半径，一个 BorderRadius 对象
+          ///   borderRadius - 边框圆角的半径，一个 BorderRadius 对象
           shape: OutlineInputBorder(
             borderSide: const BorderSide(width: 5, color: Colors.green),
             borderRadius: BorderRadius.circular(6),

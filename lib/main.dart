@@ -79,6 +79,10 @@ import 'widget/flyout/snack_bar.dart';
 import 'widget/flyout/material_banner.dart';
 import 'widget/flyout/popup_menu_button.dart';
 
+import 'widget/selection/radio.dart';
+import 'widget/selection/checkbox.dart';
+import 'widget/selection/dropdown_button.dart';
+
 import 'widget/builder/builder.dart';
 import 'widget/builder/stateful_builder.dart';
 import 'widget/builder/layout_builder.dart';
@@ -172,6 +176,9 @@ class MyApp extends StatelessWidget {
         "lib.widget.flyout.snack_bar.dart":(context) => const SnackBarDemo(),
         "lib.widget.flyout.material_banner.dart":(context) => const MaterialBannerDemo(),
         "lib.widget.flyout.popup_menu_button.dart":(context) => const PopupMenuButtonDemo(),
+        "lib.widget.selection.radio.dart":(context) => const RadioDemo(),
+        "lib.widget.selection.checkbox.dart":(context) => const CheckboxDemo(),
+        "lib.widget.selection.dropdown_button.dart":(context) => const DropdownButtonDemo(),
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
         "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),
