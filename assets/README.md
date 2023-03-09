@@ -190,7 +190,9 @@
 - lib/animation/tween.dart
 4. Tween - 补间动画（曲线型动画）
 - lib/animation/tween2.dart
-5. Transition - 支持直接关联 Animation<T> 并自动重绘的 Widget（FadeTransition, SizeTransition, SlideTransition 等）
+5. 自定义 Tween - ColorTween, CurveTween, SizeTween, RectTween, AlignmentTween, BorderTween, BoxConstraintsTween, DecorationTween, EdgeInsetsTween, TextStyleTween 等
+- lib/animation/tween3.dart
+6. Transition - 支持直接关联 Animation<T> 并自动重绘的 Widget（FadeTransition, SizeTransition, SlideTransition 等）
 - lib/animation/transition.dart
 
 ### 网络

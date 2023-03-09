@@ -2,7 +2,7 @@
  * Tween - 补间动画（直线型动画）
  *
  * Tween<T> 继承自 Animatable<T>
- *   用于在指定的范围对 T 做动画，这个 T 就是你需要动画的类型，可以是 double, Size, Offset, Color 等
+ *   用于在指定的范围对 T 做动画，这个 T 就是你需要动画的类型，可以是 double, Offset 等
  *   通过 animate(Animation<double>) 将指定的 Animation<double> 对象转换为需要的 Animation<T> 对象
  *     比如：
  *     Animation<double> 为 0.0 时 Tween<T> 决定这个 T 是什么值

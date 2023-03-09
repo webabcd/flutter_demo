@@ -104,6 +104,7 @@ import 'animation/animation.dart';
 import 'animation/curved_animation.dart';
 import 'animation/tween.dart';
 import 'animation/tween2.dart';
+import 'animation/tween3.dart';
 import 'animation/transition.dart';
 
 import 'network/http.dart';
@@ -203,6 +204,7 @@ class MyApp extends StatelessWidget {
         "lib.animation.curved_animation.dart":(context) => const CurvedAnimationDemo(),
         "lib.animation.tween.dart":(context) => const TweenDemo(),
         "lib.animation.tween2.dart":(context) => const Tween2Demo(),
+        "lib.animation.tween3.dart":(context) => const Tween3Demo(),
         "lib.animation.transition.dart":(context) => const TransitionDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
       },
