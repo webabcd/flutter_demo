@@ -34,6 +34,7 @@ import 'widget/basic/constraint.dart';
 import 'widget/basic/focus.dart';
 import 'widget/basic/tree.dart';
 import 'widget/basic/change_notifier.dart';
+import 'widget/basic/value_notifier.dart';
 
 import 'widget/layout/row.dart';
 import 'widget/layout/column.dart';
@@ -106,6 +107,7 @@ import 'animation/tween.dart';
 import 'animation/tween2.dart';
 import 'animation/tween3.dart';
 import 'animation/transition.dart';
+import 'animation/animated_widget.dart';
 
 import 'network/http.dart';
 
@@ -146,6 +148,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.basic.focus.dart":(context) => const FocusDemo(),
         "lib.widget.basic.tree.dart":(context) => const TreeDemo(),
         "lib.widget.basic.change_notifier.dart":(context) => const ChangeNotifierDemo(),
+        "lib.widget.basic.value_notifier.dart":(context) => const ValueNotifierDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
         "lib.widget.layout.flex.dart":(context) => const FlexDemo(),
@@ -206,6 +209,7 @@ class MyApp extends StatelessWidget {
         "lib.animation.tween2.dart":(context) => const Tween2Demo(),
         "lib.animation.tween3.dart":(context) => const Tween3Demo(),
         "lib.animation.transition.dart":(context) => const TransitionDemo(),
+        "lib.animation.animated_widget.dart":(context) => const AnimatedWidgetDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
       },
     );

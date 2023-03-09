@@ -1,5 +1,6 @@
 /*
- * 状态管理
+ * 状态管理 - ChangeNotifier
+ * ChangeNotifier 继承自 Listenable（可监听对象）
  *
  * flutter 的所谓的声明式 UI，可以将其理解为一个公式 UI = f(state)
  * 其中 f 是构建方法，state 是状态，如果要更新 UI 的话，实际上就是修改状态，然后通过你的构建方法重绘 UI
@@ -92,7 +93,8 @@ class _MyApp extends StatelessWidget {
   }
 }
 
-// 提供变化通知的 ChangeNotifier 对象
+/// 提供变化通知的 ChangeNotifier 对象
+/// ChangeNotifier 继承自 Listenable（可监听对象）
 class _MyModel extends ChangeNotifier {
 
   final List<String> _items = [];
