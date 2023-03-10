@@ -5,6 +5,7 @@
  *
  * Hero - 指的是上面所说的，可以在不同页切换的时候做无缝动画过渡的对象
  *   tag - 这个是 Hero 的标识，用于将不同页的不同 Hero 实例标记为相关对象
+ *   createRectTween - 用于定义 Hero 的起点到终点之间的动画效果
  */
 
 import 'package:flutter/material.dart';
@@ -101,6 +102,11 @@ class MyImage extends StatelessWidget {
       width: imageWidth,
       child: Hero(
         tag: imageUrl,
+        createRectTween: (begin, end) {
+          /// begin 和 end 分别是 Hero 动画的起点和终点的 rect
+          /// 下面这个就是 Hero 的 RectTween 的默认实现（如果需要使用自己的动画效果，可以通过继承 Tween<Rect?> 实现自己的逻辑）
+          return MaterialRectCenterArcTween(begin: begin, end: end);
+        },
         child: Image.asset(imageUrl, fit: BoxFit.contain,),
       ),
     );
