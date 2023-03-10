@@ -48,10 +48,6 @@
 - lib/widget/basic/focus.dart
 5. 三棵树
 - lib/widget/basic/tree.dart
-6. 状态管理 - ChangeNotifier
-- lib/widget/basic/change_notifier.dart
-7. 状态管理 - ValueNotifier
-- lib/widget/basic/value_notifier.dart
 
 ### widget 布局类（可以有多个子）
 1. Row - 水平弹性布局
@@ -160,6 +156,14 @@
 - lib/widget/builder/future_builder.dart
 5. StreamBuilder - 跟踪 Stream 的变化并构造 Widget
 - lib/widget/builder/stream_builder.dart
+
+### widget 状态管理
+1. 状态管理 - ChangeNotifier（可用于多 Widget 之间的状态管理）
+- lib/state/change_notifier.dart
+2. 状态管理 - ValueNotifier（可用于多 Widget 之间的状态管理）
+- lib/state/value_notifier.dart
+3. 状态管理 - InheritedWidget（可用于多 Widget 之间的状态管理）
+- lib/state/inherited_widget.dart
 
 ### UI
 1. 状态栏

@@ -1,5 +1,5 @@
 /*
- * 状态管理 - ValueNotifier
+ * 状态管理 - ValueNotifier（可用于多 Widget 之间的状态管理）
  * ValueNotifier<T> 继承自 ChangeNotifier，ChangeNotifier 继承自 Listenable（可监听对象）
  * ValueNotifier<T> 实现了 ValueListenable<T> 接口
  *

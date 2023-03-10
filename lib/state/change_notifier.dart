@@ -1,5 +1,5 @@
 /*
- * 状态管理 - ChangeNotifier
+ * 状态管理 - ChangeNotifier（可用于多 Widget 之间的状态管理）
  * ChangeNotifier 继承自 Listenable（可监听对象）
  *
  * flutter 的所谓的声明式 UI，可以将其理解为一个公式 UI = f(state)

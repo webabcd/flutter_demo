@@ -33,8 +33,6 @@ import 'widget/basic/stateful_widget.dart';
 import 'widget/basic/constraint.dart';
 import 'widget/basic/focus.dart';
 import 'widget/basic/tree.dart';
-import 'widget/basic/change_notifier.dart';
-import 'widget/basic/value_notifier.dart';
 
 import 'widget/layout/row.dart';
 import 'widget/layout/column.dart';
@@ -89,6 +87,10 @@ import 'widget/builder/stateful_builder.dart';
 import 'widget/builder/layout_builder.dart';
 import 'widget/builder/future_builder.dart';
 import 'widget/builder/stream_builder.dart';
+
+import 'state/change_notifier.dart';
+import 'state/value_notifier.dart';
+import 'state/inherited_widget.dart';
 
 import 'ui/status_bar.dart';
 import 'ui/navigation_bar.dart';
@@ -147,8 +149,6 @@ class MyApp extends StatelessWidget {
         "lib.widget.basic.constraint.dart":(context) => const ConstraintDemo(),
         "lib.widget.basic.focus.dart":(context) => const FocusDemo(),
         "lib.widget.basic.tree.dart":(context) => const TreeDemo(),
-        "lib.widget.basic.change_notifier.dart":(context) => const ChangeNotifierDemo(),
-        "lib.widget.basic.value_notifier.dart":(context) => const ValueNotifierDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
         "lib.widget.layout.flex.dart":(context) => const FlexDemo(),
@@ -194,6 +194,9 @@ class MyApp extends StatelessWidget {
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),
         "lib.widget.builder.future_builder.dart":(context) => const FutureBuilderDemo(),
         "lib.widget.builder.stream_builder.dart":(context) => const StreamBuilderDemo(),
+        "lib.state.change_notifier.dart":(context) => const ChangeNotifierDemo(),
+        "lib.state.value_notifier.dart":(context) => const ValueNotifierDemo(),
+        "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
         "lib.ui.status_bar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigation_bar.dart":(context) => const NavigationBarDemo(),
         "lib.ui.theme.dart":(context) => const ThemeDemo(),
