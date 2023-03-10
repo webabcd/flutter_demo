@@ -48,8 +48,6 @@
 - lib/widget/basic/focus.dart
 5. 三棵树
 - lib/widget/basic/tree.dart
-6. 状态管理
-- lib/widget/basic/change_notifier.dart
 
 ### widget 布局类（可以有多个子）
 1. Row - 水平弹性布局
@@ -157,6 +155,14 @@
 5. StreamBuilder - 跟踪 Stream 的变化并构造 Widget
 - lib/widget/builder/stream_builder.dart
 
+### widget 状态管理
+1. 状态管理 - ChangeNotifier（可用于多 Widget 之间的状态管理）
+- lib/state/change_notifier.dart
+2. 状态管理 - ValueNotifier（可用于多 Widget 之间的状态管理）
+- lib/state/value_notifier.dart
+3. 状态管理 - InheritedWidget（可用于多 Widget 之间的状态管理）
+- lib/state/inherited_widget.dart
+
 ### UI
 1. 状态栏
 - lib/ui/status_bar.dart
@@ -176,6 +182,22 @@
 - lib/shape/transform.dart
 5. 阴影
 - lib/shape/shadow.dart
+
+### 动画
+1. Animation - 动画基础（以直线型动画为例）
+- lib/animation/animation.dart
+2. CurvedAnimation - 曲线型动画（缓动动画）
+- lib/animation/curved_animation.dart
+3. Tween - 补间动画（直线型动画）
+- lib/animation/tween.dart
+4. Tween - 补间动画（曲线型动画）
+- lib/animation/tween2.dart
+5. 自定义 Tween - ColorTween, CurveTween, SizeTween, RectTween, AlignmentTween, BorderTween, BoxConstraintsTween, DecorationTween, EdgeInsetsTween, TextStyleTween, IntTween 等
+- lib/animation/tween3.dart
+6. Transition - 支持直接关联 Animation<T> 并自动重绘的 Widget（FadeTransition, SizeTransition, SlideTransition, AlignTransition, DecoratedBoxTransition, DefaultTextStyleTransition, PositionedTransition, RotationTransition, ScaleTransition 等）
+- lib/animation/transition.dart
+7. AnimatedWidget - 用于实现自定义的 Transition
+- lib/animation/animated_widget.dart
 
 ### 网络
 1. http 库以及 json 和对象间的转换
