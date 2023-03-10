@@ -4,7 +4,9 @@
  * 在经典的动画实现中，我们需要监听 Animation<T> 的更新，然后手动触发 Widget 重绘，然后用 Animation<T> 中的 T 的值更新 Widget 中对应的内容
  * 自定义 AnimatedWidget 可以直接关联 Animation<T> 并自动重绘，也就是说不用去 addListener() 和 setState() 了
  *
- * 关于原生实现的一些自定义 AnimatedWidget 请参见 transition.dart
+ * 注：
+ * 1、关于原生实现的一些自定义 AnimatedWidget 请参见 transition.dart
+ * 2、可通过 AnimatedBuilder 简化 AnimatedWidget 动画（不用单独写继承 AnimatedWidget 的类了），参见 animated_builder.dart
  */
 
 import 'package:flutter/material.dart';

@@ -198,10 +198,14 @@
 - lib/animation/tween2.dart
 5. 自定义 Tween - ColorTween, CurveTween, SizeTween, RectTween, AlignmentTween, BorderTween, BoxConstraintsTween, DecorationTween, EdgeInsetsTween, TextStyleTween, IntTween 等
 - lib/animation/tween3.dart
-6. Transition - 支持直接关联 Animation<T> 并自动重绘的 Widget（FadeTransition, SizeTransition, SlideTransition, AlignTransition, DecoratedBoxTransition, DefaultTextStyleTransition, PositionedTransition, RotationTransition, ScaleTransition 等）
+6. XxxTransition - 支持直接关联 Animation<T> 并自动重绘的 Widget（FadeTransition, SizeTransition, SlideTransition, AlignTransition, DecoratedBoxTransition, DefaultTextStyleTransition, PositionedTransition, RotationTransition, ScaleTransition 等）
 - lib/animation/transition.dart
 7. AnimatedWidget - 用于实现自定义的 Transition
 - lib/animation/animated_widget.dart
+8. AnimatedBuilder - 用于简化 AnimatedWidget 动画
+- lib/animation/animated_builder.dart
+9. AnimatedXxx - 极简动画 Widget（AnimatedContainer, AnimatedDefaultTextStyle, AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedRotation，AnimatedScale， AnimatedSize， AnimatedSlide 等）
+- lib/animation/animated.dart
 
 ### 网络
 1. http 库以及 json 和对象间的转换

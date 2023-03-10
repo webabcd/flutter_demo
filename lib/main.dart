@@ -110,6 +110,8 @@ import 'animation/tween2.dart';
 import 'animation/tween3.dart';
 import 'animation/transition.dart';
 import 'animation/animated_widget.dart';
+import 'animation/animated_builder.dart';
+import 'animation/animated.dart';
 
 import 'network/http.dart';
 
@@ -213,6 +215,8 @@ class MyApp extends StatelessWidget {
         "lib.animation.tween3.dart":(context) => const Tween3Demo(),
         "lib.animation.transition.dart":(context) => const TransitionDemo(),
         "lib.animation.animated_widget.dart":(context) => const AnimatedWidgetDemo(),
+        "lib.animation.animated_builder.dart":(context) => const AnimatedBuilderDemo(),
+        "lib.animation.animated.dart":(context) => const AnimatedDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
       },
     );

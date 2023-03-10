@@ -1,5 +1,5 @@
 /*
- * Transition - 支持直接关联 Animation<T> 并自动重绘的 Widget（FadeTransition, SizeTransition, SlideTransition, AlignTransition, DecoratedBoxTransition, DefaultTextStyleTransition, PositionedTransition, RotationTransition, ScaleTransition 等）
+ * XxxTransition - 支持直接关联 Animation<T> 并自动重绘的 Widget（FadeTransition, SizeTransition, SlideTransition, AlignTransition, DecoratedBoxTransition, DefaultTextStyleTransition, PositionedTransition, RotationTransition, ScaleTransition 等）
  *
  * 在经典的动画实现中，我们需要监听 Animation<T> 的更新，然后手动触发 Widget 重绘，然后用 Animation<T> 中的 T 的值更新 Widget 中对应的内容
  * 本例介绍的这些 Widget 可以直接关联 Animation<T> 并自动重绘，也就是说不用去 addListener() 和 setState() 了
