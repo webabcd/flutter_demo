@@ -2,6 +2,7 @@
  * AnimatedXxx - 极简动画 Widget（AnimatedContainer, AnimatedDefaultTextStyle, AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedRotation，AnimatedScale， AnimatedSize， AnimatedSlide 等）
  *
  * 通过 AnimatedXxx 系列 Widget 可以非常简单的实现动画，不需要自己写管理 Animation<T> 的代码
+ * AnimatedXxx 继承自 ImplicitlyAnimatedWidget（隐式动画）
  *
  * 本例以 AnimatedContainer 为例，其他的使用方式都是差不多的
  */
@@ -16,7 +17,7 @@ class AnimatedDemo extends StatefulWidget {
   _AnimatedDemoState createState() => _AnimatedDemoState();
 }
 
-class _AnimatedDemoState extends State<AnimatedDemo> with SingleTickerProviderStateMixin {
+class _AnimatedDemoState extends State<AnimatedDemo> {
 
   bool _selected = false;
 

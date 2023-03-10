@@ -112,6 +112,8 @@ import 'animation/transition.dart';
 import 'animation/animated_widget.dart';
 import 'animation/animated_builder.dart';
 import 'animation/animated.dart';
+import 'animation/hero.dart';
+import 'animation/stagger.dart';
 
 import 'network/http.dart';
 
@@ -217,6 +219,8 @@ class MyApp extends StatelessWidget {
         "lib.animation.animated_widget.dart":(context) => const AnimatedWidgetDemo(),
         "lib.animation.animated_builder.dart":(context) => const AnimatedBuilderDemo(),
         "lib.animation.animated.dart":(context) => const AnimatedDemo(),
+        "lib.animation.hero.dart":(context) => const HeroDemo(),
+        "lib.animation.stagger.dart":(context) => const StaggerDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
       },
     );

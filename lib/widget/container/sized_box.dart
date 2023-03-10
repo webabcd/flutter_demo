@@ -9,17 +9,31 @@ class SizedBoxDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SizedBox(
-        width: 200,
-        height: 100,
-        /// 结果 Container 的宽为 200，高为 100
-        child: Container(
-          width: 1,
-          height: 1,
-          color: Colors.red,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        SizedBox(
+          width: 200,
+          height: 100,
+          /// SizedBox 设置了宽和高，则其子元素的宽和高会强制与 SizedBox 的宽和高相同
+          /// 结果 Container 的宽为 200，高为 100
+          child: Container(
+            width: 1,
+            height: 1,
+            color: Colors.red,
+          ),
         ),
-      ),
+        SizedBox(
+          width: 200,
+          /// SizedBox 如果没设置宽或高，则其子元素自行确定宽或高
+          /// 结果 Container 的宽为 200，高为 30
+          child: Container(
+            width: 1,
+            height: 30,
+            color: Colors.green,
+          ),
+        ),
+      ],
     );
   }
 }

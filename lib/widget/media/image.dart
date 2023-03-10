@@ -82,28 +82,33 @@ class _ImageDemoState extends State<ImageDemo> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            /// Image.asset() - 显示 assets 中的图片，也可以用类似这种方式 Image(image: AssetImage("assets/son.jpg"))
-            Image.asset("assets/son.jpg",
-              width: 100,                   /// 宽
-              height: 50,                   /// 高
-              color: Colors.red,            /// 颜色
-              colorBlendMode: _blendMode,   /// 颜色与图片的混合模式（好多种，可以运行本例看不同模式的效果）
-              fit: _boxFit,                 /// 拉伸方式
-                                            ///   BoxFit.fill = 拉伸到目标大小
-                                            ///   BoxFit.contain = 等比拉伸到目标大小，不剪裁，可能有黑边
-                                            ///   BoxFit.cover = 等比拉伸到目标大小，并剪裁，不会有黑边
-                                            ///   BoxFit.fitWidth = 等比拉伸，并保证宽度与目标宽度相同，需要则剪裁
-                                            ///   BoxFit.fitHeight = 等比拉伸，并保证高度与目标高度相同，需要则剪裁
-                                            ///   BoxFit.none = 与 BoxFit.cover 的逻辑相同
-                                            ///   BoxFit.scaleDown = 与 BoxFit.contain 的逻辑相同
-              repeat: _imageRepeat,         /// 拉伸方式为 BoxFit.contain 时，黑边的填充方式
-                                            ///   ImageRepeat.repeat = 在 x 方向和 y 方向均重复图像，直到填满黑边为止
-                                            ///   ImageRepeat.repeatX = 在 x 方向重复图像，直到填满 x 方向的黑边为止
-                                            ///   ImageRepeat.repeatY = 在 y 方向重复图像，直到填满 y 方向的黑边为止
-                                            ///   ImageRepeat.noRepeat = 不重复图像
-              alignment: Alignment.center,  /// 图片的对齐方式，此值用于影响 fit 逻辑和 repeat 逻辑
-                                            ///   比如此值为 center，则 fit 时需要剪裁则会剪裁四周，有黑边则在四周，repeat 会填充四周
-                                            ///   比如此值为 topLeft，则 fit 时需要剪裁则会剪裁右下部分，有黑边则在右下部分，repeat 会填充右下部分
+            Container(
+              color: Colors.orange,
+              width: 100,
+              height: 50,
+              /// Image.asset() - 显示 assets 中的图片，也可以用类似这种方式 Image(image: AssetImage("assets/son.jpg"))
+              child: Image.asset("assets/son.jpg",
+                width: 100,                   /// 宽
+                height: 50,                   /// 高
+                color: Colors.red,            /// 颜色
+                colorBlendMode: _blendMode,   /// 颜色与图片的混合模式（好多种，可以运行本例看不同模式的效果）
+                fit: _boxFit,                 /// 拉伸方式
+                                              ///   BoxFit.fill = 拉伸到目标大小
+                                              ///   BoxFit.contain = 等比拉伸到目标大小，不剪裁，可能有黑边（本例所谓的黑边只是一个形容，实际要看父的颜色，可能是透明的，也可能是其他颜色）
+                                              ///   BoxFit.cover = 等比拉伸到目标大小，并剪裁，不会有黑边
+                                              ///   BoxFit.fitWidth = 等比拉伸，并保证宽度与目标宽度相同，需要则剪裁
+                                              ///   BoxFit.fitHeight = 等比拉伸，并保证高度与目标高度相同，需要则剪裁
+                                              ///   BoxFit.none = 与 BoxFit.cover 的逻辑相同
+                                              ///   BoxFit.scaleDown = 与 BoxFit.contain 的逻辑相同
+                repeat: _imageRepeat,         /// 拉伸方式为 BoxFit.contain 时，黑边的填充方式
+                                              ///   ImageRepeat.repeat = 在 x 方向和 y 方向均重复图像，直到填满黑边为止
+                                              ///   ImageRepeat.repeatX = 在 x 方向重复图像，直到填满 x 方向的黑边为止
+                                              ///   ImageRepeat.repeatY = 在 y 方向重复图像，直到填满 y 方向的黑边为止
+                                              ///   ImageRepeat.noRepeat = 不重复图像
+                alignment: Alignment.center,  /// 图片的对齐方式，此值用于影响 fit 逻辑和 repeat 逻辑
+                                              ///   比如此值为 center，则 fit 时需要剪裁则会剪裁四周，有黑边则在四周，repeat 会填充四周
+                                              ///   比如此值为 topLeft，则 fit 时需要剪裁则会剪裁右下部分，有黑边则在右下部分，repeat 会填充右下部分
+              ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

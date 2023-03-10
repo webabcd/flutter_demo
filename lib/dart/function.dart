@@ -165,6 +165,8 @@ class DartFunction extends StatelessWidget {
       return "$str1, $str2";
     }, (_) { // 回调函数中的参数如果你用不到，建议用 _ 代替
       log("callback4 返回数据了");
+    }, () {
+      log("callback5 返回数据了");
     });
     a.start();
   }
@@ -183,8 +185,10 @@ class _MyClass {
   String Function(String str1, String str2) callback3;
   // 类型别名的应用
   MyCallback callback4;
+  // 无参数无返回值的函数，这是个原生的类型别名 typedef VoidCallback = void Function();
+  VoidCallback callback5;
 
-  _MyClass(this.callback1, this.callback2, this.callback3, this.callback4);
+  _MyClass(this.callback1, this.callback2, this.callback3, this.callback4, this.callback5);
 
   void start() {
     Future.delayed(const Duration(seconds: 1), () {
@@ -193,6 +197,7 @@ class _MyClass {
       var result = callback3("i am callback3", "webabcd");
       log("result: $result");
       callback4("i am callback4");
+      callback5();
     });
   }
 }

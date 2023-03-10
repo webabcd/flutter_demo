@@ -35,6 +35,16 @@ class ContainerDemo extends StatelessWidget {
           alignment: Alignment.center,
           child: MyText("webabcd"),
         ),
+        /// Container 的宽高逻辑和 SizedBox 的逻辑是一样的，下面会显示一个 200 * 50 的绿色矩形
+        Container(
+          width: 200, height: 50, color: Colors.red,
+          child: Container(color: Colors.green, width: 1, height: 1,),
+        ),
+        /// Container 的宽高逻辑和 SizedBox 的逻辑是一样的，下面会显示一个 200 * 30 的绿色矩形
+        Container(
+          width: 200, color: Colors.red,
+          child: Container(color: Colors.green, width: 1, height: 30,),
+        ),
         /// 演示 Container 的内边距
         Container(
           width: 200,
