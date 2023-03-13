@@ -91,7 +91,8 @@ class _AnimationDemoState extends State<AnimationDemo> with SingleTickerProvider
                   child: const Text('forward'),
                   onPressed: () {
                     /// 启动正向动画（动画的时长就是 AnimationController 中的 duration 的值）
-                    _controller.forward();
+                    /// 注：forward(), reverse(), repeat() 返回的是一个 TickerFuture 对象
+                    var tickerFuture = _controller.forward();
                   },
                 ),
                 ElevatedButton(
