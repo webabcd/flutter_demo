@@ -14,13 +14,13 @@ import 'package:flutter_demo/helper.dart';
 import 'package:flutter_demo/route/route2.dart';
 import 'package:flutter_demo/route/route3.dart';
 
-class RouteBasicDemo extends StatelessWidget {
-  const RouteBasicDemo({super.key});
+class NavigatorDemo extends StatelessWidget {
+  const NavigatorDemo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const RouteBasic(title: '主页'),
+      home: const MyNavigatorDemo(title: '主页'),
 
       /// 命名路由就是给路由起一个名字，然后通过这个名字打开对应的路由
       /// 要想使用命名路由，就先要注册路由表（注册后则可以通过 Navigator 的 pushNamed() 导航到指定的页面）
@@ -44,16 +44,16 @@ class RouteBasicDemo extends StatelessWidget {
   }
 }
 
-class RouteBasic extends StatefulWidget {
-  const RouteBasic({Key? key, required this.title}) : super(key: key);
+class MyNavigatorDemo extends StatefulWidget {
+  const MyNavigatorDemo({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _RouteBasicState createState() => _RouteBasicState();
+  _MyNavigatorDemoState createState() => _MyNavigatorDemoState();
 }
 
-class _RouteBasicState extends State<RouteBasic> {
+class _MyNavigatorDemoState extends State<MyNavigatorDemo> {
 
   @override
   Widget build(BuildContext context) {

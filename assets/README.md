@@ -167,7 +167,7 @@
 
 ### 路由和导航
 1. 路由和导航的基础
-- lib/route/route_basic.dart
+- lib/route/navigator.dart
 2. WillPopScope - 出栈拦截
 - lib/route/will_pop_scope.dart
 

@@ -92,7 +92,7 @@ import 'state/change_notifier.dart';
 import 'state/value_notifier.dart';
 import 'state/inherited_widget.dart';
 
-import 'route/route_basic.dart';
+import 'route/navigator.dart';
 import 'route/will_pop_scope.dart';
 
 import 'ui/status_bar.dart';
@@ -204,7 +204,7 @@ class MyApp extends StatelessWidget {
         "lib.state.change_notifier.dart":(context) => const ChangeNotifierDemo(),
         "lib.state.value_notifier.dart":(context) => const ValueNotifierDemo(),
         "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
-        "lib.route.route_basic.dart":(context) => const RouteBasicDemo(),
+        "lib.route.navigator.dart":(context) => const NavigatorDemo(),
         "lib.route.will_pop_scope.dart":(context) => const WillPopScopeDemo(),
         "lib.ui.status_bar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigation_bar.dart":(context) => const NavigationBarDemo(),
