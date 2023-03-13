@@ -208,7 +208,7 @@
 - lib/animation/animated.dart
 10. Hero - 一个对象从一个页飞入另一个页的动画
 - lib/animation/hero.dart
-11. Stagger
+11. Stagger - 复合动画，即一个 AnimationController 控制多个动画
 - lib/animation/stagger.dart
 
 ### 网络

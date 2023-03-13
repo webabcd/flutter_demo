@@ -33,7 +33,7 @@ class _CurvedAnimationDemoState extends State<CurvedAnimationDemo> with SingleTi
 
     /// 实例化 CurvedAnimation（曲线型动画）
     ///   parent - 关联的 Animation<double> 对象，这个 Animation<double> 的 double 的范围必须在 0.0 到 1.0 之间
-    ///   curve - 缓动类型
+    ///   curve - 缓动类型（如果需要直线型动画就用 Curves.linear 即可）
     _curvedAnimation = CurvedAnimation(parent: _controller, curve: Curves.bounceInOut);
   }
 
