@@ -30,7 +30,8 @@ class DartAsync extends StatelessWidget {
 
   // 如需在函数体内使用 await 则需要在函数体之前加上 async
   // 标记为 async 的函数会自动异步执行
-  // async 函数有返回值则返回的是 Future<T>（可以省略 async）；没有返回值则返回的是 Future<void>（可以省略 async），也可以简写为 void（不可以省略 async）
+  // async 函数有返回值则返回的类型是 Future<T>（可以省略 async）
+  // async 函数没有返回值则返回的类型是 Future<void>（可以省略 async），也可以简写为 void（不可以省略 async）
   void sample1() async {
 
     // await 就是让它异步执行，然后等着它执行完
@@ -98,6 +99,7 @@ class DartAsync extends StatelessWidget {
     // 等待 2 秒
     await Future.delayed(const Duration(seconds: 2));
     // 返回数据，假设返回值类型为 T 则在函数体之前加上 async 的话，会自动返回 Future<T> 类型的数据
+    // 也就是说下面这句等同于 return Future.value("sample1: aaa");
     return "sample1: aaa";
 
     // 也可以使用 Future.then() 返回 Future<T> 类型的数据，下面这句等同于上面两句

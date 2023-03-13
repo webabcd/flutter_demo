@@ -163,6 +163,12 @@
 3. 状态管理 - InheritedWidget（可用于多 Widget 之间的状态管理）
 - lib/state/inherited_widget.dart
 
+### 路由和导航
+1. 路由和导航的基础
+- lib/route/route_basic.dart
+2. WillPopScope - 出栈拦截
+- lib/route/will_pop_scope.dart
+
 ### UI
 1. 状态栏
 - lib/ui/status_bar.dart
@@ -202,6 +208,10 @@
 - lib/animation/animated_builder.dart
 9. AnimatedXxx - 极简动画 Widget（AnimatedContainer, AnimatedDefaultTextStyle, AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedRotation，AnimatedScale， AnimatedSize， AnimatedSlide 等）
 - lib/animation/animated.dart
+10. Hero - 一个对象从一个页飞入另一个页的动画
+- lib/animation/hero.dart
+11. Stagger - 复合动画，即一个 AnimationController 控制多个动画
+- lib/animation/stagger.dart
 
 ### 网络
 1. http 库以及 json 和对象间的转换

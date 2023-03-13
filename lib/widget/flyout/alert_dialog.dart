@@ -26,7 +26,7 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
         children: [
           ElevatedButton(
             onPressed: () async {
-              /// 显示弹出框，并获取弹出框的返回值
+              /// 显示弹出框，并获取弹出框的返回值（如果因点击空白区域而隐藏了弹出框，则返回值为 null）
               var result = await _showDialog(context);
               setState(() {
                 _result = 'result: $result';
@@ -42,6 +42,7 @@ class _AlertDialogDemoState extends State<AlertDialogDemo> {
 
   Future<String?> _showDialog(BuildContext context) {
     /// showDialog<T> 显示弹出框，其中的 T 是弹出框的返回结果的类型
+    /// 注：showDialog<T> 返回的是 Future<T?>，这里的 ? 是因为如果点击空白区域而隐藏弹出框的话，则返回的是 null
     return showDialog<String>(
       context: context,
       barrierColor: Colors.red,                           /// 显示弹出框后，弹出框和主界面之间的遮罩层的颜色
