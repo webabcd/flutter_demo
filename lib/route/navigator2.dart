@@ -1,5 +1,7 @@
 /*
  * 路由和导航的进阶
+ *
+ * 主要请看 routeC.dart 中的说明
  */
 
 import 'package:flutter/material.dart';
