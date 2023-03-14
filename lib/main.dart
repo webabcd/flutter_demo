@@ -93,6 +93,7 @@ import 'state/value_notifier.dart';
 import 'state/inherited_widget.dart';
 
 import 'route/navigator.dart';
+import 'route/navigator2.dart';
 import 'route/will_pop_scope.dart';
 
 import 'ui/status_bar.dart';
@@ -120,7 +121,6 @@ import 'animation/stagger.dart';
 
 import 'network/http.dart';
 
-// main 是
 void main() {
   runApp(const MyApp());
 }
@@ -205,6 +205,7 @@ class MyApp extends StatelessWidget {
         "lib.state.value_notifier.dart":(context) => const ValueNotifierDemo(),
         "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
         "lib.route.navigator.dart":(context) => const NavigatorDemo(),
+        "lib.route.navigator2.dart":(context) => const Navigator2Demo(),
         "lib.route.will_pop_scope.dart":(context) => const WillPopScopeDemo(),
         "lib.ui.status_bar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigation_bar.dart":(context) => const NavigationBarDemo(),

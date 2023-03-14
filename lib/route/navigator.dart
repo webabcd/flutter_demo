@@ -6,6 +6,7 @@
  *
  * Navigator - 通过路由栈管理路由集合，其提供了很多方法来管理路由栈，比如可以使用 push 或 pop 做入栈或出栈
  * MaterialPageRoute - 用于定义路由的与导航相关的行为，以及路由之间切换时的动画等
+ * MaterialApp - 需要在 MaterialApp 内做路由管理，一个程序只有一个顶级 MaterialApp（可以嵌套），所有路由都在其内管理
  */
 
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class NavigatorDemo extends StatelessWidget {
       /// 命名路由就是给路由起一个名字，然后通过这个名字打开对应的路由
       /// 要想使用命名路由，就先要注册路由表（注册后则可以通过 Navigator 的 pushNamed() 导航到指定的页面）
       /// 给路由起名的时候，有个规范，就是 / 代表主页，主页下的某页命名为 /xxx，多级页面的话命名为 /xxx/yyy/zzz
+      /// 一个 MaterialApp 中注册的路由表，在这个 MaterialApp 内的所有路由均可使用
       routes:{
         "/route3":(context) => const Route3Demo(),
       },
@@ -67,6 +69,7 @@ class _MyNavigatorDemoState extends State<MyNavigatorDemo> {
           MyButton(
             onPressed: () {
               /// 通过 Navigator 和 MaterialPageRoute 导航到指定的页面
+              /// 可以 Navigator.push(context, ...) 也可以 Navigator.of(context).push(...)
               Navigator.push(context, MaterialPageRoute(
                   builder: (context) => const Route1Demo()),
               );

@@ -165,8 +165,10 @@
 
 ### 路由和导航
 1. 路由和导航的基础
-- lib/route/route_basic.dart
-2. WillPopScope - 出栈拦截
+- lib/route/navigator.dart
+2. 路由和导航的进阶
+- lib/route/navigator2.dart
+3. WillPopScope - 出栈拦截
 - lib/route/will_pop_scope.dart
 
 ### UI
