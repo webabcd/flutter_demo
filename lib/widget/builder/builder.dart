@@ -17,7 +17,7 @@ class _BuilderDemoState extends State<BuilderDemo> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           /// 这里通过 Scaffold.of(context) 是拿不到 Scaffold 对象的
           /// 因为这个 context 是在 Scaffold 之上定义的，也就是说有 context 的时候还没有 Scaffold，所以通过这个 context 是拿不到 Scaffold 的
@@ -39,8 +39,29 @@ class _BuilderDemoState extends State<BuilderDemo> {
               },
             ),
           ),
+
+          Theme(
+            data: ThemeData(
+              colorScheme:Theme.of(context).colorScheme.copyWith(background: Colors.orange),
+            ),
+            /// 如果不想用 Builder 的话，那么写个自定义 Widget 也是可以的（通过自定义 Widget 的 build 方法的 context 获取当前上下文）
+            child: const _MyContainer(),
+          ),
         ],
       )
+    );
+  }
+}
+
+class _MyContainer extends StatelessWidget {
+  const _MyContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      color: Theme.of(context).colorScheme.background,
+      child: Text("hasAppBar: ${Scaffold.of(context).hasAppBar}"),
     );
   }
 }

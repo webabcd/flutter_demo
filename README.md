@@ -168,7 +168,11 @@
 - lib/route/navigator.dart
 2. 路由和导航的进阶
 - lib/route/navigator2.dart
-3. WillPopScope - 出栈拦截
+3. PageRouteBuilder - 路由跳转动画
+- lib/route/page_route_builder.dart
+4. PageRouteBuilder - 路由跳转动画（让 pushNamed() 实现转场动画）
+- lib/route/page_route_builder2.dart
+5. WillPopScope - 出栈拦截
 - lib/route/will_pop_scope.dart
 
 ### UI

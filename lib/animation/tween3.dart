@@ -29,7 +29,8 @@ class _Tween3DemoState extends State<Tween3Demo> with SingleTickerProviderStateM
     _controller = AnimationController(vsync: this, duration: const Duration(seconds: 3),);
 
     /// 通过 ColorTween 实现在指定的颜色之间做动画
-    _animation = ColorTween(begin: Colors.red, end: Colors.green).animate(_controller)
+    /// 注：通过 .chain(CurveTween) 可以为动画关联一个缓动类型
+    _animation = ColorTween(begin: Colors.red, end: Colors.green).chain(CurveTween(curve: Curves.bounceInOut)).animate(_controller)
       ..addListener(() {
         log("value: ${_animation.value}");
         setState(() {

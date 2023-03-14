@@ -39,6 +39,10 @@ class _Tween2DemoState extends State<Tween2Demo> with SingleTickerProviderStateM
 
         });
       });
+
+    /// 注：tween.animate(animation) 和 animation.drive(tween) 是一样，比如下面两句的结果是一样的
+    // _animation = Tween<double>(begin: 100, end: 300).animate(curvedAnimation);
+    // _animation = curvedAnimation.drive(Tween<double>(begin: 100, end: 300));
   }
 
   @override

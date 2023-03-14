@@ -94,6 +94,8 @@ import 'state/inherited_widget.dart';
 
 import 'route/navigator.dart';
 import 'route/navigator2.dart';
+import 'route/page_route_builder.dart';
+import 'route/page_route_builder2.dart';
 import 'route/will_pop_scope.dart';
 
 import 'ui/status_bar.dart';
@@ -206,6 +208,8 @@ class MyApp extends StatelessWidget {
         "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
         "lib.route.navigator.dart":(context) => const NavigatorDemo(),
         "lib.route.navigator2.dart":(context) => const Navigator2Demo(),
+        "lib.route.page_route_builder.dart":(context) => const PageRouteBuilderDemo(),
+        "lib.route.page_route_builder2.dart":(context) => const PageRouteBuilder2Demo(),
         "lib.route.will_pop_scope.dart":(context) => const WillPopScopeDemo(),
         "lib.ui.status_bar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigation_bar.dart":(context) => const NavigationBarDemo(),
