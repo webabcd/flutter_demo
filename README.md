@@ -163,6 +163,14 @@
 3. 状态管理 - InheritedWidget（可用于多 Widget 之间的状态管理）
 - lib/state/inherited_widget.dart
 
+### 输入
+1. Listener - 指针
+- lib/input/listener.dart
+2. GestureDetector - 手势
+- lib/input/gesture_detector.dart
+3. RawKeyboardListener - 按键
+- lib/input/raw_keyboard_listener.dart
+
 ### 路由和导航
 1. 路由和导航的基础
 - lib/route/navigator.dart

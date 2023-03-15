@@ -92,6 +92,10 @@ import 'state/change_notifier.dart';
 import 'state/value_notifier.dart';
 import 'state/inherited_widget.dart';
 
+import 'input/listener.dart';
+import 'input/gesture_detector.dart';
+import 'input/raw_keyboard_listener.dart';
+
 import 'route/navigator.dart';
 import 'route/navigator2.dart';
 import 'route/page_route_builder.dart';
@@ -206,6 +210,9 @@ class MyApp extends StatelessWidget {
         "lib.state.change_notifier.dart":(context) => const ChangeNotifierDemo(),
         "lib.state.value_notifier.dart":(context) => const ValueNotifierDemo(),
         "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
+        "lib.input.listener.dart":(context) => const ListenerDemo(),
+        "lib.input.gesture_detector.dart":(context) => const GestureDetectorDemo(),
+        "lib.input.raw_keyboard_listener.dart":(context) => const RawKeyboardListenerDemo(),
         "lib.route.navigator.dart":(context) => const NavigatorDemo(),
         "lib.route.navigator2.dart":(context) => const Navigator2Demo(),
         "lib.route.page_route_builder.dart":(context) => const PageRouteBuilderDemo(),

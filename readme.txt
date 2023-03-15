@@ -12,6 +12,10 @@
     2. 直接通过 ctrl + f5 运行，这个是自动 hot reload 的
   注：如果运行报错，比如 Target of URI doesn't exist 'package:xxx'，则在终端窗口运行一下 flutter pub get 即可
 5、启动 web 的命令为 flutter run -d chrome
+6、在已有的 flutter 项目中追加 windows, macos, linux 的支持需要先执行 flutter create --platforms=windows,macos,linux .
+  如果出现 "..." is not a valid Dart package name. 错误，是因为项目的根目录的目录名有大写字母，都改成小写就好了
+7、启动 windows 的命令为 flutter run -d windows
+  如果出现 Unable to find suitable Visual Studio toolchain. 错误，则需要在安装 visual studio 的时候勾选“使用 C++ 的桌面开发”
 
 
 提示：
