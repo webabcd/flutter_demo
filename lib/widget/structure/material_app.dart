@@ -14,7 +14,7 @@
  *
  *
  * 注：
- * 关于 MaterialApp 的主题请参见 lib/ui/theme.dart
+ * 关于 MaterialApp 的主题请参见 lib/ui/theme.dart, lib/ui/theme2.dart
  * 关于 MaterialApp 的路由请参见 lib/route/
  * 关于 MaterialApp 的国际化请参见 lib/localization/
  */

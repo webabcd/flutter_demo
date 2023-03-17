@@ -27,6 +27,7 @@ class ContainerDemo extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
+
         /// 演示 Container 的宽，高，颜色，子相对于 Container 的对齐方式
         Container(
           width: 200,
@@ -35,6 +36,20 @@ class ContainerDemo extends StatelessWidget {
           alignment: Alignment.center,
           child: MyText("webabcd"),
         ),
+
+        /// 观察下面 2 个 Container 的效果，当不指定 Container 的宽的时候
+        /// 1、如果没指定 alignment 则 Container 的宽与子一样
+        /// 2、如果指定了 alignment 则 Container 的宽会尽量大
+        Container(
+          color: Colors.red,
+          child: MyText("webabcd"),
+        ),
+        Container(
+          alignment: Alignment.center,
+          color: Colors.red,
+          child: MyText("webabcd"),
+        ),
+
         /// Container 的宽高逻辑和 SizedBox 的逻辑是一样的，下面会显示一个 200 * 50 的绿色矩形
         Container(
           width: 200, height: 50, color: Colors.red,
@@ -45,6 +60,7 @@ class ContainerDemo extends StatelessWidget {
           width: 200, color: Colors.red,
           child: Container(color: Colors.green, width: 1, height: 30,),
         ),
+
         /// 演示 Container 的内边距
         Container(
           width: 200,
@@ -65,6 +81,7 @@ class ContainerDemo extends StatelessWidget {
             margin: EdgeInsets.all(10),
           ),
         ),
+
         /// 演示 Container 的范围约束
         Container(
           color: Colors.red,
@@ -81,6 +98,7 @@ class ContainerDemo extends StatelessWidget {
             color: Colors.green,
           ),
         ),
+
         /// 演示 Container 的在 child 的后面定义装饰
         Container(
           width: 180,
@@ -101,6 +119,7 @@ class ContainerDemo extends StatelessWidget {
           ),
           child: MyText("webabcd"),
         ),
+
         /// 演示 Container 的变换
         Container(
           width: 200,

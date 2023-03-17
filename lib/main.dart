@@ -9,10 +9,9 @@
  * 2、UI 的声明式编程：描述你需要的 UI 即可（构造 Widget 实例），需要修改时就重新描述 UI（构造新的 Widget 实例）
  */
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:convert';
+import 'helper.dart';
 
 import 'dart/summary.dart';
 import 'dart/datatype.dart';
@@ -106,6 +105,7 @@ import 'route/will_pop_scope.dart';
 import 'ui/status_bar.dart';
 import 'ui/navigation_bar.dart';
 import 'ui/theme.dart';
+import 'ui/theme2.dart';
 
 import 'shape/border.dart';
 import 'shape/clip.dart';
@@ -141,8 +141,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: Theme.of(context).copyWith(
+        primaryColor: Colors.blue,
       ),
       home: const MyHomePage(title: 'Flutter Demo'),
       routes:{
@@ -224,6 +224,7 @@ class MyApp extends StatelessWidget {
         "lib.ui.status_bar.dart":(context) => const StatusBarDemo(),
         "lib.ui.navigation_bar.dart":(context) => const NavigationBarDemo(),
         "lib.ui.theme.dart":(context) => const ThemeDemo(),
+        "lib.ui.theme2.dart":(context) => const Theme2Demo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),
         "lib.shape.gradient.dart":(context) => const GradientDemo(),
@@ -271,9 +272,11 @@ class _MyHomePageState extends State<MyHomePage> {
         n = Node(line.substring(4).trim(), "", <Node>[]);
         _siteMap!.add(n);
       } else if (n != null && line.contains(". ")) {
-        n.node.add(Node(line.trim(),
+        n.node.add(Node(
+            line.trim(),
             list[++i].substring(list[i].indexOf("-") + 2).trim().replaceAll("/", "."),
-            <Node>[]));
+            <Node>[]
+        ));
       }
     }
   }
@@ -285,8 +288,14 @@ class _MyHomePageState extends State<MyHomePage> {
       future: _loadSiteMap(),
       builder: (context, snapshot) {
         if (snapshot.connectionState != ConnectionState.done) {
-          return const Text("loading");
+          return Container(
+            color: Colors.orange,
+            child: const Center(
+              child: MyText("loading"),
+            ),
+          );
         }
+
         return Scaffold(
           appBar: AppBar(
             title: Text(widget.title),
@@ -297,49 +306,35 @@ class _MyHomePageState extends State<MyHomePage> {
                 initiallyExpanded: false,
                 title: Text(
                   _siteMap![index].title,
-                  style: const TextStyle(
-
-                  ),
                 ),
-                collapsedBackgroundColor: Colors.yellow,
-                backgroundColor: Colors.orange,
+                collapsedBackgroundColor: Colors.yellow[200],
+                backgroundColor: Colors.green[200],
                 collapsedTextColor: Colors.black,
-                textColor: Colors.white,
+                textColor: Colors.black,
                 collapsedIconColor: Colors.black,
-                iconColor: Colors.white,
+                iconColor: Colors.black,
                 children: _siteMap![index].node.map((e) =>
-                  Column(
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                              child: GestureDetector(
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 10, right: 10, top: 3, bottom: 3),
-                                  child: Text(
-                                    e.title,
-                                    textAlign: TextAlign.left,
-                                    style: const TextStyle(
-                                      fontSize: 16,
-                                      color: Colors.white,
-                                      backgroundColor: Colors.transparent,
-                                    ),
-                                  ),
-                                ),
-                                onTap: () {
-                                  Navigator.pushNamed(context, e.url);
-                                },
-                              )
-                          )
-                        ],
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      color: Colors.orange,
+                      child: GestureDetector(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
+                          child: Text(
+                            e.title,
+                            textAlign: TextAlign.left,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              backgroundColor: Colors.transparent,
+                            ),
+                          ),
+                        ),
+                        onTap: () {
+                          Navigator.pushNamed(context, e.url);
+                        },
                       ),
-                      const Divider(
-                        height: 5,
-                        color: Colors.blue,
-                      ),
-                    ],
-                  ),
+                    ),
                 ).toList(),
               );
             },

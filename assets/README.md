@@ -199,8 +199,10 @@
 - lib/ui/status_bar.dart
 2. android 底部导航栏
 - lib/ui/navigation_bar.dart
-3. 主题
+3. 主题基础
 - lib/ui/theme.dart
+4. 主题（Material Design 3 规范，亮色主题，暗色主题）
+- lib/ui/theme2.dart
 
 ### 图形
 1. 边框
