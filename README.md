@@ -122,6 +122,8 @@
 - lib/widget/structure/scaffold_tab_bar.dart
 7. Scaffold 的 TabBar - 选项卡（自定义 TabController，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态）
 - lib/widget/structure/scaffold_tab_bar2.dart
+8. MaterialApp - 符合 Material Design 的根组件
+- lib/widget/structure/material_app.dart
 
 ### widget 弹出类
 1. AlertDialog - 弹出框（包括标题，内容，多个按钮）
@@ -156,12 +158,14 @@
 - lib/widget/builder/stream_builder.dart
 
 ### widget 状态管理
-1. 状态管理 - ChangeNotifier（可用于多 Widget 之间的状态管理）
+1. 状态管理 - ChangeNotifier（多 Widget 之间的多数据的状态管理）
 - lib/state/change_notifier.dart
-2. 状态管理 - ValueNotifier（可用于多 Widget 之间的状态管理）
+2. 状态管理 - ValueNotifier（多 Widget 之间的单值的状态管理）
 - lib/state/value_notifier.dart
-3. 状态管理 - InheritedWidget（可用于多 Widget 之间的状态管理）
+3. 状态管理 - InheritedWidget（在树上，父共享数据后，任意子可获取此数据）
 - lib/state/inherited_widget.dart
+4. 状态管理 - 在树上，子获取父的数据
+- lib/state/find_ancestor.dart
 
 ### 输入
 1. Listener - 指针
@@ -174,8 +178,15 @@
 ### 路由和导航
 1. 路由和导航的基础
 - lib/route/navigator.dart
+- lib/route/route1.dart
+- lib/route/route2.dart
+- lib/route/route3.dart
 2. 路由和导航的进阶
 - lib/route/navigator2.dart
+- lib/route/route_a.dart
+- lib/route/route_b.dart
+- lib/route/route_c.dart
+- lib/route/route_d.dart
 3. PageRouteBuilder - 路由跳转动画
 - lib/route/page_route_builder.dart
 4. PageRouteBuilder - 路由跳转动画（让 pushNamed() 实现转场动画）
@@ -226,6 +237,10 @@
 - lib/animation/hero.dart
 11. Stagger - 复合动画，即一个 AnimationController 控制多个动画
 - lib/animation/stagger.dart
+
+### 国际化
+1. Localization - 国际化
+- lib/localization/localization.dart
 
 ### 网络
 1. http 库以及 json 和对象间的转换

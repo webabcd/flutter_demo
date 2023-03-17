@@ -19,8 +19,25 @@ class Navigator2Demo extends StatelessWidget {
     /// 这里的 MaterialApp 是 main.dart 中的 MaterialApp 的子
     return MaterialApp(
       home: null,
+
       /// 当 home 设置为 null 时，首次加载会自动导航至 initialRoute 指定的路由
       initialRoute: '/',
+
+      /// 当 home 设置为 null 时，可以通过如下方式，在首次加载的时候 push 多个路由
+      /// 下面的运行结果为：首次加载时会显示 RouteBDemo，对 RouteBDemo 做 pop 后会显示 RouteADemo
+      /*
+      onGenerateInitialRoutes: (settings) {
+        return [
+          MaterialPageRoute(builder: (context){
+            return const RouteADemo();
+          }),
+          MaterialPageRoute(builder: (context){
+            return const RouteBDemo();
+          }),
+        ];
+      },
+      */
+
       /// 一个 MaterialApp 中注册的路由表，在这个 MaterialApp 内的所有路由均可使用
       routes:{
         "/":(context) => const MyNavigator2Demo(title: '主页'),

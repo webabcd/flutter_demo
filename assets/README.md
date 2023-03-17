@@ -122,7 +122,7 @@
 - lib/widget/structure/scaffold_tab_bar.dart
 7. Scaffold 的 TabBar - 选项卡（自定义 TabController，通过程序切换选项卡，以及如何保持每个 Tab 对应的内容的状态）
 - lib/widget/structure/scaffold_tab_bar2.dart
-8. MaterialApp
+8. MaterialApp - 符合 Material Design 的根组件
 - lib/widget/structure/material_app.dart
 
 ### widget 弹出类

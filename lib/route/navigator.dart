@@ -42,6 +42,11 @@ class NavigatorDemo extends StatelessWidget {
           },
         );
       },
+
+      /// 先走 onGenerateRoute，如果在 onGenerateRoute 中 return null 了， 则会走到这里
+      onUnknownRoute: (settings) {
+        return null;
+      }
     );
   }
 }
