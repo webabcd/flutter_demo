@@ -7,7 +7,7 @@ class RouteDDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('route D'),
+        title: const Text('route d'),
       ),
       body:null,
     );

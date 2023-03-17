@@ -9,16 +9,16 @@ class RouteADemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('route A'),
+        title: const Text('route a'),
       ),
       body: Wrap(
         spacing: 10,
         children: [
           MyButton(
             onPressed: () {
-              Navigator.of(context).pushNamed('/routeB');
+              Navigator.of(context).pushNamed('/route_b');
             },
-            child: const Text('导航到 route B'),
+            child: const Text('导航到 route b'),
           ),
         ],
       ),

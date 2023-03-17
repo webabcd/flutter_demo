@@ -9,7 +9,7 @@ class RouteCDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('route C'),
+        title: const Text('route c'),
       ),
       body: Wrap(
         spacing: 10,
@@ -24,16 +24,16 @@ class RouteCDemo extends StatelessWidget {
           MyButton(
             onPressed: () {
               /// pushReplacementNamed - 用指定的路由替换当前栈顶的路由（效果和 popAndPushNamed 差不多）
-              Navigator.of(context).pushReplacementNamed('/routeD');
+              Navigator.of(context).pushReplacementNamed('/route_d');
             },
-            child: const Text('导航到 route D（pushReplacementNamed）'),
+            child: const Text('导航到 route d（pushReplacementNamed）'),
           ),
           MyButton(
             onPressed: () {
               /// popAndPushNamed - 将当前栈顶的路由 pop 掉，然后 push 指定的路由（效果和 pushReplacementNamed 差不多）
-              Navigator.of(context).popAndPushNamed('/routeD');
+              Navigator.of(context).popAndPushNamed('/route_d');
             },
-            child: const Text('导航到 route D（popAndPushNamed）'),
+            child: const Text('导航到 route d（popAndPushNamed）'),
           ),
           MyButton(
             onPressed: () {
@@ -44,8 +44,9 @@ class RouteCDemo extends StatelessWidget {
           ),
           MyButton(
             onPressed: () {
-              /// 在路由堆栈中做 pop 直到显示指定的路由，然后 push 指定的路由
-              Navigator.of(context).pushNamedAndRemoveUntil('/routeD', ModalRoute.withName('/routeA')); /// 导航至 routeD，其下的路由是 routeA
+              /// push 到指定的路由，并在其下做 pop 直到指定的路由
+              /// 导航至 route_d，然后 route_d 下面的路由做 pop 直到 route_a，也就是说路由栈中 route_d 的下面是 route_a
+              Navigator.of(context).pushNamedAndRemoveUntil('/route_d', ModalRoute.withName('/route_a'));
             },
             child: const Text('在路由堆栈中做 pop 直到显示指定的路由，然后 push 指定的路由'),
           ),
