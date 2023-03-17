@@ -158,12 +158,14 @@
 - lib/widget/builder/stream_builder.dart
 
 ### widget 状态管理
-1. 状态管理 - ChangeNotifier（可用于多 Widget 之间的状态管理）
+1. 状态管理 - ChangeNotifier（多 Widget 之间的多数据的状态管理）
 - lib/state/change_notifier.dart
-2. 状态管理 - ValueNotifier（可用于多 Widget 之间的状态管理）
+2. 状态管理 - ValueNotifier（多 Widget 之间的单值的状态管理）
 - lib/state/value_notifier.dart
-3. 状态管理 - InheritedWidget（可用于多 Widget 之间的状态管理）
+3. 状态管理 - InheritedWidget（在树上，父共享数据后，任意子可获取此数据）
 - lib/state/inherited_widget.dart
+4. 状态管理 - 在树上，子获取父的数据
+- lib/state/find_ancestor.dart
 
 ### 输入
 1. Listener - 指针
@@ -230,6 +232,10 @@
 - lib/animation/hero.dart
 11. Stagger - 复合动画，即一个 AnimationController 控制多个动画
 - lib/animation/stagger.dart
+
+### 国际化
+1. Localization - 国际化
+- lib/localization/localization.dart
 
 ### 网络
 1. http 库以及 json 和对象间的转换

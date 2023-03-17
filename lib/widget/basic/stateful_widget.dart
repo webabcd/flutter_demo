@@ -15,7 +15,7 @@ import 'package:flutter_demo/helper.dart';
 class StatefulWidgetDemo extends StatefulWidget {
   const StatefulWidgetDemo({Key? key}) : super(key: key);
 
-  /// 用于演示如何在 State<T> 中调用 StatefulWidget 中的属性或方法
+  /// 用于演示如何在 State<T> 中调用相关的 StatefulWidget 中的属性或方法
   final param = "webabcd";
 
   /// 把 build() 放到 State<T> 中实现
@@ -50,7 +50,7 @@ class _StatefulWidgetDemoState extends State<StatefulWidgetDemo> {
   void initState() {
     super.initState();
 
-    /// 通过如下方式调用 StatefulWidget 中的属性或方法
+    /// 通过如下方式调用相关的 StatefulWidget 中的属性或方法
     log(widget.param);
   }
 

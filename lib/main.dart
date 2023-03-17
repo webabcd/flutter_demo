@@ -91,6 +91,7 @@ import 'widget/builder/stream_builder.dart';
 import 'state/change_notifier.dart';
 import 'state/value_notifier.dart';
 import 'state/inherited_widget.dart';
+import 'state/find_ancestor.dart';
 
 import 'input/listener.dart';
 import 'input/gesture_detector.dart';
@@ -124,6 +125,8 @@ import 'animation/animated_builder.dart';
 import 'animation/animated.dart';
 import 'animation/hero.dart';
 import 'animation/stagger.dart';
+
+import 'localization/localization.dart';
 
 import 'network/http.dart';
 
@@ -210,6 +213,7 @@ class MyApp extends StatelessWidget {
         "lib.state.change_notifier.dart":(context) => const ChangeNotifierDemo(),
         "lib.state.value_notifier.dart":(context) => const ValueNotifierDemo(),
         "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
+        "lib.state.find_ancestor.dart":(context) => const FindAncestorDemo(),
         "lib.input.listener.dart":(context) => const ListenerDemo(),
         "lib.input.gesture_detector.dart":(context) => const GestureDetectorDemo(),
         "lib.input.raw_keyboard_listener.dart":(context) => const RawKeyboardListenerDemo(),
@@ -238,6 +242,7 @@ class MyApp extends StatelessWidget {
         "lib.animation.animated.dart":(context) => const AnimatedDemo(),
         "lib.animation.hero.dart":(context) => const HeroDemo(),
         "lib.animation.stagger.dart":(context) => const StaggerDemo(),
+        "lib.localization.localization.dart":(context) => const LocalizationDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
       },
     );

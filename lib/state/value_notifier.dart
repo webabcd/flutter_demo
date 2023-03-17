@@ -1,9 +1,9 @@
 /*
- * 状态管理 - ValueNotifier（可用于多 Widget 之间的状态管理）
+ * 状态管理 - ValueNotifier（多 Widget 之间的单值的状态管理）
  * ValueNotifier<T> 继承自 ChangeNotifier，ChangeNotifier 继承自 Listenable（可监听对象）
  * ValueNotifier<T> 实现了 ValueListenable<T> 接口
  *
- * ValueNotifier 用于将指定的数据类型以及对它的管理封装到一起并自动提供数据变化的通知
+ * ValueNotifier 用于将指定的数据类型以及对它的管理封装到一起并自动提供数据变化的通知，如果只是管理一个值的变化就可以用这个
  * 可以通过 ValueListenableBuilder 结合 ValueNotifier 实现数据的管理以及 UI 的更新
  */
 

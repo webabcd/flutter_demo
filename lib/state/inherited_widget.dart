@@ -1,5 +1,5 @@
 /*
- * 状态管理 - InheritedWidget（可用于多 Widget 之间的状态管理）
+ * 状态管理 - InheritedWidget（在树上，父共享数据后，任意子可获取此数据）
  *
  * 在父 Widget 中通过 InheritedWidget 共享一个数据，然后在其任意子 Widget 中都能获取此共享数据
  *
