@@ -106,6 +106,8 @@ import 'ui/status_bar.dart';
 import 'ui/navigation_bar.dart';
 import 'ui/theme.dart';
 import 'ui/theme2.dart';
+import 'ui/orientation.dart';
+import 'ui/safe_area.dart';
 
 import 'shape/border.dart';
 import 'shape/clip.dart';
@@ -225,6 +227,8 @@ class MyApp extends StatelessWidget {
         "lib.ui.navigation_bar.dart":(context) => const NavigationBarDemo(),
         "lib.ui.theme.dart":(context) => const ThemeDemo(),
         "lib.ui.theme2.dart":(context) => const Theme2Demo(),
+        "lib.ui.orientation.dart":(context) => const OrientationDemo(),
+        "lib.ui.safe_area.dart":(context) => const SafeAreaDemo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),
         "lib.shape.gradient.dart":(context) => const GradientDemo(),
@@ -314,10 +318,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 collapsedIconColor: Colors.black,
                 iconColor: Colors.black,
                 children: _siteMap![index].node.map((e) =>
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      color: Colors.orange,
-                      child: GestureDetector(
+                    GestureDetector(
+                      child: Container(
+                        alignment: Alignment.centerLeft,
+                        color: Colors.orange,
                         child: Padding(
                           padding: const EdgeInsets.only(left: 10, right: 10, top: 10, bottom: 10),
                           child: Text(
@@ -330,10 +334,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                         ),
-                        onTap: () {
-                          Navigator.pushNamed(context, e.url);
-                        },
                       ),
+                      onTap: () {
+                        Navigator.pushNamed(context, e.url);
+                      },
                     ),
                 ).toList(),
               );

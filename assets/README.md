@@ -203,6 +203,10 @@
 - lib/ui/theme.dart
 4. 主题（Material Design 3 规范，亮色主题，暗色主题）
 - lib/ui/theme2.dart
+5. 屏幕方向
+- lib/ui/orientation.dart
+6. 安全区域
+- lib/ui/safe_area.dart
 
 ### 图形
 1. 边框
