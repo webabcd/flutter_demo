@@ -108,6 +108,7 @@ import 'ui/theme.dart';
 import 'ui/theme2.dart';
 import 'ui/orientation.dart';
 import 'ui/safe_area.dart';
+import 'ui/splash_screen.dart';
 
 import 'shape/border.dart';
 import 'shape/clip.dart';
@@ -229,6 +230,7 @@ class MyApp extends StatelessWidget {
         "lib.ui.theme2.dart":(context) => const Theme2Demo(),
         "lib.ui.orientation.dart":(context) => const OrientationDemo(),
         "lib.ui.safe_area.dart":(context) => const SafeAreaDemo(),
+        "lib.ui.splash_screen.dart":(context) => const SplashScreenDemo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),
         "lib.shape.gradient.dart":(context) => const GradientDemo(),

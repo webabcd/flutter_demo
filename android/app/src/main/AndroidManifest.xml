@@ -13,14 +13,13 @@
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize"
             android:screenOrientation="fullSensor">
-            <!-- Specifies an Android theme to apply to this Activity as soon as
-                 the Android process has started. This theme is visible to the user
-                 while the Flutter UI initializes. After that, this theme continues
-                 to determine the Window background behind the Flutter UI. -->
+            <!--
+                上面 activity 中指定的 android:theme="@style/LaunchTheme" 是闪屏页的主题（只能设置闪屏页的 window 窗口背景）
+                下面 meta-data 中指定的 android:resource="@style/NormalTheme" 是非闪屏页的主题（只能设置非闪屏页的 window 窗口背景）
+            -->
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
-              android:resource="@style/NormalTheme"
-              />
+              android:resource="@style/NormalTheme" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
