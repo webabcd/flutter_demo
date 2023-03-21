@@ -207,7 +207,7 @@
 - lib/ui/orientation.dart
 6. 安全区域
 - lib/ui/safe_area.dart
-7. 闪屏页
+7. 闪屏页，程序名称，程序图标
 - lib/ui/splash_screen.dart
 
 ### 图形
