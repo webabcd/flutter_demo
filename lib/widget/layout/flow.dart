@@ -80,9 +80,9 @@ class _FlowDemoDelegate extends FlowDelegate {
     return const Size(double.infinity, 150);
   }
 
-  /// 是否需要重新绘制
+  /// 是否需要重绘，通常新实例与旧实例不同时则返回 true
   @override
   bool shouldRepaint(FlowDelegate oldDelegate) {
-    return true;
+    return this != oldDelegate;
   }
 }

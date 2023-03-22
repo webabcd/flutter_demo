@@ -65,6 +65,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  # 这里用于配置需要打包的文件或文件夹
   assets:
     - assets/README.md
     - assets/son.jpg
