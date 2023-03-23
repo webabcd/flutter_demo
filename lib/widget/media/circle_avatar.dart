@@ -21,7 +21,7 @@ class _CircleAvatarDemoState extends State<CircleAvatarDemo> {
       appBar: AppBar(title: const Text("title")),
       backgroundColor: Colors.orange,
       body: Wrap(
-        children: const [
+        children: [
           /// 圆形头像（由一个纯色背景和一个子组件构成）
           CircleAvatar(
             backgroundColor: Colors.blue,
@@ -31,6 +31,9 @@ class _CircleAvatarDemoState extends State<CircleAvatarDemo> {
           /// 圆形头像（由一个图片背景和一个子组件构成）
           CircleAvatar(
             backgroundImage: AssetImage('assets/son.jpg'),
+            onBackgroundImageError: (exception, stackTrace) {
+              log("图片加载失败");
+            },
             child: MyText('W'),
           ),
 
