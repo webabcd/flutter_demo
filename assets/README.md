@@ -1,6 +1,9 @@
 # Flutter Demo
 
 
+### widget 选择类
+4. Switch - 开关
+- lib/widget/selection/switch.dart
 
 ### widget 滚动类
 1. SingleChildScrollView, Scrollbar - 可滚动组件，滚动条
