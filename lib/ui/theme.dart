@@ -69,6 +69,7 @@ class _MyHomePage extends StatelessWidget {
               builder: (BuildContext context) {
                 return Container(
                   width: double.infinity,
+                  /// 如果不用 Builder 的话，这个 context 就是 _MyHomePage 的 context，那个时候还没有新定义的主题
                   child: Text('Text', style: Theme.of(context).textTheme.displayLarge),
                 );
               },

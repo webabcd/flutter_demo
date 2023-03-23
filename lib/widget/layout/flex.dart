@@ -63,6 +63,7 @@ class FlexDemo extends StatelessWidget {
             ),
           ],
         ),
+
         Flex(
           direction: Axis.horizontal,
           children: [
@@ -92,6 +93,31 @@ class FlexDemo extends StatelessWidget {
                 height: 20,
                 color: Colors.blue,
               ),
+            ),
+          ],
+        ),
+
+        Flex(
+          direction: Axis.horizontal,
+          children: [
+            /// 宽度为 50
+            Container(
+              color: Colors.red,
+              width: 50,
+              height: 20,
+            ),
+            /// 宽度为除了左边 50 和右边 50 之外的全部空间
+            Flexible(
+              child: Container(
+                height: 20,
+                color: Colors.green,
+              ),
+            ),
+            /// 宽度为 50
+            Container(
+              color: Colors.blue,
+              width: 50,
+              height: 20,
             ),
           ],
         ),

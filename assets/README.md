@@ -1,6 +1,17 @@
 # Flutter Demo
 
 
+
+### widget 滚动类
+1. SingleChildScrollView, Scrollbar - 可滚动组件，滚动条
+- lib/widget/scroll/single_child_scroll_view.dart
+2. ScrollController - 用于控制可滚动组件和滚动条
+- lib/widget/scroll/scroll_controller.dart
+
+### 图形
+6. 绘制
+- lib/shape/paint.dart
+
 ### dart
 1. 概述
 - lib/dart/summary.dart
@@ -221,8 +232,6 @@
 - lib/shape/transform.dart
 5. 阴影
 - lib/shape/shadow.dart
-6. Paint
-- lib/shape/paint.dart
 
 ### 动画
 1. Animation - 动画基础（以直线型动画为例）
