@@ -1,6 +1,16 @@
 # Flutter Demo
 
 
+### widget Chip 类
+1. Chip
+- lib/widget/chip/chip.dart
+
+### widget 媒体类
+3. Divider - 分隔线
+- lib/widget/media/divider.dart
+4. CircleAvatar - 圆形头像
+- lib/widget/media/circle_avatar.dart
+
 ### widget 选择类
 4. Switch - 开关
 - lib/widget/selection/switch.dart

@@ -59,8 +59,12 @@ import 'widget/button/outlined_button.dart';
 import 'widget/button/elevated_button.dart';
 import 'widget/button/icon_button.dart';
 
+import 'widget/chip/chip.dart';
+
 import 'widget/media/image.dart';
 import 'widget/media/icon.dart';
+import 'widget/media/circle_avatar.dart';
+import 'widget/media/divider.dart';
 
 import 'widget/structure/scaffold.dart';
 import 'widget/structure/scaffold_app_bar.dart';
@@ -193,8 +197,11 @@ class MyApp extends StatelessWidget {
         "lib.widget.button.outlined_button.dart":(context) => const OutlinedButtonDemo(),
         "lib.widget.button.elevated_button.dart":(context) => const ElevatedButtonDemo(),
         "lib.widget.button.icon_button.dart":(context) => const IconButtonDemo(),
+        "lib.widget.chip.chip.dart":(context) => const ChipDemo(),
         "lib.widget.media.image.dart":(context) => const ImageDemo(),
         "lib.widget.media.icon.dart":(context) => const IconDemo(),
+        "lib.widget.media.circle_avatar.dart":(context) => const CircleAvatarDemo(),
+        "lib.widget.media.divider.dart":(context) => const DividerDemo(),
         "lib.widget.structure.scaffold.dart":(context) => const ScaffoldDemo(),
         "lib.widget.structure.scaffold_app_bar.dart":(context) => const ScaffoldAppBarDemo(),
         "lib.widget.structure.scaffold_bottom_navigation_bar.dart":(context) => const ScaffoldBottomNavigationBarDemo(),
