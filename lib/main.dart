@@ -60,6 +60,10 @@ import 'widget/button/elevated_button.dart';
 import 'widget/button/icon_button.dart';
 
 import 'widget/chip/chip.dart';
+import 'widget/chip/action_chip.dart';
+import 'widget/chip/choice_chip.dart';
+import 'widget/chip/filter_chip.dart';
+import 'widget/chip/input_chip.dart';
 
 import 'widget/media/image.dart';
 import 'widget/media/icon.dart';
@@ -198,6 +202,10 @@ class MyApp extends StatelessWidget {
         "lib.widget.button.elevated_button.dart":(context) => const ElevatedButtonDemo(),
         "lib.widget.button.icon_button.dart":(context) => const IconButtonDemo(),
         "lib.widget.chip.chip.dart":(context) => const ChipDemo(),
+        "lib.widget.chip.action_chip.dart":(context) => const ActionChipDemo(),
+        "lib.widget.chip.choice_chip.dart":(context) => const ChoiceChipDemo(),
+        "lib.widget.chip.filter_chip.dart":(context) => const FilterChipDemo(),
+        "lib.widget.chip.input_chip.dart":(context) => const InputChipDemo(),
         "lib.widget.media.image.dart":(context) => const ImageDemo(),
         "lib.widget.media.icon.dart":(context) => const IconDemo(),
         "lib.widget.media.circle_avatar.dart":(context) => const CircleAvatarDemo(),

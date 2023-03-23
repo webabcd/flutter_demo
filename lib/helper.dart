@@ -8,6 +8,22 @@ int currentTimestamp() {
   return DateTime.now().millisecondsSinceEpoch;
 }
 
+void showToast(BuildContext context, String message) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Center(child: Text(message)),
+      duration: const Duration(milliseconds: 2000),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      margin:const EdgeInsets.only(bottom: 30, left: 30, right: 30),
+      behavior: SnackBarBehavior.floating,
+      backgroundColor: Colors.black54,
+      shape: const StadiumBorder(
+        side: BorderSide(width: 5, color: Colors.transparent),
+      ),
+    ),
+  );
+}
+
 class MyWidget extends StatelessWidget {
   const MyWidget({
     Key? key,

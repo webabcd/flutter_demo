@@ -101,11 +101,27 @@
 4. IconButton - 图标按钮
 - lib/widget/button/icon_button.dart
 
+### widget Chip 类
+1. Chip - Chip（背景上有文字，文字左边有图标，文字右边有删除按钮）
+- lib/widget/chip/chip.dart
+2. ActionChip - Chip 按钮
+- lib/widget/chip/action_chip.dart
+3. ChoiceChip - Chip 双状态按钮
+- lib/widget/chip/choice_chip.dart
+4. FilterChip - Chip 双状态按钮（选中时有对钩）
+- lib/widget/chip/filter_chip.dart
+5. InputChip - Chip 双状态按钮（选中时有对钩，文字右边有删除按钮）
+- lib/widget/chip/input_chip.dart
+
 ### widget 媒体类
 1. Image - 图片
 - lib/widget/media/image.dart
 2. Icon - 图标
 - lib/widget/media/icon.dart
+3. Divider - 分隔线
+- lib/widget/media/divider.dart
+4. CircleAvatar - 圆形头像
+- lib/widget/media/circle_avatar.dart
 
 ### widget 架构类
 1. Scaffold - 脚手架
@@ -144,6 +160,14 @@
 - lib/widget/selection/checkbox.dart
 3. DropdownButton - 下拉框
 - lib/widget/selection/dropdown_button.dart
+4. Switch - 开关
+- lib/widget/selection/switch.dart
+
+### widget 滚动类
+1. SingleChildScrollView, Scrollbar - 可滚动组件，滚动条
+- lib/widget/scroll/single_child_scroll_view.dart
+2. ScrollController - 用于控制可滚动组件和滚动条
+- lib/widget/scroll/scroll_controller.dart
 
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
@@ -221,6 +245,8 @@
 - lib/shape/transform.dart
 5. 阴影
 - lib/shape/shadow.dart
+6. 绘制
+- lib/shape/paint.dart
 
 ### 动画
 1. Animation - 动画基础（以直线型动画为例）
