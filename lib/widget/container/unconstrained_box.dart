@@ -12,7 +12,7 @@ class UnconstrainedBoxDemo extends StatelessWidget {
     /// 屏幕会强制 UnconstrainedBox 的宽高与屏幕相同
     /// UnconstrainedBox 会让其子元素自行决定宽高，如果超过了 UnconstrainedBox 的宽高则会有内容溢出的警告
     return UnconstrainedBox(
-      /// alignment - 子相对于父的对齐方式
+      /// alignment - 子相对于父的对齐方式（默认值为 center）
       ///   topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
       alignment: Alignment.bottomRight,
       /// constrainedAxis - 例外
