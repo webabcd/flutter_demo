@@ -96,6 +96,8 @@ import 'widget/selection/switch.dart';
 import 'widget/scroll/single_child_scroll_view.dart';
 import 'widget/scroll/scroll_controller.dart';
 
+import 'widget/list/list_view.dart';
+
 import 'widget/builder/builder.dart';
 import 'widget/builder/stateful_builder.dart';
 import 'widget/builder/layout_builder.dart';
@@ -235,6 +237,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.selection.switch.dart":(context) => const SwitchDemo(),
         "lib.widget.scroll.single_child_scroll_view.dart":(context) => const SingleChildScrollViewDemo(),
         "lib.widget.scroll.scroll_controller.dart":(context) => const ScrollControllerDemo(),
+        "lib.widget.list.list_view.dart":(context) => const ListViewDemo(),
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
         "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),

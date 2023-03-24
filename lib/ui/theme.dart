@@ -1,5 +1,5 @@
 /*
- * 主题基础
+ * 主题（基础）
  */
 
 import 'package:flutter/material.dart';
