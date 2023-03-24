@@ -56,7 +56,7 @@ class _MyListView extends StatelessWidget {
             addRepaintBoundaries: true,
             /// 列表的元素集合
             /// 如果用 children 的话，则在初始化的时就会把所有元素都创建好
-            /// 所以对于大数据量的话请用 ListView.builder，它会根据滚动的位置，需要创建的时候才创建
+            /// 所以对于大数据量的话请用 ListView.builder，它会根据滚动的位置，按需创建列表元素
             children: <Widget>[
               Container(
                 color: Colors.red,
