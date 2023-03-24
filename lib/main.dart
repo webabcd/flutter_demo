@@ -49,6 +49,9 @@ import 'widget/container/unconstrained_box.dart';
 import 'widget/container/decorated_box.dart';
 import 'widget/container/container.dart';
 import 'widget/container/opacity.dart';
+import 'widget/container/limited_box.dart';
+import 'widget/container/overflow_box.dart';
+import 'widget/container/fitted_box.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
@@ -194,6 +197,9 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.decorated_box.dart":(context) => const DecoratedBoxDemo(),
         "lib.widget.container.container.dart":(context) => const ContainerDemo(),
         "lib.widget.container.opacity.dart":(context) => const OpacityDemo(),
+        "lib.widget.container.limited_box.dart":(context) => const LimitedBoxDemo(),
+        "lib.widget.container.overflow_box.dart":(context) => const OverflowBoxDemo(),
+        "lib.widget.container.fitted_box.dart":(context) => const FittedBoxDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),

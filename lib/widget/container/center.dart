@@ -11,7 +11,9 @@ class CenterDemo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    /// Center 的宽高与父相同
     return Center(
+      /// child 相对于 Center 会居中对齐
       child: Container(
         width: 50,
         height: 50,

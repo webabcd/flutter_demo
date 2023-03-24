@@ -16,8 +16,9 @@ class AlignDemo extends StatelessWidget {
           width: 120,
           height: 120,
           color: Colors.blue,
+          /// Align 的宽高与父相同
           child: Align(
-            /// alignment - 子相对于父的对齐方式
+            /// alignment - child 相对于 Align 的对齐方式
             ///   topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
             alignment: Alignment.topRight,
             child: Container(

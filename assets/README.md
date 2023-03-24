@@ -1,5 +1,14 @@
 # Flutter Demo
 
+### widget 容器类（只能有一个子）
+10. LimitedBox - 限制最大尺寸
+- lib/widget/container/limited_box.dart
+11. OverflowBox - 可溢出
+- lib/widget/container/overflow_box.dart
+12. FittedBox - 自适应
+- lib/widget/container/fitted_box.dart
+
+
 
 ### dart
 1. 概述
