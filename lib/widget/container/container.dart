@@ -27,12 +27,15 @@ class ContainerDemo extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-
-        /// 演示 Container 的宽，高，颜色，子相对于 Container 的对齐方式
+        
+        /// Container 的宽高与父相同
+        /// Container 会让其 child 自行决定宽高
         Container(
           width: 200,
           height: 50,
           color: Colors.red,
+          /// alignment - child 相对于 Container 的对齐方式
+          ///   topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
           alignment: Alignment.center,
           child: MyText("webabcd"),
         ),
