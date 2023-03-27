@@ -1,11 +1,22 @@
 # Flutter Demo
 
 
+### widget 进度类
+1. CircularProgressIndicator - 圆形进度条
+- lib/widget/progress/circular_progress_indicator.dart
+2. LinearProgressIndicator - 条形进度条
+- lib/widget/progress/linear_progress_indicator.dart
+3. RefreshIndicator - 下拉刷新进度条
+- lib/widget/progress/refresh_indicator.dart
+
+
 ### widget 列表类
 1. ListView - 列表（基础）
 - lib/widget/list/list_view.dart
-
-
+2. ListView - 列表（动态生成）
+- lib/widget/list/list_view2.dart
+3. ListView - 列表（下拉刷新和上拉加载）
+- lib/widget/list/list_view3.dart
 
 
 ### widget 容器类（只能有一个子）

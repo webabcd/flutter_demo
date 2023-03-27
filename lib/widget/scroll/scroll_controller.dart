@@ -29,8 +29,10 @@ class _ScrollControllerDemoState extends State<ScrollControllerDemo> {
     /// 滚动发生时触发的事件
     _controller.addListener(() {
       setState(() {
-        /// 获取当前的滚动位置
-        _message = "offset:${_controller.offset.toStringAsFixed(2)}";
+        /// offset - 当前的滚动位置
+        /// position.maxScrollExtent - 最大的可滚动位置
+        _message = "offset:${_controller.offset.toStringAsFixed(2)}, "
+            "maxScrollExtent:${_controller.position.maxScrollExtent.toStringAsFixed(2)}";
       });
     });
   }
@@ -43,7 +45,7 @@ class _ScrollControllerDemoState extends State<ScrollControllerDemo> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          MyText(_message),
+          MyTextSmall(_message),
           Flexible(
             child: Scrollbar(
               /// 指定 Scrollbar 关联的 ScrollController

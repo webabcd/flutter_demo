@@ -1,5 +1,8 @@
 /*
  * ListView - 列表（基础）
+ *
+ * 本例用于介绍 ListView 的基础，以及如何通过 children 一个一个地指定列表中的每个元素
+ * 如果需要根据数据源动态生成对应的元素，则可以使用 ListView.builder 或 ListView.separated，请参见 list_view2.dart
  */
 
 import 'package:flutter/material.dart';

@@ -93,10 +93,16 @@ import 'widget/selection/checkbox.dart';
 import 'widget/selection/dropdown_button.dart';
 import 'widget/selection/switch.dart';
 
+import 'widget/progress/circular_progress_indicator.dart';
+import 'widget/progress/linear_progress_indicator.dart';
+import 'widget/progress/refresh_indicator.dart';
+
 import 'widget/scroll/single_child_scroll_view.dart';
 import 'widget/scroll/scroll_controller.dart';
 
 import 'widget/list/list_view.dart';
+import 'widget/list/list_view2.dart';
+import 'widget/list/list_view3.dart';
 
 import 'widget/builder/builder.dart';
 import 'widget/builder/stateful_builder.dart';
@@ -235,9 +241,14 @@ class MyApp extends StatelessWidget {
         "lib.widget.selection.checkbox.dart":(context) => const CheckboxDemo(),
         "lib.widget.selection.dropdown_button.dart":(context) => const DropdownButtonDemo(),
         "lib.widget.selection.switch.dart":(context) => const SwitchDemo(),
+        "lib.widget.progress.circular_progress_indicator.dart":(context) => const CircularProgressIndicatorDemo(),
+        "lib.widget.progress.linear_progress_indicator.dart":(context) => const LinearProgressIndicatorDemo(),
+        "lib.widget.progress.refresh_indicator.dart":(context) => const RefreshIndicatorDemo(),
         "lib.widget.scroll.single_child_scroll_view.dart":(context) => const SingleChildScrollViewDemo(),
         "lib.widget.scroll.scroll_controller.dart":(context) => const ScrollControllerDemo(),
         "lib.widget.list.list_view.dart":(context) => const ListViewDemo(),
+        "lib.widget.list.list_view2.dart":(context) => const ListView2Demo(),
+        "lib.widget.list.list_view3.dart":(context) => const ListView3Demo(),
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
         "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),
