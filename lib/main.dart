@@ -96,6 +96,7 @@ import 'widget/selection/switch.dart';
 import 'widget/progress/circular_progress_indicator.dart';
 import 'widget/progress/linear_progress_indicator.dart';
 import 'widget/progress/refresh_indicator.dart';
+import 'widget/progress/slider.dart';
 
 import 'widget/scroll/single_child_scroll_view.dart';
 import 'widget/scroll/scroll_controller.dart';
@@ -244,6 +245,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.progress.circular_progress_indicator.dart":(context) => const CircularProgressIndicatorDemo(),
         "lib.widget.progress.linear_progress_indicator.dart":(context) => const LinearProgressIndicatorDemo(),
         "lib.widget.progress.refresh_indicator.dart":(context) => const RefreshIndicatorDemo(),
+        "lib.widget.progress.slider.dart":(context) => const SliderDemo(),
         "lib.widget.scroll.single_child_scroll_view.dart":(context) => const SingleChildScrollViewDemo(),
         "lib.widget.scroll.scroll_controller.dart":(context) => const ScrollControllerDemo(),
         "lib.widget.list.list_view.dart":(context) => const ListViewDemo(),

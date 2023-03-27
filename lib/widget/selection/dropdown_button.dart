@@ -70,7 +70,7 @@ class _DropdownButtonDemoState extends State<DropdownButtonDemo> {
               DropdownMenuItem(child: Text('item2'), value: "b"),
               DropdownMenuItem(child: Text('item3'), value: "c"),
             ],
-            onChanged: null,                                      /// onChanged 设置为 null 则意味着下拉框不可用
+            onChanged: null,                                      /// onChanged 设置为 null 则说明 DropdownButton 为不可用状态
           ),
         ],
       ),

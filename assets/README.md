@@ -8,6 +8,8 @@
 - lib/widget/progress/linear_progress_indicator.dart
 3. RefreshIndicator - 下拉刷新进度条
 - lib/widget/progress/refresh_indicator.dart
+4. Slider - 可拖动进度条
+- lib/widget/progress/slider.dart
 
 
 ### widget 列表类
