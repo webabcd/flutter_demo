@@ -1,36 +1,6 @@
 # Flutter Demo
 
 
-### widget 进度类
-1. CircularProgressIndicator - 圆形进度条
-- lib/widget/progress/circular_progress_indicator.dart
-2. LinearProgressIndicator - 条形进度条
-- lib/widget/progress/linear_progress_indicator.dart
-3. RefreshIndicator - 下拉刷新进度条
-- lib/widget/progress/refresh_indicator.dart
-4. Slider - 可拖动进度条
-- lib/widget/progress/slider.dart
-
-
-### widget 列表类
-1. ListView - 列表（基础）
-- lib/widget/list/list_view.dart
-2. ListView - 列表（动态生成）
-- lib/widget/list/list_view2.dart
-3. ListView - 列表（下拉刷新和上拉加载）
-- lib/widget/list/list_view3.dart
-
-
-### widget 容器类（只能有一个子）
-10. LimitedBox - 限制最大尺寸
-- lib/widget/container/limited_box.dart
-11. OverflowBox - 可溢出
-- lib/widget/container/overflow_box.dart
-12. FittedBox - 自适应
-- lib/widget/container/fitted_box.dart
-
-
-
 ### dart
 1. 概述
 - lib/dart/summary.dart
@@ -112,6 +82,12 @@
 - lib/widget/container/container.dart
 9. Opacity - 不透明度
 - lib/widget/container/opacity.dart
+10. LimitedBox - 限制最大尺寸
+- lib/widget/container/limited_box.dart
+11. OverflowBox - 可溢出
+- lib/widget/container/overflow_box.dart
+12. FittedBox - 自适应
+- lib/widget/container/fitted_box.dart
 
 ### widget 文本类
 1. Text - 文本显示框
@@ -193,11 +169,31 @@
 4. Switch - 开关
 - lib/widget/selection/switch.dart
 
+### widget 进度类
+1. CircularProgressIndicator - 圆形进度条
+- lib/widget/progress/circular_progress_indicator.dart
+2. LinearProgressIndicator - 条形进度条
+- lib/widget/progress/linear_progress_indicator.dart
+3. RefreshIndicator - 下拉刷新进度条
+- lib/widget/progress/refresh_indicator.dart
+4. Slider - 可拖动进度条
+- lib/widget/progress/slider.dart
+
 ### widget 滚动类
 1. SingleChildScrollView, Scrollbar - 可滚动组件，滚动条
 - lib/widget/scroll/single_child_scroll_view.dart
 2. ScrollController - 用于控制可滚动组件和滚动条
 - lib/widget/scroll/scroll_controller.dart
+
+### widget 列表类
+1. ListView - 列表（基础）
+- lib/widget/list/list_view.dart
+2. ListView - 列表（动态生成）
+- lib/widget/list/list_view2.dart
+3. ListView - 列表（下拉刷新和上拉加载）
+- lib/widget/list/list_view3.dart
+4. ListTile - 列表项
+- lib/widget/list/list_tile.dart
 
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
