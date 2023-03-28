@@ -32,7 +32,6 @@ class _MyListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Expanded(
           child: ListView(
@@ -41,7 +40,7 @@ class _MyListView extends StatelessWidget {
             /// 滚动方向，也就是列表内元素的排列方向（vertical 或 horizontal）
             scrollDirection: Axis.vertical,
             /// 是否反向排列
-            reverse: true,
+            reverse: false,
             /// 滚动的响应方式
             ///   NeverScrollableScrollPhysics() - 禁止滚动
             ///   BouncingScrollPhysics() - 允许滚动，滚到边缘后会有类似 ios 的弹簧效果

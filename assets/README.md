@@ -1,6 +1,18 @@
 # Flutter Demo
 
 
+### 插件
+1. 插件基础
+- lib/plugin/plugin.dart
+- android/app/src/main/kotlin/com/example/flutter_demo/MainActivity.kt
+
+
+### widget 列表类
+5. ExpansionTile - 列表项（可展开）
+- lib/widget/list/expansion_tile.dart
+
+
+
 ### dart
 1. 概述
 - lib/dart/summary.dart

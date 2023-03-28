@@ -20,6 +20,8 @@ doc/api/
 *.js.deps
 *.js.map
 
+.idea
+
 WebApi/.vs
 WebApi/WebApi/bin
 WebApi/WebApi/obj

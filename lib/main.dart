@@ -159,6 +159,8 @@ import 'localization/localization.dart';
 
 import 'network/http.dart';
 
+import 'plugin/plugin.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -298,6 +300,7 @@ class MyApp extends StatelessWidget {
         "lib.animation.stagger.dart":(context) => const StaggerDemo(),
         "lib.localization.localization.dart":(context) => const LocalizationDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
+        "lib.plugin.plugin.dart":(context) => const PluginDemo(),
       },
     );
   }
