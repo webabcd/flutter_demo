@@ -6,7 +6,6 @@
  * 2、参见 /android/app/src/main/kotlin/com/example/flutter_demo/MainActivity.kt
  *
  *
- *
  * 注：插件中实现的功能不支持 flutter 的 hot reload
  */
 
