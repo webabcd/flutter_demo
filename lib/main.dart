@@ -105,6 +105,7 @@ import 'widget/list/list_view.dart';
 import 'widget/list/list_view2.dart';
 import 'widget/list/list_view3.dart';
 import 'widget/list/list_tile.dart';
+import 'widget/list/expansion_tile.dart';
 
 import 'widget/builder/builder.dart';
 import 'widget/builder/stateful_builder.dart';
@@ -253,6 +254,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.list.list_view2.dart":(context) => const ListView2Demo(),
         "lib.widget.list.list_view3.dart":(context) => const ListView3Demo(),
         "lib.widget.list.list_tile.dart":(context) => const ListTileDemo(),
+        "lib.widget.list.expansion_tile.dart":(context) => const ExpansionTileDemo(),
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
         "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),

@@ -5,6 +5,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/helper.dart';
 
 class AnimatedBuilderDemo extends StatefulWidget {
   const AnimatedBuilderDemo({Key? key}) : super(key: key);
@@ -40,9 +41,14 @@ class _AnimatedBuilderDemoState extends State<AnimatedBuilderDemo> with SingleTi
               color: Colors.blue,
               height: _animation.value,
               width: _animation.value,
+              alignment: Alignment.center,
+              child: child, /// 这个 child 是由 AnimatedBuilder 的 child 传递过来的
             ),
           );
         },
+        /// 这里定义的 child 会传递给 AnimatedBuilder 的 builder 函数
+        /// 对于不参与动画的组件来说，建议通过这种方式传给 AnimatedBuilder 的 builder 函数处理，这样可以提高效率
+        child: const MyText("webabcd"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
