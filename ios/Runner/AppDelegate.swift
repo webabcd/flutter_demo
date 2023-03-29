@@ -37,6 +37,9 @@ import Flutter
                 let returnValue = self.method1()
                 // 返回给 flutter 的结果
                 result(returnValue)
+                
+                // 用于演示 ios 调用 flutter
+                channel.invokeMethod("ios to flutter", arguments: "param")
             }
             
             else if (method == "method2")

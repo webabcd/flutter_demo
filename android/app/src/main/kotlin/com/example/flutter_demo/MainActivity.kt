@@ -44,6 +44,9 @@ class MyFlutterPlugin : FlutterPlugin {
                 val returnValue = method1()
                 // 返回给 flutter 的结果
                 result.success(returnValue)
+
+                // 用于演示 android 调用 flutter
+                channel.invokeMethod("android to flutter", "param")
             }
 
             else if (method == "method2") {

@@ -109,7 +109,13 @@ class _PluginDemoState extends State<PluginDemo> {
 
 class MyPlugin {
   /// 获取指定名称的 channel（其用于 flutter 和插件之间的通信）
-  static const MethodChannel _channel = MethodChannel("myChannel");
+  static final MethodChannel _channel = const MethodChannel("myChannel")
+    ..setMethodCallHandler(_callHandler); /// 插件调用 flutter 时会执行这里
+
+  /// 用于演示如何接收插件调用 flutter 时的方法名和参数值
+  static Future<dynamic> _callHandler(MethodCall call) async {
+    log("method:${call.method}, arguments:${call.arguments}");
+  }
 
   static Future<String> method1() async {
     /// flutter 调用插件中的方法
