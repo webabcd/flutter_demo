@@ -2,8 +2,17 @@
  * 插件基础
  *
  * 一、android 插件开发
- * 1、在 android 文件夹上，使用右键菜单，然后选择 Flutter -> Open Android module in Android Studio
- * 2、参见 /android/app/src/main/kotlin/com/example/flutter_demo/MainActivity.kt
+ * 1、主 flutter 项目要先在 android 平台中运行一下
+ * 2、在 android 文件夹上，使用右键菜单，然后选择 Flutter -> Open Android module in Android Studio 即可开发插件
+ * 3、参见 /android/app/src/main/kotlin/com/example/flutter_demo/MainActivity.kt
+ *
+ * 二、ios 插件开发
+ * 1、主 flutter 项目要先在 ios 平台中运行一下
+ * 2、在 android studio 或 visual studio code 中执行如下逻辑
+ *    cd ios
+ *    pod install
+ * 3、用 xcode 中打开 /ios/Runner.xcworkspace 即可开发插件
+ * 4、参见 /ios/Runner/AppDelegate.swift
  *
  *
  * 注：插件中实现的功能不支持 flutter 的 hot reload
@@ -99,33 +108,33 @@ class _PluginDemoState extends State<PluginDemo> {
 
 
 class MyPlugin {
-  /// 指定一个 channel 的名称，从而获取这个用于 flutter 和 android 插件之间通信的 channel
+  /// 获取指定名称的 channel（其用于 flutter 和插件之间的通信）
   static const MethodChannel _channel = MethodChannel("myChannel");
 
   static Future<String> method1() async {
-    /// flutter 调用 android 插件中的方法
+    /// flutter 调用插件中的方法
     return await _channel.invokeMethod("method1");
   }
 
   static Future<String> method2() async {
-    /// flutter 调用 android 插件中的方法，并传递一个字符串类型的参数
+    /// flutter 调用插件中的方法，并传递一个字符串类型的参数
     return await _channel.invokeMethod("method2", "abc");
   }
 
   static Future<String> method3() async {
-    /// flutter 调用 android 插件中的方法，并传递一个字典表类型的参数
+    /// flutter 调用插件中的方法，并传递一个字典表类型的参数
     var map = {"name": "webabcd", "age": 43};
     return await _channel.invokeMethod("method3", map);
   }
 
   static Future<String> method4() async {
-    /// flutter 调用 android 插件中的方法，并传递一个列表类型的参数
+    /// flutter 调用插件中的方法，并传递一个列表类型的参数
     var list = [1, 2, 3];
     return await _channel.invokeMethod("method4", list);
   }
 
   static Future<String> method5() async {
-    /// flutter 调用 android 插件中的方法，并捕获异常
+    /// flutter 调用插件中的方法，并捕获异常
     try {
       return await _channel.invokeMethod("method5");
     } on PlatformException catch(e) {
@@ -134,7 +143,7 @@ class MyPlugin {
   }
 
   static Future<String> method6() async {
-    /// flutter 调用 android 插件中的方法，但是 android 插件中没有这个方法
+    /// flutter 调用插件中的方法，但是插件中没有这个方法
     try {
       return await _channel.invokeMethod("method6");
     } on MissingPluginException catch(e) {

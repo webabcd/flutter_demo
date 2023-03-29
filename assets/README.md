@@ -5,6 +5,7 @@
 1. 插件基础
 - lib/plugin/plugin.dart
 - android/app/src/main/kotlin/com/example/flutter_demo/MainActivity.kt
+- ios/Runner/AppDelegate.swift
 
 
 ### widget 列表类

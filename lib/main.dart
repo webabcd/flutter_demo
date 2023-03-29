@@ -357,6 +357,7 @@ class _MyHomePageState extends State<MyHomePage> {
           appBar: AppBar(
             title: Text(widget.title),
           ),
+          backgroundColor: Colors.yellow[200],
           body: ListView.builder(
             itemBuilder: (context, index) {
               return ExpansionTile(
