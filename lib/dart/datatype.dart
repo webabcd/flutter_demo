@@ -2,6 +2,8 @@
  * dart 数据类型（num, int, double, bool, String, List, Set, Map, Object, dynamic, 数据类型转换与判断，可空类型）
  */
 
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/helper.dart';
 
@@ -148,7 +150,16 @@ c''';
       return 'element:$e';
     }).toList();
 
-    log("$a, $b, $c, $d, $e, $f, $g, $g2, $j, $k, $l, $m, $n, $o, $p, $q");
+    // Uint8List 相当于 java 的 byte[]
+    var r = Uint8List.fromList([1, 2, 3]);    // [1, 2, 3]
+    // Int32List 相当于 java 的 int[]
+    var s = Int32List.fromList([1, 2, 3]);    // [1, 2, 3]
+    // Int64List 相当于 java 的 long[]
+    var t = Int64List.fromList([1, 2, 3]);    // [1, 2, 3]
+    // Float64List 相当于 java 的 double[]
+    var u = Float64List.fromList([1, 2, 3]);  // [1.0, 2.0, 3.0]
+
+    log("$a, $b, $c, $d, $e, $f, $g, $g2, $j, $k, $l, $m, $n, $o, $p, $q, $r, $s, $t, $u");
   }
 
   void sample4() {
