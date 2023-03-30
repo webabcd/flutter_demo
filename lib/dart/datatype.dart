@@ -245,6 +245,23 @@ c''';
     String? a;
     int? b;
 
-    log("$a, $b"); // null, null
+    // ? 左侧是 null 则返回 null
+    var c = a?.length;
+
+    try {
+      // ! 左侧是 null 则抛出异常
+      var d = a!.length;
+    } catch (e) {
+      log("$e");
+    }
+
+    a = "abc";
+    // ? 左侧不是 null 则与无 ? 时逻辑相同
+    var e = a?.length;
+
+    // ! 左侧不是 null 则与无 ! 时逻辑相同
+    var f = a!.length;
+
+    log("$a, $b, $c, $e, $f"); // abc, null, null, 3, 3
   }
 }

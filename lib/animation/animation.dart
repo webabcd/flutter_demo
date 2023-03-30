@@ -110,6 +110,13 @@ class _AnimationDemoState extends State<AnimationDemo> with SingleTickerProvider
                   },
                 ),
                 ElevatedButton(
+                  child: const Text('reset'),
+                  onPressed: () {
+                    /// 复位
+                    _controller.reset();
+                  },
+                ),
+                ElevatedButton(
                   child: const Text('stop'),
                   onPressed: () {
                     /// 停止动画
