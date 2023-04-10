@@ -194,6 +194,8 @@
 - lib/widget/list/list_view3.dart
 4. ListTile - 列表项
 - lib/widget/list/list_tile.dart
+5. ExpansionTile - 列表项（可展开）
+- lib/widget/list/expansion_tile.dart
 
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
@@ -216,6 +218,8 @@
 - lib/state/inherited_widget.dart
 4. 状态管理 - 在树上，子获取父的数据
 - lib/state/find_ancestor.dart
+5. 状态管理 - 自定义 controller
+- lib/state/controller.dart
 
 ### 输入
 1. Listener - 指针
@@ -305,3 +309,24 @@
 ### 网络
 1. http 库以及 json 和对象间的转换
 - lib/network/http.dart
+
+### 插件
+1. flutter 与 android 原生之间的数据通信
+- lib/plugin/plugin.dart
+- android/app/src/main/kotlin/com/example/flutter_demo/MainActivity.kt
+- android/app/src/main/kotlin/com/example/flutter_demo/MyFlutterPlugin1.kt
+2. flutter 与 ios 原生之间的数据通信
+- lib/plugin/plugin.dart
+- ios/Runner/AppDelegate.swift
+- ios/Runner/MyFlutterPlugin1.swift
+3. flutter 使用 android 原生控件，并做数据通信
+- lib/plugin/plugin2.dart
+- android/app/src/main/kotlin/com/example/flutter_demo/MainActivity.kt
+- android/app/src/main/kotlin/com/example/flutter_demo/MyFlutterPlugin2.kt
+- android/app/src/main/kotlin/com/example/flutter_demo/MyView.kt
+- android/app/src/main/res/layout/view_my.xml
+4. flutter 使用 ios 原生控件，并做数据通信
+- lib/plugin/plugin2.dart
+- ios/Runner/AppDelegate.swift
+- ios/Runner/MyFlutterPlugin2.swift
+- ios/Runner/MyView.swift

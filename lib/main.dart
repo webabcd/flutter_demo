@@ -117,6 +117,7 @@ import 'state/change_notifier.dart';
 import 'state/value_notifier.dart';
 import 'state/inherited_widget.dart';
 import 'state/find_ancestor.dart';
+import 'state/controller.dart';
 
 import 'input/listener.dart';
 import 'input/gesture_detector.dart';
@@ -160,6 +161,7 @@ import 'localization/localization.dart';
 import 'network/http.dart';
 
 import 'plugin/plugin.dart';
+import 'plugin/plugin2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -266,6 +268,7 @@ class MyApp extends StatelessWidget {
         "lib.state.value_notifier.dart":(context) => const ValueNotifierDemo(),
         "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
         "lib.state.find_ancestor.dart":(context) => const FindAncestorDemo(),
+        "lib.state.controller.dart":(context) => const ControllerDemo(),
         "lib.input.listener.dart":(context) => const ListenerDemo(),
         "lib.input.gesture_detector.dart":(context) => const GestureDetectorDemo(),
         "lib.input.raw_keyboard_listener.dart":(context) => const RawKeyboardListenerDemo(),
@@ -301,6 +304,7 @@ class MyApp extends StatelessWidget {
         "lib.localization.localization.dart":(context) => const LocalizationDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
         "lib.plugin.plugin.dart":(context) => const PluginDemo(),
+        "lib.plugin.plugin2.dart":(context) => const Plugin2Demo(),
       },
     );
   }

@@ -24,6 +24,7 @@
 3、更新 dart 版本时，除了要更新 pub 包外，还要在 pubspec.yaml 中指定你的 dart 的版本，需要修改的地方如下
 environment:
   sdk: ">=2.19.2 <3.0.0"
+4、如果开发 ios 运行时报类似 Pods-xxx.sh permission denied 的错误的话，就 chmod a+x Pods-xxx.sh 即可
 
 镜像：
 不能翻墙的话就镜像，执行如下命令即可

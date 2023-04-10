@@ -1,5 +1,6 @@
 /*
- * 插件基础
+ * 插件
+ * 本例用于演示 flutter 与 android/ios 原生之间的数据通信
  *
  * 一、android 插件开发
  * 1、主 flutter 项目要先在 android 平台中运行一下
@@ -108,8 +109,8 @@ class _PluginDemoState extends State<PluginDemo> {
 
 
 class MyPlugin {
-  /// 获取指定名称的 channel（其用于 flutter 和插件之间的通信）
-  static final MethodChannel _channel = const MethodChannel("myChannel")
+  /// 获取指定名称的 MethodChannel（其用于 flutter 和插件之间的通信）
+  static final MethodChannel _methodChannel = const MethodChannel("com.webabcd.flutter/channel1")
     ..setMethodCallHandler(_callHandler); /// 插件调用 flutter 时会执行这里
 
   /// 用于演示如何接收插件调用 flutter 时的方法名和参数值
@@ -119,30 +120,30 @@ class MyPlugin {
 
   static Future<String> method1() async {
     /// flutter 调用插件中的方法
-    return await _channel.invokeMethod("method1");
+    return await _methodChannel.invokeMethod("method1");
   }
 
   static Future<String> method2() async {
     /// flutter 调用插件中的方法，并传递一个字符串类型的参数
-    return await _channel.invokeMethod("method2", "abc");
+    return await _methodChannel.invokeMethod("method2", "abc");
   }
 
   static Future<String> method3() async {
     /// flutter 调用插件中的方法，并传递一个字典表类型的参数
     var map = {"name": "webabcd", "age": 43};
-    return await _channel.invokeMethod("method3", map);
+    return await _methodChannel.invokeMethod("method3", map);
   }
 
   static Future<String> method4() async {
     /// flutter 调用插件中的方法，并传递一个列表类型的参数
     var list = [1, 2, 3];
-    return await _channel.invokeMethod("method4", list);
+    return await _methodChannel.invokeMethod("method4", list);
   }
 
   static Future<String> method5() async {
     /// flutter 调用插件中的方法，并捕获异常
     try {
-      return await _channel.invokeMethod("method5");
+      return await _methodChannel.invokeMethod("method5");
     } on PlatformException catch(e) {
       return "调用 method5 异常 code:${e.code}, message:${e.message}, details:${e.details}";
     }
@@ -151,7 +152,7 @@ class MyPlugin {
   static Future<String> method6() async {
     /// flutter 调用插件中的方法，但是插件中没有这个方法
     try {
-      return await _channel.invokeMethod("method6");
+      return await _methodChannel.invokeMethod("method6");
     } on MissingPluginException catch(e) {
       return "调用 method6 异常 ${e.toString()}";
     }

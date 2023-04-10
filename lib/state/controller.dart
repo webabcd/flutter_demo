@@ -1,7 +1,7 @@
 /*
  * 状态管理 - 自定义 controller
  *
- * 为一个自定义组件指定一个自定义 controller 后，就可以在自定义组件的外部通过这个 controller 控制自定义组件或监听自定义组件
+ * 为自定义组件指定一个自定义 controller 后，就可以在自定义组件的外部通过这个 controller 控制自定义组件或监听自定义组件
  */
 
 import 'package:flutter/material.dart';
