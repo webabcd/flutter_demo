@@ -1,5 +1,11 @@
 # Flutter Demo
 
+### widget 列表类
+6. GridView - 网格
+- lib/widget/list/grid_view.dart
+
+
+
 
 ### dart
 1. 概述
