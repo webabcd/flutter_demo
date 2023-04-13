@@ -4,7 +4,17 @@
 6. GridView - 网格
 - lib/widget/list/grid_view.dart
 
+### widget 容器类（只能有一个子）
+13. AspectRatio - 按比例
+- lib/widget/container/aspect_ratio.dart
 
+### 输入
+4. Draggable/DragTarget - 拖拽
+- lib/input/drag.dart
+
+### widget 滚动类
+3. DraggableScrollableSheet - 可滚动组件，并且支持通过拖拽的方式上下展开
+- lib/widget/scroll/draggable_scrollable_sheet.dart
 
 
 ### dart

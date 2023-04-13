@@ -52,6 +52,7 @@ import 'widget/container/opacity.dart';
 import 'widget/container/limited_box.dart';
 import 'widget/container/overflow_box.dart';
 import 'widget/container/fitted_box.dart';
+import 'widget/container/aspect_ratio.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
@@ -100,6 +101,7 @@ import 'widget/progress/slider.dart';
 
 import 'widget/scroll/single_child_scroll_view.dart';
 import 'widget/scroll/scroll_controller.dart';
+import 'widget/scroll/draggable_scrollable_sheet.dart';
 
 import 'widget/list/list_view.dart';
 import 'widget/list/list_view2.dart';
@@ -123,6 +125,7 @@ import 'state/controller.dart';
 import 'input/listener.dart';
 import 'input/gesture_detector.dart';
 import 'input/raw_keyboard_listener.dart';
+import 'input/drag.dart';
 
 import 'route/navigator.dart';
 import 'route/navigator2.dart';
@@ -216,6 +219,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.limited_box.dart":(context) => const LimitedBoxDemo(),
         "lib.widget.container.overflow_box.dart":(context) => const OverflowBoxDemo(),
         "lib.widget.container.fitted_box.dart":(context) => const FittedBoxDemo(),
+        "lib.widget.container.aspect_ratio.dart":(context) => const AspectRatioDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),
@@ -255,6 +259,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.progress.slider.dart":(context) => const SliderDemo(),
         "lib.widget.scroll.single_child_scroll_view.dart":(context) => const SingleChildScrollViewDemo(),
         "lib.widget.scroll.scroll_controller.dart":(context) => const ScrollControllerDemo(),
+        "lib.widget.scroll.draggable_scrollable_sheet.dart":(context) => const DraggableScrollableSheetDemo(),
         "lib.widget.list.list_view.dart":(context) => const ListViewDemo(),
         "lib.widget.list.list_view2.dart":(context) => const ListView2Demo(),
         "lib.widget.list.list_view3.dart":(context) => const ListView3Demo(),
@@ -274,6 +279,7 @@ class MyApp extends StatelessWidget {
         "lib.input.listener.dart":(context) => const ListenerDemo(),
         "lib.input.gesture_detector.dart":(context) => const GestureDetectorDemo(),
         "lib.input.raw_keyboard_listener.dart":(context) => const RawKeyboardListenerDemo(),
+        "lib.input.drag.dart":(context) => const DragDemo(),
         "lib.route.navigator.dart":(context) => const NavigatorDemo(),
         "lib.route.navigator2.dart":(context) => const Navigator2Demo(),
         "lib.route.page_route_builder.dart":(context) => const PageRouteBuilderDemo(),
