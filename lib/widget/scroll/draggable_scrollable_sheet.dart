@@ -20,7 +20,7 @@ class _DraggableScrollableSheetDemoState extends State<DraggableScrollableSheetD
     return Scaffold(
       appBar: AppBar(title: const Text("title")),
       backgroundColor: Colors.orange,
-      /// 当 DraggableScrollableSheet 的展开的高度发生变化时触发的事件
+      /// 监听当 DraggableScrollableSheet 的展开的高度发生变化时的通知
       body: NotificationListener<DraggableScrollableNotification>(
         onNotification: (notification) {
           /// 当前展开的高度（占用父的百分比）

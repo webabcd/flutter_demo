@@ -101,6 +101,7 @@ import 'widget/progress/slider.dart';
 
 import 'widget/scroll/single_child_scroll_view.dart';
 import 'widget/scroll/scroll_controller.dart';
+import 'widget/scroll/scroll_notification.dart';
 import 'widget/scroll/draggable_scrollable_sheet.dart';
 
 import 'widget/list/list_view.dart';
@@ -259,6 +260,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.progress.slider.dart":(context) => const SliderDemo(),
         "lib.widget.scroll.single_child_scroll_view.dart":(context) => const SingleChildScrollViewDemo(),
         "lib.widget.scroll.scroll_controller.dart":(context) => const ScrollControllerDemo(),
+        "lib.widget.scroll.scroll_notification.dart":(context) => const ScrollNotificationDemo(),
         "lib.widget.scroll.draggable_scrollable_sheet.dart":(context) => const DraggableScrollableSheetDemo(),
         "lib.widget.list.list_view.dart":(context) => const ListViewDemo(),
         "lib.widget.list.list_view2.dart":(context) => const ListView2Demo(),

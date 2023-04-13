@@ -13,7 +13,9 @@
 - lib/input/drag.dart
 
 ### widget 滚动类
-3. DraggableScrollableSheet - 可滚动组件，并且支持通过拖拽的方式上下展开
+3. ScrollNotification - 
+- lib/widget/scroll/scroll_notification.dart
+4. DraggableScrollableSheet - 可滚动组件，并且支持通过拖拽的方式上下展开
 - lib/widget/scroll/draggable_scrollable_sheet.dart
 
 
