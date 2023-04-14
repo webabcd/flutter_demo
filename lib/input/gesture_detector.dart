@@ -3,6 +3,10 @@
  *
  * 指针事件是原始的
  * 手势事件封装了指针事件，其用于描述具有特殊语义的操作
+ *
+ * 注：
+ * 如果需要让任意组件支持点击事件则就用 GestureDetector 就行
+ * 如果需要让任意组件支持点击事件，并且还要支持点击的动画效果，则可以用 Ink/InkWell/InkResponse，参见 /widget/button/ink.dart
  */
 
 import 'package:flutter/material.dart';

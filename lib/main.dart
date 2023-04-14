@@ -62,6 +62,7 @@ import 'widget/button/text_button.dart';
 import 'widget/button/outlined_button.dart';
 import 'widget/button/elevated_button.dart';
 import 'widget/button/icon_button.dart';
+import 'widget/button/ink.dart';
 
 import 'widget/chip/chip.dart';
 import 'widget/chip/action_chip.dart';
@@ -232,6 +233,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.button.outlined_button.dart":(context) => const OutlinedButtonDemo(),
         "lib.widget.button.elevated_button.dart":(context) => const ElevatedButtonDemo(),
         "lib.widget.button.icon_button.dart":(context) => const IconButtonDemo(),
+        "lib.widget.button.ink.dart":(context) => const InkDemo(),
         "lib.widget.chip.chip.dart":(context) => const ChipDemo(),
         "lib.widget.chip.action_chip.dart":(context) => const ActionChipDemo(),
         "lib.widget.chip.choice_chip.dart":(context) => const ChoiceChipDemo(),

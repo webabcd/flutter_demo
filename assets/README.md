@@ -1,19 +1,5 @@
 # Flutter Demo
 
-### UI
-8. 其它
-- lib/ui/other.dart
-9. MediaQuery - 获取屏幕的相关信息，使系统设置中的字体大小无效
-- lib/ui/media_query.dart
-
-### 输入
-5. 软键盘相关
-- lib/input/soft_keyboard.dart
-
-
-
-
-
 
 ### dart
 1. 概述
@@ -122,6 +108,8 @@
 - lib/widget/button/elevated_button.dart
 4. IconButton - 图标按钮
 - lib/widget/button/icon_button.dart
+5. Ink/InkWell/InkResponse - 让任意组件支持点击事件和点击效果
+- lib/widget/button/ink.dart 
 
 ### widget Chip 类
 1. Chip - Chip（背景上有文字，文字左边有图标，文字右边有删除按钮）
@@ -254,6 +242,8 @@
 - lib/input/raw_keyboard_listener.dart
 4. Draggable/DragTarget - 拖拽
 - lib/input/drag.dart
+5. 软键盘相关
+- lib/input/soft_keyboard.dart 
 
 ### 路由和导航
 1. 路由和导航的基础
@@ -289,6 +279,10 @@
 - lib/ui/safe_area.dart
 7. 闪屏页，程序名称，程序图标
 - lib/ui/splash_screen.dart
+8. 其它
+- lib/ui/other.dart
+9. MediaQuery - 获取屏幕的相关信息，使系统设置中的字体大小无效
+- lib/ui/media_query.dart
 
 ### 图形
 1. 边框
