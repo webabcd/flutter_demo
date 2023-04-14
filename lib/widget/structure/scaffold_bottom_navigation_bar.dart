@@ -2,6 +2,8 @@
  * BottomNavigationBar - 底部导航栏（一般在 Scaffold 中使用）
  *
  * BottomNavigationBar 的 item 是由图标和文字组成的
+ *
+ * 注意：如果需要实现底部导航栏与 floatingActionButton 之间的空隙效果，则要用 BottomAppBar，参见 scaffold_floating_action_button.dart
  */
 
 import 'package:flutter/material.dart';
