@@ -56,7 +56,7 @@ class _RowDemoState extends State<RowDemo> {
             ///   ltr - 左到右，默认值
             ///   rtl - 右到左
             textDirection: TextDirection.ltr,
-            /// mainAxisAlignment - 主轴方向的排列方式（对于 Row 来说就是水平方向的排列方式），以下说明以 TextDirection.ltr 为例
+            /// mainAxisAlignment - 主轴方向的排列方式（对于 Row 来说就是每个元素水平方向的排列方式），以下说明以 TextDirection.ltr 为例
             ///   start - 线性排列，整体居左
             ///   end - 线性排列，整体居右
             ///   center - 线性排列，整体居中
@@ -68,7 +68,7 @@ class _RowDemoState extends State<RowDemo> {
             ///   down - 上到下，默认值
             ///   up - 下到上
             verticalDirection: VerticalDirection.down,
-            /// crossAxisAlignment - 交叉轴方向的元素对齐方式（对于 Row 来说就是垂直方向的元素对齐方式），以下说明以 VerticalDirection.down 为例
+            /// crossAxisAlignment - 交叉轴方向的元素对齐方式（对于 Row 来说就是每个元素垂直方向的对齐方式），以下说明以 VerticalDirection.down 为例
             ///   start - 顶部对齐
             ///   end - 底部对齐
             ///   center - 中线对齐，默认值
