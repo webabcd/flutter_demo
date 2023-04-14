@@ -128,6 +128,7 @@ import 'input/listener.dart';
 import 'input/gesture_detector.dart';
 import 'input/raw_keyboard_listener.dart';
 import 'input/drag.dart';
+import 'input/soft_keyboard.dart';
 
 import 'route/navigator.dart';
 import 'route/navigator2.dart';
@@ -142,6 +143,8 @@ import 'ui/theme2.dart';
 import 'ui/orientation.dart';
 import 'ui/safe_area.dart';
 import 'ui/splash_screen.dart';
+import 'ui/media_query.dart';
+import 'ui/other.dart';
 
 import 'shape/border.dart';
 import 'shape/clip.dart';
@@ -284,6 +287,7 @@ class MyApp extends StatelessWidget {
         "lib.input.gesture_detector.dart":(context) => const GestureDetectorDemo(),
         "lib.input.raw_keyboard_listener.dart":(context) => const RawKeyboardListenerDemo(),
         "lib.input.drag.dart":(context) => const DragDemo(),
+        "lib.input.soft_keyboard.dart":(context) => const SoftKeyboardDemo(),
         "lib.route.navigator.dart":(context) => const NavigatorDemo(),
         "lib.route.navigator2.dart":(context) => const Navigator2Demo(),
         "lib.route.page_route_builder.dart":(context) => const PageRouteBuilderDemo(),
@@ -296,6 +300,8 @@ class MyApp extends StatelessWidget {
         "lib.ui.orientation.dart":(context) => const OrientationDemo(),
         "lib.ui.safe_area.dart":(context) => const SafeAreaDemo(),
         "lib.ui.splash_screen.dart":(context) => const SplashScreenDemo(),
+        "lib.ui.media_query.dart":(context) => const MediaQueryDemo(),
+        "lib.ui.other.dart":(context) => const OtherDemo(),
         "lib.shape.border.dart":(context) => const BorderDemo(),
         "lib.shape.clip.dart":(context) => const ClipDemo(),
         "lib.shape.gradient.dart":(context) => const GradientDemo(),
