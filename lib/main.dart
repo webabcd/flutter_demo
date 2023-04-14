@@ -122,6 +122,7 @@ import 'state/value_notifier.dart';
 import 'state/inherited_widget.dart';
 import 'state/find_ancestor.dart';
 import 'state/controller.dart';
+import 'state/notification_listener.dart';
 
 import 'input/listener.dart';
 import 'input/gesture_detector.dart';
@@ -278,6 +279,7 @@ class MyApp extends StatelessWidget {
         "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
         "lib.state.find_ancestor.dart":(context) => const FindAncestorDemo(),
         "lib.state.controller.dart":(context) => const ControllerDemo(),
+        "lib.state.notification_listener.dart":(context) => const NotificationListenerDemo(),
         "lib.input.listener.dart":(context) => const ListenerDemo(),
         "lib.input.gesture_detector.dart":(context) => const GestureDetectorDemo(),
         "lib.input.raw_keyboard_listener.dart":(context) => const RawKeyboardListenerDemo(),

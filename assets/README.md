@@ -1,23 +1,5 @@
 # Flutter Demo
 
-### widget 列表类
-6. GridView - 网格
-- lib/widget/list/grid_view.dart
-
-### widget 容器类（只能有一个子）
-13. AspectRatio - 按比例
-- lib/widget/container/aspect_ratio.dart
-
-### 输入
-4. Draggable/DragTarget - 拖拽
-- lib/input/drag.dart
-
-### widget 滚动类
-3. ScrollNotification - 
-- lib/widget/scroll/scroll_notification.dart
-4. DraggableScrollableSheet - 可滚动组件，并且支持通过拖拽的方式上下展开
-- lib/widget/scroll/draggable_scrollable_sheet.dart
-
 
 ### dart
 1. 概述
@@ -106,6 +88,8 @@
 - lib/widget/container/overflow_box.dart
 12. FittedBox - 自适应
 - lib/widget/container/fitted_box.dart
+13. AspectRatio - 按比例
+- lib/widget/container/aspect_ratio.dart
 
 ### widget 文本类
 1. Text - 文本显示框
@@ -114,6 +98,8 @@
 - lib/widget/text/font.dart
 3. TextField - 文本输入框
 - lib/widget/text/text_field.dart
+4. Draggable/DragTarget - 拖拽
+- lib/input/drag.dart
 
 ### widget 按钮类
 1. TextButton - 文本按钮
@@ -202,6 +188,10 @@
 - lib/widget/scroll/single_child_scroll_view.dart
 2. ScrollController - 用于控制可滚动组件和滚动条
 - lib/widget/scroll/scroll_controller.dart
+3. ScrollNotification - 滚动通知
+- lib/widget/scroll/scroll_notification.dart
+4. DraggableScrollableSheet - 可滚动组件，并且支持通过拖拽的方式上下展开
+- lib/widget/scroll/draggable_scrollable_sheet.dart
 
 ### widget 列表类
 1. ListView - 列表（基础）
@@ -214,6 +204,8 @@
 - lib/widget/list/list_tile.dart
 5. ExpansionTile - 列表项（可展开）
 - lib/widget/list/expansion_tile.dart
+6. GridView - 网格
+- lib/widget/list/grid_view.dart
 
 ### widget Builder
 1. Builder - 在指定的位置构造上下文
@@ -236,7 +228,9 @@
 - lib/state/inherited_widget.dart
 4. 状态管理 - 在树上，子获取父的数据
 - lib/state/find_ancestor.dart
-5. 状态管理 - 自定义 controller
+5. 状态管理 - 在树上，父监听子的通知
+- lib/state/notification_listener.dart
+6. 状态管理 - 自定义 controller
 - lib/state/controller.dart
 
 ### 输入
