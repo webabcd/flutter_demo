@@ -36,7 +36,29 @@ class OrientationDemo extends StatefulWidget {
   _OrientationDemoState createState() => _OrientationDemoState();
 }
 
-class _OrientationDemoState extends State<OrientationDemo> {
+/// 通过 with WidgetsBindingObserver 可以监听屏幕尺寸的变化（比如横竖屏切换时）
+class _OrientationDemoState extends State<OrientationDemo> with WidgetsBindingObserver {
+
+  @override
+  void initState() {
+    /// 开始监听
+    WidgetsBinding.instance.addObserver(this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    /// 停止监听
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  /// 来自 with WidgetsBindingObserver 可以监听屏幕尺寸的变化（比如横竖屏切换时）
+  @override
+  void didChangeMetrics() {
+    log("size: ${MediaQuery.of(context).size}");
+    super.didChangeMetrics();
+  }
 
   @override
   Widget build(BuildContext context) {
