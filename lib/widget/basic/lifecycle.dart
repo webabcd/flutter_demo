@@ -94,6 +94,24 @@ class _LifecycleDemoState extends State<LifecycleDemo> with WidgetsBindingObserv
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           MyButton(
+            onPressed: () async {
+              await Future.delayed(const Duration(milliseconds: 3000));
+
+              /// mounted 用于表示 State 对应的 Element 是否挂载到树中
+              ///   mounted 为 true 时，可以正常的 setState() 并渲染页面
+              ///   mounted 为 false 时，如果调用 setState() 则会报错
+              /// 如果异步任务回调后需要重新渲染页面，则建议先判断 mounted 以便确定是否可渲染
+              /// 如果回调之前退出了页面的话，则 mounted 就变为 false 了，之后如果再去渲染页面的话就会报错
+              if (mounted) {
+                setState(() {
+
+                });
+              }
+            },
+            child: const Text('长时任务'),
+          ),
+
+          MyButton(
             onPressed: () {
               setState(() {
                 counter++;
