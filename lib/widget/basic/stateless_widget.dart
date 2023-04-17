@@ -11,9 +11,17 @@ import 'package:flutter_demo/helper.dart';
 class StatelessWidgetDemo extends StatelessWidget {
   const StatelessWidgetDemo({Key? key}) : super(key: key);
 
+  /// createElement() 用于创建相关的 Element
+  @override
+  StatelessElement createElement() {
+    log("createElement()");
+    return super.createElement();
+  }
+
   /// build() 用于创建这个 widget 并渲染
   @override
   Widget build(BuildContext context) {
+    log("build()");
     return const MyWidget(text: "StatelessWidgetDemo");
   }
 }
