@@ -32,12 +32,12 @@ class _ValueNotifierDemoState extends State<ValueNotifierDemo> {
           floatingActionButton: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              FloatingActionButton(
+              MyButton(
                 onPressed: () => _myValueNotifier.increment(),
                 child: const Icon(Icons.exposure_plus_1_outlined),
               ),
               const SizedBox(width: 10),
-              FloatingActionButton(
+              MyButton(
                 onPressed: () => _myValueNotifier.decrement(),
                 child: const Icon(Icons.exposure_minus_1_outlined),
               ),
