@@ -1,15 +1,5 @@
 # Flutter Demo
 
-### 输入
-6. 命中测试（hit test）
-- lib/input/hit_test.dart
-
-### widget 基础
-6. 生命周期
-- lib/widget/basic/lifecycle.dart
-
-
-
 
 ### dart
 1. 概述
@@ -58,6 +48,8 @@
 - lib/widget/basic/focus.dart
 5. 三棵树
 - lib/widget/basic/tree.dart
+6. 生命周期
+- lib/widget/basic/lifecycle.dart 
 
 ### widget 布局类（可以有多个子）
 1. Row - 水平弹性布局
@@ -253,7 +245,9 @@
 4. Draggable/DragTarget - 拖拽
 - lib/input/drag.dart
 5. 软键盘相关
-- lib/input/soft_keyboard.dart 
+- lib/input/soft_keyboard.dart
+6. 命中测试（hit test）
+- lib/input/hit_test.dart 
 
 ### 路由和导航
 1. 路由和导航的基础
