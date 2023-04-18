@@ -37,8 +37,8 @@ class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
             /// 通过 GestureDetector 监听手势事件
             child: GestureDetector(
               child: Container(
-                width: 300,
-                height: 150,
+                width: 200,
+                height: 100,
                 color: Colors.red,
               ),
               /// 按下
@@ -69,11 +69,12 @@ class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
               },
             ),
           ),
+
           Center(
             child: GestureDetector(
               child: Container(
-                width: 300,
-                height: 150,
+                width: 200,
+                height: 100,
                 color: Colors.green,
               ),
               /// 触摸且有位移的手势开始时（不可与 onHorizontalDragStart 或 onVerticalDragStart 共存）
@@ -91,11 +92,12 @@ class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
               },
             ),
           ),
+
           Center(
             child: GestureDetector(
               child: Container(
-                width: 300,
-                height: 150,
+                width: 200,
+                height: 100,
                 color: Colors.blue,
               ),
 
@@ -119,6 +121,31 @@ class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
               },
               onHorizontalDragEnd: (details) {
                 log('onHorizontalDragEnd: ${details.velocity}');
+              },
+            ),
+          ),
+
+          /// 手势事件是不会冒泡的，需要冒泡的话请用指针事件
+          Center(
+            child: GestureDetector(
+              child: Container(
+                width: 200,
+                height: 100,
+                color: Colors.red,
+                alignment: Alignment.center,
+                child: GestureDetector(
+                  child: Container(
+                    width: 100,
+                    height: 50,
+                    color: Colors.green,
+                  ),
+                  onTap: () {
+                    log('onTap green');
+                  },
+                ),
+              ),
+              onTap: () {
+                log('onTap red');
               },
             ),
           ),

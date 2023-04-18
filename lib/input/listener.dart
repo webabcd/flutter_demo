@@ -55,7 +55,7 @@ class _ListenerDemoState extends State<ListenerDemo> {
               },
             ),
 
-            /// 用于演示指针事件的冒泡
+            /// 用于演示指针事件的冒泡，如果不需要冒泡的话请用手势事件
             Listener(
               child: Container(
                 color: Colors.red,
