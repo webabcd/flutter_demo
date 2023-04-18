@@ -32,6 +32,13 @@ class _ControllerDemoState extends State<ControllerDemo> {
   }
 
   @override
+  void dispose() {
+    /// 清理 controller
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
