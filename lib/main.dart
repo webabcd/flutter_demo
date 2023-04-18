@@ -131,6 +131,7 @@ import 'input/gesture_detector.dart';
 import 'input/raw_keyboard_listener.dart';
 import 'input/drag.dart';
 import 'input/soft_keyboard.dart';
+import 'input/hit_test.dart';
 
 import 'route/navigator.dart';
 import 'route/navigator2.dart';
@@ -292,6 +293,7 @@ class MyApp extends StatelessWidget {
         "lib.input.raw_keyboard_listener.dart":(context) => const RawKeyboardListenerDemo(),
         "lib.input.drag.dart":(context) => const DragDemo(),
         "lib.input.soft_keyboard.dart":(context) => const SoftKeyboardDemo(),
+        "lib.input.hit_test.dart":(context) => const HitTestDemo(),
         "lib.route.navigator.dart":(context) => const NavigatorDemo(),
         "lib.route.navigator2.dart":(context) => const Navigator2Demo(),
         "lib.route.page_route_builder.dart":(context) => const PageRouteBuilderDemo(),

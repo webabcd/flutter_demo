@@ -1,5 +1,8 @@
 # Flutter Demo
 
+### 输入
+6. 命中测试（hit test）
+- lib/input/hit_test.dart
 
 ### widget 基础
 6. 生命周期
