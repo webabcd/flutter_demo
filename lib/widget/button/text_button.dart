@@ -110,6 +110,22 @@ class _TextButtonDemoState extends State<TextButtonDemo> {
             ),
           ),
         ),
+
+        /// 全局去掉按钮按下的水波纹效果和背景效果
+        Theme(
+          data: ThemeData(
+            textButtonTheme: TextButtonThemeData(
+              style: ButtonStyle(
+                splashFactory: NoSplash.splashFactory,                        /// 去掉水波纹效果
+                overlayColor: MaterialStateProperty.all(Colors.transparent),  /// 去掉背景效果
+              ),
+            ),
+          ),
+          child:TextButton(
+            child: const Text("button"),
+            onPressed: () { },
+          ),
+        ),
       ],
     );
   }
