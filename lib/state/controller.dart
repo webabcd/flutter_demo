@@ -125,7 +125,6 @@ class _MyWidgetState extends State<_MyWidget> with SingleTickerProviderStateMixi
   @override
   void dispose() {
     /// 清理 controller
-    widget.controller.dispose();
     _animationController.dispose();
     super.dispose();
   }
