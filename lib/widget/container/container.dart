@@ -53,14 +53,20 @@ class ContainerDemo extends StatelessWidget {
           child: MyText("webabcd"),
         ),
 
-        /// Container 的宽高逻辑和 SizedBox 的逻辑是一样的，下面会显示一个 200 * 50 的绿色矩形
+        /// Container 设置了宽和高，则其子元素的宽和高会强制与 Container 的宽和高相同，下面会显示一个 200 * 50 的绿色矩形
         Container(
           width: 200, height: 50, color: Colors.red,
           child: Container(color: Colors.green, width: 1, height: 1,),
         ),
-        /// Container 的宽高逻辑和 SizedBox 的逻辑是一样的，下面会显示一个 200 * 30 的绿色矩形
+        /// Container 如果没设置宽或高，则其子元素自行确定宽或高，下面会显示一个 200 * 30 的绿色矩形
         Container(
           width: 200, color: Colors.red,
+          child: Container(color: Colors.green, width: 1, height: 30,),
+        ),
+        /// Container 如果指定了 alignment 的话，则子元素如果指定了宽高就不会跟父元素走，下面会显示一个 200 * 30 的红色矩形，中部有一个 1 * 30 的绿色矩形
+        Container(
+          width: 200, color: Colors.red,
+          alignment: Alignment.center,
           child: Container(color: Colors.green, width: 1, height: 30,),
         ),
 
