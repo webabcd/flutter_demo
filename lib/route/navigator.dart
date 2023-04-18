@@ -6,6 +6,8 @@
  *
  * Navigator - 通过路由栈管理路由集合，其提供了很多方法来管理路由栈，比如可以使用 push 或 pop 做入栈或出栈
  * MaterialPageRoute - 用于定义路由的与导航相关的行为，以及路由之间切换时的动画等（如果需要类似 ios 的效果就用 CupertinoPageRoute）
+ *   MaterialApp 的 pushNamed() 走的是 MaterialPageRoute
+ *   CupertinoApp 的 pushNamed() 走的是 CupertinoPageRoute
  * MaterialApp - 需要在 MaterialApp 内做路由管理，一个程序只有一个顶级 MaterialApp（可以嵌套），所有路由都在其内管理
  */
 
