@@ -54,6 +54,16 @@ class FittedBoxDemo extends StatelessWidget {
             ),
           ),
         ),
+
+        const Expanded(
+          child: FittedBox(
+            /// child 相对于 FittedBox 的对齐方式
+            alignment: Alignment.centerRight,
+            /// child 的拉伸方式（参见 /lib/widget/media/image.dart 中的相关说明）
+            fit: BoxFit.fitHeight,
+            child: MyText('W'),
+          ),
+        ),
       ],
     );
   }
