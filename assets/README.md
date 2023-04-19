@@ -5,6 +5,11 @@
 5. PageView - 页面滚动切换
 - lib/widget/scroll/page_view.dart
 
+### widget 选择类
+5. ToggleButtons - 一组多状态按钮
+- lib/widget/selection/toggle_buttons.dart
+
+
 
 
 ### dart
