@@ -1,6 +1,12 @@
 # Flutter Demo
 
 
+### widget 滚动类
+5. PageView - 页面滚动切换
+- lib/widget/scroll/page_view.dart
+
+
+
 ### dart
 1. 概述
 - lib/dart/summary.dart

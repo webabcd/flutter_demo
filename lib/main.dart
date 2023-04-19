@@ -105,6 +105,7 @@ import 'widget/scroll/single_child_scroll_view.dart';
 import 'widget/scroll/scroll_controller.dart';
 import 'widget/scroll/scroll_notification.dart';
 import 'widget/scroll/draggable_scrollable_sheet.dart';
+import 'widget/scroll/page_view.dart';
 
 import 'widget/list/list_view.dart';
 import 'widget/list/list_view2.dart';
@@ -271,6 +272,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.scroll.scroll_controller.dart":(context) => const ScrollControllerDemo(),
         "lib.widget.scroll.scroll_notification.dart":(context) => const ScrollNotificationDemo(),
         "lib.widget.scroll.draggable_scrollable_sheet.dart":(context) => const DraggableScrollableSheetDemo(),
+        "lib.widget.scroll.page_view.dart":(context) => const PageViewDemo(),
         "lib.widget.list.list_view.dart":(context) => const ListViewDemo(),
         "lib.widget.list.list_view2.dart":(context) => const ListView2Demo(),
         "lib.widget.list.list_view3.dart":(context) => const ListView3Demo(),
