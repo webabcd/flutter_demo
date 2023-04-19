@@ -14,6 +14,16 @@ class FittedBoxDemo extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
+        const Expanded(
+          child: FittedBox(
+            /// child 相对于 FittedBox 的对齐方式
+            alignment: Alignment.centerRight,
+            /// child 的拉伸方式（参见 /lib/widget/media/image.dart 中的相关说明）
+            fit: BoxFit.fitHeight,
+            child: MyText('W'),
+          ),
+        ),
+        
         Expanded(
           /// Container 的宽高与父相同
           /// Container 会让其 child 自行决定宽高
@@ -52,16 +62,6 @@ class FittedBoxDemo extends StatelessWidget {
                 child: MyText('abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz'),
               ),
             ),
-          ),
-        ),
-
-        const Expanded(
-          child: FittedBox(
-            /// child 相对于 FittedBox 的对齐方式
-            alignment: Alignment.centerRight,
-            /// child 的拉伸方式（参见 /lib/widget/media/image.dart 中的相关说明）
-            fit: BoxFit.fitHeight,
-            child: MyText('W'),
           ),
         ),
       ],
