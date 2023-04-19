@@ -330,7 +330,7 @@
 - lib/animation/animated_widget.dart
 8. AnimatedBuilder - 用于简化 AnimatedWidget 动画
 - lib/animation/animated_builder.dart
-9. AnimatedXxx - 极简动画 Widget（AnimatedContainer, AnimatedDefaultTextStyle, AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedRotation，AnimatedScale， AnimatedSize， AnimatedSlide 等）
+9. AnimatedXxx - 极简动画 Widget（AnimatedContainer, AnimatedDefaultTextStyle, AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedRotation, AnimatedScale, AnimatedSize, AnimatedSlide 等）
 - lib/animation/animated.dart
 10. Hero - 一个对象从一个页飞入另一个页的动画
 - lib/animation/hero.dart
