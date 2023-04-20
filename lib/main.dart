@@ -10,6 +10,7 @@
  */
 
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'helper.dart';
 
@@ -370,6 +371,19 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
       }
     }
+  }
+
+  @override
+  void initState() {
+
+    /// 每帧都回调，经测试 flutter 是 60 帧刷新率
+    SchedulerBinding.instance.addPersistentFrameCallback((timeStamp) {
+      log("$timeStamp");
+      /// 有下面这句则每帧回调，没有下面这句则每次渲染时回调
+      SchedulerBinding.instance.scheduleFrame();
+    });
+
+    super.initState();
   }
 
   @override
