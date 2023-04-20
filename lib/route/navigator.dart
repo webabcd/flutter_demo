@@ -87,7 +87,7 @@ class _MyNavigatorDemoState extends State<MyNavigatorDemo> {
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(
                   /// 是否采用全屏模态框的方式显示指定的页面（默认值为 false）
-                  ///   在 ios 中此值为 true 则对应 showViewController，此值为 false 则对应 pushViewController
+                  ///   在 ios 中此值为 true 则对应 present/dismiss，此值为 false 则对应 push/pop
                   fullscreenDialog: true,
                   builder: (context) => const Route1Demo()),
               );

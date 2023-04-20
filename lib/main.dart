@@ -96,6 +96,7 @@ import 'widget/selection/checkbox.dart';
 import 'widget/selection/dropdown_button.dart';
 import 'widget/selection/switch.dart';
 import 'widget/selection/toggle_buttons.dart';
+import 'widget/selection/time_picker.dart';
 
 import 'widget/progress/circular_progress_indicator.dart';
 import 'widget/progress/linear_progress_indicator.dart';
@@ -266,6 +267,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.selection.dropdown_button.dart":(context) => const DropdownButtonDemo(),
         "lib.widget.selection.switch.dart":(context) => const SwitchDemo(),
         "lib.widget.selection.toggle_buttons.dart":(context) => const ToggleButtonsDemo(),
+        "lib.widget.selection.time_picker.dart":(context) => const TimePickerDemo(),
         "lib.widget.progress.circular_progress_indicator.dart":(context) => const CircularProgressIndicatorDemo(),
         "lib.widget.progress.linear_progress_indicator.dart":(context) => const LinearProgressIndicatorDemo(),
         "lib.widget.progress.refresh_indicator.dart":(context) => const RefreshIndicatorDemo(),
