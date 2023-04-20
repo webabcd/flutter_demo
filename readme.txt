@@ -1,3 +1,4 @@
+开发前须知：
 1、flutter 官网 https://flutter.dev/
 2、windows 环境的 flutter sdk 下载地址和安装说明 https://docs.flutter.dev/get-started/install/windows
   注：别忘了在 File->Settings->Languages & Frameworks->Flutter 中指定 flutter sdk 的路径
@@ -18,6 +19,12 @@
   如果出现 Unable to find suitable Visual Studio toolchain. 错误，则需要在安装 visual studio 的时候勾选“使用 C++ 的桌面开发”
 
 
+运行和编译相关的命令：
+1、比如 flutter run -d chrome 代表着在 chrome 中运行 flutter，其中的 -d 后面跟的是 device-id，如果找不到对应的 device-id 的话则会列出所有可用的 device-id
+2、比如 flutter build apk --release 会生成 release 版 apk 文件
+3、比如 flutter build ipa --release 会生成 release 版 ipa 文件
+
+
 提示：
 1、如果运行时卡在 Running Gradle task 'assembleDebug' 的话，则翻墙跑一遍即可
 2、查看 flutter 版本用 flutter --version，更新 flutter 版本用 flutter upgrade，获取 pub 包用 flutter pub get，更新 pub 包用 flutter pub upgrade
@@ -25,6 +32,7 @@
 environment:
   sdk: ">=2.19.2 <3.0.0"
 4、如果开发 ios 运行时报类似 Pods-xxx.sh permission denied 的错误的话，就 chmod a+x Pods-xxx.sh 即可
+
 
 镜像：
 不能翻墙的话就镜像，执行如下命令即可

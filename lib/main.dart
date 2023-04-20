@@ -9,6 +9,7 @@
  * 2、UI 的声明式编程：描述你需要的 UI 即可（构造 Widget 实例），需要修改时就重新描述 UI（构造新的 Widget 实例）
  */
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -378,10 +379,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
     /// 每帧都回调，经测试 flutter 是 60 帧刷新率
     SchedulerBinding.instance.addPersistentFrameCallback((timeStamp) {
-      log("$timeStamp");
+      /// log("$timeStamp");
       /// 有下面这句则每帧回调，没有下面这句则每次渲染时回调
       SchedulerBinding.instance.scheduleFrame();
     });
+
+    /// 判断当前是否是 release 模式
+    if (kReleaseMode) {
+      log("release 模式");
+    } else {
+      log("debug 模式");
+    }
 
     super.initState();
   }

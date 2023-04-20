@@ -50,6 +50,26 @@ android {
         versionName flutterVersionName
     }
 
+    signingConfigs {
+        flutterDemo {
+            storeFile file("mykey.key")
+            storePassword "111111"
+            keyAlias "flutter_demo"
+            keyPassword "111111"
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.flutterDemo
+        }
+
+        release {
+            signingConfig signingConfigs.flutterDemo
+        }
+    }
+
+    /*
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
@@ -57,6 +77,7 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    */
 }
 
 flutter {
