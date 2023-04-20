@@ -79,7 +79,29 @@ class _TreeDemoState extends State<TreeDemo> {
             widgets2.insert(0, widgets2.removeAt(1));
             setState(() {});
           },
+        ),
+
+        /// 通过 Builder 获取上下文，这个上下文是由框架传递过来的
+        Builder(
+          builder: (context) {
+            return GestureDetector(
+              child: Container(
+                width: 200,
+                height: 100,
+                color: Colors.orange,
+              ),
+              onTap: () {
+                /// 通过 context 获取对应的 RenderObject
+                RenderBox box = context.findRenderObject() as RenderBox;
+                /// 获取此 RenderObject 的相对于屏幕的位置
+                /// 对于本例来说拿到的就是 Container 相对于屏幕的位置
+                var globalOffset = box.localToGlobal(Offset.zero);
+                log("相对于屏幕的位置:$globalOffset");
+              },
+            );
+          },
         )
+
       ],
     );
   }
