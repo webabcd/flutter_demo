@@ -1,5 +1,5 @@
 /*
- * dart 单线程异步编程（async/await/Future<T>/Stream<T>/StreamSubscription/Completer）
+ * dart 单线程异步编程（async/await/Future<T>/Stream<T>/StreamSubscription/Completer/Timer）
  *
  * 注：
  * 本例介绍的异步编程，只是在相同线程上的异步，并不是多线程，关于多线程请参见 isolate.dart
@@ -24,6 +24,8 @@ class DartAsync extends StatelessWidget {
     sample3();
     // 演示 Completer 的用法
     sample4();
+    // 演示 Timer 的用法
+    sample5();
 
     return const MyWidget(text: "dart_async");
   }
@@ -236,5 +238,26 @@ class DartAsync extends StatelessWidget {
 
     // 返回一个 Future<T> 对象，从而实现异步编程
     return c.future;
+  }
+
+
+
+  void sample5() {
+    var timeout = const Duration(seconds: 3);
+    log('currentTimestamp1:${currentTimestamp()}');
+    // 指定的时间之后回调
+    Timer(timeout, () {
+      log('currentTimestamp1:${currentTimestamp()}');
+    });
+
+    var period = const Duration(seconds: 1);
+    log('currentTimestamp2:${currentTimestamp()}');
+    // 指定的间隔时间回调
+    Timer.periodic(period, (timer) {
+      log('currentTimestamp2:${currentTimestamp()}, ${timer.tick}');
+      if (timer.tick >= 5) {  // 定时器的执行次数
+        timer.cancel();       // 停止定时器
+      }
+    });
   }
 }
