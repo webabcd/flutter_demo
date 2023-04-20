@@ -1,18 +1,6 @@
 # Flutter Demo
 
 
-### widget 滚动类
-5. PageView - 页面滚动切换
-- lib/widget/scroll/page_view.dart
-
-### widget 选择类
-5. ToggleButtons - 一组多状态按钮
-- lib/widget/selection/toggle_buttons.dart
-6. showDatePicker()/showTimePicker/CalendarDatePicker - 日期选择和时间选择
-- lib/widget/selection/time_picker.dart
-
-
-
 ### dart
 1. 概述
 - lib/dart/summary.dart
@@ -186,6 +174,10 @@
 - lib/widget/selection/dropdown_button.dart
 4. Switch - 开关
 - lib/widget/selection/switch.dart
+5. ToggleButtons - 一组多状态按钮
+- lib/widget/selection/toggle_buttons.dart
+6. showDatePicker()/showTimePicker/CalendarDatePicker - 日期选择和时间选择
+- lib/widget/selection/time_picker.dart 
 
 ### widget 进度类
 1. CircularProgressIndicator - 圆形进度条
@@ -206,6 +198,8 @@
 - lib/widget/scroll/scroll_notification.dart
 4. DraggableScrollableSheet - 可滚动组件，并且支持通过拖拽的方式上下展开
 - lib/widget/scroll/draggable_scrollable_sheet.dart
+5. PageView - 页面滚动切换
+- lib/widget/scroll/page_view.dart 
 
 ### widget 列表类
 1. ListView - 列表（基础）

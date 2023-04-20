@@ -20,7 +20,7 @@
 - lib/dart/class2.dart
 9. 泛型（泛型类，泛型属性，泛型方法，泛型扩展方法）
 - lib/dart/generic.dart
-10. 单线程异步编程（async/await/Future<T>/Stream<T>/StreamSubscription/Completer）
+10. 单线程异步编程（async/await/Future<T>/Stream<T>/StreamSubscription/Completer/Timer）
 - lib/dart/async.dart
 11. 多线程异步编程（isolate/compute）
 - lib/dart/isolate.dart
@@ -174,6 +174,10 @@
 - lib/widget/selection/dropdown_button.dart
 4. Switch - 开关
 - lib/widget/selection/switch.dart
+5. ToggleButtons - 一组多状态按钮
+- lib/widget/selection/toggle_buttons.dart
+6. showDatePicker()/showTimePicker/CalendarDatePicker - 日期选择和时间选择
+- lib/widget/selection/time_picker.dart
 
 ### widget 进度类
 1. CircularProgressIndicator - 圆形进度条
@@ -194,6 +198,8 @@
 - lib/widget/scroll/scroll_notification.dart
 4. DraggableScrollableSheet - 可滚动组件，并且支持通过拖拽的方式上下展开
 - lib/widget/scroll/draggable_scrollable_sheet.dart
+5. PageView - 页面滚动切换
+- lib/widget/scroll/page_view.dart
 
 ### widget 列表类
 1. ListView - 列表（基础）
@@ -319,7 +325,7 @@
 - lib/animation/animated_widget.dart
 8. AnimatedBuilder - 用于简化 AnimatedWidget 动画
 - lib/animation/animated_builder.dart
-9. AnimatedXxx - 极简动画 Widget（AnimatedContainer, AnimatedDefaultTextStyle, AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedRotation，AnimatedScale， AnimatedSize， AnimatedSlide 等）
+9. AnimatedXxx - 极简动画 Widget（AnimatedContainer, AnimatedDefaultTextStyle, AnimatedOpacity, AnimatedPadding, AnimatedPositioned, AnimatedRotation, AnimatedScale, AnimatedSize, AnimatedSlide 等）
 - lib/animation/animated.dart
 10. Hero - 一个对象从一个页飞入另一个页的动画
 - lib/animation/hero.dart
