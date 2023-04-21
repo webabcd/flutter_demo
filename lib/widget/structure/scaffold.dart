@@ -39,6 +39,7 @@ class _ScaffoldDemoState extends State<ScaffoldDemo> {
         ],
         persistentFooterAlignment: AlignmentDirectional.center,     /// 底部导航栏上面的一组 widget 的对齐方式
 
+        /// 注：可以为 floatingActionButton 指定任意类型的 widget
         floatingActionButton: Builder(                              /// 悬浮按钮，请参见 scaffold_floating_action_button.dart
           builder: (BuildContext context) {
             return FloatingActionButton(
