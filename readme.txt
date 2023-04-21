@@ -23,8 +23,11 @@
 1、比如 flutter run -d chrome 代表着在 chrome 中运行 flutter，其中的 -d 后面跟的是 device-id，如果找不到对应的 device-id 的话则会列出所有可用的 device-id
 2、比如 flutter build apk --release 用于生成 release 版 apk 文件
 3、比如 flutter build ipa --release 用于生成 release 版 ipa 文件
-4、比如 flutter build web --release 用于生成 release 版 html 文件
-  如果报错 "Missing index.html." 的话，则先 "flutter config --enable-web" 再 "flutter create ." 即可
+4、比如 flutter build web --release 用于生成 release 版 web 文件
+  a) 如果报错 "Missing index.html." 的话，则先 "flutter config --enable-web" 再 "flutter create ." 即可
+  b) 因为默认使用的是 canvaskit 模式，其可能会导致中文的乱码问题，改用 html 模式的话就可以解决此问题
+     flutter build web --release --web-renderer html 用于生成 html 模式的 web 文件
+     flutter build web --release --web-renderer canvaskit 用于生成 canvaskit 模式的 web 文件
 
 
 提示：
