@@ -240,6 +240,8 @@
 - lib/state/notification_listener.dart
 6. 状态管理 - 自定义 controller
 - lib/state/controller.dart
+7. 状态管理 - Redux
+- lib/state/redux.dart 
 
 ### 输入
 1. Listener - 指针
