@@ -44,9 +44,10 @@ class _SliverGridDemoState extends State<SliverGridDemo> {
                 Container(color: _getRandomColor(), height: 150,),
               /// 用于指定列表中的元素数量
               childCount: 50,
-              /// 列表内元素超出显示范围后是否保持其状态，如果是 true 的话，那么元素再次显示的时候就会快速构建
+              /// 是否将列表内元素用 AutomaticKeepAlive 封装，从而在元素滚动出可视区的时候允许其保持状态（注：前提是元素支持保持状态）
+              /// 要想使元素可以保持状态，需要借助 with AutomaticKeepAliveClientMixin，可以参见 /lib/widget/sliver/sliver_list.dart 中的示例
               addAutomaticKeepAlives: true,
-              /// 是否将列表内元素用一个重绘边界（Repaint Boundary）封装，从而使滚动的时候避免重绘
+              /// 是否将列表内元素用 RepaintBoundary 封装，从而使滚动的时候避免重绘
               addRepaintBoundaries: true,
             ),
           ),
@@ -71,9 +72,10 @@ class _SliverGridDemoState extends State<SliverGridDemo> {
                 Container(color: _getRandomColor(), height: 150,),
               /// 用于指定列表中的元素数量
               childCount: 100,
-              /// 列表内元素超出显示范围后是否保持其状态，如果是 true 的话，那么元素再次显示的时候就会快速构建
+              /// 是否将列表内元素用 AutomaticKeepAlive 封装，从而在元素滚动出可视区的时候允许其保持状态（注：前提是元素支持保持状态）
+              /// 要想使元素可以保持状态，需要借助 with AutomaticKeepAliveClientMixin，可以参见 /lib/widget/sliver/sliver_list.dart 中的示例
               addAutomaticKeepAlives: true,
-              /// 是否将列表内元素用一个重绘边界（Repaint Boundary）封装，从而使滚动的时候避免重绘
+              /// 是否将列表内元素用 RepaintBoundary 封装，从而使滚动的时候避免重绘
               addRepaintBoundaries: true,
             ),
           ),

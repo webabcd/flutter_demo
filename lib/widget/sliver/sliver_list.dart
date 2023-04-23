@@ -34,10 +34,6 @@ class _SliverListDemoState extends State<SliverListDemo> {
                 Container(color: Colors.green, height: 150,),
                 Container(color: Colors.blue, height: 150,),
               ],
-              /// 列表内元素超出显示范围后是否保持其状态，如果是 true 的话，那么元素再次显示的时候就会快速构建
-              addAutomaticKeepAlives: true,
-              /// 是否将列表内元素用一个重绘边界（Repaint Boundary）封装，从而使滚动的时候避免重绘
-              addRepaintBoundaries: true,
             ),
           ),
 
@@ -46,10 +42,12 @@ class _SliverListDemoState extends State<SliverListDemo> {
             delegate: SliverChildBuilderDelegate((context, index) =>
                 Container(color: _getRandomColor(), height: 150,),
               /// 用于指定列表中的元素数量
-              childCount: 20,
-              /// 列表内元素超出显示范围后是否保持其状态，如果是 true 的话，那么元素再次显示的时候就会快速构建
+              childCount: 10,
+              /// 是否将列表内元素用 AutomaticKeepAlive 封装，从而在元素滚动出可视区的时候允许其保持状态（注：前提是元素支持保持状态）
+              /// 要想使元素可以保持状态，需要借助 with AutomaticKeepAliveClientMixin，后面会有详细说明
+              /// 通过测试本例可以发现，这个 SliverList 内的 Container 每次重新滚动到可视区的时候颜色都会变化，其并不会保持状态
               addAutomaticKeepAlives: true,
-              /// 是否将列表内元素用一个重绘边界（Repaint Boundary）封装，从而使滚动的时候避免重绘
+              /// 是否将列表内元素用 RepaintBoundary 封装，从而使滚动的时候避免重绘
               addRepaintBoundaries: true,
             ),
           ),
@@ -61,11 +59,50 @@ class _SliverListDemoState extends State<SliverListDemo> {
             itemExtent: 50.0,
             delegate: SliverChildBuilderDelegate((context, index) =>
                 Container(color: _getRandomColor(),),
-              childCount: 20,
+              childCount: 10,
+            ),
+          ),
+
+          SliverFixedExtentList(
+            itemExtent: 150.0,
+            delegate: SliverChildBuilderDelegate((context, index) =>
+                _MyWidget(color: _getRandomColor(),),
+              childCount: 10,
+              /// 是否将列表内元素用 AutomaticKeepAlive 封装，从而在元素滚动出可视区的时候允许其保持状态（注：前提是元素支持保持状态）
+              /// 要想使元素可以保持状态，需要借助 with AutomaticKeepAliveClientMixin，请参见本例使用的 _MyWidget 中的说明
+              /// 通过测试本例可以发现，这个 SliverList 内的 _MyWidget 每次重新滚动到可视区的时候颜色都不会变化，其会保持状态
+              addAutomaticKeepAlives: true,
             ),
           ),
         ],
       ),
     );
   }
+}
+
+class _MyWidget extends StatefulWidget {
+  const _MyWidget({Key? key, required this.color}) : super(key: key);
+
+  final Color color;
+
+  @override
+  _MyWidgetState createState() => _MyWidgetState();
+}
+
+/// 如果需要当前元素可以保持状态，则可以使用 with AutomaticKeepAliveClientMixin
+class _MyWidgetState extends State<_MyWidget> with AutomaticKeepAliveClientMixin {
+
+  @override
+  Widget build(BuildContext context) {
+    /// 用了 with AutomaticKeepAliveClientMixin 则这里必须要 super.build(context);
+    super.build(context);
+
+    return Container(
+      color: widget.color,
+    );
+  }
+
+  /// 需要保持状态
+  @override
+  bool get wantKeepAlive => true;
 }

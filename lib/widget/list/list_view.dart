@@ -52,9 +52,10 @@ class _MyListView extends StatelessWidget {
             /// 比如垂直滚动的话，这里就是设置每个元素的高；水平滚动的话，这里就是设置每个元素的宽
             /// 也可以不指定这个，那么就由每个元素自己决定尺寸（注：建议使用 itemExtent 指定尺寸，这样性能会好一些）
             itemExtent: 400,
-            /// 列表内元素超出显示范围后是否保持其状态，如果是 true 的话，那么元素再次显示的时候就会快速构建
+            /// 是否将列表内元素用 AutomaticKeepAlive 封装，从而在元素滚动出可视区的时候允许其保持状态（注：前提是元素支持保持状态）
+            /// 要想使元素可以保持状态，需要借助 with AutomaticKeepAliveClientMixin，可以参见 /lib/widget/sliver/sliver_list.dart 中的示例
             addAutomaticKeepAlives: true,
-            /// 是否将列表内元素用一个重绘边界（Repaint Boundary）封装，从而使滚动的时候避免重绘
+            /// 是否将列表内元素用 RepaintBoundary 封装，从而使滚动的时候避免重绘
             addRepaintBoundaries: true,
             /// 列表的元素集合
             /// 如果用 children 的话，则在初始化的时就会把所有元素都创建好
