@@ -1,5 +1,10 @@
 /*
  * GridView - 网格
+ *
+ * GridView.count() - 用于创建一个有固定数量元素的网格
+ * GridView.builder() - 根据数据源动态生成对应的网格元素
+ *
+ * 另外也可以通过 GridView.custom 结合 SliverGridDelegateWithFixedCrossAxisCount/SliverGridDelegateWithMaxCrossAxisExtent/SliverChildBuilderDelegate 的方式构造 GridView，但是这种方式不常用
  */
 
 import 'dart:math';
@@ -162,6 +167,7 @@ class _Demo3 extends StatelessWidget {
   Widget build(BuildContext context) {
     /// GridView.builder() - 根据数据源动态生成对应的网格元素
     return GridView.builder(
+      /// SliverGridDelegateWithMaxCrossAxisExtent() - 用于指定非滚动方向上的元素的最大长度
       gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
         /// 非滚动方向上的元素的最大长度
         /// 比如垂直滚动时，此参数用于指定水平方向上的元素的最大宽度，然后 GridView 会按此要求最终给元素一个合适的宽度

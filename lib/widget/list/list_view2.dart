@@ -4,6 +4,8 @@
  * 本例用于演示如何根据数据源动态生成对应的元素（使用 ListView.builder 或 ListView.separated）
  * ListView.separated 和 ListView.builder 都扩展了 ListView 的功能，从而支持根据数据源动态生成对应的元素，也会根据滚动的位置按需创建列表元素
  * ListView.separated 和 ListView.builder 的区别是 ListView.separated 内置了对分隔线的支持
+ *
+ * 另外也可以通过 ListView.custom 结合 SliverChildBuilderDelegate 的方式构造 ListView，但是这种方式不常用
  */
 
 import 'dart:math';

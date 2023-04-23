@@ -48,7 +48,8 @@ class DartFunction extends StatelessWidget {
     return "$a, $b";
   }
   // 箭头函数（只能使用简单表达式）
-  String f2(String a) => "hello: $a";
+  // 注：可以不指定返回值类型，会自动推导
+  f2(String a) => "hello: $a";
   // 如果不指定返回值类型的话，则函数结束后会自动 return null（注：无返回值的类型是 void）
   f3() {
 
