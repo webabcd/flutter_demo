@@ -1,5 +1,23 @@
 # Flutter Demo
 
+### widget Sliver
+1. CustomScrollView/SliverPadding/SliverSafeArea - 通过 slivers 实现滚动效果
+- lib/widget/sliver/custom_scroll_view.dart
+2. SliverList, SliverFixedExtentList - 列表（需要在 CustomScrollView 中使用）
+- lib/widget/sliver/sliver_list.dart
+3. SliverGrid - 网格（需要在 CustomScrollView 中使用）
+- lib/widget/sliver/sliver_grid.dart
+4. SliverAppBar/FlexibleSpaceBar - 可展开/收缩的标题栏（需要在 CustomScrollView 中使用）
+- lib/widget/sliver/sliver_app_bar.dart
+5. SliverToBoxAdapter - 为不可滚动组件提供 sliver 效果
+- lib/widget/sliver/sliver_to_box_adapter.dart
+6. NestedScrollView - 为可滚动组件提供 sliver 效果
+- lib/widget/sliver/nested_scroll_view.dart 
+7. SliverPersistentHeader - 自定义可展开/收缩的标题栏
+- lib/widget/sliver/sliver_persistent_header.dart
+
+
+
 
 ### dart
 1. 概述

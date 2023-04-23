@@ -118,6 +118,14 @@ import 'widget/list/list_tile.dart';
 import 'widget/list/expansion_tile.dart';
 import 'widget/list/grid_view.dart';
 
+import 'widget/sliver/custom_scroll_view.dart';
+import 'widget/sliver/sliver_list.dart';
+import 'widget/sliver/sliver_grid.dart';
+import 'widget/sliver/sliver_app_bar.dart';
+import 'widget/sliver/sliver_to_box_adapter.dart';
+import 'widget/sliver/sliver_persistent_header.dart';
+import 'widget/sliver/nested_scroll_view.dart';
+
 import 'widget/builder/builder.dart';
 import 'widget/builder/stateful_builder.dart';
 import 'widget/builder/layout_builder.dart';
@@ -286,6 +294,13 @@ class MyApp extends StatelessWidget {
         "lib.widget.list.list_tile.dart":(context) => const ListTileDemo(),
         "lib.widget.list.expansion_tile.dart":(context) => const ExpansionTileDemo(),
         "lib.widget.list.grid_view.dart":(context) => const GridViewDemo(),
+        "lib.widget.sliver.custom_scroll_view.dart":(context) => const CustomScrollViewDemo(),
+        "lib.widget.sliver.sliver_list.dart":(context) => const SliverListDemo(),
+        "lib.widget.sliver.sliver_grid.dart":(context) => const SliverGridDemo(),
+        "lib.widget.sliver.sliver_app_bar.dart":(context) => const SliverAppBarDemo(),
+        "lib.widget.sliver.sliver_to_box_adapter.dart":(context) => const SliverToBoxAdapterDemo(),
+        "lib.widget.sliver.sliver_persistent_header.dart":(context) => const SliverPersistentHeaderDemo(),
+        "lib.widget.sliver.nested_scroll_view.dart":(context) => const NestedScrollViewDemo(),
         "lib.widget.builder.builder.dart":(context) => const BuilderDemo(),
         "lib.widget.builder.stateful_builder.dart":(context) => const StatefulBuilderDemo(),
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),
