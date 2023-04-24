@@ -78,7 +78,7 @@ class _StepperDemoState extends State<StepperDemo> {
       body: Stepper(
         /// 步骤的排列方向（vertical 或 horizontal）
         type: _stepperType,
-        /// 滚动到边缘时的物理效果，参见 list_view.dart
+        /// 滚动到边缘时的物理效果，参见 /lib/widget/scroll/single_child_scroll_view.dart
         physics: const BouncingScrollPhysics(),
         /// 当前编辑的步骤在 steps 中的索引位置
         currentStep: _currentStepIndex,

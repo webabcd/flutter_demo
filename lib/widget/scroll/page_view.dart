@@ -59,7 +59,7 @@ class _PageViewDemoState extends State<PageViewDemo> {
                 log("onPageChanged:$index");
                 _currentPageIndex = index;
               },
-              /// 滚动到边缘时的物理效果，参见 list_view.dart
+              /// 滚动到边缘时的物理效果，参见 /lib/widget/scroll/single_child_scroll_view.dart
               physics: const BouncingScrollPhysics(),
               /// 滚动方向（horizontal 或 vertical）
               scrollDirection: Axis.horizontal,
