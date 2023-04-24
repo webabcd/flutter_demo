@@ -21,6 +21,10 @@ class GestureDetectorDemo extends StatefulWidget {
 
 class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
 
+  double _angle = 0.0;
+  double _scaleX = 1.0;
+  double _scaleY = 1.0;
+
   @override
   void initState() {
     super.initState();
@@ -63,10 +67,18 @@ class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
               onLongPress: () {
                 log('onLongPress');
               },
+              /// 长按后移动
+              onLongPressMoveUpdate: (details) {
+                log('onLongPressMoveUpdate: ${details.globalPosition}, ${details.localPosition}');
+              },
               /// 当发生了 onDoubleTap 或 onLongPress 时，会先触发此事件（不会触发 onTap 事件）
               onTapCancel: () {
                 log('onTapCancel');
               },
+              /// onSecondaryTap, onSecondaryTapDown, onSecondaryTapUp - 鼠标右键单击
+              /// onTertiaryTapDown, onTertiaryTapUp - 鼠标中键单击
+              /// onSecondaryLongPress, onSecondaryLongPressMoveUpdate - 鼠标右键长按
+              /// onTertiaryLongPress, onTertiaryLongPressMoveUpdate - 鼠标中键长按
             ),
           ),
 
@@ -123,6 +135,28 @@ class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
                 log('onHorizontalDragEnd: ${details.velocity}');
               },
             ),
+          ),
+
+          GestureDetector(
+            child: Transform.scale(
+              scaleX: _scaleX,
+              scaleY: _scaleY,
+              child: Transform.rotate(
+                angle: _angle,
+                child: Container(
+                  width: 200,
+                  height: 100,
+                  color: Colors.orange,
+                ),
+              ),
+            ),
+            /// 两点触摸操作后的结果
+            onScaleUpdate: (ScaleUpdateDetails details) {
+              _angle = details.rotation;          /// 旋转的弧度
+              _scaleX = details.horizontalScale;  /// 水平方向上的缩放倍数
+              _scaleY = details.verticalScale;    /// 垂直方向上的缩放倍数
+              setState(() {});
+            },
           ),
 
           /// 手势事件是不会冒泡的，需要冒泡的话请用指针事件
