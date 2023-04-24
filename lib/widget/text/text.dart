@@ -81,7 +81,7 @@ class _TextDemoState extends State<TextDemo> {
   }
 
   /// 通过 Text.rich() 构造 Text 对象
-  /// 在 Text.rich() 中可以设置 TextSpan，其用于设置 Text 中的不同文本的不同样式
+  /// 在 Text.rich() 中可以设置 TextSpan，其用于设置 Text 中的不同文本的不同样式（关于 RichText 的详细说明请参见 rich_text.dart）
   final _text3 = const Text.rich(
     TextSpan(
       text: 'webabcd\n', // default text style

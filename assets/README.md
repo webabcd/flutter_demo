@@ -1,5 +1,14 @@
 # Flutter Demo
 
+### widget 文本类
+4. RichText - 富文本
+- lib/widget/text/rich_text.dart
+5. Tooltip - 长按提示或鼠标悬浮提示
+- lib/widget/text/tooltip.dart
+
+
+
+
 
 ### dart
 1. 概述
