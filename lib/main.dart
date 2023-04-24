@@ -101,6 +101,7 @@ import 'widget/selection/dropdown_button.dart';
 import 'widget/selection/switch.dart';
 import 'widget/selection/toggle_buttons.dart';
 import 'widget/selection/time_picker.dart';
+import 'widget/selection/stepper.dart';
 
 import 'widget/progress/circular_progress_indicator.dart';
 import 'widget/progress/linear_progress_indicator.dart';
@@ -119,6 +120,7 @@ import 'widget/list/list_view3.dart';
 import 'widget/list/list_tile.dart';
 import 'widget/list/expansion_tile.dart';
 import 'widget/list/grid_view.dart';
+import 'widget/list/table.dart';
 
 import 'widget/sliver/custom_scroll_view.dart';
 import 'widget/sliver/sliver_list.dart';
@@ -283,6 +285,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.selection.switch.dart":(context) => const SwitchDemo(),
         "lib.widget.selection.toggle_buttons.dart":(context) => const ToggleButtonsDemo(),
         "lib.widget.selection.time_picker.dart":(context) => const TimePickerDemo(),
+        "lib.widget.selection.stepper.dart":(context) => const StepperDemo(),
         "lib.widget.progress.circular_progress_indicator.dart":(context) => const CircularProgressIndicatorDemo(),
         "lib.widget.progress.linear_progress_indicator.dart":(context) => const LinearProgressIndicatorDemo(),
         "lib.widget.progress.refresh_indicator.dart":(context) => const RefreshIndicatorDemo(),
@@ -298,6 +301,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.list.list_tile.dart":(context) => const ListTileDemo(),
         "lib.widget.list.expansion_tile.dart":(context) => const ExpansionTileDemo(),
         "lib.widget.list.grid_view.dart":(context) => const GridViewDemo(),
+        "lib.widget.list.table.dart":(context) => const TableDemo(),
         "lib.widget.sliver.custom_scroll_view.dart":(context) => const CustomScrollViewDemo(),
         "lib.widget.sliver.sliver_list.dart":(context) => const SliverListDemo(),
         "lib.widget.sliver.sliver_grid.dart":(context) => const SliverGridDemo(),
