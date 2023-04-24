@@ -150,13 +150,25 @@ class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
                 ),
               ),
             ),
-            /// 两点触摸操作后的结果
+            /// 两点触摸操作的相关事件
+            onScaleStart: (ScaleStartDetails details) {
+              log('onScaleStart');
+            },
+            onScaleEnd: (ScaleEndDetails details) {
+              log('onScaleEnd');
+              _angle = 0.0;
+              _scaleX = 1.0;
+              _scaleY = 1.0;
+              setState(() {});
+            },
             onScaleUpdate: (ScaleUpdateDetails details) {
               _angle = details.rotation;          /// 旋转的弧度
               _scaleX = details.horizontalScale;  /// 水平方向上的缩放倍数
               _scaleY = details.verticalScale;    /// 垂直方向上的缩放倍数
               setState(() {});
             },
+
+
           ),
 
           /// 手势事件是不会冒泡的，需要冒泡的话请用指针事件
