@@ -25,7 +25,7 @@ class TransformDemo extends StatelessWidget {
           ///   transform - Matrix4 对象
           ///     Matrix4.translationValues() - 平移变换，也可以用 Transform.translate() 生成平移 Transform 对象
           ///   transformHitTests - 点击区域是否也做相应的变换，默认值为 true
-          transform: Transform(
+          child: Transform(
             transform: Matrix4.translationValues(10, 10, 0),
             transformHitTests: true,
             child: Container(
@@ -42,7 +42,7 @@ class TransformDemo extends StatelessWidget {
           ///   alignment - 变换的中心点（这是一个相对位置）
           ///     topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
           ///   origin - 变换的中心点（这是一个绝对位置）
-          transform: Transform(
+          child: Transform(
             alignment: Alignment.center,
             transform: Matrix4.diagonal3Values(1.5, 1.5, 0),
             transformHitTests: true,
@@ -60,7 +60,7 @@ class TransformDemo extends StatelessWidget {
           ///   alignment - 变换的中心点（这是一个相对位置）
           ///     topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
           ///   origin - 变换的中心点（这是一个绝对位置）
-          transform: Transform(
+          child: Transform(
             origin: const Offset(20, 10),
             transform: Matrix4.rotationZ(math.pi / 2),
             transformHitTests: true,
@@ -78,7 +78,7 @@ class TransformDemo extends StatelessWidget {
           ///   alignment - 变换的中心点（这是一个相对位置）
           ///     topLeft, topCenter, topRight, centerLeft, center, centerRight, bottomLeft, bottomCenter, bottomRight
           ///   origin - 变换的中心点（这是一个绝对位置）
-          transform: Transform(
+          child: Transform(
             alignment: Alignment.center,
             transform: Matrix4.skewY(0.3),
             transformHitTests: true,
@@ -89,7 +89,7 @@ class TransformDemo extends StatelessWidget {
           ),
         ),
         MyDemo(
-          transform: Transform(
+          child: Transform(
             /// Transform - 变换
             ///   transform - Matrix4 对象
             ///     可以通过 Matrix4.identity().. 的方式构造 Matrix4 对象，这样就可以同时叠加多种变换效果了
@@ -112,11 +112,11 @@ class TransformDemo extends StatelessWidget {
 }
 
 class MyDemo extends StatelessWidget {
-  final Transform transform;
+  final Widget child;
 
   const MyDemo({
     Key? key,
-    required this.transform,
+    required this.child,
   }) : super(key: key);
 
   @override
@@ -129,7 +129,7 @@ class MyDemo extends StatelessWidget {
         ),
         Opacity(
           opacity: 0.7,
-          child: transform,
+          child: child,
         ),
       ],
     );
