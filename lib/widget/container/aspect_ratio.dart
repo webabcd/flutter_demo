@@ -1,5 +1,5 @@
 /*
- * AspectRatio - 按比例
+ * AspectRatio - 宽高比
  */
 
 import 'package:flutter/material.dart';

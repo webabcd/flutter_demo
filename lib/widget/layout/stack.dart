@@ -31,11 +31,18 @@ class StackDemo extends StatelessWidget {
           ///   antiAliasWithSaveLayer - 裁剪而且抗锯齿，并分配一个缓冲区，速度比 antiAlias 慢
           clipBehavior: Clip.none,
           children: [
+            /// 在 Stack 的 children 中定义的多个元素会从内到外层叠布局
             Container(
               width: 50,
               height: 50,
               color: Colors.blue,
             ),
+            Container(
+              width: 30,
+              height: 30,
+              color: Colors.orange,
+            ),
+
             /// Positioned - 用于在 Stack 内绝对定位
             ///   left, top, right, bottom, width, height
             Positioned(

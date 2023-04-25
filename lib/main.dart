@@ -42,6 +42,7 @@ import 'widget/layout/flex.dart';
 import 'widget/layout/wrap.dart';
 import 'widget/layout/flow.dart';
 import 'widget/layout/stack.dart';
+import 'widget/layout/indexed_stack.dart';
 
 import 'widget/container/padding.dart';
 import 'widget/container/align.dart';
@@ -59,6 +60,7 @@ import 'widget/container/aspect_ratio.dart';
 import 'widget/container/rotated_box.dart';
 import 'widget/container/material.dart';
 import 'widget/container/interactive_viewer.dart';
+import 'widget/container/fractionally_sized_box.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
@@ -239,6 +241,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.layout.wrap.dart":(context) => const WrapDemo(),
         "lib.widget.layout.flow.dart":(context) => const FlowDemo(),
         "lib.widget.layout.stack.dart":(context) => const StackDemo(),
+        "lib.widget.layout.indexed_stack.dart":(context) => const IndexedStackDemo(),
         "lib.widget.container.padding.dart":(context) => const PaddingDemo(),
         "lib.widget.container.align.dart":(context) => const AlignDemo(),
         "lib.widget.container.center.dart":(context) => const CenterDemo(),
@@ -255,6 +258,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.rotated_box.dart":(context) => const RotatedBoxDemo(),
         "lib.widget.container.material.dart":(context) => const MaterialDemo(),
         "lib.widget.container.interactive_viewer.dart":(context) => const InteractiveViewerDemo(),
+        "lib.widget.container.fractionally_sized_box.dart":(context) => const FractionallySizedBoxDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),

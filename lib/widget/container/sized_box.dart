@@ -1,5 +1,7 @@
 /*
  * SizedBox - 确定宽高（SizedBox 会告诉其子元素宽和高是多少）
+ *   width - 宽，设置为 double.infinity 代表尽量宽
+ *   height - 高，设置为 double.infinity 代表尽量高
  */
 
 import 'package:flutter/material.dart';
@@ -31,6 +33,17 @@ class SizedBoxDemo extends StatelessWidget {
             width: 1,
             height: 30,
             color: Colors.green,
+          ),
+        ),
+
+        SizedBox(
+          width: 200,
+          height: 200,
+          /// SizedBox.expand() 是一个宽和高都是 double.infinity 的 SizedBox
+          child: SizedBox.expand(
+            child: Container(
+              color: Colors.blue,
+            ),
           ),
         ),
       ],

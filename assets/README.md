@@ -23,11 +23,21 @@
 - lib/widget/container/material.dart
 16. InteractiveViewer - 手动拖动/手动缩放
 - lib/widget/container/interactive_viewer.dart
-
+17. FractionallySizedBox - 按比值占用可用空间
+- lib/widget/container/fractionally_sized_box.dart
 
 ### widget 媒体类
 5. RawImage - 用于显示 dart:ui 库中的 Image
 - lib/widget/media/raw_image.dart
+
+
+### widget 布局类（可以有多个子）
+7. IndexedStack - 从多个子中选择一个显示
+- lib/widget/layout/indexed_stack.dart
+
+
+
+
 
 
 
@@ -126,7 +136,7 @@
 - lib/widget/container/overflow_box.dart
 12. FittedBox - 自适应
 - lib/widget/container/fitted_box.dart
-13. AspectRatio - 按比例
+13. AspectRatio - 宽高比
 - lib/widget/container/aspect_ratio.dart
 
 ### widget 文本类
