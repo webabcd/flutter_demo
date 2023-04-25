@@ -165,6 +165,7 @@ class _GestureDetectorDemoState extends State<GestureDetectorDemo> {
               _angle = details.rotation;          /// 旋转的弧度
               _scaleX = details.horizontalScale;  /// 水平方向上的缩放倍数
               _scaleY = details.verticalScale;    /// 垂直方向上的缩放倍数
+              var _ = details.scale;              /// 缩放倍数
               setState(() {});
             },
 

@@ -58,6 +58,7 @@ import 'widget/container/fitted_box.dart';
 import 'widget/container/aspect_ratio.dart';
 import 'widget/container/rotated_box.dart';
 import 'widget/container/material.dart';
+import 'widget/container/interactive_viewer.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
@@ -253,6 +254,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.aspect_ratio.dart":(context) => const AspectRatioDemo(),
         "lib.widget.container.rotated_box.dart":(context) => const RotatedBoxDemo(),
         "lib.widget.container.material.dart":(context) => const MaterialDemo(),
+        "lib.widget.container.interactive_viewer.dart":(context) => const InteractiveViewerDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),

@@ -21,11 +21,13 @@
 - lib/widget/container/rotated_box.dart
 15. Material - Material 组件
 - lib/widget/container/material.dart
+16. InteractiveViewer - 手动拖动/手动缩放
+- lib/widget/container/interactive_viewer.dart
+
 
 ### widget 媒体类
-5. RawImage - 
+5. RawImage - 用于显示 dart:ui 库中的 Image
 - lib/widget/media/raw_image.dart
-
 
 
 
