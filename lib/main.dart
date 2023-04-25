@@ -67,6 +67,7 @@ import 'widget/text/font.dart';
 import 'widget/text/text_field.dart';
 import 'widget/text/rich_text.dart';
 import 'widget/text/tooltip.dart';
+import 'widget/text/form.dart';
 
 import 'widget/button/text_button.dart';
 import 'widget/button/outlined_button.dart';
@@ -264,6 +265,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),
         "lib.widget.text.rich_text.dart":(context) => const RichTextDemo(),
         "lib.widget.text.tooltip.dart":(context) => const TooltipDemo(),
+        "lib.widget.text.form.dart":(context) => const FormDemo(),
         "lib.widget.button.text_button.dart":(context) => const TextButtonDemo(),
         "lib.widget.button.outlined_button.dart":(context) => const OutlinedButtonDemo(),
         "lib.widget.button.elevated_button.dart":(context) => const ElevatedButtonDemo(),

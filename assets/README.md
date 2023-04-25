@@ -5,6 +5,8 @@
 - lib/widget/text/rich_text.dart
 5. Tooltip - 长按提示或鼠标悬浮提示
 - lib/widget/text/tooltip.dart
+6. Form - 表单
+- lib/widget/text/form.dart
 
 ### widget 列表类
 7. Table - 表格
