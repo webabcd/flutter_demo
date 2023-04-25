@@ -9,10 +9,17 @@
 ### widget 列表类
 7. Table - 表格
 - lib/widget/list/table.dart
-
+8. ReorderableListView - 可拖拽排序的列表
+- lib/widget/list/reorderable_list_view.dart
+ 
 ### widget 选择类
 7. Stepper - 步骤选择
 - lib/widget/selection/stepper.dart
+
+### widget 容器类（只能有一个子）
+14. RotatedBox - 旋转
+- lib/widget/container/rotated_box.dart
+
 
 
 

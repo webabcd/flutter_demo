@@ -56,6 +56,7 @@ import 'widget/container/limited_box.dart';
 import 'widget/container/overflow_box.dart';
 import 'widget/container/fitted_box.dart';
 import 'widget/container/aspect_ratio.dart';
+import 'widget/container/rotated_box.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
@@ -121,6 +122,7 @@ import 'widget/list/list_tile.dart';
 import 'widget/list/expansion_tile.dart';
 import 'widget/list/grid_view.dart';
 import 'widget/list/table.dart';
+import 'widget/list/reorderable_list_view.dart';
 
 import 'widget/sliver/custom_scroll_view.dart';
 import 'widget/sliver/sliver_list.dart';
@@ -247,6 +249,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.overflow_box.dart":(context) => const OverflowBoxDemo(),
         "lib.widget.container.fitted_box.dart":(context) => const FittedBoxDemo(),
         "lib.widget.container.aspect_ratio.dart":(context) => const AspectRatioDemo(),
+        "lib.widget.container.rotated_box.dart":(context) => const RotatedBoxDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),
@@ -302,6 +305,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.list.expansion_tile.dart":(context) => const ExpansionTileDemo(),
         "lib.widget.list.grid_view.dart":(context) => const GridViewDemo(),
         "lib.widget.list.table.dart":(context) => const TableDemo(),
+        "lib.widget.list.reorderable_list_view.dart":(context) => const ReorderableListViewDemo(),
         "lib.widget.sliver.custom_scroll_view.dart":(context) => const CustomScrollViewDemo(),
         "lib.widget.sliver.sliver_list.dart":(context) => const SliverListDemo(),
         "lib.widget.sliver.sliver_grid.dart":(context) => const SliverGridDemo(),
