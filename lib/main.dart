@@ -57,6 +57,7 @@ import 'widget/container/overflow_box.dart';
 import 'widget/container/fitted_box.dart';
 import 'widget/container/aspect_ratio.dart';
 import 'widget/container/rotated_box.dart';
+import 'widget/container/material.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
@@ -80,6 +81,7 @@ import 'widget/media/image.dart';
 import 'widget/media/icon.dart';
 import 'widget/media/circle_avatar.dart';
 import 'widget/media/divider.dart';
+import 'widget/media/raw_image.dart';
 
 import 'widget/structure/scaffold.dart';
 import 'widget/structure/scaffold_app_bar.dart';
@@ -250,6 +252,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.fitted_box.dart":(context) => const FittedBoxDemo(),
         "lib.widget.container.aspect_ratio.dart":(context) => const AspectRatioDemo(),
         "lib.widget.container.rotated_box.dart":(context) => const RotatedBoxDemo(),
+        "lib.widget.container.material.dart":(context) => const MaterialDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),
@@ -269,6 +272,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.media.icon.dart":(context) => const IconDemo(),
         "lib.widget.media.circle_avatar.dart":(context) => const CircleAvatarDemo(),
         "lib.widget.media.divider.dart":(context) => const DividerDemo(),
+        "lib.widget.media.raw_image.dart":(context) => const RawImageDemo(),
         "lib.widget.structure.scaffold.dart":(context) => const ScaffoldDemo(),
         "lib.widget.structure.scaffold_app_bar.dart":(context) => const ScaffoldAppBarDemo(),
         "lib.widget.structure.scaffold_bottom_navigation_bar.dart":(context) => const ScaffoldBottomNavigationBarDemo(),

@@ -65,7 +65,7 @@ class _ImageDemoState extends State<ImageDemo> {
     var bytes = await rootBundle.load("assets/son.jpg");
     String dir = (await getApplicationDocumentsDirectory()).path;
     _imagePath = '$dir/son.jpg';
-    File(_imagePath).writeAsBytes(bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes));
+    await File(_imagePath).writeAsBytes(bytes.buffer.asUint8List(bytes.offsetInBytes, bytes.lengthInBytes));
   }
 
   /// 从 assets 中获取图片的二进制数据
