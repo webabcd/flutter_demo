@@ -3,7 +3,7 @@
  * 1、Widget 树
  *   Widget 是一个用来描述 UI 的配置
  * 2、RenderObject 树
- *   RenderObject 是用于渲染的对象
+ *   RenderObject 是用于渲染的对象，比如要获取组件宽高的话就需要从 RenderObject 中获取
  * 3、Element 树
  *   Element 是 Widget 实例化出的对象，它是 Widget 和 RenderObject 之间的桥梁
  *   Element 会持有其对应的 Widget
