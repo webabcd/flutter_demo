@@ -89,9 +89,10 @@ class _DataTableDemoState extends State<DataTableDemo> {
           /// columnIndex - 排序的列的索引
           /// ascending - 是否正向排序
           log('onSort, columnIndex:$columnIndex, ascending:$ascending');
-          if (_sortColumnIndex != 0 && _sortColumnIndex != 2) {
+          if (columnIndex != 0 && columnIndex != 2) {
             return;
           }
+
           setState(() {
             _sortColumnIndex = columnIndex;
             _sortAscending = ascending;
@@ -117,7 +118,6 @@ class _DataTableDemoState extends State<DataTableDemo> {
             });
           });
         },
-
       ));
     }
     return dataColumnList;
