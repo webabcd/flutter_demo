@@ -61,6 +61,7 @@ import 'widget/container/rotated_box.dart';
 import 'widget/container/material.dart';
 import 'widget/container/interactive_viewer.dart';
 import 'widget/container/fractionally_sized_box.dart';
+import 'widget/container/card.dart';
 
 import 'widget/text/text.dart';
 import 'widget/text/font.dart';
@@ -68,6 +69,7 @@ import 'widget/text/text_field.dart';
 import 'widget/text/rich_text.dart';
 import 'widget/text/tooltip.dart';
 import 'widget/text/form.dart';
+import 'widget/text/autocomplete.dart';
 
 import 'widget/button/text_button.dart';
 import 'widget/button/outlined_button.dart';
@@ -95,6 +97,7 @@ import 'widget/structure/material_app.dart';
 import 'widget/structure/scaffold_floating_action_button.dart';
 import 'widget/structure/scaffold_tab_bar.dart';
 import 'widget/structure/scaffold_tab_bar2.dart';
+import 'widget/structure/scaffold_bottom_sheet.dart';
 
 import 'widget/flyout/alert_dialog.dart';
 import 'widget/flyout/simple_dialog.dart';
@@ -263,12 +266,14 @@ class MyApp extends StatelessWidget {
         "lib.widget.container.material.dart":(context) => const MaterialDemo(),
         "lib.widget.container.interactive_viewer.dart":(context) => const InteractiveViewerDemo(),
         "lib.widget.container.fractionally_sized_box.dart":(context) => const FractionallySizedBoxDemo(),
+        "lib.widget.container.card.dart":(context) => const CardDemo(),
         "lib.widget.text.text.dart":(context) => const TextDemo(),
         "lib.widget.text.font.dart":(context) => const FontDemo(),
         "lib.widget.text.text_field.dart":(context) => const TextFieldDemo(),
         "lib.widget.text.rich_text.dart":(context) => const RichTextDemo(),
         "lib.widget.text.tooltip.dart":(context) => const TooltipDemo(),
         "lib.widget.text.form.dart":(context) => const FormDemo(),
+        "lib.widget.text.autocomplete.dart":(context) => const AutocompleteDemo(),
         "lib.widget.button.text_button.dart":(context) => const TextButtonDemo(),
         "lib.widget.button.outlined_button.dart":(context) => const OutlinedButtonDemo(),
         "lib.widget.button.elevated_button.dart":(context) => const ElevatedButtonDemo(),
@@ -292,6 +297,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.structure.scaffold_tab_bar.dart":(context) => const ScaffoldTabBarDemo(),
         "lib.widget.structure.scaffold_tab_bar2.dart":(context) => const ScaffoldTabBarDemo2(),
         "lib.widget.structure.material_app.dart":(context) => const MaterialAppDemo(),
+        "lib.widget.structure.scaffold_bottom_sheet.dart":(context) => const ScaffoldBottomSheetDemo(),
         "lib.widget.flyout.alert_dialog.dart":(context) => const AlertDialogDemo(),
         "lib.widget.flyout.simple_dialog.dart":(context) => const SimpleDialogDemo(),
         "lib.widget.flyout.snack_bar.dart":(context) => const SnackBarDemo(),

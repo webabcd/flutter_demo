@@ -45,7 +45,7 @@ class _ScaffoldDemoState extends State<ScaffoldDemo> {
             return FloatingActionButton(
               child: Text('show'),
               onPressed: () {
-                Scaffold.of(context).showBottomSheet((context) {    /// 弹出 BottomSheet（下滑可消失）
+                Scaffold.of(context).showBottomSheet((context) {    /// 弹出 BottomSheet（下滑可消失），请参见 scaffold_bottom_sheet.dart
                   return Container(
                     height: 200,
                     color: Colors.red,

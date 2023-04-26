@@ -7,6 +7,8 @@
 - lib/widget/text/tooltip.dart
 6. Form - 表单
 - lib/widget/text/form.dart
+7. Autocomplete - 自动完成
+- lib/widget/text/autocomplete.dart
 
 ### widget 列表类
 7. Table - 表格
@@ -33,6 +35,8 @@
 - lib/widget/container/interactive_viewer.dart
 17. FractionallySizedBox - 按比值占用可用空间
 - lib/widget/container/fractionally_sized_box.dart
+18. Card - 阴影边框
+- lib/widget/container/card.dart
 
 ### widget 媒体类
 5. RawImage - 用于显示 dart:ui 库中的 Image
@@ -42,6 +46,14 @@
 ### widget 布局类（可以有多个子）
 7. IndexedStack - 从多个子中选择一个显示
 - lib/widget/layout/indexed_stack.dart
+
+
+### widget 架构类
+9. BottomSheet - 底部弹出框
+- lib/widget/structure/scaffold_bottom_sheet.dart
+
+
+
 
 
 

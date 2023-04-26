@@ -38,6 +38,7 @@ class _MyWidget1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.center,
       width: double.infinity,
       height: 40,
       // color: Colors.red,
@@ -46,6 +47,12 @@ class _MyWidget1 extends StatelessWidget {
       /// 颜色值可以通过类似 Colors.red[100] 的方式指定色值的浓淡，具体看源码
       /// 自定义颜色值的规则是 argb
       color: const Color(0xffff0000),
+      child: Container(
+        width: 100,
+        height: 20,
+        /// 颜色可以通过 withAlpha() 的方式指定 alpha 值
+        color: Colors.green.withAlpha(0x66),
+      ),
     );
   }
 }
