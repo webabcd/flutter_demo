@@ -129,6 +129,8 @@ import 'widget/list/expansion_tile.dart';
 import 'widget/list/grid_view.dart';
 import 'widget/list/table.dart';
 import 'widget/list/reorderable_list_view.dart';
+import 'widget/list/expansion_panel_list.dart';
+import 'widget/list/dismissible.dart';
 
 import 'widget/sliver/custom_scroll_view.dart';
 import 'widget/sliver/sliver_list.dart';
@@ -318,6 +320,8 @@ class MyApp extends StatelessWidget {
         "lib.widget.list.grid_view.dart":(context) => const GridViewDemo(),
         "lib.widget.list.table.dart":(context) => const TableDemo(),
         "lib.widget.list.reorderable_list_view.dart":(context) => const ReorderableListViewDemo(),
+        "lib.widget.list.expansion_panel_list.dart":(context) => const ExpansionPanelListDemo(),
+        "lib.widget.list.dismissible.dart":(context) => const DismissibleDemo(),
         "lib.widget.sliver.custom_scroll_view.dart":(context) => const CustomScrollViewDemo(),
         "lib.widget.sliver.sliver_list.dart":(context) => const SliverListDemo(),
         "lib.widget.sliver.sliver_grid.dart":(context) => const SliverGridDemo(),

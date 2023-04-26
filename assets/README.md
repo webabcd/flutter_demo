@@ -13,7 +13,11 @@
 - lib/widget/list/table.dart
 8. ReorderableListView - 可拖拽排序的列表
 - lib/widget/list/reorderable_list_view.dart
- 
+9. ExpansionPanelList - 可展开列表
+- lib/widget/list/expansion_panel_list.dart 
+10. Dismissible - 滑动删除
+- lib/widget/list/dismissible.dart
+
 ### widget 选择类
 7. Stepper - 步骤选择
 - lib/widget/selection/stepper.dart
