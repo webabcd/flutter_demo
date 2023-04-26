@@ -50,12 +50,14 @@ class _MyHomePage extends StatelessWidget {
             width: double.infinity,
             child: Text('Text'),
           ),
+
           Container(
             width: double.infinity,
             /// 通过 Theme.of() 引用主题
             color: Theme.of(context).colorScheme.background,
             child: Text('Text', style: Theme.of(context).textTheme.displayLarge),
           ),
+
           /// 如果只想在某一个部分使用自定义主题，则可以使用名为 Theme 的 Widget
           Theme(
             /// 指定一个 ThemeData 类型的对象
@@ -75,6 +77,29 @@ class _MyHomePage extends StatelessWidget {
               },
             ),
           ),
+        ],
+      ),
+
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            onPressed: () {},
+            child: const Icon(Icons.add),
+          ),
+          Theme(
+            data: ThemeData(
+              colorScheme: Theme.of(context).colorScheme.copyWith(secondary: Colors.red),
+            ),
+            /// FloatingActionButton 的 Icon 的颜色用的是主题 colorScheme 中的 secondary
+            /// 可以通过修改主题来修改 FloatingActionButton 的 Icon 的颜色
+            /// 因为是 FloatingActionButton 内部 build 时使用的，所以不需要借助 Builder
+            /// 很多复杂控件中的一些组件的样式是无法直接修改的，需要通过这种方式修改，具体的使用的是什么主题，可以看源码
+            child: FloatingActionButton(
+              onPressed: () {},
+              child: const Icon(Icons.add),
+            ),
+          )
         ],
       ),
     );
