@@ -131,6 +131,7 @@ import 'widget/list/table.dart';
 import 'widget/list/reorderable_list_view.dart';
 import 'widget/list/expansion_panel_list.dart';
 import 'widget/list/dismissible.dart';
+import 'widget/list/data_table.dart';
 
 import 'widget/sliver/custom_scroll_view.dart';
 import 'widget/sliver/sliver_list.dart';
@@ -322,6 +323,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.list.reorderable_list_view.dart":(context) => const ReorderableListViewDemo(),
         "lib.widget.list.expansion_panel_list.dart":(context) => const ExpansionPanelListDemo(),
         "lib.widget.list.dismissible.dart":(context) => const DismissibleDemo(),
+        "lib.widget.list.data_table.dart":(context) => const DataTableDemo(),
         "lib.widget.sliver.custom_scroll_view.dart":(context) => const CustomScrollViewDemo(),
         "lib.widget.sliver.sliver_list.dart":(context) => const SliverListDemo(),
         "lib.widget.sliver.sliver_grid.dart":(context) => const SliverGridDemo(),
