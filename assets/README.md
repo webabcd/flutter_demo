@@ -1,71 +1,5 @@
 # Flutter Demo
 
-### widget 文本类
-4. RichText - 富文本
-- lib/widget/text/rich_text.dart
-5. Tooltip - 长按提示或鼠标悬浮提示
-- lib/widget/text/tooltip.dart
-6. Form - 表单
-- lib/widget/text/form.dart
-7. Autocomplete - 自动完成
-- lib/widget/text/autocomplete.dart
-
-### widget 列表类
-7. Table - 表格
-- lib/widget/list/table.dart
-8. ReorderableListView - 可拖拽排序的列表
-- lib/widget/list/reorderable_list_view.dart
-9. ExpansionPanelList - 可展开列表
-- lib/widget/list/expansion_panel_list.dart 
-10. Dismissible - 滑动删除
-- lib/widget/list/dismissible.dart
-11. DataTable - 数据表格
-- lib/widget/list/data_table.dart
-
-### widget 选择类
-7. Stepper - 步骤选择
-- lib/widget/selection/stepper.dart
-
-### widget 容器类（只能有一个子）
-14. RotatedBox - 旋转
-- lib/widget/container/rotated_box.dart
-15. Material - Material 组件
-- lib/widget/container/material.dart
-16. InteractiveViewer - 手动拖动/手动缩放
-- lib/widget/container/interactive_viewer.dart
-17. FractionallySizedBox - 按比值占用可用空间
-- lib/widget/container/fractionally_sized_box.dart
-18. Card - 阴影边框
-- lib/widget/container/card.dart
-
-### widget 媒体类
-5. RawImage - 用于显示 dart:ui 库中的 Image
-- lib/widget/media/raw_image.dart
-
-
-### widget 布局类（可以有多个子）
-7. IndexedStack - 从多个子中选择一个显示
-- lib/widget/layout/indexed_stack.dart
-
-
-### widget 架构类
-9. BottomSheet - 底部弹出框
-- lib/widget/structure/scaffold_bottom_sheet.dart
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### dart
 1. 概述
@@ -130,6 +64,8 @@
 - lib/widget/layout/flow.dart
 6. Stack - 层叠布局
 - lib/widget/layout/stack.dart
+7. IndexedStack - 从多个子中选择一个显示
+- lib/widget/layout/indexed_stack.dart
 
 ### widget 容器类（只能有一个子）
 1. Align - 对齐方式
@@ -158,6 +94,16 @@
 - lib/widget/container/fitted_box.dart
 13. AspectRatio - 宽高比
 - lib/widget/container/aspect_ratio.dart
+14. RotatedBox - 旋转
+- lib/widget/container/rotated_box.dart
+15. Material - Material 组件
+- lib/widget/container/material.dart
+16. InteractiveViewer - 手动拖动/手动缩放
+- lib/widget/container/interactive_viewer.dart
+17. FractionallySizedBox - 按比值占用可用空间
+- lib/widget/container/fractionally_sized_box.dart
+18. Card - 阴影边框
+- lib/widget/container/card.dart
 
 ### widget 文本类
 1. Text - 文本显示框
@@ -166,6 +112,14 @@
 - lib/widget/text/font.dart
 3. TextField - 文本输入框
 - lib/widget/text/text_field.dart
+4. RichText - 富文本
+- lib/widget/text/rich_text.dart
+5. Tooltip - 长按提示或鼠标悬浮提示
+- lib/widget/text/tooltip.dart
+6. Form - 表单
+- lib/widget/text/form.dart
+7. Autocomplete - 自动完成
+- lib/widget/text/autocomplete.dart
 
 ### widget 按钮类
 1. TextButton - 文本按钮
@@ -200,6 +154,8 @@
 - lib/widget/media/divider.dart
 4. CircleAvatar - 圆形头像
 - lib/widget/media/circle_avatar.dart
+5. RawImage - 用于显示 dart:ui 库中的 Image
+- lib/widget/media/raw_image.dart
 
 ### widget 架构类
 1. Scaffold - 脚手架
@@ -218,6 +174,8 @@
 - lib/widget/structure/scaffold_tab_bar2.dart
 8. MaterialApp - 符合 Material Design 的根组件
 - lib/widget/structure/material_app.dart
+9. BottomSheet - 底部弹出框
+- lib/widget/structure/scaffold_bottom_sheet.dart
 
 ### widget 弹出类
 1. AlertDialog - 弹出框（包括标题，内容，多个按钮）
@@ -244,6 +202,8 @@
 - lib/widget/selection/toggle_buttons.dart
 6. showDatePicker()/showTimePicker/CalendarDatePicker - 日期选择和时间选择
 - lib/widget/selection/time_picker.dart 
+7. Stepper - 步骤选择
+- lib/widget/selection/stepper.dart
 
 ### widget 进度类
 1. CircularProgressIndicator - 圆形进度条
@@ -280,6 +240,16 @@
 - lib/widget/list/expansion_tile.dart
 6. GridView - 网格
 - lib/widget/list/grid_view.dart
+7. Table - 表格
+- lib/widget/list/table.dart
+8. ReorderableListView - 可拖拽排序的列表
+- lib/widget/list/reorderable_list_view.dart
+9. ExpansionPanelList - 可展开列表
+- lib/widget/list/expansion_panel_list.dart
+10. Dismissible - 滑动删除
+- lib/widget/list/dismissible.dart
+11. DataTable - 数据表格
+- lib/widget/list/data_table.dart
 
 ### widget Sliver
 1. CustomScrollView/SliverPadding/SliverSafeArea - 通过 slivers 实现滚动效果
