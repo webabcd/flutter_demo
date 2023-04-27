@@ -34,8 +34,8 @@ class _TreeDemoState extends State<TreeDemo> {
 
   /// 颜色信息保存在 Widget 的 State 中
   List<Widget> widgets2 = [
-    _MyStatefulWidget(color: Colors.red, type: 1, key: UniqueKey()),
-    _MyStatefulWidget(color: Colors.green, type: 1, key: UniqueKey(),),
+    _MyStatefulWidget(color: Colors.red, type: 1, key: ValueKey("1")),
+    _MyStatefulWidget(color: Colors.green, type: 1, key: ValueKey("2"),),
   ];
 
   /// 颜色信息保存在 Widget 的 State 中
@@ -46,9 +46,9 @@ class _TreeDemoState extends State<TreeDemo> {
 
   /// 颜色信息保存在 Widget 的 State 中
   List<Widget> widgets4 = [
-    _MyStatefulWidget(color: Colors.red, type: 1, key: UniqueKey()),
-    _MyStatefulWidget(color: Colors.green, type: 1, key: UniqueKey()),
-    _MyStatefulWidget(color: Colors.blue, type: 1, key: UniqueKey()),
+    _MyStatefulWidget(color: Colors.red, type: 1),
+    _MyStatefulWidget(color: Colors.green, type: 1),
+    _MyStatefulWidget(color: Colors.blue, type: 1),
   ];
 
   @override
@@ -89,7 +89,7 @@ class _TreeDemoState extends State<TreeDemo> {
             ///   1、如果你没有为 Widget 指定不同的 key，则 key 和 runtimeType 均相同，所以第 1 个 Element 就认为其持有原来的第 2 个 Widget 是合法的，同理第 2 个 Element 就认为其持有原来的第 1 个 Widget 是合法的
             ///   因为使用的颜色信息是保存在 Widget 的 State 中的（State 是保存在 Element 树中的），所以虽然 Widget 对调了，但是颜色不会对调
             ///   2、如果你为 Widget 指定了不同的 key，则因为 key 是不同的，所以第 1 个 Element 就认为其持有原来的第 2 个 Widget 是不合法的
-            ///   然后第 1 个 Element 就会在原来的第 2 个 Widget 的同级树上查找（不会在父级或子级查找），看看有没有和之前的 Widget 的 key 和 runtimeType 都相同的
+            ///   然后第 1 个 Element 就会在 Widget 树上查找，看看有没有和之前的 Widget 的 key 和 runtimeType 都相同的
             ///   结果找到了，然后第 1 个 Element 就持有了原来的第 1 个 Widget，同理第 2 个 Element 就持有了原来的第 2 个 Widget
             ///   所以随着 Widget 的对调，颜色也对调了
             widgets2.insert(0, widgets2.removeAt(1));
@@ -145,22 +145,14 @@ class _TreeDemoState extends State<TreeDemo> {
           },
         ),
 
-        /// 把上面的示例都看懂后，再加深一遍理解，比如初始状态如下
-        /// Widget树                    Element树
-        /// root                        root
-        /// |--w1                       |--e1
-        /// |  |--w1_1                  |  |--e1_1
-        /// |  |--w1_2                  |  |--e1_2
-        /// |  |  |--w1_2_1             |  |  |--e1_2_1
-        /// |  |  |--w1_2_2             |  |  |--e1_2_2
-        /// |  |  |--w1_2_3             |  |  |--e1_2_3
-        /// |  |--w1_3                  |  |--e1_3
-        /// |--w2                       |--e2
-        /// 上面 e1_2_1 持有 w1_2_1，e1_2_2 持有 w1_2_2，e1_2_3 持有 w1_2_3
-        /// 当 w1_2_1/w1_2_2/w1_2_3 这一级发生变化时，e1_2_1/e1_2_2/e1_2_3 查找其持有的 widget 时只会在同级树上查找（不会在父级或子级查找）
-        /// 查找时，会先按照之前的索引位置查找
-        /// 比如 e1_2_1 之前持有的是同级 widget 树上的第 1 个 widget，则 widget 树发生变化后，e1_2_1 会先去找同级 widget 树上的第 1 个 widget
-        /// 也就是说如果 w1_2_1/w1_2_2/w1_2_3 类型相同且没有指定不同的 key，则删除 w1_2_1 后 e1_2_1 会持有 w1_2_2
+        /// 把上面的示例都看懂后，再继续说明一下
+        /// 1、数据保存在 State 中且没有指定 key 的时候，Widget 树变化后
+        ///   Element 会在 Widget 的同级树上查找（不会在父级或子级查找），且先会先按照之前的索引位置查找
+        /// 2、数据保存在 State 中且指定了不同的 LocalKey 的时候，Widget 树变化后
+        ///   Element 会在 Widget 的同级树上查找（不会在父级或子级查找） LocalKey 相同的那个 Widget
+        ///   如果你的 LocalKey 是 UniqueKey，则每次 Widget 树变化后，Element 都找不到 key 相同的 Widget，所以就会重新创建新的 Element
+        /// 3、数据保存在 State 中且指定了不同的 GlobalKey 的时候，Widget 树变化后
+        ///   Element 会在 Widget 的全局树上查找 GlobalKey 相同的那个 Widget
 
         /// 通过 Builder 获取上下文，这个上下文是由框架传递过来的
         Builder(
