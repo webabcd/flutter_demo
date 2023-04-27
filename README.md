@@ -66,6 +66,8 @@
 - lib/widget/layout/stack.dart
 7. IndexedStack - 从多个子中选择一个显示
 - lib/widget/layout/indexed_stack.dart
+8. CustomMultiChildLayout - 自定义多组件布局
+- lib/widget/layout/custom_multi_child_layout.dart
 
 ### widget 容器类（只能有一个子）
 1. Align - 对齐方式
@@ -104,6 +106,8 @@
 - lib/widget/container/fractionally_sized_box.dart
 18. Card - 阴影边框
 - lib/widget/container/card.dart
+19. CustomSingleChildLayout - 自定义单组件布局
+- lib/widget/container/custom_single_child_layout.dart
 
 ### widget 文本类
 1. Text - 文本显示框
