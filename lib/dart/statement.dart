@@ -32,6 +32,26 @@ class DartStatement extends StatelessWidget {
     } else {
       log("a == 1");
     }
+
+    Object b = "webabcd";
+    // 判断类型成功之后，再使用时其就是被转换之后的
+    if (b is String) {
+      log("${b.length}");
+    }
+    // 判断类型成功之后，再使用时其就是被转换之后的
+    if (b is String && b.length == 7) {
+      log("ok");
+    }
+
+    String? c = currentTimestamp() % 999999 == 0 ? null : "webabcd";
+    // 判断为非空之后，再使用时其就是非空了
+    if (c != null) {
+      log("${c.length}");
+    }
+    // 判断为非空之后，再使用时其就是非空了
+    if (c != null && c.length == 7) {
+      log("ok");
+    }
   }
 
   void sample2() {

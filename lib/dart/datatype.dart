@@ -237,7 +237,29 @@ c''';
       var x = item as int;      // 在访问的时候转换数据类型也是被推荐的做法
     }
 
-    log("$a, $b, $c, $d");
+    Object o1 = _MyModel("abc", 12);
+    Object o2 = _MyModel("abc", 12);
+    // 判断两个对象是否相等（通过对象的 == 运算符判断）
+    var h = o1 == o2;             // true
+    // 判断两个引用是否指向同一个对象（类似于指针判断）
+    var i = identical(o1, o2);    // false
+
+    Object j = "webabcd";
+    // 判断类型成功之后，再使用时其就是被转换之后的
+    if (j is String) {
+      log("${j.length}");
+    }
+    // 判断类型成功之后，再使用时其就是被转换之后的
+    if (j is String && j.length == 7) {
+      log("ok");
+    }
+
+    Object k = "webabcd";
+    // 看下面的示例，一旦你 as 转换了，则之后再使用时其就是被转换之后的
+    var l = k as String;
+    var m = k.length;
+
+    log("$a, $b, $c, $d, $h, $i, $h ,$i");
   }
 
   void sample8() {
@@ -258,10 +280,40 @@ c''';
     a = "abc";
     // ? 左侧不是 null 则与无 ? 时逻辑相同
     var e = a?.length;
-
     // ! 左侧不是 null 则与无 ! 时逻辑相同
     var f = a!.length;
 
+    String? g = currentTimestamp() % 999999 == 0 ? null : "webabcd";
+    // 判断为非空之后，再使用时其就是非空了
+    if (g != null) {
+      log("${g.length}");
+    }
+    // 判断为非空之后，再使用时其就是非空了
+    if (g != null && g.length == 7) {
+      log("ok");
+    }
+
+    String? h = currentTimestamp() % 999999 == 0 ? null : "webabcd";
+    // 看下面的示例，一旦你 ! 了一个可空类型，则之后再使用时其就是非空了
+    var i = h!.length;
+    var j = h.length;
+
     log("$a, $b, $c, $e, $f"); // abc, null, null, 3, 3
   }
+}
+
+class _MyModel {
+  String name;
+  int age;
+  _MyModel(this.name, this.age);
+
+  /// 重写 == 运算符
+  /// 注：如果重写 == 运算符，则建议也要重写 hashCode，以便确保 == 的两个对象，他们的 hashCode 也是相等的
+  @override
+  bool operator ==(Object other) {
+    return other is _MyModel && name == other.name && other.age == other.age;
+  }
+
+  @override
+  int get hashCode => name.hashCode ^ age.hashCode;
 }
