@@ -35,6 +35,7 @@ import 'widget/basic/constraint.dart';
 import 'widget/basic/focus.dart';
 import 'widget/basic/tree.dart';
 import 'widget/basic/lifecycle.dart';
+import 'widget/basic/key.dart';
 
 import 'widget/layout/row.dart';
 import 'widget/layout/column.dart';
@@ -244,6 +245,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.basic.focus.dart":(context) => const FocusDemo(),
         "lib.widget.basic.tree.dart":(context) => const TreeDemo(),
         "lib.widget.basic.lifecycle.dart":(context) => const LifecycleDemo(),
+        "lib.widget.basic.key.dart":(context) => const KeyDemo(),
         "lib.widget.layout.row.dart":(context) => const RowDemo(),
         "lib.widget.layout.column.dart":(context) => const ColumnDemo(),
         "lib.widget.layout.flex.dart":(context) => const FlexDemo(),

@@ -50,6 +50,8 @@
 - lib/widget/basic/tree.dart
 6. 生命周期
 - lib/widget/basic/lifecycle.dart
+7. Key - 键
+- lib/widget/basic/key.dart
 
 ### widget 布局类（可以有多个子）
 1. Row - 水平弹性布局

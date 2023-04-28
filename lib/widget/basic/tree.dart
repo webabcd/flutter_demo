@@ -150,7 +150,7 @@ class _TreeDemoState extends State<TreeDemo> {
         ///   Element 会在 Widget 的同级树上查找（不会在父级或子级查找），且先会先按照之前的索引位置查找
         /// 2、数据保存在 State 中且指定了不同的 LocalKey 的时候，Widget 树变化后
         ///   Element 会在 Widget 的同级树上查找（不会在父级或子级查找） LocalKey 相同的那个 Widget
-        ///   如果你的 LocalKey 是 UniqueKey，则每次 Widget 树变化后，Element 都找不到 key 相同的 Widget，所以就会重新创建新的 Element
+        ///   如果你的 LocalKey 是 UniqueKey，则每次 Widget 树变化后，原 Element 都找不到 key 相同的 Widget，所以就会重新创建新的 Element，原 Element 会被销毁
         /// 3、数据保存在 State 中且指定了不同的 GlobalKey 的时候，Widget 树变化后
         ///   Element 会在 Widget 的全局树上查找 GlobalKey 相同的那个 Widget
 
@@ -165,6 +165,7 @@ class _TreeDemoState extends State<TreeDemo> {
               ),
               onTap: () {
                 /// 通过 context 获取对应的 RenderObject
+                /// 如果想获取某个指定的 Widget 对应的 RenderObject 的话，则可以使用 GlobalKey
                 RenderBox box = context.findRenderObject() as RenderBox;
 
                 /// 获取此 RenderObject 的相对于屏幕的位置
