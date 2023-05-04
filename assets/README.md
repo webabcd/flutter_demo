@@ -5,7 +5,8 @@
 - lib/storage/shared_preferences.dart
 2. path_provider - 用于获取不同平台的本地存储的路径
 - lib/storage/path_provider.dart
-
+3. File, Directory - 文件操作, 目录操作 
+- lib/storage/file.dart
 
 
 

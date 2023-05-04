@@ -205,6 +205,7 @@ import 'animation/stagger.dart';
 
 import 'storage/shared_preferences.dart';
 import 'storage/path_provider.dart';
+import 'storage/file.dart';
 
 import 'resource/localization.dart';
 
@@ -397,6 +398,7 @@ class MyApp extends StatelessWidget {
         "lib.animation.stagger.dart":(context) => const StaggerDemo(),
         "lib.storage.shared_preferences.dart":(context) => const SharedPreferencesDemo(),
         "lib.storage.path_provider.dart":(context) => const PathProviderDemo(),
+        "lib.storage.file.dart":(context) => const FileDemo(),
         "lib.resource.localization.dart":(context) => const LocalizationDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
         "lib.plugin.plugin.dart":(context) => const PluginDemo(),
