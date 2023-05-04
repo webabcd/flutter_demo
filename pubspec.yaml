@@ -57,6 +57,9 @@ dev_dependencies:
   # 用于获取不同平台的本地存储的路径
   path_provider: ^2.0.0
 
+  # 用于操作 android 的 SharedPreferences, ios 的 NSUserDefaults, web 的 LocalStorage
+  shared_preferences : ^2.1.0
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 

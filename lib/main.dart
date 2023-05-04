@@ -203,7 +203,10 @@ import 'animation/animated.dart';
 import 'animation/hero.dart';
 import 'animation/stagger.dart';
 
-import 'localization/localization.dart';
+import 'storage/shared_preferences.dart';
+import 'storage/path_provider.dart';
+
+import 'resource/localization.dart';
 
 import 'network/http.dart';
 
@@ -392,7 +395,9 @@ class MyApp extends StatelessWidget {
         "lib.animation.animated.dart":(context) => const AnimatedDemo(),
         "lib.animation.hero.dart":(context) => const HeroDemo(),
         "lib.animation.stagger.dart":(context) => const StaggerDemo(),
-        "lib.localization.localization.dart":(context) => const LocalizationDemo(),
+        "lib.storage.shared_preferences.dart":(context) => const SharedPreferencesDemo(),
+        "lib.storage.path_provider.dart":(context) => const PathProviderDemo(),
+        "lib.resource.localization.dart":(context) => const LocalizationDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
         "lib.plugin.plugin.dart":(context) => const PluginDemo(),
         "lib.plugin.plugin2.dart":(context) => const Plugin2Demo(),

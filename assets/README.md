@@ -1,5 +1,16 @@
 # Flutter Demo
 
+### 存储
+1. shared_preferences - 用于操作 android 的 SharedPreferences, ios 的 NSUserDefaults, web 的 LocalStorage
+- lib/storage/shared_preferences.dart
+2. path_provider - 用于获取不同平台的本地存储的路径
+- lib/storage/path_provider.dart
+
+
+
+
+
+
 
 ### dart
 1. 概述
@@ -392,9 +403,9 @@
 11. Stagger - 复合动画，即一个 AnimationController 控制多个动画
 - lib/animation/stagger.dart
 
-### 国际化
+### 资源
 1. Localization - 国际化
-- lib/localization/localization.dart
+- lib/resource/localization.dart
 
 ### 网络
 1. http 库以及 json 和对象间的转换
