@@ -7,7 +7,7 @@
  * 1、子先从父那里拿到约束条件，所谓的约束条件就是：最小宽/最小高/最大宽/最大高
  * 2、然后子一个一个地告诉孙们，它们的约束都是什么，并且询问孙们想要多大的尺寸
  * 3、然后子一个一个地安排孙们的位置
- * 4、最后子告诉父自己的尺寸
+ * 4、最后子告诉父自己的尺寸，然后父安排子的位置
  *
  * 也就是说：
  * 1、子只能在父给他的约束条件下决定自己的尺寸
@@ -52,14 +52,14 @@ class ConstraintDemo extends StatefulWidget {
     Example21(),
   ];
 
-  /// 所谓的 tight 约束，就是严格约束，比如
+  /// 所谓的 tight 约束，就是严格约束（紧约束），比如
   /// BoxConstraints.tight(Size size)
   ///   : minWidth = size.width,
   ///     maxWidth = size.width,
   ///     minHeight = size.height,
   ///     maxHeight = size.height;
   ///
-  /// 所谓的 loose 约束，就是宽松约束，比如
+  /// 所谓的 loose 约束，就是宽松约束（松约束），比如
   /// BoxConstraints.loose(Size size)
   ///   : minWidth = 0.0,
   ///     maxWidth = size.width,
@@ -99,7 +99,9 @@ class _ConstraintDemoState extends State<ConstraintDemo> {
               child: widget.examples[count - 1],
             ),
           ),
-          Wrap(
+          Container(
+            color: Colors.green,
+            child: Wrap(
               children: [
                 for (int i = 0; i < widget.examples.length; i++)
                   Container(
@@ -109,6 +111,7 @@ class _ConstraintDemoState extends State<ConstraintDemo> {
                     child: getButton(i + 1),
                   ),
               ],
+            ),
           ),
         ],
       ),
@@ -165,7 +168,8 @@ class Example1 extends StatelessWidget {
   const Example1({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// Container 的父亲是屏幕，屏幕会强制 Container 的宽高与屏幕相同
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
+    /// 结果 Container 的尺寸与父相同
     return Container(color: red);
   }
 }
@@ -174,7 +178,8 @@ class Example2 extends StatelessWidget {
   const Example2({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 此处指定 Container 的宽高是无效的，因为 Container 的父亲是屏幕，屏幕会强制 Container 的宽高与屏幕相同
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
+    /// 父不会安排子的位置，所以此处指定 Container 的宽高是无效的，结果 Container 的尺寸与父相同
     return Container(width: 100, height: 100, color: red);
   }
 }
@@ -183,8 +188,9 @@ class Example3 extends StatelessWidget {
   const Example3({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 Center 的宽高与屏幕相同
-    /// Center 会让 Container 自行决定宽高，只要不超过 Center 的宽高即可
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
+    /// 因为 Container 的父是 Center，其会安排子的位置，所以结果 Container 的宽为 100 高为 100
+    /// 结果 Center 的尺寸与父相同
     return Center(
       child: Container(width: 100, height: 100, color: red),
     );
@@ -196,9 +202,9 @@ class Example4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 Center 的宽高与屏幕相同
-    /// Center 会让 Container 自行决定宽高，只要不超过 Center 的宽高即可
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
     /// 这里指定了 Container 的宽高为无穷大，但是因为不能超过 Center 的宽高，所以 Container 的宽高会与 Center 的宽高相同
+    /// 结果 Center 的尺寸与父相同
     return Center(
       child: Container(width: double.infinity, height: double.infinity, color: red),
     );
@@ -209,9 +215,9 @@ class Example5 extends StatelessWidget {
   const Example5({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 Center 的宽高与屏幕相同
-    /// Center 会让 Container 自行决定宽高，只要不超过 Center 的宽高即可
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
     /// 这里没有指定 Container 的宽高，且 Container 也没有子，那么它就会尽可能的大，但是因为不能超过 Center 的宽高，所以 Container 的宽高会与 Center 的宽高相同
+    /// 结果 Center 的尺寸与父相同
     return Center(
       child: Container(color: red),
     );
@@ -222,7 +228,7 @@ class Example6 extends StatelessWidget {
   const Example6({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 Center 的宽高与屏幕相同
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
     /// Center 会让父 Container 自行决定宽高，只要不超过 Center 的宽高即可
     /// 这里没有指定父 Container 的宽高，但是父 Container 有一个子 Container，那么父 Container 会决定要与子 Container 的宽高相同
     /// 父 Container 会让子 Container 自行决定宽高，只要不超过 Center 的宽高即可
@@ -257,9 +263,10 @@ class Example8 extends StatelessWidget {
   const Example8({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 ConstrainedBox 的宽高与屏幕相同
-    /// ConstrainedBox 会强制 Container 的宽高与 ConstrainedBox 相同
-    /// 也就是说下面指定的那些宽高都是没用的，要想这些宽高设置有用，可以考虑在外层加一个 Align, Center 之类的，具体说明可以参考上面的那些示例
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
+    /// 结果 ConstrainedBox 的尺寸与父相同
+    /// ConstrainedBox 不会安排 Container 的位置，所以此处指定 Container 的宽高是无效的，结果 Container 的尺寸与父相同
+    /// 如果想要 Container 的宽高设置有用，可以考虑在外层加一个 Align, Center 之类的，具体说明可以参考上面的那些示例
     return ConstrainedBox(
       constraints: const BoxConstraints(
         minWidth: 50,
@@ -276,8 +283,9 @@ class Example9 extends StatelessWidget {
   const Example9({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 UnconstrainedBox 的宽高与屏幕相同
-    /// UnconstrainedBox 会让 Container 自行决定宽高，且没有任何限制
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
+    /// 因为 Container 的父是 UnconstrainedBox，其会安排子的位置（UnconstrainedBox 的 alignment 默认为 Alignment.center），所以结果 Container 的宽为 20 高为 20
+    /// 结果 UnconstrainedBox 的尺寸与父相同
     return UnconstrainedBox(
       child: Container(color: red, width: 20, height: 20),
     );
@@ -288,8 +296,9 @@ class Example10 extends StatelessWidget {
   const Example10({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 UnconstrainedBox 的宽高与屏幕相同
+    /// 首先参见 Example9 的说明
     /// UnconstrainedBox 会让 Container 自行决定宽高，且没有任何限制，但是如果超过了 UnconstrainedBox 的宽高则会有溢出警告
+    /// 注：这个溢出警告并非系统行为，而是对应的 RenderObject 对象的逻辑
     return UnconstrainedBox(
       child: Container(color: red, width: 999999, height: 50),              // 有溢出警告
       // child: Container(color: red, width: double.infinity, height: 50),  // 如果你把宽高设置为 double.infinity 无限大，则会因 flutter 无法渲染而导致错误
@@ -301,7 +310,8 @@ class Example11 extends StatelessWidget {
   const Example11({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 OverflowBox 的宽高与屏幕相同
+    /// 首先参见 Example10 的说明
+    /// OverflowBox 的 alignment 默认为 Alignment.center
     /// OverflowBox 会让 Container 自行决定宽高，且没有任何限制，即使超过了 OverflowBox 的宽高也不会有溢出警告
     return OverflowBox(
       minWidth: 0.0,
@@ -319,7 +329,7 @@ class Example12 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return UnconstrainedBox(
-      /// LimitedBox 用于限制 UnconstrainedBox 的最大宽和最大高
+      /// LimitedBox 用于限制无约束容器的最大宽和最大高
       child: LimitedBox(
         maxWidth: 100,
         maxHeight: 100,
@@ -337,8 +347,8 @@ class Example13 extends StatelessWidget {
   const Example13({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 FittedBox 的宽高与屏幕相同
     /// FittedBox 会对 Text 做缩放，使其适应 FittedBox 的宽高
+    /// 结果 FittedBox 的尺寸与父相同，Text 会自动缩放以适应 FittedBox 的尺寸
     return const FittedBox(
       child: MyText('abc'),
     );
@@ -349,9 +359,9 @@ class Example14 extends StatelessWidget {
   const Example14({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 Center 的宽高与屏幕相同
+    /// FittedBox 会对 Text 做缩放，使其适应 FittedBox 的宽高
     /// Center 会让 FittedBox 自行决定宽高，只要不超过 Center 的宽高即可
-    /// FittedBox 的宽高会调整为与 Text 一致，也就是说不会缩放
+    /// FittedBox 的宽高会调整为与 Text 一致，也就是说 Text 不会缩放
     return const Center(
       child: FittedBox(
         child: MyText('abc'),
@@ -364,7 +374,8 @@ class Example15 extends StatelessWidget {
   const Example15({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 首先参见 Example14 的说明
+    /// 父传来的约束为 BoxConstraints.tightFor(width: double.infinity, height: double.infinity)
+    /// 这个约束传递给 Center，再传递给 FittedBox，再传递给 Text
     /// 如果 Text 过长，则 FittedBox 会先调整自己的宽高（本例中 FittedBox 的宽会调整为与 Center 一致），然后再对 Text 做缩放，使其适应 FittedBox 的宽高
     return const Center(
       child: FittedBox(
@@ -405,7 +416,6 @@ class Example18 extends StatelessWidget {
   const Example18({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    /// 屏幕会强制 Row 的宽高与屏幕相同
     /// Row 的子元素自己管理自己的宽度，这样会导致过长的数据会有内容溢出的警告
     return Row(
       children: [
@@ -471,7 +481,7 @@ class Example21 extends StatelessWidget {
   Widget build(BuildContext context) {
     /// 首先参见 Example20 的说明
     /// Row 的两个子元素都是 Flexible，其默认 flex 均为 1，也就是说他们会平分宽度
-    //// 注：
+    /// 注：
     /// 1、Expanded 会强制其子元素与 Expanded 同宽
     /// 2、Flexible 会让其子元素自行决定宽度，然后调整为与其子元素同宽，但是宽度不能超过 Flexible 的 flex 指定的权重
     return Row(
