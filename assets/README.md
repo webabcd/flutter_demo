@@ -12,6 +12,11 @@
 2. rootBundle - 访问程序内资源
 - lib/resource/root_bundle.dart
 
+### widget 自定义
+1. 通过 SingleChildRenderObjectWidget 实现自定义组件
+- lib/widget/custom/single_child_render_object_widget.dart
+
+
 
 
 

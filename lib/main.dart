@@ -153,6 +153,8 @@ import 'widget/builder/layout_builder.dart';
 import 'widget/builder/future_builder.dart';
 import 'widget/builder/stream_builder.dart';
 
+import 'widget/custom/single_child_render_object_widget.dart';
+
 import 'state/change_notifier.dart';
 import 'state/value_notifier.dart';
 import 'state/inherited_widget.dart';
@@ -353,6 +355,7 @@ class MyApp extends StatelessWidget {
         "lib.widget.builder.layout_builder.dart":(context) => const LayoutBuilderDemo(),
         "lib.widget.builder.future_builder.dart":(context) => const FutureBuilderDemo(),
         "lib.widget.builder.stream_builder.dart":(context) => const StreamBuilderDemo(),
+        "lib.widget.custom.single_child_render_object_widget.dart":(context) => const SingleChildRenderObjectWidgetDemo(),
         "lib.state.change_notifier.dart":(context) => const ChangeNotifierDemo(),
         "lib.state.value_notifier.dart":(context) => const ValueNotifierDemo(),
         "lib.state.inherited_widget.dart":(context) => const InheritedWidgetDemo(),
