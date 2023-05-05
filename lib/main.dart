@@ -208,6 +208,7 @@ import 'storage/path_provider.dart';
 import 'storage/file.dart';
 
 import 'resource/localization.dart';
+import 'resource/root_bundle.dart';
 
 import 'network/http.dart';
 
@@ -400,6 +401,7 @@ class MyApp extends StatelessWidget {
         "lib.storage.path_provider.dart":(context) => const PathProviderDemo(),
         "lib.storage.file.dart":(context) => const FileDemo(),
         "lib.resource.localization.dart":(context) => const LocalizationDemo(),
+        "lib.resource.root_bundle.dart":(context) => const RootBundleDemo(),
         "lib.network.http.dart":(context) => const HttpDemo(),
         "lib.plugin.plugin.dart":(context) => const PluginDemo(),
         "lib.plugin.plugin2.dart":(context) => const Plugin2Demo(),

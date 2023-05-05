@@ -8,6 +8,9 @@
 3. File, Directory - 文件操作, 目录操作 
 - lib/storage/file.dart
 
+### 资源
+2. rootBundle - 访问程序内资源
+- lib/resource/root_bundle.dart
 
 
 
