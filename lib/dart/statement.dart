@@ -20,7 +20,13 @@ class DartStatement extends StatelessWidget {
     // for/forEach
     sample4();
 
-    return const MyWidget(text: "dart_statement");
+    return Column(
+      children: [
+        // for 语句可以用来生成 widget 集合
+        for (var i = 0; i < 10; i++)
+          MyText('text $i')
+      ],
+    );
   }
 
   void sample1() {
