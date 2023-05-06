@@ -15,7 +15,8 @@
 ### widget 自定义
 1. 通过 SingleChildRenderObjectWidget 实现自定义组件
 - lib/widget/custom/single_child_render_object_widget.dart
-
+2. 通过 CustomPaint 实现自定义组件
+- lib/widget/custom/custom_paint.dart
 
 
 

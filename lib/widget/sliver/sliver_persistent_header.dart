@@ -83,9 +83,10 @@ class _MySliverPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
   @override
   double get minExtent => _minExtent;
 
-  /// 是否需要重建（当 maxExtent 或 minExtent 发生变化时，应该返回 true）
+  /// 如果之后 widget 重新 build 了，就会执行到这里
+  /// 一般通过判断 _MySliverPersistentHeaderDelegate 新旧实例的与 UI 相关的参数是否发生变化来决定是否需要重建
   @override
   bool shouldRebuild(covariant _MySliverPersistentHeaderDelegate oldDelegate) {
-    return false;
+    return maxExtent != oldDelegate.maxExtent || minExtent != oldDelegate.minExtent;
   }
 }

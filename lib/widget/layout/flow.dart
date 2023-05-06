@@ -80,9 +80,10 @@ class _FlowDemoDelegate extends FlowDelegate {
     return const Size(double.infinity, 150);
   }
 
-  /// 是否需要重绘，通常新实例与旧实例不同时则返回 true
+  /// 如果之后 widget 重新 build 了，就会执行到这里
+  /// 一般通过判断 _FlowDemoDelegate 新旧实例的与 UI 相关的参数是否发生变化来决定是否需要重绘
   @override
-  bool shouldRepaint(FlowDelegate oldDelegate) {
+  bool shouldRepaint(_FlowDemoDelegate oldDelegate) {
     return this != oldDelegate;
   }
 }

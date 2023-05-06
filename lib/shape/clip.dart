@@ -103,8 +103,10 @@ class _MyClipper extends CustomClipper<Path>{
     return path;
   }
 
+  /// 如果之后 widget 重新 build 了，就会执行到这里
+  /// 一般通过判断 _MyClipper 新旧实例的与 UI 相关的参数是否发生变化来决定是否需要重新剪裁
   @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
+  bool shouldReclip(_MyClipper oldClipper) {
     return true;
   }
 }

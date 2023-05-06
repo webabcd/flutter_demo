@@ -72,9 +72,10 @@ class _MyMultiChildLayoutDelegate extends MultiChildLayoutDelegate {
     positionChild("b", Offset(100, 100));
   }
 
-  /// 当 MultiChildLayoutDelegate 发生变化时，通过这里决定是否需要重新布局
+  /// 如果之后 widget 重新 build 了，就会执行到这里
+  /// 一般通过判断 _MyMultiChildLayoutDelegate 新旧实例的与 UI 相关的参数是否发生变化来决定是否需要重新布局
   @override
-  bool shouldRelayout(covariant MultiChildLayoutDelegate oldDelegate) {
+  bool shouldRelayout(covariant _MyMultiChildLayoutDelegate oldDelegate) {
     return true;
   }
 

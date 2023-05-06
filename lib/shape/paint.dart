@@ -49,12 +49,15 @@ class _PaintDemoState extends State<PaintDemo> {
       color: Colors.orange,
       /// CustomPaint - 用于自定义绘制的 Widget
       ///   先绘制 painter，然后在 painter 的前面渲染 child, 然后在 child 的前面绘制 foregroundPainter
-      child:CustomPaint(
+      child: CustomPaint(
         painter: MyCustomPainter(_image),
         child: const Center(
           child: MyText("我是 CustomPaint 的 child"),
         ),
         foregroundPainter: null,
+        /// 如果不指定 child 则 CustomPaint 使用 size 作为自己的尺寸
+        /// 如果指定了 child 则 CustomPaint 使用 child 的尺寸作为自己的尺寸
+        size: Size.zero,
       ),
     );
   }
@@ -98,7 +101,7 @@ class MyCustomPainter extends CustomPainter {
 
   /// 自定义绘制
   ///   canvas - 画布，所有 canvas 的操作都是调用的 native 方法
-  ///   size - 绘制区域，由 CustomPaint 的构造函数传入
+  ///   size - 绘制区域（即 CustomPaint 的尺寸，参见上面 CustomPaint 的 size 的说明）
   @override
   void paint(Canvas canvas, Size size) {
     log("paint size: $size");
@@ -174,7 +177,8 @@ class MyCustomPainter extends CustomPainter {
     }
   }
 
-  /// 是否需要重绘，通常新实例与旧实例不同时则返回 true
+  /// 如果之后 widget 重新 build 了，就会执行到这里
+  /// 一般通过判断 MyCustomPainter 新旧实例的与 UI 相关的参数是否发生变化来决定是否需要重绘
   @override
   bool shouldRepaint(MyCustomPainter oldDelegate) {
     return this != oldDelegate;
