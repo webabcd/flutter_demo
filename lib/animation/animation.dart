@@ -122,8 +122,8 @@ class _AnimationDemoState extends State<AnimationDemo> with SingleTickerProvider
               ElevatedButton(
                 child: const Text('animateTo()'),
                 onPressed: () {
-                  /// 通过 animateTo() 启动动画（从当前值到指定的值）
-                  /// 下面的例子会启动动画，从 _controller.value 到 120，时长 1 秒，缓动 Curves.ease
+                  /// 通过 animateTo() 启动动画（从当前值动画到目标值），目标值必须在 lowerBound 和 upperBound 之间
+                  /// 下面的例子会启动动画，_controller 会从当前值动画到 120，时长 1 秒，缓动 Curves.ease
                   _controller.animateTo(120, duration: const Duration(seconds: 1), curve: Curves.ease);
                 },
               ),

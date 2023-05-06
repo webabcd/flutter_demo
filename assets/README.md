@@ -17,7 +17,8 @@
 - lib/widget/custom/single_child_render_object_widget.dart
 2. 通过 CustomPaint 实现自定义组件
 - lib/widget/custom/custom_paint.dart
-
+3. 通过组合多个 Widget 的方式实现自定义组件
+- lib/widget/custom/custom_widget.dart
 
 
 

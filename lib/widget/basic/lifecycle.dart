@@ -147,6 +147,11 @@ class _MyWidget1State extends State<_MyWidget1> {
   @override
   void didUpdateWidget(covariant _MyWidget1 oldWidget) {
     log("didUpdateWidget(), oldWidget:${oldWidget.counter}, newWidget:${widget.counter}");
+
+    /// 因为父组件重新 build 了，所以 _MyWidget1 也会重新 build
+    /// 一般在这里通过判断 _MyWidget1 新旧实例的与 UI 相关的参数是否发生变化，然后决定是否需要调用 setState() 从而更新 _MyWidget1 的状态
+    /// setState(() { });
+
     super.didUpdateWidget(oldWidget);
   }
 
