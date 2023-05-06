@@ -81,50 +81,53 @@ class _AnimationDemoState extends State<AnimationDemo> with SingleTickerProvider
               ),
             ),
           ),
-          Container(
-            height: 40,
-            color: Colors.red,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  child: const Text('forward'),
-                  onPressed: () {
-                    /// 启动正向动画（动画的时长就是 AnimationController 中的 duration 的值）
-                    /// 注：forward(), reverse(), repeat() 返回的是一个 TickerFuture 对象
-                    var tickerFuture = _controller.forward();
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text('reverse'),
-                  onPressed: () {
-                    /// 启动反向动画（动画的时长就是 AnimationController 中的 reverseDuration 的值）
-                    _controller.reverse();
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text('repeat'),
-                  onPressed: () {
-                    /// 启动循环动画（其中的正向动画部分和反向动画部分的时长均是 AnimationController 中的 duration 的值）
-                    _controller.repeat(reverse: true);
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text('reset'),
-                  onPressed: () {
-                    /// 复位
-                    _controller.reset();
-                  },
-                ),
-                ElevatedButton(
-                  child: const Text('stop'),
-                  onPressed: () {
-                    /// 停止动画
-                    _controller.stop();
-                  },
-                ),
-              ],
-            ),
+          Wrap(
+            children: [
+              ElevatedButton(
+                child: const Text('forward'),
+                onPressed: () {
+                  /// 启动正向动画（动画的时长就是 AnimationController 中的 duration 的值）
+                  /// 注：forward(), reverse(), repeat() 返回的是一个 TickerFuture 对象
+                  var tickerFuture = _controller.forward();
+                },
+              ),
+              ElevatedButton(
+                child: const Text('reverse'),
+                onPressed: () {
+                  /// 启动反向动画（动画的时长就是 AnimationController 中的 reverseDuration 的值）
+                  _controller.reverse();
+                },
+              ),
+              ElevatedButton(
+                child: const Text('repeat'),
+                onPressed: () {
+                  /// 启动循环动画（其中的正向动画部分和反向动画部分的时长均是 AnimationController 中的 duration 的值）
+                  _controller.repeat(reverse: true);
+                },
+              ),
+              ElevatedButton(
+                child: const Text('reset'),
+                onPressed: () {
+                  /// 复位
+                  _controller.reset();
+                },
+              ),
+              ElevatedButton(
+                child: const Text('stop'),
+                onPressed: () {
+                  /// 停止动画
+                  _controller.stop();
+                },
+              ),
+              ElevatedButton(
+                child: const Text('animateTo()'),
+                onPressed: () {
+                  /// 通过 animateTo() 启动动画（从当前值到指定的值）
+                  /// 下面的例子会启动动画，从 _controller.value 到 120，时长 1 秒，缓动 Curves.ease
+                  _controller.animateTo(120, duration: const Duration(seconds: 1), curve: Curves.ease);
+                },
+              ),
+            ],
           ),
         ],
       ),
