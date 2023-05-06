@@ -285,6 +285,14 @@
 5. StreamBuilder - 跟踪 Stream 的变化并构造 Widget
 - lib/widget/builder/stream_builder.dart
 
+### widget 自定义
+1. 通过 SingleChildRenderObjectWidget 实现自定义组件
+- lib/widget/custom/single_child_render_object_widget.dart
+2. 通过 CustomPaint 实现自定义组件
+- lib/widget/custom/custom_paint.dart
+3. 通过组合多个 Widget 的方式实现自定义组件
+- lib/widget/custom/custom_widget.dart
+
 ### widget 状态管理
 1. 状态管理 - ChangeNotifier（多 Widget 之间的多数据的状态管理）
 - lib/state/change_notifier.dart
@@ -392,9 +400,19 @@
 11. Stagger - 复合动画，即一个 AnimationController 控制多个动画
 - lib/animation/stagger.dart
 
-### 国际化
+### 存储
+1. shared_preferences - 用于操作 android 的 SharedPreferences, ios 的 NSUserDefaults, web 的 LocalStorage
+- lib/storage/shared_preferences.dart
+2. path_provider - 用于获取不同平台的本地存储的路径
+- lib/storage/path_provider.dart
+3. File, Directory - 文件操作, 目录操作
+- lib/storage/file.dart
+
+### 资源
 1. Localization - 国际化
-- lib/localization/localization.dart
+- lib/resource/localization.dart
+2. rootBundle - 访问程序内资源
+- lib/resource/root_bundle.dart
 
 ### 网络
 1. http 库以及 json 和对象间的转换
