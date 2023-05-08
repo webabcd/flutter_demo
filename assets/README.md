@@ -33,7 +33,13 @@
 - lib/dart/package/lib5.dart
 - lib/dart/package/lib6.dart
 - lib/dart/package/lib7.dart
+- lib/dart/package/lib8.dart 
+- lib/dart/package/lib9.dart
+- lib/dart/package/lib10.dart 
+- lib/dart/package/lib11.dart
 - lib/dart/package/mylib.dart
+- lib/dart/package/mylib2.dart
+- lib/dart/package/mylib3.dart
 13. 其它（用调用函数的方式调用类的实例，生成器）
 - lib/dart/other.dart
 
