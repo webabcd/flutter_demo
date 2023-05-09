@@ -1,6 +1,6 @@
 /*
  * 插件
- * 本例用于演示 flutter 使用 android/ios 原生控件，并做数据通信
+ * 本例用于演示 flutter 使用 android/ios/web 原生控件，并做数据通信
  *
  * 一、android 插件开发
  * 1、主 flutter 项目要先在 android 平台中运行一下
@@ -15,6 +15,9 @@
  * 3、用 xcode 中打开 /ios/Runner.xcworkspace 即可开发插件
  * 4、参见 /ios/Runner/AppDelegate.swift
  *
+ * 三、web 原生控件，以及 flutter 与 js 的通信
+ * 1、参见 /lib/plugin/flutter_plugin_web2.dart
+ *
  *
  * 注：插件中实现的功能（非 .dart 实现的）不支持 flutter 的 hot reload
  */
@@ -27,6 +30,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../helper.dart';
+
+/// 这里要注意，如果编译的时候，目标平台不是 web 环境，那么如果项目中 import 了 dart:js, dart:ui, dart:html 之类的库，则会报类似如下的错误
+/// FileSystemException(uri=org-dartlang-untranslatable-uri:dart%3Ahtml; message=StandardFileSystem only supports file:* and data:* URIs)
+/// 此时，就需要用如下的方式 import
+/// 下面的 import 的意思是：导入 flutter_plugin_web2_stub.dart，但是编译为 web 时（即 dart.library.js 为真）则导入 flutter_plugin_web2.dart
+/// flutter_plugin_web2_stub.dart 里的对外的方法定义与 flutter_plugin_web2.dart 是一样的
+/// 但是 flutter_plugin_web2_stub.dart 中没有具体的逻辑，不会导入 dart:js, dart:ui, dart:html 之类的库，这样就保证了编译为非 web 时不会报错
+/// 而 flutter_plugin_web2.dart 有具体的逻辑，会导入 dart:js, dart:ui, dart:html 之类的库，这样就保证了编译为 web 时会包括相关的逻辑
+import 'flutter_plugin_web2_stub.dart' if (dart.library.js) "flutter_plugin_web2.dart";
 
 class Plugin2Demo extends StatefulWidget {
   const Plugin2Demo({Key? key}) : super(key: key);
@@ -155,7 +167,9 @@ class _MyNativeViewState extends State<_MyNativeView> {
     /// 判断是否为 web 环境要用 kIsWeb
     /// 如果在 web 环境使用 Platform.xxx 的话会报错的
     if (kIsWeb) {
-      return const MyText("不支持 web 环境");
+      /// 嵌入到 flutter 中的 web 的 view（相关的插件在 /lib/plugin/flutter_plugin_web2.dart）
+      /// 这是一个 HtmlElementView 类型的组件
+      return FlutterPluginWeb2().getHtmlElementView(widget.controller.jsToFlutter);
     }
 
     if (Platform.isAndroid) {
@@ -196,6 +210,12 @@ class _MyViewController extends ChangeNotifier {
 
   String nativeToFlutterMessage = "";
 
+  /// 接收从 web 发送到 flutter 的数据
+  void jsToFlutter(String message) {
+    nativeToFlutterMessage = message;
+    notifyListeners();
+  }
+
   /// 接收从 android/ios 发送到 flutter 的数据
   void setMethodChannel(MethodChannel methodChannel) {
     _methodChannel = methodChannel;
@@ -210,8 +230,15 @@ class _MyViewController extends ChangeNotifier {
     });
   }
 
-  /// 从 flutter 发送数据到 android/ios
+  /// 从 flutter 发送数据到 android/ios/web
   Future<void> flutterToNative(String message) async {
-    await _methodChannel.invokeMethod('flutterToNative', message);
+    if (kIsWeb) {
+      /// 从 flutter 发送数据到 web
+      var result = FlutterPluginWeb2.flutterToJs(message);
+    }
+    else {
+      /// 从 flutter 发送数据到 android/ios
+      await _methodChannel.invokeMethod('flutterToNative', message);
+    }
   }
 }

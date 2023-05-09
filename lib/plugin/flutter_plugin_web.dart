@@ -1,5 +1,5 @@
 /*
- * 本例用于演示 web 插件的开发
+ * 本例用于演示 web 插件的开发（flutter 与 web 原生之间的数据通信）
  * 这里用于注册插件，以及配置 flutter 与 js 之间的方法映射等
  * 具体的插件逻辑请参见 /web/index.html
  *
@@ -21,6 +21,11 @@
  *       web:
  *         fileName: plugin/flutter_plugin_web.dart      # 实现了 web 插件的文件的文件名
  *         pluginClass: FlutterPluginWeb                 # 实现了 web 插件的类名
+ *
+ *
+ * 注：
+ * 本例介绍的 flutter 与 js 通信的方法有一些麻烦，但是可以和 android/ios 插件的接口保持一致，这样对于 flutter 的开发来说，其与 android/ios/web 通信的方法都是一样的
+ * 如果没有上述要求，则可以用更简单的通信方式，参见 flutter_plugin_web2.dart
  */
 
 import 'dart:async';
@@ -66,7 +71,7 @@ class FlutterPluginWeb {
     });
 
     /// flutter 调用 js
-    xxx("初始化插件");
+    xxx("插件注册完成");
   }
 
   /// flutter 调用 web 插件中的方法时
