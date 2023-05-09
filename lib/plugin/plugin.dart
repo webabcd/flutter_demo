@@ -1,6 +1,6 @@
 /*
  * 插件
- * 本例用于演示 flutter 与 android/ios 原生之间的数据通信
+ * 本例用于演示 flutter 与 android/ios/web 原生之间的数据通信
  *
  * 一、android 插件开发
  * 1、主 flutter 项目要先在 android 平台中运行一下
@@ -15,8 +15,24 @@
  * 3、用 xcode 中打开 /ios/Runner.xcworkspace 即可开发插件
  * 4、参见 /ios/Runner/AppDelegate.swift
  *
+ * 三、web 插件开发
+ * 1、为了在 flutter 中调用 js，需要在 pubspec.yaml 中做如下配置
+ * dependencies:
+ *   flutter_web_plugins:
+ *     sdk: flutter
+ *   js: ^0.6.5
+ * 2、为了开发 web 插件，需要在 pubspec.yaml 中做如下配置
+ * flutter:
+ *   plugin:
+ *     platforms:
+ *       web:
+ *         fileName: plugin/flutter_plugin_web.dart      # 实现了 web 插件的文件的文件名
+ *         pluginClass: FlutterPluginWeb                 # 实现了 web 插件的类名
+ * 3、在 /web/index.html 中开发具体的 js 逻辑
+ * 4、在 plugin/flutter_plugin_web.dart 开发 web 插件逻辑，包括 flutter 与 js 之间的方法映射等
  *
- * 注：插件中实现的功能不支持 flutter 的 hot reload
+ *
+ * 注：插件中实现的功能（非 .dart 实现的）不支持 flutter 的 hot reload
  */
 
 import 'dart:async';
@@ -108,6 +124,7 @@ class _PluginDemoState extends State<PluginDemo> {
 }
 
 
+/// 使用插件
 class MyPlugin {
   /// 获取指定名称的 MethodChannel（其用于 flutter 和插件之间的通信）
   static final MethodChannel _methodChannel = const MethodChannel("com.webabcd.flutter/channel1")

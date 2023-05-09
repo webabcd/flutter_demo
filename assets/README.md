@@ -1,6 +1,18 @@
 # Flutter Demo
 
 
+### 插件
+5. flutter 与 web 原生之间的数据通信
+- lib/plugin/plugin.dart
+- lib/plugin/flutter_plugin_web.dart.dart
+- web/index.html
+
+
+
+
+
+
+
 ### dart
 1. 概述
 - lib/dart/summary.dart

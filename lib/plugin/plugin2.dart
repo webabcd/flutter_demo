@@ -16,7 +16,7 @@
  * 4、参见 /ios/Runner/AppDelegate.swift
  *
  *
- * 注：插件中实现的功能不支持 flutter 的 hot reload
+ * 注：插件中实现的功能（非 .dart 实现的）不支持 flutter 的 hot reload
  */
 
 import 'dart:async';

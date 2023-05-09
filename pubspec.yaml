@@ -39,6 +39,11 @@ dependencies:
   redux: ^5.0.0
   flutter_redux: ^0.10.0
 
+  # 为了在 flutter 中调用 js
+  flutter_web_plugins:
+    sdk: flutter
+  js: ^0.6.5
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -114,3 +119,10 @@ flutter:
     - family: customfont                                        # 字体名称
       fonts:
         - asset: assets/fonts/myfont.ttf                        # 字体文件的地址
+
+  # 为了开发 web 插件
+  plugin:
+    platforms:
+      web:
+        fileName: plugin/flutter_plugin_web.dart      # 实现了 web 插件的文件的文件名
+        pluginClass: FlutterPluginWeb                 # 实现了 web 插件的类名

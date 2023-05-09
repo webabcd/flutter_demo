@@ -54,6 +54,62 @@
         }
       });
     });
+
+    // flutter 的 web 插件的具体逻辑
+    // 在 flutter 中调用 flutterToJs() 后，就会调用 js 中的 webabcd_flutterToJs()
+    window.webabcd_flutterToJs = async (method, arguments) => {
+      const promise = new Promise((resolve, reject) => {
+        if (method == "method1" ) {
+          let returnValue = method1();
+          // 返回给 flutter 的结果
+          resolve(returnValue);
+
+          // 用于演示 js 调用 flutter
+          // 在 js 中调用 webabcd_jsToFlutter() 后，就会调用 flutter 中的 jsToFlutter()
+          window.webabcd_jsToFlutter('js to flutter', "param");
+        }
+
+        else if (method == "method2" ) {
+          let returnValue = method2(arguments);
+          resolve(returnValue);
+        }
+
+        else if (method == "method3" ) {
+          let name = arguments._get("name");
+          let age = arguments._get("age");
+          let returnValue = method3(name, age);
+          resolve(returnValue);
+        }
+
+        else if (method == "method4" ) {
+          let returnValue = method4(arguments);
+          resolve(returnValue);
+        }
+
+        else if (method == "method5" ) {
+          // 通过 Promise 的 reject() 返回一个异常信息，在 flutter 中可以通过 try/catch 捕获到一个 PlatformException 类型的异常
+          reject("errorMessage");
+        }
+      });
+      return promise;
+    }
+
+    function method1() {
+      return "调用 method1 成功";
+    }
+
+    function method2(param) {
+      return `调用 method2 成功 param:${param}`;
+    }
+
+    function method3(name, age) {
+      return `调用 method3 成功 name:${name}, age:${age}`;
+    }
+
+    function method4(params) {
+      return `调用 method4 成功 ${params.join(',')}`;
+    }
+
   </script>
 </body>
 </html>
