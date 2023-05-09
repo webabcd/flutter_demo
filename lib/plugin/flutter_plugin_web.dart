@@ -42,6 +42,7 @@ external set jsToFlutter(void Function(String method, dynamic arguments) f);
 @JS("webabcd_flutterToJs")
 external dynamic flutterToJs(String method, dynamic arguments);
 
+/// 这个类名就是在 pubspec.yaml 中配置的 web 插件的类名
 class FlutterPluginWeb {
 
   /// 注册自定义插件，用于演示 flutter 与 web 原生之间的数据通信
