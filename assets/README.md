@@ -1,20 +1,6 @@
 # Flutter Demo
 
 
-### 插件
-5. flutter 与 web 原生之间的数据通信
-- lib/plugin/plugin.dart
-- lib/plugin/flutter_plugin_web.dart.dart
-- web/index.html
-6. flutter 使用 web 原生控件，并做数据通信
-- lib/plugin/plugin2.dart
-- lib/plugin/flutter_plugin_web.dart2_stub.dart
-- lib/plugin/flutter_plugin_web.dart2.dart
-
-
-
-
-
 ### dart
 1. 概述
 - lib/dart/summary.dart
@@ -458,3 +444,11 @@
 - ios/Runner/AppDelegate.swift
 - ios/Runner/MyFlutterPlugin2.swift
 - ios/Runner/MyView.swift
+5. flutter 与 web 原生之间的数据通信
+- lib/plugin/plugin.dart
+- lib/plugin/flutter_plugin_web.dart
+- web/index.html
+6. flutter 使用 web 原生控件，并做数据通信
+- lib/plugin/plugin2.dart
+- lib/plugin/flutter_plugin_web2_stub.dart
+- lib/plugin/flutter_plugin_web2.dart

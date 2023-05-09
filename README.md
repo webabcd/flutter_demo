@@ -33,7 +33,13 @@
 - lib/dart/package/lib5.dart
 - lib/dart/package/lib6.dart
 - lib/dart/package/lib7.dart
+- lib/dart/package/lib8.dart
+- lib/dart/package/lib9.dart
+- lib/dart/package/lib10.dart
+- lib/dart/package/lib11.dart
 - lib/dart/package/mylib.dart
+- lib/dart/package/mylib2.dart
+- lib/dart/package/mylib3.dart
 13. 其它（用调用函数的方式调用类的实例，生成器）
 - lib/dart/other.dart
 
@@ -438,3 +444,11 @@
 - ios/Runner/AppDelegate.swift
 - ios/Runner/MyFlutterPlugin2.swift
 - ios/Runner/MyView.swift
+5. flutter 与 web 原生之间的数据通信
+- lib/plugin/plugin.dart
+- lib/plugin/flutter_plugin_web.dart
+- web/index.html
+6. flutter 使用 web 原生控件，并做数据通信
+- lib/plugin/plugin2.dart
+- lib/plugin/flutter_plugin_web2_stub.dart
+- lib/plugin/flutter_plugin_web2.dart
