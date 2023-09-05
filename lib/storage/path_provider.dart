@@ -9,9 +9,15 @@
  *
  *
  * 常用的目录如下：
- * getTemporaryDirectory() - ios 的 NSCachesDirectory; android 的 getCacheDir()
- * getApplicationSupportDirectory() - ios 的 NSApplicationSupportDirectory; android 的 getFilesDir()
- * getApplicationDocumentsDirectory() - ios 的 NSDocumentDirectory; android 的 getDataDir() + "/app_flutter/"
+ * getTemporaryDirectory()
+ *   ios 的 NSCachesDirectory - 在设备可用空间极少时，可能会被系统清除
+ *   android 的 getCacheDir() - 存放的数据可能会被系统主动删除（比如系统认为存储空间不够的时候），用户在设置中的“应用信息”中单击“清除缓存”后会删除
+ * getApplicationSupportDirectory()
+ *   ios 的 NSApplicationSupportDirectory - 不会被系统清除，会被自动 iCloud/iTunes 备份（不需要的话可以通过接口禁用指定路径的自动备份），一般用于保存非用户生成的必需数据
+ *   android 的 getFilesDir() - 存放的数据系统不会主动删除，用户在设置中的“应用信息”中单击“清除数据”后会删除
+ * getApplicationDocumentsDirectory()
+ *   ios 的 NSDocumentDirectory - 不会被系统清除，会被自动 iCloud/iTunes 备份（不需要的话可以通过接口禁用指定路径的自动备份），一般用于保存用户生成的必需数据
+ *   android 的 getDataDir() + "/app_flutter/" - 内部存储根目录（类似 /data/data/packagename/app_flutter/）
  *
  * 不常用的目录如下：
  * getLibraryDirectory() - 获取 ios 的 Library 目录
