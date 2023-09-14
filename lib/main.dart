@@ -219,6 +219,8 @@ import 'network/http.dart';
 import 'plugin/plugin.dart';
 import 'plugin/plugin2.dart';
 
+import 'game/tetris/tetris.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -412,6 +414,7 @@ class MyApp extends StatelessWidget {
         "lib.network.http.dart":(context) => const HttpDemo(),
         "lib.plugin.plugin.dart":(context) => const PluginDemo(),
         "lib.plugin.plugin2.dart":(context) => const Plugin2Demo(),
+        "lib.game.tetris.tetris.dart":(context) => const Tetris(),
       },
     );
   }
