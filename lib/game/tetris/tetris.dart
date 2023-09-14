@@ -88,10 +88,14 @@ class MyGame extends FlameGame {
   bool shapeUpdated = false;
 
   List<Shape> shapeList = <Shape>[];
-  late List<List<Square?>> mainMatrix;
+  List<List<Square?>> mainMatrix = <List<Square?>>[];
 
   @override
   Future<void>? onLoad() async {
+
+    shapeList.add(Core.createShape());
+    Core.initMainMatrix(mainMatrix);
+
     controller.addListener(() {
       if (controller.rotateTimes > 0) {
         shapeList[0].rotate();
@@ -105,17 +109,6 @@ class MyGame extends FlameGame {
       }
       shapeUpdated = true;
     });
-
-    shapeList.add(T());
-
-    mainMatrix = <List<Square?>>[];
-    for (var i = 0; i < Config.mainMatrixHeight; i++) {
-      var row = <Square?>[];
-      mainMatrix.add(row);
-      for (var j = 0; j < Config.mainMatrixWidth; j++) {
-        row.add(null);
-      }
-    }
 
     return super.onLoad();
   }
@@ -166,7 +159,7 @@ class MyGame extends FlameGame {
       var newShape = Core.createShape();
       shapeList.add(newShape);
       if (Core.checkCollision(newShape, mainMatrix) == CollisionType.bottom) {
-        paused = true;
+        Core.initMainMatrix(mainMatrix); // 死了重来
       }
     } else if (collisionType == CollisionType.edge) {
       shape.loadPrev();

@@ -11,6 +11,8 @@ import 'package:flutter_demo/game/tetris/shape/shape.dart';
 import 'package:flutter_demo/game/tetris/shape/square.dart';
 import 'package:flutter_demo/game/tetris/shape/t.dart';
 
+import 'config.dart';
+
 enum CollisionType { none, edge, bottom }
 
 class Core {
@@ -87,6 +89,17 @@ class Core {
         for (var i = 0; i < 10; i++) {
           row.add(null);
         }
+      }
+    }
+  }
+
+  static void initMainMatrix(List<List<Square?>> mainMatrix) {
+    mainMatrix.clear();
+    for (var i = 0; i < Config.mainMatrixHeight; i++) {
+      var row = <Square?>[];
+      mainMatrix.add(row);
+      for (var j = 0; j < Config.mainMatrixWidth; j++) {
+        row.add(null);
       }
     }
   }
