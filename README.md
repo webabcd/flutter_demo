@@ -42,6 +42,10 @@
 - lib/dart/package/mylib3.dart
 13. 其它（用调用函数的方式调用类的实例，生成器）
 - lib/dart/other.dart
+14. dart 3 新特性（元组，解构，switch 的模式匹配）
+- lib/dart/dart3feature1.dart
+15. dart 3 新特性（类相关）
+- lib/dart/dart3feature2.dart
 
 ### widget 基础
 1. StatelessWidget - 无状态 widget
@@ -456,3 +460,15 @@
 ### 游戏
 1. 俄罗斯方块
 - lib/game/tetris/tetris.dart
+- lib/game/tetris/core.dart
+- lib/game/tetris/config.dart
+- lib/game/tetris/controller.dart
+- lib/game/tetris/shape/square.dart
+- lib/game/tetris/shape/shape.dart
+- lib/game/tetris/shape/i.dart
+- lib/game/tetris/shape/l.dart
+- lib/game/tetris/shape/l2.dart
+- lib/game/tetris/shape/n.dart
+- lib/game/tetris/shape/n2.dart
+- lib/game/tetris/shape/o.dart
+- lib/game/tetris/shape/t.dart

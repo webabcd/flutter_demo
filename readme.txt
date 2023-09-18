@@ -32,10 +32,10 @@
 
 提示：
 1、如果运行时卡在 Running Gradle task 'assembleDebug' 的话，则翻墙跑一遍即可
-2、查看 flutter 版本用 flutter --version，更新 flutter 版本用 flutter upgrade，获取 pub 包用 flutter pub get，更新 pub 包用 flutter pub upgrade
+2、查看 flutter 版本用 flutter --version，更新 flutter/dart 版本用 flutter upgrade，获取 pub 包用 flutter pub get，更新 pub 包用 flutter pub upgrade
 3、更新 dart 版本时，除了要更新 pub 包外，还要在 pubspec.yaml 中指定你的 dart 的版本，需要修改的地方如下
 environment:
-  sdk: ">=2.19.2 <3.0.0"
+  sdk: ">=3.0.0 <=3.1.2"
 4、如果开发 ios 运行时报类似 Pods-xxx.sh permission denied 的错误的话，就 chmod a+x Pods-xxx.sh 即可
 
 

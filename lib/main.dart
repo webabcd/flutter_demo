@@ -28,6 +28,8 @@ import 'dart/other.dart';
 import 'dart/async.dart';
 import 'dart/isolate.dart';
 import 'dart/package/demo.dart';
+import 'dart/dart3feature1.dart';
+import 'dart/dart3feature2.dart';
 
 import 'widget/basic/stateless_widget.dart';
 import 'widget/basic/stateful_widget.dart';
@@ -250,6 +252,8 @@ class MyApp extends StatelessWidget {
         "lib.dart.package.demo.dart":(context) => const DartPackage(),
         "lib.dart.async.dart":(context) => const DartAsync(),
         "lib.dart.isolate.dart":(context) => const DartIsolate(),
+        "lib.dart.dart3feature1.dart":(context) => const Dart3Feature1(),
+        "lib.dart.dart3feature2.dart":(context) => const Dart3Feature2(),
         "lib.widget.basic.stateless_widget.dart":(context) => const StatelessWidgetDemo(),
         "lib.widget.basic.stateful_widget.dart":(context) => const StatefulWidgetDemo(),
         "lib.widget.basic.constraint.dart":(context) => const ConstraintDemo(),
