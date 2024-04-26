@@ -17,7 +17,6 @@
   如果出现 "..." is not a valid Dart package name. 错误，是因为项目的根目录的目录名有大写字母，都改成小写就好了
 7、启动 windows 的命令为 flutter run -d windows
   如果出现 Unable to find suitable Visual Studio toolchain. 错误，则需要在安装 visual studio 的时候勾选“使用 C++ 的桌面开发”
-8、如果有任何问题，可以先 flutter doctor 判断环境是否正常
 
 
 运行和编译相关的命令：
@@ -44,3 +43,6 @@ environment:
 不能翻墙的话就镜像，执行如下命令即可
 set PUB_HOSTED_URL=https://pub.flutter-io.cn
 set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+
+
+注：如果有任何问题，可以先 flutter doctor 判断环境是否正常
