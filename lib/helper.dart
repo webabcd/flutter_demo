@@ -95,7 +95,6 @@ class MyButton extends TextButton {
     onFocusChange: onFocusChange,
     style: style ?? TextButton.styleFrom(
       padding: const EdgeInsets.all(5.0),
-      primary: Colors.white,
       backgroundColor: Colors.blue,
       textStyle: const TextStyle(fontSize: 16),
     ),

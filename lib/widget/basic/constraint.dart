@@ -153,7 +153,6 @@ class MyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: TextButton.styleFrom(
-        primary: Colors.white,
         backgroundColor: isSelected ? Colors.orange[400] : Colors.orange[900],
       ),
       child: Text(exampleNumber.toString()),
