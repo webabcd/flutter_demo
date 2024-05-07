@@ -45,4 +45,7 @@ set PUB_HOSTED_URL=https://pub.flutter-io.cn
 set FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 
-注：如果有任何问题，可以先 flutter doctor 判断环境是否正常
+注：
+1、如果有任何问题，可以先 flutter doctor 判断环境是否正常
+2、查看当前有哪些设备可以运行的命令是 flutter devices，之后可以通过 flutter run -d device-id 在指定的设备上运行
+3、新建项目时，可以先运行如下命令把框架搭起来 flutter create .
