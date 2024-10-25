@@ -23,7 +23,9 @@ class _MediaQueryDemoState extends State<MediaQueryDemo> {
     /// 获取屏幕的相关信息
     MediaQueryData data = MediaQuery.of(context);
     message = 'size: ${data.size}\n'                              /// 逻辑分辨率
+        'padding: ${data.padding}\n'                              /// 设备的安全区域的 padding
         'devicePixelRatio: ${data.devicePixelRatio}\n'            /// 物理分辨率与逻辑分辨率的比值
+        '真实分辨率: ${data.size * data.devicePixelRatio}\n'        /// 真实分辨率
         'textScaleFactor: ${data.textScaleFactor}\n'              /// 系统设置中的字体大小
         'platformBrightness: ${data.platformBrightness}\n'        /// 当前处于浅色模式还是深色模式
         'padding: ${data.padding}\n'                              /// 安全区域的尺寸
