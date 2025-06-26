@@ -6,11 +6,14 @@
 4、macos 环境的 flutter sdk 下载地址和安装说明 https://docs.flutter.dev/get-started/install/macos
   我在 macos 中用的是 vscode
   a) 下载 flutter sdk 并配置环境变量
+    配置环境变量的方法：编辑 ~/.zshenv 文件，添加 export PATH="/Users/wanglei/flutter_sdk/bin:$PATH"，然后通过 source ~/.zshenv 使环境变量立即生效
   b) 安装 vscode，以及 flutter 插件和 dart 插件
   c) 在 vscode 的右下角可以选择调试的设备或模拟器
   d) 以本例为例，通过 ctrl + ~ 打开终端窗口，然后进入 FlutterDemo 目录
     1. 然后运行 flutter run，但是这个不会自动 hot reload，需要运行后通过输入 r 做手动 hot reload
     2. 直接通过 ctrl + f5 运行，这个是自动 hot reload 的
+  e) 新建项目的方法：点击 vsc 顶部的搜索框，点击 Show and Run Commands，点击 Flutter: New Project
+  f) 在 vsc 中修改 sdk 目录的方法：File -> Preferences -> Settings -> Extensions -> Dart -> SDK 然后修改相关配置即可
   注：如果运行报错，比如 Target of URI doesn't exist 'package:xxx'，则在终端窗口运行一下 flutter pub get 即可
 5、启动 web 的命令为 flutter run -d chrome
 6、在已有的 flutter 项目中追加 windows, macos, linux 的支持需要先执行 flutter create --platforms=windows,macos,linux .
