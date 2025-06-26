@@ -4,7 +4,7 @@
   注：别忘了在 File->Settings->Languages & Frameworks->Flutter 中指定 flutter sdk 的路径
 3、android studio 的 settings 的 plugins 中安装 flutter 插件
 4、macos 环境的 flutter sdk 下载地址和安装说明 https://docs.flutter.dev/get-started/install/macos
-  我在 macos 中用的是 vscode
+  我在 macos 中用的是 vscode（注：在 windows 中使用 vsc 开发 flutter 也是类似的）
   a) 下载 flutter sdk 并配置环境变量
     配置环境变量的方法：编辑 ~/.zshenv 文件，添加 export PATH="/Users/wanglei/flutter_sdk/bin:$PATH"，然后通过 source ~/.zshenv 使环境变量立即生效
   b) 安装 vscode，以及 flutter 插件和 dart 插件
