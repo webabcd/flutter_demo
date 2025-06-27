@@ -5,8 +5,8 @@
  * 如果对于 flutter 的开发来说，其想要与 android/ios/web 通信的方法都是一样的，则可以参见 flutter_plugin_web.dart 中的实现方式
  */
 
+import 'dart:ui_web' as ui; // 注：如果是旧版的 flutter 则用 import 'dart:ui' as ui;
 import 'dart:html' as html;
-import 'dart:ui' as ui;
 import 'dart:js' as js;
 
 import 'package:flutter/material.dart';
