@@ -144,7 +144,7 @@ class Dart3Feature1 extends StatelessWidget {
       Colors.orange => "orange",
       _ => "other",
     };
-    log("$c"); // red || green || blue
+    log(c); // red || green || blue
 
     // 通过 case 解构，并通过 when 匹配解构后的值
     switch (Colors.red) {

@@ -97,7 +97,7 @@ class _MyClass extends _MyClassBase with _MyMixin1, _MyMixin2 implements _MyClas
   // 定义构造函数，以及调用基类的构造函数，传统的方式就用上面注销的那段代码的方式，在 dart 2.17 引入新的构造方式
   // 下面这句与上面注销的 _MyClass(String name, this.age) : super(name) { } 的作用是一样的
   // 也就是说 super.name 的意思是除了用于当前类的实例化的参数，同时也会在自动调用基类的构造函数的时候将此参数传递给基类的构造函数
-  _MyClass(super.name, this.age) { }
+  _MyClass(super.name, this.age);
 
   // 重写基类的方法
   @override

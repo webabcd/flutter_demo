@@ -49,7 +49,7 @@ class DartClass1 extends StatelessWidget {
 
   void sample2() {
     // 无名构造函数（无名构造函数只能有一个，如果你不定义无名构造函数，那么默认会有一个无参数的无名构造函数）
-    var a = _MyClass2("webabcd", 40);
+    var a = _MyClass2("webabcd", 40, temp1: "temp1", temp2: "temp2");
 
     // 有名构造函数（有名构造函数允许有多个）
     var b = _MyClass2.constructor1("webabcd", 40);
@@ -151,8 +151,8 @@ class _MyClass2 {
 
   // 在执行构造函数逻辑之前，可以先做属性的初始化
   _MyClass2.constructor3(String name, double age)
-      : this.name = name + "2",
-        this.age = age * 2 {
+      : name = name + "2",
+        age = age * 2 {
     this.age += 2;
   }
 

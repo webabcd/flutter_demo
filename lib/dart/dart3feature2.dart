@@ -26,7 +26,7 @@ class Dart3Feature2 extends StatelessWidget {
       _MyClass2()=> '_MyClass2',
       _MyClass3()=> '_MyClass3',
     };
-    log("$b");
+    log(b);
 
     return const MyWidget(text: "dart 3 新特性（类相关）");
   }

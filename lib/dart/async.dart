@@ -74,9 +74,9 @@ class DartAsync extends StatelessWidget {
       // 用于捕获 then() 过程中的异常
       // 如果没有在 then() 中定义 onError() 则这里也会捕获 future() 过程中的异常
       log("catchError: $e");
-    }).whenComplete(() => {
+    }).whenComplete(() {
       // 当 Future 完成后，无论是否发生异常都会走到这里，类似 finally
-      log("whenComplete")
+      log("whenComplete");
     });
 
 
