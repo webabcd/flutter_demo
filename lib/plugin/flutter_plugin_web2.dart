@@ -1,8 +1,10 @@
 /*
- * 本例用于演示 web 插件的开发（flutter 使用 web 原生控件，并做数据通信）
+ * 本例用于演示 web 插件的开发（flutter 使用 web 原生控件，并做数据通信）（旧版 flutter 的实现方式）
  *
  * 本例中用的 flutter 与 js 的通信方式实现起来比较简单，但是无法和 android/ios 插件的接口保持一致
  * 如果对于 flutter 的开发来说，其想要与 android/ios/web 通信的方法都是一样的，则可以参见 flutter_plugin_web.dart 中的实现方式
+ * 
+ * 注：本例演示的是旧版 flutter 的实现方式，新版 flutter 的实现方式请参见 /lib/plugin/flutter_plugin_web2_new.dart
  */
 
 import 'dart:ui_web' as ui; // 注：如果是旧版的 flutter 则用 import 'dart:ui' as ui;
@@ -15,6 +17,7 @@ import 'package:flutter/services.dart';
 class FlutterPluginWeb2 {
 
   /// 构造一个 HtmlElementView，其用于在 flutter 中显示指定的 html（仅在 web 环境可用）
+  /// jsToFlutter 是 js 端调用 flutter 端之后，需要回调的函数
   HtmlElementView getHtmlElementView(dynamic jsToFlutter) {
     var view = html.DivElement()
       ..append(html.StyleElement()
@@ -34,10 +37,11 @@ class FlutterPluginWeb2 {
             // 用于演示 flutter 调用 js
             function xxx_flutterToJs(message) {
               document.getElementById("txtMessage").innerHTML = "flutter to js: " + message;
+              return "ok";
             }
             
             // 用于演示 js 调用 flutter
-            function send() {
+            function xxx_jsToFlutter_demo() {
               // 通过 xxx_jsToFlutter() 调用 flutter
               // 这个 xxx_jsToFlutter() 是通过类似这样注册的 js.context["xxx_jsToFlutter"] = jsToFlutter;
               window.xxx_jsToFlutter(new Date().getTime().toString());
@@ -52,7 +56,7 @@ class FlutterPluginWeb2 {
         )
         ..append(html.DivElement()
           ..setAttribute("style", "flex-grow: 1; display: flex; flex-direction: column; justify-content: flex-start;")
-          ..setAttribute("onclick", "send();")
+          ..setAttribute("onclick", "xxx_jsToFlutter_demo();")
           ..append(html.ButtonElement()
             ..setAttribute("style", "padding: 12px")
             ..setInnerHtml("发送数据给 flutter")

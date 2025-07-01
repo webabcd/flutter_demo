@@ -16,7 +16,7 @@
  * 4、参见 /ios/Runner/AppDelegate.swift
  *
  * 三、web 原生控件，以及 flutter 与 js 的通信
- * 1、参见 /lib/plugin/flutter_plugin_web2.dart
+ * 1、参见 /lib/plugin/flutter_plugin_web2.dart 和 /lib/plugin/flutter_plugin_web2_new.dart
  *
  *
  * 注：插件中实现的功能（非 .dart 实现的）不支持 flutter 的 hot reload
@@ -24,6 +24,7 @@
 
 import 'dart:async';
 import 'dart:io';
+import 'dart:js_interop' as js_interop;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -31,17 +32,21 @@ import 'package:flutter/services.dart';
 
 import '../helper.dart';
 
-/// 这里要注意，如果编译的时候，目标平台不是 web 环境，那么如果项目中 import 了 dart:js, dart:ui, dart:html 之类的库，则会报类似如下的错误
+/// 这里要注意，如果编译的时候，目标平台不是 web 环境，那么如果项目中 import 了 dart:js_interop, dart:js, dart:ui, dart:html 之类的库，则会报类似如下的错误
 /// FileSystemException(uri=org-dartlang-untranslatable-uri:dart%3Ahtml; message=StandardFileSystem only supports file:* and data:* URIs)
 /// 此时，就需要用如下的方式 import
 /// 下面的 import 的意思是：导入 flutter_plugin_web2_stub.dart，但是编译为 web 时（即 dart.library.js 为真）则导入 flutter_plugin_web2.dart
 /// flutter_plugin_web2_stub.dart 里的对外的方法定义与 flutter_plugin_web2.dart 是一样的
-/// 但是 flutter_plugin_web2_stub.dart 中没有具体的逻辑，不会导入 dart:js, dart:ui, dart:html 之类的库，这样就保证了编译为非 web 时不会报错
-/// 而 flutter_plugin_web2.dart 有具体的逻辑，会导入 dart:js, dart:ui, dart:html 之类的库，这样就保证了编译为 web 时会包括相关的逻辑
+/// 但是 flutter_plugin_web2_stub.dart 中没有具体的逻辑，不会导入 dart:js_interop, dart:js, dart:ui, dart:html 之类的库，这样就保证了编译为非 web 时不会报错
+/// 而 flutter_plugin_web2.dart 有具体的逻辑，会导入 dart:js_interop, dart:js, dart:ui, dart:html 之类的库，这样就保证了编译为 web 时会包括相关的逻辑
+/// 注：flutter_plugin_web2.dart 是旧版 flutter 的实现方式，flutter_plugin_web2_new.dart 是新版 flutter 的实现方式
 import 'flutter_plugin_web2_stub.dart' if (dart.library.js) "flutter_plugin_web2.dart";
+import "flutter_plugin_web2_new.dart";
 
 class Plugin2Demo extends StatefulWidget {
-  const Plugin2Demo({Key? key}) : super(key: key);
+  // 当演示 web 原生控件以及 flutter 与 js 的通信时，通过此字段判断是使用新版 flutter 的方式还是旧版 flutter 的方式
+  final bool newWeb;
+  const Plugin2Demo({Key? key, this.newWeb = false}) : super(key: key);
 
   @override
   _Plugin2DemoState createState() => _Plugin2DemoState();
@@ -71,9 +76,9 @@ class _MyWidget extends StatefulWidget {
 
 class _MyWidgetState extends State<_MyWidget> {
 
-  /// 用于保存从 android/ios 发送到 flutter 的数据
+  /// 用于保存从 android/ios/web 发送到 flutter 的数据
   String _nativeToFlutterMessage = '';
-  /// 用于控制 android/ios 和 flutter 通信的 controller
+  /// 用于控制 android/ios/web 和 flutter 通信的 controller
   final _controller = _MyViewController();
 
   @override
@@ -127,6 +132,9 @@ class _MyWidgetState extends State<_MyWidget> {
             const SizedBox(height: 10),
             ElevatedButton(
               onPressed: () {
+                var parentWidget = context.findAncestorWidgetOfExactType<Plugin2Demo>()!;
+                _controller.newWeb = parentWidget.newWeb;
+                /// flutter 调用 android/ios/web
                 _controller.flutterToNative("${DateTime.now().millisecondsSinceEpoch}");
               },
               child: const Text('发送数据给 Native'),
@@ -167,9 +175,16 @@ class _MyNativeViewState extends State<_MyNativeView> {
     /// 判断是否为 web 环境要用 kIsWeb
     /// 如果在 web 环境使用 Platform.xxx 的话会报错的
     if (kIsWeb) {
-      /// 嵌入到 flutter 中的 web 的 view（相关的插件在 /lib/plugin/flutter_plugin_web2.dart）
-      /// 这是一个 HtmlElementView 类型的组件
-      return FlutterPluginWeb2().getHtmlElementView(widget.controller.jsToFlutter);
+      var parentWidget = context.findAncestorWidgetOfExactType<Plugin2Demo>()!;
+      if (parentWidget.newWeb) {
+        /// 嵌入到 flutter 中的 web 的 view（新版 flutter 的方式，相关的插件在 /lib/plugin/flutter_plugin_web2_new.dart）
+        /// 这是一个 HtmlElementView 类型的组件
+        return FlutterPluginWeb2New().getHtmlElementView(widget.controller.jsToFlutterNew);
+      } else {
+        /// 嵌入到 flutter 中的 web 的 view（旧版 flutter 的方式，相关的插件在 /lib/plugin/flutter_plugin_web2.dart）
+        /// 这是一个 HtmlElementView 类型的组件
+        return FlutterPluginWeb2().getHtmlElementView(widget.controller.jsToFlutter);
+      }
     }
 
     if (Platform.isAndroid) {
@@ -203,16 +218,25 @@ class _MyNativeViewState extends State<_MyNativeView> {
   }
 }
 
-/// 用于控制 android/ios 和 flutter 通信的 controller
+/// 用于控制 android/ios/web 和 flutter 通信的 controller
 class _MyViewController extends ChangeNotifier {
 
   late MethodChannel _methodChannel;
 
+  // 当演示 flutter 与 js 的通信时，通过此字段判断是使用新版 flutter 的方式还是旧版 flutter 的方式
+  bool newWeb = false;
+
   String nativeToFlutterMessage = "";
 
-  /// 接收从 web 发送到 flutter 的数据
+  /// 接收从 web 发送到 flutter 的数据（旧版 flutter 的方式）
   void jsToFlutter(String message) {
     nativeToFlutterMessage = message;
+    notifyListeners();
+  }
+
+  /// 接收从 web 发送到 flutter 的数据（新版 flutter 的方式）
+  void jsToFlutterNew(js_interop.JSString message) {
+    nativeToFlutterMessage = message.toDart;
     notifyListeners();
   }
 
@@ -233,8 +257,15 @@ class _MyViewController extends ChangeNotifier {
   /// 从 flutter 发送数据到 android/ios/web
   Future<void> flutterToNative(String message) async {
     if (kIsWeb) {
-      /// 从 flutter 发送数据到 web
-      var result = FlutterPluginWeb2.flutterToJs(message);
+      if (newWeb) {
+        /// 从 flutter 发送数据到 web（新版 flutter 的方式）
+        var result = FlutterPluginWeb2New.flutterToJs(message);
+        log("flutterToJs result: $result");
+      } else {
+        /// 从 flutter 发送数据到 web（旧版 flutter 的方式）
+        var result = FlutterPluginWeb2.flutterToJs(message);
+        log("flutterToJs result: $result");
+      }
     }
     else {
       /// 从 flutter 发送数据到 android/ios

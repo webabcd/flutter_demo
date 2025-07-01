@@ -418,6 +418,7 @@ class MyApp extends StatelessWidget {
         "lib.network.http.dart":(context) => const HttpDemo(),
         "lib.plugin.plugin.dart":(context) => const PluginDemo(),
         "lib.plugin.plugin2.dart":(context) => const Plugin2Demo(),
+        "lib.plugin.plugin2.dart(new)":(context) => const Plugin2Demo(newWeb: true,),
         "lib.game.tetris.tetris.dart":(context) => const Tetris(),
       },
     );

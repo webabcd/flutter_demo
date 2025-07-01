@@ -456,6 +456,10 @@
 - lib/plugin/plugin2.dart
 - lib/plugin/flutter_plugin_web2_stub.dart
 - lib/plugin/flutter_plugin_web2.dart
+7. flutter 使用 web 原生控件（新版 flutter 的方式），并做数据通信（新版 flutter 的方式）
+- lib/plugin/plugin2.dart(new)
+- lib/plugin/flutter_plugin_web2_stub.dart
+- lib/plugin/flutter_plugin_web2_new.dart
 
 ### 游戏
 1. 俄罗斯方块
