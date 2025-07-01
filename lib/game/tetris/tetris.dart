@@ -35,7 +35,7 @@ class TetrisState extends State<Tetris> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          Container(
+          SizedBox(
             width: Config.mainMatrixWidth * Config.squareWidth,
             height: Config.mainMatrixHeight * Config.squareWidth,
             child: GameWidget(
