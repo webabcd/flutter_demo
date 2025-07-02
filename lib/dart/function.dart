@@ -159,7 +159,9 @@ class DartFunction extends StatelessWidget {
 
   // 回调函数实际就是函数作为参数（函数指针）的应用
   void sample5() {
-    var a = _MyClass(c1, (String str) {
+    var a = _MyClass(myCallback, (String str1, String str2) {
+      log("$str1, $str2");
+    }, (String str1, String str2) => log("$str1, $str2"), (String str) {
       log(str);
     }, (String str1, str2) {
       log("$str1, $str2");
@@ -172,14 +174,16 @@ class DartFunction extends StatelessWidget {
     a.start();
   }
 }
-void c1(String str1, String str2) {
+void myCallback(String str1, String str2) {
   log("$str1, $str2");
 }
 // 为指定的函数类型指定类型别名
 typedef MyCallback = void Function(String str);
 class _MyClass {
   // 支持任意类型和任意数量的参数的函数
-  Function callback1;
+  Function callback1_1; // 用于演示通过有名函数调用此回调
+  Function callback1_2; // 用于演示通过匿名函数调用此回调
+  Function callback1_3; // 用于演示通过箭头函数调用此回调
   // 支持指定类型的参数的函数
   void Function(String str) callback2;
   // 支持指定类型的参数，以及指定返回值类型的函数
@@ -189,11 +193,13 @@ class _MyClass {
   // 无参数无返回值的函数，这是个原生的类型别名 typedef VoidCallback = void Function();
   VoidCallback callback5;
 
-  _MyClass(this.callback1, this.callback2, this.callback3, this.callback4, this.callback5);
+  _MyClass(this.callback1_1, this.callback1_2, this.callback1_3, this.callback2, this.callback3, this.callback4, this.callback5);
 
   void start() {
     Future.delayed(const Duration(seconds: 1), () {
-      callback1("i am callback1", "webabcd");
+      callback1_1("i am callback1_1", "webabcd");
+      callback1_2("i am callback1_2", "webabcd");
+      callback1_3("i am callback1_3", "webabcd");
       callback2("i am callback2");
       var result = callback3("i am callback3", "webabcd");
       log("result: $result");
