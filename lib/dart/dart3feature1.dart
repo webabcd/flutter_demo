@@ -147,9 +147,10 @@ class Dart3Feature1 extends StatelessWidget {
     log(c); // red || green || blue
 
     // 通过 case 解构，并通过 when 匹配解构后的值
-    switch (Colors.red) {
-      case Color(value: var d) when d > 100:
-        log("$d, ${Color(d)}"); // 4294198070, Color(0xfff44336)
+    var obj = _MyClass1(name: "webabcd", age: 43);
+    switch (obj) {
+      case _MyClass1(age: var a) when a > 10:
+        log("$a"); // 43
     }
   }
 }
