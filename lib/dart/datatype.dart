@@ -122,6 +122,7 @@ c''';
     // 构造 List 的时候支持 for 语句
     var g = ['a0', for (var v in f) 'a$v']; // [a0, a1, a2, a3, a4]
     var g2 = ['a0', for (var i = 0; i < f.length; i++) 'a${f[i]}']; // [a0, a1, a2, a3, a4]
+    var g3 = [for (var i = 0; i < 3; i++) i * 2]; // [0, 2, 4]
 
     var h = [1, 2, 3];
     var i = h.toList(); // 通过 toList() 复制列表
@@ -154,12 +155,12 @@ c''';
     var r = Uint8List.fromList([1, 2, 3]);    // [1, 2, 3]
     // Int32List 相当于 java 的 int[]
     var s = Int32List.fromList([1, 2, 3]);    // [1, 2, 3]
-    // Int64List 相当于 java 的 long[]
-    var t = Int64List.fromList([1, 2, 3]);    // [1, 2, 3]
+    // Int64List 相当于 java 的 long[]（注：在 web 端不支持 Int64List）
+    // var t = Int64List.fromList([1, 2, 3]);    // [1, 2, 3]
     // Float64List 相当于 java 的 double[]
     var u = Float64List.fromList([1, 2, 3]);  // [1.0, 2.0, 3.0]
 
-    log("$a, $b, $c, $d, $e, $f, $g, $g2, $j, $k, $l, $m, $n, $o, $p, $q, $r, $s, $t, $u");
+    log("$a, $b, $c, $d, $e, $f, $g, $g2, $g3, $j, $k, $l, $m, $n, $o, $p, $q, $r, $s, $u");
   }
 
   void sample4() {

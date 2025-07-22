@@ -65,13 +65,20 @@ class DartOperator extends StatelessWidget {
     // !. 如果左边是 null 则运行时会出现异常
     // var e = a!.length;
 
+    a = "abc";
+    var e = 0;
+    if (a != null) {
+      // 此处可以通过上下文自动判断 a 不是 null
+      e = a.length;
+    }
+
     List<int>? f;
     // ?[] 如果左边是 null 则返回 null
     var g = f?[0];
     // ![] 如果左边是 null 则运行时会出现异常
     // var h = f![0];
 
-    log("$a, $b, $c, $d, $f, $g");
+    log("$a, $b, $c, $d, $e, $f, $g"); // abc, a == null, b == null, null, 3, null, null
   }
 
   void sample4() {

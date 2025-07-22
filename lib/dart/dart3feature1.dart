@@ -1,14 +1,15 @@
 /*
  * dart 3 新特性（元组，解构，switch 的模式匹配）
  *
- * dart 3 中新增了 Record 和 Pattern
- * Record 就是元组
- * Pattern 就是解构和 switch 的模式匹配
+ * dart 3 中新增了 Record（元组）和 Pattern（解构）
  *
  *
  * 升级 dart 需要先在 pubspec.yaml 中做如下配置，然后 flutter upgrade
  * environment:
  *   sdk: ">=3.0.0 <=3.1.2"
+ * 或者
+ * environment:
+ *   sdk: ^3.3.0
  */
 
 import 'package:flutter/material.dart';
@@ -30,6 +31,8 @@ class Dart3Feature1 extends StatelessWidget {
     sample4();
     // switch 的模式匹配
     sample5();
+    // 通过 case 匹配后解构
+    sample6();
 
     return const MyWidget(text: "dart 3 新特性（元组，解构，switch 的模式匹配）");
   }
@@ -151,6 +154,20 @@ class Dart3Feature1 extends StatelessWidget {
     switch (obj) {
       case _MyClass1(age: var a) when a > 10:
         log("$a"); // 43
+    }
+  }
+
+  void sample6() {
+    var data = (name: 'webabcd', details: (age: 44, city: '北京'));
+    // 通过 case 匹配，然后解构元组
+    if (data case (name: 'webabcd', details: (age: 44, city: var c))) {
+      log('city: $c'); // city: 北京
+    }
+
+    var list = [10, 20, 30, 40, 50];
+    // 通过 case 匹配，然后解构列表
+    if (list case [var x, var y, ...]) {
+      log('x: $x, y: $y'); // x: 10, y: 20
     }
   }
 }
